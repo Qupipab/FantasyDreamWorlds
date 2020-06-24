@@ -2,4 +2,4 @@
 
 <script src="./fdw-header.component.js"></script>
 
-<style scoped src="./fdw-header.component.css"></style>
+<style scoped lang="scss" src="./fdw-header.component.scss"></style>

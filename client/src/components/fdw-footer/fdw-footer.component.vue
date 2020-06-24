@@ -2,4 +2,4 @@
 
 <script src="./fdw-footer.component.js"></script>
 
-<style scoped src="./fdw-footer.component.css"></style>
+<style scoped lang="scss" src="./fdw-footer.component.scss"></style>
