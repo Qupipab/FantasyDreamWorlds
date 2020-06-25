@@ -1,0 +1,124 @@
+header, .logo-wrap, .profile, .nav-wrap {
+  display: flex;
+}
+
+header {
+  box-shadow: 0 3px 10px 0 rgba(0,0,0,.1);
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 40px;
+  height: 110px;
+  a {
+    color: #000;
+    transition: .2s;
+    &:hover {
+      color: #9E9EA3;
+    }
+  }
+  nav, .logo-wrap, .profile {
+    flex-grow: 1;
+    flex-basis: 300px;
+    z-index:2;
+  }
+  .logo-wrap {
+    justify-content: center;
+    .logo {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      white-space: nowrap;
+      text-align: center;
+      &::after {
+        // content: 'Fantasy Dream Worlds';
+      }
+    }
+    .logo-image {
+      width: 100px;
+      height: 100px;
+    }
+  }
+}
+
+.profile {
+  justify-content: flex-end;
+  align-items: center;
+  .sign-in-button {
+    margin: 0 20px 0 4px;
+    font-size: 16px;
+  }
+  .sign-up-button {
+    margin: 0 20px;
+  }
+}
+
+.nav-wrap {
+  justify-content: space-between;
+  .nav-item {
+    margin: 0 2px;
+    a {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      font-size: 16px;
+      .chevron {
+        text-align: center;
+      }
+    }
+  }
+}
+
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+.circles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 110px;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.circles li {
+  position: absolute;
+  display: block;
+  list-style: none;
+  width: 20px;
+  height: 20px;
+  background: rgba(37, 44, 194, 0.08);
+  animation: animate 25s linear infinite;
+  bottom: -100px;
+}
+
+@for $i from 0 to 10 {
+  .circles li:nth-child(#{$i}) {
+    $size: (random(30) + 10) + px;
+    $delay: random(5) + s;
+    $duration: (random(40) + 10) + s;
+    $randPercent: percentage(random(100) / 100);
+    left: $randPercent;
+    width: $size;
+    height: $size;
+    animation-delay: $delay;
+    animation-duration: $duration;
+  }
+}
+
+@keyframes animate {
+
+  0%{
+      transform: translateY(0) rotate(0deg);
+      opacity: 1;
+      border-radius: 0;
+  }
+
+  100%{
+      transform: translateY(-1000px) rotate(720deg);
+      opacity: 0;
+      border-radius: 75%;
+  }
+
+}

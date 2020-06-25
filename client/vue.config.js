@@ -10,10 +10,10 @@ module.exports = {
       .set('@views', path.resolve('src/views/'))
       .set('@router', path.resolve('src/router/'))
       .set('@store', path.resolve('src/store/'))
+      .set('@styles', path.resolve('src/styles/'))
   }
 };
 
-// .set('@styles', path.resolve('src/styles/'))
 // .set('@layout', path.resolve('src/layouts/'))
 // .set('@locales', path.resolve('src/locales/'))
 // .set('@assets', path.resolve('src/assets/'))

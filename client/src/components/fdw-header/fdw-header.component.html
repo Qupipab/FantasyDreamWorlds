@@ -1,0 +1,42 @@
+<header>
+  <ul class="circles">
+    <li v-for="x in 10"></li>
+  </ul>
+  <nav>
+    <ul class="nav-wrap">
+      <li
+        class="nav-item"
+        v-for="(item, index) in navList"
+        :key="index"
+      >
+        <a href="#">
+          {{ item.title }}
+          <!-- <v-icon class="chevron" v-if="item.content">mdi-chevron-down</v-icon> -->
+        </a>
+        <div class="drop-down" v-if="item.content"></div>
+      </li>
+    </ul>
+  </nav>
+  <div class="logo-wrap">
+    <!-- <a id="logo" class="logo" href="#">
+      <img
+      class="logo-image"
+      src="https://images-ext-1.discordapp.net/external/WL0MFYbOfXC7hijaSkgwnOt4Z46bQgcFgeu688Sp8HE/%3Fsize%3D512/https/cdn.discordapp.com/avatars/694322119299039262/8a4c6197ffc97e89277877d0ed1d8e76.png"
+      alt="logo"
+      >
+    </a> -->
+  </div>
+  <div class="profile" v-if="authorized">
+    <a
+      class="sign-in-button"
+      href="#"
+    >Вход</a>
+    <v-btn
+      class="sign-up-button"
+      color="#8e44ad"
+      outlined
+      large
+    >Регистрация</v-btn>
+  </div>
+  <div class="profile" v-if="!authorized">UnAuthorized</div>
+</header>
