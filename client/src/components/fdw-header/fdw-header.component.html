@@ -7,13 +7,14 @@
       <ul class="nav-wrap">
         <v-menu
           bottom
-          auto
           offset-y
+          max-height="400px"
           origin="bottom center"
           transition="scale-transition"
           open-on-hover
           v-for="(item, index) in navList"
           :key="index"
+          :allow-overflow="true"
         >
           <template
             v-slot:activator="{ on, attrs }"

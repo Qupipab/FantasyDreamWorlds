@@ -126,7 +126,7 @@
 .nav-wrap {
   justify-content: space-between;
   .nav-item {
-    margin: 0 2px;
+    margin: 0 6px;
     .link {
       margin: 0 5px;
       flex-direction: column;
@@ -213,6 +213,7 @@
 
 .v-menu__content {
   box-shadow: none;
+  max-height: 2000px;
 }
 
 .marker {

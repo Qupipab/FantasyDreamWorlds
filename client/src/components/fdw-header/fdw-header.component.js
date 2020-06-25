@@ -21,7 +21,6 @@ export default {
       authorized: true,
       navList: [
         { title: 'Форум', path: '/' },
-        { title: 'Правила', path: '/' },
         { title: 'Услуги', path: '/' },
         {
           title: 'Сервера',
@@ -38,6 +37,7 @@ export default {
           path: '/',
           content: [
             { title: 'Рейтинг', path: '/' },
+            { title: 'Правила', path: '/' },
             { title: 'Бан лист', path: '/' },
             { title: 'Частые вопросы', path: '/' },
             { title: 'Команда проекта', path: '/' },
