@@ -1,9 +1,20 @@
-import { VBtn, VIcon } from 'vuetify/lib';
+import {
+  VBtn,
+  VIcon,
+  VList,
+  VListItem,
+  VListItemTitle,
+  VMenu
+} from 'vuetify/lib';
 
 export default {
   components: {
     VBtn,
-    VIcon
+    VIcon,
+    VMenu,
+    VList,
+    VListItem,
+    VListItemTitle
   },
   data () {
     return {
@@ -15,12 +26,23 @@ export default {
         {
           title: 'Сервера',
           path: '/',
-          content: [ 'abc' ]
+          content: [
+            { title: 'Infinity', path: '/' },
+            { title: 'Arcmagic', path: '/' },
+            { title: 'Ozone', path: '/' },
+            { title: 'AOE', path: '/' }
+          ]
         },
         {
           title: 'Помощь',
           path: '/',
-          content: [ 'def' ]
+          content: [
+            { title: 'Рейтинг', path: '/' },
+            { title: 'Бан лист', path: '/' },
+            { title: 'Частые вопросы', path: '/' },
+            { title: 'Команда проекта', path: '/' },
+            { title: 'Команды', path: '/' }
+          ]
         }
       ]
     };

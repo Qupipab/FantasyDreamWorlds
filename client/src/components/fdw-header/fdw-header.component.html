@@ -1,42 +1,103 @@
-<header>
-  <ul class="circles">
-    <li v-for="x in 10"></li>
-  </ul>
-  <nav>
-    <ul class="nav-wrap">
-      <li
-        class="nav-item"
-        v-for="(item, index) in navList"
-        :key="index"
-      >
-        <a href="#">
-          {{ item.title }}
-          <!-- <v-icon class="chevron" v-if="item.content">mdi-chevron-down</v-icon> -->
-        </a>
-        <div class="drop-down" v-if="item.content"></div>
-      </li>
+<div class="header-wrap">
+  <header class="desktop-menu">
+    <ul class="circles">
+      <li v-for="n in 10"></li>
     </ul>
-  </nav>
-  <div class="logo-wrap">
-    <!-- <a id="logo" class="logo" href="#">
-      <img
-      class="logo-image"
-      src="https://images-ext-1.discordapp.net/external/WL0MFYbOfXC7hijaSkgwnOt4Z46bQgcFgeu688Sp8HE/%3Fsize%3D512/https/cdn.discordapp.com/avatars/694322119299039262/8a4c6197ffc97e89277877d0ed1d8e76.png"
-      alt="logo"
-      >
-    </a> -->
-  </div>
-  <div class="profile" v-if="authorized">
-    <a
-      class="sign-in-button"
-      href="#"
-    >Вход</a>
-    <v-btn
-      class="sign-up-button"
-      color="#8e44ad"
-      outlined
-      large
-    >Регистрация</v-btn>
-  </div>
-  <div class="profile" v-if="!authorized">UnAuthorized</div>
-</header>
+    <nav>
+      <ul class="nav-wrap">
+        <v-menu
+          bottom
+          auto
+          offset-y
+          origin="bottom center"
+          transition="scale-transition"
+          open-on-hover
+          v-for="(item, index) in navList"
+          :key="index"
+        >
+          <template
+            v-slot:activator="{ on, attrs }"
+          >
+            <li
+              class="nav-item"
+              v-bind="attrs"
+              v-on="on"
+            >
+              <span class="link" v-if="item.content">{{ item.title }}</span>
+              <a class="link" href="#" v-else>{{ item.title }}</a>
+            </li>
+          </template>
+        
+          <v-list
+            class="menu-items"
+            v-if="item.content"
+            outlined
+          >
+            <ul>
+              <li
+                class="menu-item"
+                v-for="(content, index) in item.content"
+                :key="index"
+              >
+                <div class="marker"></div>
+                <a
+                  class="menu-item-link"
+                  href="#"
+                >{{ content.title }}</a>
+              </li>
+            </ul>
+            
+          </v-list>
+        </v-menu>
+      </ul>
+    </nav>
+    <div class="logo-wrap">
+      <!-- <a id="logo" class="logo" href="#">
+        <img
+        class="logo-image"
+        src="https://images-ext-1.discordapp.net/external/WL0MFYbOfXC7hijaSkgwnOt4Z46bQgcFgeu688Sp8HE/%3Fsize%3D512/https/cdn.discordapp.com/avatars/694322119299039262/8a4c6197ffc97e89277877d0ed1d8e76.png"
+        alt="logo"
+        >
+      </a> -->
+    </div>
+    <div class="profile" v-if="authorized">
+      <a
+        class="sign-in-button"
+        href="#"
+      >Вход</a>
+      <v-btn
+        class="sign-up-button"
+        color="#8e44ad"
+        outlined
+        large
+      >Регистрация</v-btn>
+    </div>
+    <div class="profile" v-if="!authorized">UnAuthorized</div>
+  </header>
+
+  <header class="nav-mobile">
+    <div class="nav-menu">
+      <div class="logo"></div>
+      <div class="nav-menu-mobile">
+        <label class="open-mob-menu-btn-wrapper" for="mobile-menu-toggle">
+          <a class="open-mob-menu-btn">
+            <span></span>
+          </a>
+        </label>
+        <input id="mobile-menu-toggle" type="checkbox" />
+        <div class="mob-menu-bg"></div>
+        <ul class="menu-container">
+          <div class="mobile-menu-nav">
+            <label class="close-mob-menu-btn-wrapper" for="mobile-menu-toggle">
+              <a class="close-mob-menu-btn">
+                <span></span>
+              </a>
+            </label>
+          </div>
+        </ul>
+      </div>
+    </div>
+    <h1>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Suscipit, accusamus.</h1>
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+  </header>
+</div>
