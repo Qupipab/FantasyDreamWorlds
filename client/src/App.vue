@@ -1,8 +1,6 @@
 <template>
   <v-app id="app">
     <fdw-header></fdw-header>
-    <fdw-sidebar></fdw-sidebar>
-    <div class="temp"></div>
   </v-app>
 </template>
 
@@ -10,14 +8,13 @@
 import {
   VApp
 } from 'vuetify/lib';
-import { FdwHeader, FdwSidebar } from '@components';
+import { FdwHeader } from '@components';
 
 export default {
   name: 'App',
   components: {
     VApp,
-    FdwHeader,
-    FdwSidebar
+    FdwHeader
   },
   computed: {}
 };
@@ -25,7 +22,4 @@ export default {
 
 <style lang="scss">
 @import "@styles/common.scss";
-.temp {
-  height: 3000px;
-}
 </style>
