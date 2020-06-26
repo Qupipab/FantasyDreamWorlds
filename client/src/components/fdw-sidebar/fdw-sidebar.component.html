@@ -1,5 +1,60 @@
 <div class="sidebar">
+  <a
+    class="start-play-btn"
+    href="#"
+  >
+    <div class="btn-info">
+      <span>Скачать лаунчер</span>
+      <small>Начни игру в пару кликов</small>
+    </div>
+  </a>
   <div class="servers-status">
-    
+    <div class="title">
+      <h2>Наши сервера</h2>
+    </div>
+    <div class="body">
+      <ul class="servers-group-list">
+        <li
+          class="server-group"
+          v-for="(serverGroup, i) in serversGroupList"
+          :key="i"
+          @click="showServerGroup(i)"
+        >
+          <div class="server-title-info">
+            <div class="server-group-info server-purple">
+              <h4>{{ serverGroup.groupTitle }}</h4>
+              <span class="general-servers-count server-gray">
+                {{ serverGroup.serversList.length | serversCount }}
+                [{{ serverGroup.serverVersion }}]
+              </span>
+            </div>
+            <div class="server-online server-purple">
+              <b class="general-online-count server-purple">
+                {{ serverGroup.serversList | getGeneralOnlineCount }}
+              </b>из {{ serverGroup.serversList | getGeneralSlotsCount }}
+            </div>
+          </div>
+          <ul
+            :class="`${ checkedServerGroup && checkedServerGroup == i + 1 ? 'servers-list-active' : '' } servers-list`"
+          >
+            <li
+              class="server"
+              v-for="(server, j) in serverGroup.serversList"
+              :key="j"
+            >
+              <div class="server-info">
+                <div class="server-title">
+                  <span>{{ serverGroup.groupTitle | setServerNumber(j + 1, serverGroup.serversList.length) }}</span>
+                </div>
+                <div class="server-online">
+                  <span>{{ server.onlineCount }}</span>
+                </div>
+              </div>
+              <div class="server-progress-wrapper"></div>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
   </div>
 </div>
