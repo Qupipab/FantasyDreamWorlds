@@ -1,0 +1,25 @@
+<div class="footer">
+  <footer class="desktop-footer">
+    <div class="footer-logo">ffff</div>
+    <div class="footer-info">
+      <ul class="title-info-wrapper">
+        <li
+          class="title-item-info"
+          v-for="(titleItem, index) in footerNavList.titleInfo"
+          :key="index"
+        ><a :href="titleItem.path"><h5>{{ titleItem.title }}</h5></a></li>
+      </ul>
+      <ul class="body-info-wrapper">
+        <li
+          class="body-item-info"
+          v-for="(bodyItem, index) in footerNavList.bodyInfo"
+          :key="index"
+        ><a :href="bodyItem.path"><span>{{ bodyItem.title }}</span></a></li>
+      </ul>
+      <div class="about-info-wrapper">
+        <p>© FDWorlds.com 2016 - {{ currentDate }}. Разработано каким-то челом под пивас</p>
+      </div>
+    </div>
+    <div class="footer-wrapper">ffff</div>
+  </footer>
+</div>
