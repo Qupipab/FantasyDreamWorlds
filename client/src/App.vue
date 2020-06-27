@@ -1,8 +1,8 @@
 <template>
   <v-app id="app">
-    <fdw-header></fdw-header>
-    <div class="temp"></div>
-    <fdw-footer></fdw-footer>
+    <component :is="layout">
+      <router-view/>
+    </component>
   </v-app>
 </template>
 
@@ -10,22 +10,20 @@
 import {
   VApp
 } from 'vuetify/lib';
-import { FdwHeader, FdwFooter } from '@components';
 
 export default {
   name: 'App',
   components: {
-    VApp,
-    FdwHeader,
-    FdwFooter
+    VApp
+  },
+  computed: {
+    layout () {
+      return 'default-layout';
+    }
   }
 };
 </script>
 
 <style lang="scss">
 @import "@styles/common.scss";
-.temp {
-  height: 1000px;
-}
-
 </style>
