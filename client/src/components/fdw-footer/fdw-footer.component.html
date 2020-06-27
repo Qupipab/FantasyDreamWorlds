@@ -1,0 +1,33 @@
+<div class="footer">
+  <footer class="desktop-footer">
+    <div class="footer-logo"><a href="#">Logo</a></div>
+    <div class="footer-info">
+      <p class="title-info-wrapper">
+        <a
+          class="title-item-info"
+          v-for="(titleItem, index) in footerNavList.titleInfo"
+          :key="index"
+          :href="titleItem.path"
+        >
+        {{ titleItem.title }}
+        </a>
+      </p>
+      <p class="body-info-wrapper">
+        <a
+          class="body-item-info"
+          v-for="(bodyItem, index) in footerNavList.bodyInfo"
+          :key="index"
+          :href="bodyItem.path"
+        >
+          {{ bodyItem.title }}
+        </a>
+      </p>
+      <div class="about-info-wrapper">
+        <p>© FDWorlds.com 2016 - {{ currentDate }}. Разработано каким-то челом под пивас <v-icon
+          color="#f4d03f"  
+        >mdi-glass-mug-variant</v-icon></p>
+      </div>
+    </div>
+    <div class="footer-wrapper">Metric</div>
+  </footer>
+</div>
