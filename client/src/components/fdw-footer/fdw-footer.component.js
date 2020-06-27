@@ -1,4 +1,9 @@
+import { VIcon } from 'vuetify/lib';
+
 export default {
+  components: {
+    VIcon
+  },
   data () {
     return {
       authorized: true,
