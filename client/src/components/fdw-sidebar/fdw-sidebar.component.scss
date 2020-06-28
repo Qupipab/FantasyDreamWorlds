@@ -95,6 +95,7 @@
 
 .server-group {
   overflow: hidden;
+  position: relative;
   user-select: none;
   position: relative;
   bottom: 0;
@@ -120,6 +121,15 @@
   &:hover h4 {
     opacity: .8;
   }
+  .server-info-chips {
+    position: absolute;
+    top: -2px;
+    right: 3px;
+    padding: 3px;
+    &:hover .info-icon{
+      color: blue;
+    }
+  }
   .servers-list-active {
     display: block;
   }
@@ -131,8 +141,10 @@
       justify-content: space-between;
     }
     .server-online {
-      text-align: right;
       opacity: .6;
+      .general-online-count-wrapper {
+        text-align: end;
+      }
       .general-online-count {
         display: block;
         line-height: 100%;
