@@ -29,9 +29,20 @@
               </span>
             </div>
             <div class="server-online server-purple">
-              <b class="general-online-count server-purple">
-                {{ serverGroup.serversList | getGeneralOnlineCount }}
-              </b>из {{ serverGroup.serversList | getGeneralSlotsCount }}
+              <a
+                class="server-info-chips"
+                :href="serverGroup.link"
+              >
+                <v-icon
+                  class="info-icon"
+                  x-small
+                >mdi-information-outline</v-icon>
+              </a>
+              <div class="general-online-count-wrapper">
+                <b class="general-online-count server-purple">
+                  {{ serverGroup.serversList | getGeneralOnlineCount }}
+                </b>из {{ serverGroup.serversList | getGeneralSlotsCount }}
+              </div>
             </div>
           </div>
           <ul
