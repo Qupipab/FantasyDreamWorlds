@@ -1,4 +1,9 @@
+import { VIcon } from 'vuetify/lib';
+
 export default {
+  components: {
+    VIcon
+  },
   data () {
     return {
       authorized: true,
@@ -7,6 +12,7 @@ export default {
         {
           groupTitle: 'Infinity',
           serverVersion: '1.7.10',
+          link: '/',
           serversList: [
             {
               onlineCount: 50,
@@ -29,6 +35,7 @@ export default {
         {
           groupTitle: 'Ozone',
           serverVersion: '1.7.10',
+          link: '/',
           serversList: [
             {
               onlineCount: 50,
@@ -47,6 +54,7 @@ export default {
         {
           groupTitle: 'Arcmagic',
           serverVersion: '1.7.10',
+          link: '/',
           serversList: [
             {
               onlineCount: 50,
@@ -57,6 +65,7 @@ export default {
         {
           groupTitle: 'AOE',
           serverVersion: '1.7.10',
+          link: '/',
           serversList: [
             {
               onlineCount: 50,
