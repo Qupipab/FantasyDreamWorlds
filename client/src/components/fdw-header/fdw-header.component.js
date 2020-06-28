@@ -20,10 +20,10 @@ export default {
     return {
       authorized: true,
       navList: [
-        { title: 'Форум', path: '/' },
-        { title: 'Услуги', path: '/' },
+        { title: this.$t('header.forum'), path: '/' },
+        { title: this.$t('header.services'), path: '/' },
         {
-          title: 'Сервера',
+          title: this.$t('header.serversTitle'),
           path: '/',
           content: [
             { title: 'Infinity', path: '/' },
@@ -33,15 +33,15 @@ export default {
           ]
         },
         {
-          title: 'Помощь',
+          title: this.$t('header.helpTitle'),
           path: '/',
           content: [
-            { title: 'Рейтинг', path: '/' },
-            { title: 'Правила', path: '/' },
-            { title: 'Бан лист', path: '/' },
-            { title: 'Частые вопросы', path: '/' },
-            { title: 'Команда проекта', path: '/' },
-            { title: 'Команды', path: '/' }
+            { title: this.$t('header.helpList.rating'), path: '/' },
+            { title: this.$t('header.helpList.rules'), path: '/' },
+            { title: this.$t('header.helpList.banList'), path: '/' },
+            { title: this.$t('header.helpList.FAQ'), path: '/' },
+            { title: this.$t('header.helpList.team'), path: '/' },
+            { title: this.$t('header.helpList.commands'), path: '/' }
           ]
         }
       ]

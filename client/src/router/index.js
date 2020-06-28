@@ -1,14 +1,40 @@
+/* eslint-disable */
 import { Home } from '@views';
+import { SUPPORTED_LOCALES } from '@constants';
 import Vue from 'vue';
 import VueRouter from 'vue-router';
+import store from '@store';
 
 Vue.use(VueRouter);
 
+// function load (component) {
+//   return () => import(`@views/${component}.vue`)
+// }
+
+function getLocale(lang = 'ru') {
+  const locale = SUPPORTED_LOCALES.find(locale => locale.code === lang);
+  return locale ? locale.code : 'ru';
+}
+
+
 const routes = [
   {
-    path: '/',
-    name: 'Home',
-    component: Home
+    path: '/:lang?',
+    component: {
+      template: '<router-view></router-view>'
+    },
+    beforeEnter (to) {
+      if (store.state.locale.language !== to.params.lang) {
+        store.commit('locale/CHANGE_LANGUAGE', getLocale(to.params.lang));
+      }
+    },
+    children: [
+      {
+        path: 'home',
+        name: 'Home',
+        component: Home
+      }
+    ]
   }
 ],
       router = new VueRouter({

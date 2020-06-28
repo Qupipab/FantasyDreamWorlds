@@ -1,0 +1,29 @@
+{
+  "header": {
+    "forum": "Forum",
+    "services": "Services",
+    "serversTitle": "Servers",
+    "servers": {
+      "infinity": "Infinity",
+      "arcmagic": "Arcmagic",
+      "ozone": "Ozone",
+      "aoe": "AOE"
+    },
+    "helpTitle": "Help",
+    "helpList": {
+      "rating": "Rating",
+      "rules": "Rules",
+      "banList": "Ban list",
+      "FAQ": "FAQ",
+      "team": "Project team",
+      "commands": "Commands"
+    },
+    "signIn": "SignIn",
+    "signUp": "SignUp"
+  },
+  "locale": {
+    "language": "Language",
+    "enUS": "English",
+    "ru": "Russian"
+  }
+}
