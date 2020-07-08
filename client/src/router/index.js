@@ -1,54 +1,62 @@
-/* eslint-disable */
-import { Home } from '@views';
-import { SUPPORTED_LOCALES } from '@constants';
 import Vue from 'vue';
 import VueRouter from 'vue-router';
-import store from '@store';
+import Home from '../views/Home.vue';
+import Root from './Root';
+import i18n, { loadLocaleMessagesAsync } from '@/plugins/i18n';
+
+import { i18nDocumentUtil } from '@utils';
 
 Vue.use(VueRouter);
 
-// function load (component) {
-//   return () => import(`@views/${component}.vue`)
-// }
-
-function getLocale(lang = 'ru') {
-  const locale = SUPPORTED_LOCALES.find(locale => locale.code === lang);
-  return locale ? locale.code : 'ru';
-}
-
-
-const routes = [
-  {
-    path: '/:lang?',
-    component: {
-      template: '<router-view></router-view>'
-    },
-    beforeEnter (to) {
-      if (store.state.locale.language !== to.params.lang) {
-        store.commit('locale/CHANGE_LANGUAGE', getLocale(to.params.lang));
-      }
-    },
-    children: [
-      {
-        path: 'home',
-        name: 'Home',
-        component: Home
-      }
-    ]
-  }
-],
-      router = new VueRouter({
+const { locale } = i18n,
+      routes = [
+        {
+          path: '/',
+          redirect: locale
+        },
+        {
+          path: '/:locale',
+          component: Root,
+          children: [
+            {
+              path: '',
+              name: 'home',
+              component: Home
+            }
+          ]
+        }
+      ];
+/* eslint-disable */
+const router = new VueRouter({
         mode: 'history',
         base: process.env.BASE_URL,
         routes
       });
 
-export default router;
 // {
-//   path: '/about',
-//   name: 'About',
+//   path: "about",
+//   name: "about",
 //   // route level code-splitting
 //   // this generates a separate chunk (about.[hash].js) for this route
 //   // which is lazy-loaded when the route is visited.
-//   component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
+//   component: () =>
+//     import(/* webpackChunkName: "about" */ '../views/About.vue')
 // }
+
+router.beforeEach((to, from, next) => {
+  if (to.params.locale === from.params.locale) {
+    next();
+    return;
+  }
+
+  const { locale } = to.params;
+
+  loadLocaleMessagesAsync(locale)
+    .then(() => {
+      i18nDocumentUtil.setDocumentLang(locale);
+    });
+
+  next();
+});
+
+export default router;

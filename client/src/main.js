@@ -13,12 +13,9 @@ Vue.config.productionTip = false;
 Vue.component('default-layout', Default);
 
 new Vue({
+  i18n,
   router,
   vuetify,
-  i18n,
   store,
-  created () {
-    this.$store.commit('locale/INIT_LANGUAGE');
-  },
   render: h => h(App)
 }).$mount('#app');

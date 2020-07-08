@@ -14,6 +14,15 @@ module.exports = {
       .set('@styles', path.resolve('src/styles/'))
       .set('@locales', path.resolve('src/locales/'))
       .set('@constants', path.resolve('src/constants/'))
+      .set('@utils', path.resolve('src/util/'))
+  },
+  pluginOptions: {
+    i18n: {
+      locale: 'ru',
+      fallbackLocale: 'ru',
+      localeDir: 'locales',
+      enableInSFC: false
+    }
   }
 };
 
