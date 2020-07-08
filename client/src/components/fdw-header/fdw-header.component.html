@@ -65,13 +65,13 @@
       <a
         class="sign-in-button"
         href="#"
-      >Вход</a>
+      >{{ $t('header.signIn') }}</a>
       <v-btn
         class="sign-up-button"
         color="#8e44ad"
         outlined
         large
-      >Регистрация</v-btn>
+      >{{ $t('header.signUp') }}</v-btn>
     </div>
     <div class="profile" v-if="!authorized">UnAuthorized</div>
   </header>

@@ -7,7 +7,7 @@
           class="title-item-info"
           v-for="(titleItem, index) in footerNavList.titleInfo"
           :key="index"
-          :href="titleItem.path"
+          :href="$route.path + titleItem.path"
         >
         {{ titleItem.title }}
         </a>
@@ -17,7 +17,7 @@
           class="body-item-info"
           v-for="(bodyItem, index) in footerNavList.bodyInfo"
           :key="index"
-          :href="bodyItem.path"
+          :href="$route.path + bodyItem.path"
         >
           {{ bodyItem.title }}
         </a>

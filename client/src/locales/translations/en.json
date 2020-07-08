@@ -1,0 +1,45 @@
+{
+  "header": {
+    "forum": "Forum",
+    "services": "Services",
+    "serversTitle": "Servers",
+    "servers": {
+      "infinity": "Infinity",
+      "arcmagic": "Arcmagic",
+      "ozone": "Ozone",
+      "aoe": "AOE"
+    },
+    "helpTitle": "Help",
+    "helpList": {
+      "rating": "Rating",
+      "rules": "Rules",
+      "banList": "Ban list",
+      "FAQ": "FAQ",
+      "team": "Project team",
+      "commands": "Commands"
+    },
+    "signIn": "SignIn",
+    "signUp": "SignUp"
+  },
+  "footer": {
+    "titleInfo": {
+      "team": "Project team",
+      "feedback": "Feedback",
+      "vk": "Our VK",
+      "ds": "Our discord"
+    },
+    "bodyInfo": {
+      "forum": "Forum",
+      "rules": "Rules",
+      "commands": "Commands",
+      "banList": "Ban list",
+      "download": "Download launcher",
+      "support": "Support"
+    }
+  },
+  "locale": {
+    "language": "Language",
+    "enUS": "English",
+    "ru": "Russian"
+  }
+}
