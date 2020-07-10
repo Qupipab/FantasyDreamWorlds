@@ -91,13 +91,13 @@
     }
   }
   .server-group, .servers-list  {
-    background-color: var(--d-third-level-bgc-color);
+    background-color: var(--d-second-level-bgc-color);
   }
   .server-group {
     transition: 0s;
     &:active {
       top: 0;
-      background-color: var(--d-third-level-bgc-color);
+      background-color: var(--d-second-level-bgc-color);
     }
   }
 }

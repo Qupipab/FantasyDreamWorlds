@@ -5,52 +5,34 @@
     </ul>
     <nav>
       <ul class="nav-wrap">
-        <v-menu
-          z-index="10"
-          bottom
-          offset-y
-          max-height="400px"
-          origin="bottom center"
-          transition="scale-transition"
-          open-on-hover
+        <li
           v-for="(item, index) in navList"
           :key="index"
-          :allow-overflow="true"
+          class="nav-item"
         >
-          <template
-            v-slot:activator="{ on, attrs }"
-          >
-            <li
-              class="nav-item"
-              v-bind="attrs"
-              v-on="on"
+          <span class="link" :class="item.content ? 'drop-down' : ''" v-if="item.content">{{ item.title }}
+            <ul
+              :class="`menu-items-${index + 1}`"
+              class="menu-items"
+              v-if="item.content"
             >
-              <span class="link" :class="item.content ? 'drop-down' : ''" v-if="item.content">{{ item.title }}</span>
-              <a class="link" href="#" v-else>{{ item.title }}</a>
-            </li>
-          </template>
-        
-          <v-list
-            class="menu-items"
-            v-if="item.content"
-            outlined
-          >
-            <ul>
-              <li
-                class="menu-item"
-                v-for="(content, index) in item.content"
-                :key="index"
-              >
-                <div class="marker"></div>
-                <a
-                  class="menu-item-link"
-                  href="#"
-                >{{ content.title }}</a>
-              </li>
+              <div class="line"></div>
+              <div class="menu-item-wrapper">
+                <li
+                  class="menu-item"
+                  v-for="(content, index) in item.content"
+                  :key="index"
+                >
+                  <a
+                    class="menu-item-link"
+                    href="#"
+                  >{{ content.title }}</a>
+                </li>
+              </div>
             </ul>
-            
-          </v-list>
-        </v-menu>
+          </span>
+          <a class="link" href="#" v-else>{{ item.title }}</a>
+        </li>
       </ul>
     </nav>
     <div class="logo-wrap">
