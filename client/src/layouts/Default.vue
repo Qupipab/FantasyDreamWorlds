@@ -21,11 +21,11 @@ export default {
 
 <style lang="scss" scoped>
   .content {
-    background-color: var(--l-second-level-bgc-color);
+    background-color: var(--l-third-level-bgc-color);
   }
   .dark {
     .content {
-      background-color: var(--d-second-level-bgc-color);
+      background-color: var(--d-third-level-bgc-color);
     }
   }
   .body-content {
