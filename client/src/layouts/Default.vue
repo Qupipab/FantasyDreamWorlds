@@ -31,7 +31,7 @@ export default {
   .body-content {
     margin: 0 auto;
     max-width: 1480px;
-    min-height: 100vh;
+    min-height: calc(100vh - 95px);
     padding: 0 60px;
   }
 </style>
