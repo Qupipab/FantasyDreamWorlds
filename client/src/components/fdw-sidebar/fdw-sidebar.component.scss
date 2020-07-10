@@ -17,7 +17,7 @@
   box-sizing: padding-box;
   flex-direction: column;
   @media (max-width:1200px) {
-    max-width: 45%;
+    
   }
 }
 
@@ -84,6 +84,24 @@
   }
 }
 
+.dark {
+  .servers-status {
+    .body {
+      background-color: var(--d-first-level-bgc-color);
+    }
+  }
+  .server-group, .servers-list  {
+    background-color: var(--d-third-level-bgc-color);
+  }
+  .server-group {
+    transition: 0s;
+    &:active {
+      top: 0;
+      background-color: var(--d-third-level-bgc-color);
+    }
+  }
+}
+
 .server-purple {
   color: #8e44ad;
 }
@@ -98,6 +116,7 @@
   position: relative;
   user-select: none;
   position: relative;
+  z-index: 0;
   bottom: 0;
   -webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.3);
   -moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.3);

@@ -1,8 +1,10 @@
 import { VIcon } from 'vuetify/lib';
+import { FdwLocaleSelect } from '@components';
 
 export default {
   components: {
-    VIcon
+    VIcon,
+    FdwLocaleSelect
   },
   data () {
     return {

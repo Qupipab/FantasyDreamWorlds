@@ -7,6 +7,8 @@ import {
   VMenu
 } from 'vuetify/lib';
 
+import { FdwThemeSwitch } from '@components';
+
 export default {
   components: {
     VBtn,
@@ -14,7 +16,8 @@ export default {
     VMenu,
     VList,
     VListItem,
-    VListItemTitle
+    VListItemTitle,
+    FdwThemeSwitch
   },
   data () {
     return {

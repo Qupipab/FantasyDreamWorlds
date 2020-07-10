@@ -1,0 +1,16 @@
+.theme-mode-toggle {
+  color: #000;
+  user-select: none;
+  cursor: pointer;
+  padding: 8px;
+}
+
+.theme-mode-toggle::after {
+  display: none;
+}
+
+.dark {
+  .theme-mode-toggle {
+    color: #FFF;
+  }
+}
