@@ -1,0 +1,7 @@
+<v-select
+  outlined
+  dense
+  :items="locales.map(l => l.name)"
+  :value="locales[0].name"
+  @change="changeLocale"
+></v-select>

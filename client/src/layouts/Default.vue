@@ -1,7 +1,9 @@
 <template>
   <div class="content">
     <fdw-header></fdw-header>
-    <slot></slot>
+    <div class="body-content">
+      <slot></slot>
+    </div>
     <fdw-footer></fdw-footer>
   </div>
 </template>
@@ -16,3 +18,20 @@ export default {
   }
 };
 </script>
+
+<style lang="scss" scoped>
+  .content {
+    background-color: var(--l-second-level-bgc-color);
+  }
+  .dark {
+    .content {
+      background-color: var(--d-second-level-bgc-color);
+    }
+  }
+  .body-content {
+    margin: 0 auto;
+    max-width: 1480px;
+    min-height: 100vh;
+    padding: 0 60px;
+  }
+</style>

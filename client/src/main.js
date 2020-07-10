@@ -13,9 +13,9 @@ Vue.config.productionTip = false;
 Vue.component('default-layout', Default);
 
 new Vue({
-  i18n,
-  router,
   vuetify,
+  router,
   store,
+  i18n,
   render: h => h(App)
 }).$mount('#app');

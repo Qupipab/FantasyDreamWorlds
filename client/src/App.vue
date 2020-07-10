@@ -1,22 +1,27 @@
 <template>
-  <v-app id="app">
+  <v-app id="app" :class="$store.state.themeMode">
     <div v-if="isLoading">Loading...</div>
     <component v-else :is="layout">
       <router-view/>
+      <fdw-sidebar></fdw-sidebar>
     </component>
   </v-app>
 </template>
 
 <script>
 import {
-  VApp
+  VApp,
+  VSwitch
 } from 'vuetify/lib';
+import { FdwSidebar } from '@components';
 import EventBus from '@/EventBus';
 
 export default {
   name: 'App',
   components: {
-    VApp
+    VApp,
+    VSwitch,
+    FdwSidebar
   },
   data () {
     return {
@@ -38,4 +43,5 @@ export default {
 
 <style lang="scss">
 @import "@styles/common.scss";
+@import "@styles/variables.scss";
 </style>

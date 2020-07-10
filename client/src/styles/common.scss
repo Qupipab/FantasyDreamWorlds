@@ -6,10 +6,18 @@
   font-family: Roboto;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  margin: 0;
 }
 
 a {
   text-decoration: none;
+}
+
+.dark {
+  p, span, h1, h2, h3, h4, h5, h6 {
+    color: var(--d-first-level-font-color);
+  }
 }
 
 ul {
