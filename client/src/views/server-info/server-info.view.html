@@ -1,0 +1,102 @@
+<div class="server-info">
+  <div class="server-info-body">
+    <div class="server-title">
+      <h2>{{ $t(`serverInfo.${serverName}.title`) }}</h2>
+      <p>{{ $t(`serverInfo.${serverName}.description`) }}</p>
+    </div>
+    <div id="server-info" class="server-card">
+      <h2 class="server-card-title">
+        <a href="#server-info" class="info-link">#</a>
+        {{ $t(`serverInfo.serverCardInfo.title`) }}
+      </h2>
+      <div class="server-card-info">
+        <div class="server-info-card server-info-left">
+          <div class="version-info server-info-item">
+            <small>{{ $t(`serverInfo.serverCardInfo.version`) }}</small>
+            <h5>{{ $t(`serverInfo.${serverName}.version`) }}</h5>
+          </div>
+          <div class="mode-info server-info-item">
+            <small>{{ $t(`serverInfo.serverCardInfo.mode`) }}</small>
+            <h5>{{ $t(`serverInfo.${serverName}.mode`) }}</h5>
+          </div>
+          <div class="wipe-info server-info-item">
+            <small>{{ $t(`serverInfo.serverCardInfo.wipe`) }}</small>
+            <h5>{{ $t(`serverInfo.${serverName}.wipe`) }}</h5>
+          </div>
+        </div>
+        <div class="server-info-card worlds-size-info">
+          <h5>{{ $t(`serverInfo.serverCardInfo.size`) }}</h5>
+          <div class="server-size-wrapper">
+            <div
+              class="server-size-info server-info-item"
+              v-for="(server, index) in $t(`serverInfo.${serverName}.worldsSize`)"
+              :key="index"
+            >
+              <small>{{ server.title }}</small>
+              <h5>{{ server.size | numberWithSpaces }}</h5>
+            </div>
+          </div>
+        </div>
+        <div class="server-info-card last-wipes">
+          <h5>{{ $t(`serverInfo.serverCardInfo.lastWipe`) }}</h5>
+          <div class="server-wipes-wrapper">
+            <div
+              class="server-wipe-info server-info-item"
+              v-for="(server, index) in serversGroupList[0].serversList"
+              :key="index"
+            >
+              <small>{{ `${ serversGroupList[0].groupTitle } #${ index + 1 }` }}</small>
+              <h5>{{ server.lastWipe }}</h5>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="server-feature" class="server-feature">
+      <h2>
+        <a href="#server-feature" class="info-link">#</a>
+        {{ $t(`serverInfo.serverCardInfo.features`) }}
+      </h2>
+      <div class="server-feature-content">
+        <p
+          class="feature-content-item"
+          v-for="(feature, index) in $t(`serverInfo.${serverName}.features`)"
+          :key="index"
+        >
+          <b>{{ feature.title }}</b> — {{ feature.content }}
+        </p>
+      </div>
+    </div>
+    <div id="server-mods-info" class="mods-info-card">
+      <h2>
+        <a href="#server-mods-info" class="info-link">#</a>
+        {{ $t(`serverInfo.serverCardInfo.mods`) }}
+      </h2>
+      <ul class="mods-list">
+        <li
+          class="mod-item"
+          v-for="(mod, index) in $t(`serverInfo.${serverName}.modsList`)"
+          :key="index"
+        >
+        <template v-if="mod.title">
+          <a class="mod-title" :href="mod.title | getWikiLink(lang)" target="_blank">
+            {{ mod.title }}
+          </a>
+          <ul class="addons-list">
+            <li
+              class="addon-item"
+              v-for="(addon, index) in mod.addons"
+              :key="index"
+            ><a :href="addon | getWikiLink(lang)" target="_blank">
+              {{ addon + `${ index === mod.addons.length - 1 ? '' : ',' }` }}
+            </a></li>
+          </ul>
+        </template>
+        <a class="mod-title" :href="mod | getWikiLink(lang)" target="_blank" v-else>{{ mod }}</a>
+        </li>
+      </ul>
+    </div>
+    <div class="donat"></div>
+  </div>
+  <fdw-sidebar class="servers-sidebar"></fdw-sidebar>
+</div>

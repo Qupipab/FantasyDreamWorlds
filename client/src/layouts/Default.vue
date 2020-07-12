@@ -29,9 +29,14 @@ export default {
     }
   }
   .body-content {
-    margin: 0 auto;
+    margin: 50px auto;
     max-width: 1480px;
     min-height: calc(100vh - 95px);
     padding: 0 60px;
   }
+  @media (max-width: 767px) {
+  .body-content {
+    padding: 0 10px;
+  }
+}
 </style>

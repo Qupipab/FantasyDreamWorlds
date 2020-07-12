@@ -1,0 +1,288 @@
+.server-info, .server-card-info {
+  display: flex;
+}
+
+@media (max-width: 990px) {
+  .server-card-info {
+    flex-direction: column;
+    .server-info-left, .worlds-size-info, .last-wipes {
+      display: flex;
+      flex-wrap: wrap;
+    }
+    .server-size-wrapper, .server-wipes-wrapper {
+      display: flex;
+      flex-wrap: wrap;
+    }
+  }
+}
+
+@media (max-width: 857px) {
+  .server-info {
+    flex-direction: column;
+    align-items: center;
+  }
+  .servers-sidebar {
+    width: 100%;
+  }
+}
+
+@media (max-width: 767px) {
+  .server-info {
+    .server-info-body {
+      margin-right: 0;
+      .server-title {
+        margin: 0 5px;
+      }
+      .server-card {
+        padding: 10px 15px;
+        .server-card-title {
+          margin: 0 10px;
+        }
+      }
+      .server-card, .mods-info-card, .server-feature {
+        border-radius: 10px;
+        margin: 40px 5px;
+      }
+    }
+  }
+}
+
+.server-info-body {
+  flex: 14 0 0;
+  margin-right: 30px;
+  .server-title {
+    p {
+      font-size: 16px;
+    }
+    h2 {
+      font-size: 50px;
+    }
+  }
+  .server-card, .mods-info-card, .server-feature {
+    border-radius: 25px;
+    -webkit-box-shadow: 0px 0px 20px -11px rgba(0,0,0,0.62);
+    -moz-box-shadow: 0px 0px 20px -11px rgba(0,0,0,0.62);
+    box-shadow: 0px 0px 20px -11px rgba(0,0,0,0.62);
+    background-color: var(--l-second-level-bgc-color);
+    max-width: 985px;
+  }
+  .server-feature {
+    padding: 20px 30px 30px 30px;
+    min-height: 100px;
+    margin-bottom: 40px;
+    .server-feature-content {
+      margin-top: 30px;
+      .feature-content-item {
+        font-weight: 300;
+        margin: 5px 0;
+        b {
+          font-weight: bold;
+        }
+      }
+    }
+  }
+  .server-card {
+    padding: 30px 40px;
+    margin: 40px 0;
+    .server-card-title {
+      position: relative;
+      margin: 0 10px;
+    }
+    .server-card-info {
+      margin-top: 30px;
+      h5 {
+        font-size: 25px;
+        font-weight: bolder;
+        white-space: wrap;
+      }
+      .server-size-wrapper, .server-wipes-wrapper {
+        margin: 0 -8px;
+      }
+      .server-info-item {
+        margin: 0 8px;
+      }
+      .server-info-left, .worlds-size-info, .last-wipes {
+        flex-shrink: 1;
+        padding: 10px 20px;
+        border-radius: 15px;
+        margin: 10px;
+      }
+      .server-info-card {
+        background-color: #FFF;
+        -webkit-box-shadow: 0px 0px 20px -11px rgba(0,0,0,0.62);
+        -moz-box-shadow: 0px 0px 20px -11px rgba(0,0,0,0.62);
+        box-shadow: 0px 0px 20px -11px rgba(0,0,0,0.62);
+      }
+      .worlds-size-info {
+        flex-direction: column;
+      }
+    }
+  }
+}
+
+.server-card, .server-feature, .mods-info-card {
+  h2 {
+    position: relative;
+    &::before {
+      content: '';
+      height: 4px;
+      width: 100%;
+      background: rgb(91,44,111);
+      background: linear-gradient(225deg, rgba(91,44,111,1) 0%, rgba(142,68,173,1) 25%, rgba(142,68,173,1) 50%, rgba(142,68,173,1) 75%, rgba(91,44,111,1) 100%);
+      border-radius: 2px;
+      position: absolute;
+      bottom: -12px;
+      left: 0;
+    }
+    &:hover .info-link {
+      color:#8e44ad;
+    }
+    .info-link {
+      color: #000;
+      font-size: 36px;
+      font-weight: bold;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+.servers-sidebar {
+  flex-grow: 1;
+}
+
+.mods-info-card {
+  padding: 20px 30px;
+  h2 {
+    margin-bottom: 25px;
+  }
+  .mods-list {
+    margin-left: 24px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 0;
+    @media (max-width: 576px) {
+      margin: 0;
+    }
+    .mod-item {
+      margin: 5px 0 5px 23px;
+      width: 30%;
+      @media (max-width: 1230px) {
+        width: 45%;
+        margin: 5px 10px;
+      }
+      .mod-title {
+        white-space: wrap;
+        color: #000;
+        font-size: 16px;
+        @media (max-width: 576px) {
+          white-space: nowrap;
+        }
+        &:hover {
+          color: #A6A7A8;
+        }
+        position: relative;
+        &::before {
+          content: '';
+          width: 10px;
+          height: 10px;
+          position: absolute;
+          top: 5px;
+          left: -20px;
+          rotate: 45deg;
+          border: 1px solid #000;
+          border-radius: 2px;
+          transition: .3s;
+          @media (max-width: 576px) {
+            content: none;
+          }
+        }
+        &:hover::before {
+          border: 1px solid #8e44ad;
+          background-color: #8e44ad;
+        }
+      }
+      .addons-list {
+        display: flex;
+        flex-wrap: wrap;
+        padding-left: 0;
+        position: relative;
+        &::before {
+          position: absolute;
+          content: '';
+          width: 8px;
+          height: 8px;
+          border-left: 1px dotted #000;
+          border-bottom: 1px dotted #000;
+          top: 0;
+          left: -16px;
+          @media (max-width: 576px) {
+            content: none;
+          }
+        }
+        .addon-item {
+          line-height: 14px;
+          margin-right: 4px;
+        }
+        .addon-item a {
+          font-weight: 300;
+          color: #000;
+          font-size: 12px;
+          margin: 0;
+          padding: 0;
+          &:hover {
+            opacity: .6;
+          }
+        }
+      }
+    }
+  }
+}
+
+.dark {
+  .server-card, .mods-info-card, .server-feature {
+    background-color: var(--d-second-level-bgc-color);
+    h2 {
+      .info-link {
+        color: #FFF;
+      }
+      &:hover .info-link {
+        color:#8e44ad;
+      }
+    }
+  }
+  .server-card {
+    .server-card-info {
+      .server-info-card {
+        background-color: var(--d-first-level-bgc-color);
+        box-shadow: none;
+      }  
+    }
+  }
+  .mods-info-card {
+    .mods-list {
+      .mod-item {
+        .mod-title {
+          color: #FFF;
+          &::before {
+            border: 1px solid #FFF;
+          }
+          &:hover::before {
+            border: 1px solid #8e44ad;
+          }
+        }
+        .addons-list {
+          &::before {
+            border-left: 1px dotted #FFF;
+            border-bottom: 1px dotted #FFF;
+          }
+          .addon-item a {
+            color: #FFF;
+          }
+        }
+      }
+    }
+  }
+}

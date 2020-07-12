@@ -4,6 +4,11 @@ export default {
   components: {
     VIcon
   },
+  computed: {
+    lang () {
+      return this.$route.params.locale;
+    }
+  },
   data () {
     return {
       authorized: true,
@@ -12,7 +17,7 @@ export default {
         {
           groupTitle: 'Infinity',
           serverVersion: '1.7.10',
-          link: '/',
+          link: '/server/infinity',
           serversList: [
             {
               onlineCount: 50,
@@ -35,7 +40,7 @@ export default {
         {
           groupTitle: 'Ozone',
           serverVersion: '1.7.10',
-          link: '/',
+          link: '/server/ozone',
           serversList: [
             {
               onlineCount: 50,
@@ -54,7 +59,7 @@ export default {
         {
           groupTitle: 'Arcmagic',
           serverVersion: '1.7.10',
-          link: '/',
+          link: '/server/arcmagic',
           serversList: [
             {
               onlineCount: 50,
@@ -65,7 +70,7 @@ export default {
         {
           groupTitle: 'AOE',
           serverVersion: '1.7.10',
-          link: '/',
+          link: '/server/aoe',
           serversList: [
             {
               onlineCount: 50,

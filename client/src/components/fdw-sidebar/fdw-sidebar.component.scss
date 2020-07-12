@@ -13,7 +13,6 @@
 }
 
 .sidebar {
-  max-width: 380px;
   box-sizing: padding-box;
   flex-direction: column;
   @media (max-width:1200px) {
@@ -80,24 +79,6 @@
       @media (max-width: 250px) {
         margin: 30px 5px;
       }
-    }
-  }
-}
-
-.dark {
-  .servers-status {
-    .body {
-      background-color: var(--d-first-level-bgc-color);
-    }
-  }
-  .server-group, .servers-list  {
-    background-color: var(--d-second-level-bgc-color);
-  }
-  .server-group {
-    transition: 0s;
-    &:active {
-      top: 0;
-      background-color: var(--d-second-level-bgc-color);
     }
   }
 }
@@ -196,6 +177,32 @@
     .server-progress-wrapper {
       height: 20px;
       background-color:  #5dade2;
+    }
+  }
+}
+
+.dark {
+  .servers-status {
+    .body {
+      background-color: var(--d-first-level-bgc-color);
+    }
+  }
+  .server-group, .servers-list  {
+    background-color: var(--d-second-level-bgc-color);
+  }
+  .server-group {
+    transition: 0s;
+    &:active {
+      top: 0;
+      background-color: var(--d-second-level-bgc-color);
+    }
+    .server-info-chips {
+      .info-icon {
+        color: gray;
+      }
+      &:hover .info-icon {
+        color: #FFF;
+      }
     }
   }
 }

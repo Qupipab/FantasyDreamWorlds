@@ -29,15 +29,15 @@
               </span>
             </div>
             <div class="server-online server-purple">
-              <a
+              <router-link
                 class="server-info-chips"
-                :href="serverGroup.link"
+                :to="`/${ lang }${ serverGroup.link }#server-info`"
               >
                 <v-icon
                   class="info-icon"
                   x-small
                 >mdi-information-outline</v-icon>
-              </a>
+              </router-link>
               <div class="general-online-count-wrapper">
                 <b class="general-online-count server-purple">
                   {{ serverGroup.serversList | getGeneralOnlineCount }}

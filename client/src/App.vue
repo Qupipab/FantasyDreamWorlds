@@ -3,7 +3,6 @@
     <div v-if="isLoading">Loading...</div>
     <component v-else :is="layout">
       <router-view/>
-      <fdw-sidebar></fdw-sidebar>
     </component>
   </v-app>
 </template>

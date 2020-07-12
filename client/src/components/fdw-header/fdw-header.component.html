@@ -23,10 +23,11 @@
                   v-for="(content, index) in item.content"
                   :key="index"
                 >
-                  <a
+                  <router-link
                     class="menu-item-link"
-                    href="#"
-                  >{{ content.title }}</a>
+                    :to="lang + content.path"
+                    replace
+                  >{{ content.title }}</router-link>
                 </li>
               </div>
             </ul>
