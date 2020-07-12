@@ -19,6 +19,11 @@ export default {
     VListItemTitle,
     FdwThemeSwitch
   },
+  computed: {
+    lang () {
+      return `/${this.$route.params.locale}`;
+    }
+  },
   data () {
     return {
       authorized: true,
@@ -29,10 +34,10 @@ export default {
           title: this.$t('header.serversTitle'),
           path: '/',
           content: [
-            { title: 'Infinity', path: '/' },
-            { title: 'Arcmagic', path: '/' },
-            { title: 'Ozone', path: '/' },
-            { title: 'AOE', path: '/' }
+            { title: 'Infinity', path: '/server/infinity' },
+            { title: 'Arcmagic', path: '/server/arcmagic' },
+            { title: 'Ozone', path: '/server/ozone' },
+            { title: 'AOE', path: '/server/aoe' }
           ]
         },
         {

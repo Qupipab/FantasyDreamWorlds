@@ -3,6 +3,7 @@ import VueRouter from 'vue-router';
 import Home from '../views/Home.vue';
 import Root from './Root';
 import i18n, { loadLocaleMessagesAsync } from '@/plugins/i18n';
+import { ServerInfo } from '@views';
 
 import { i18nDocumentUtil } from '@utils';
 
@@ -17,11 +18,18 @@ const { locale } = i18n,
         {
           path: '/:locale',
           component: Root,
+          props: true,
           children: [
             {
               path: '',
               name: 'home',
               component: Home
+            },
+            {
+              path: 'server/:serverName',
+              name: 'server',
+              component: ServerInfo,
+              props: true
             }
           ]
         }

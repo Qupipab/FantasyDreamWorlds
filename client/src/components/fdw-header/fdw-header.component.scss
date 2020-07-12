@@ -14,7 +14,7 @@
 .header-wrap {
   box-shadow: 0 3px 10px 0 rgba(0,0,0,.1);
   background-color: var(--l-first-level-bgc-color);
-  @media (max-width:990px) {
+  @media (max-width:989px) {
     box-shadow: none;
   }
 }
@@ -25,13 +25,13 @@
   min-height: 490px;
   flex-shrink: 0;
   display: none;
-  max-width: 990px;
+  max-width: 989px;
   z-index: 2;
   flex-direction: column;
   padding: 0 40px;
   justify-content: space-between;
   align-items: center;
-  @media (max-width:990px) {
+  @media (max-width:989px) {
     display: flex;
     justify-content: flex-start;
   }
@@ -108,7 +108,7 @@
       height: 100px;
     }
   }
-  @media (max-width:990px) {
+  @media (max-width:989px) {
     display: none;
   }
 }
