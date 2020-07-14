@@ -1,10 +1,11 @@
 import { VIcon } from 'vuetify/lib';
-import { FdwLocaleSelect } from '@components';
+import { FdwLocaleSelect, LocalizedLink } from '@components';
 
 export default {
   components: {
     VIcon,
-    FdwLocaleSelect
+    FdwLocaleSelect,
+    LocalizedLink
   },
   data () {
     return {
@@ -12,18 +13,18 @@ export default {
       currentDate: new Date().getFullYear(),
       footerNavList: {
         titleInfo: [
-          { title: this.$t('footer.titleInfo.team'), path: '#' },
-          { title: this.$t('footer.titleInfo.feedback'), path: '#' },
-          { title: this.$t('footer.titleInfo.vk'), path: '#' },
-          { title: this.$t('footer.titleInfo.ds'), path: '#' }
+          { title: 'footer.titleInfo.team', path: '#' },
+          { title: 'footer.titleInfo.feedback', path: '#' },
+          { title: 'footer.titleInfo.vk', path: '#' },
+          { title: 'footer.titleInfo.ds', path: '#' }
         ],
         bodyInfo: [
-          { title: this.$t('footer.bodyInfo.forum'), path: '#' },
-          { title: this.$t('footer.bodyInfo.rules'), path: '#' },
-          { title: this.$t('footer.bodyInfo.commands'), path: '#' },
-          { title: this.$t('footer.bodyInfo.banList'), path: '#' },
-          { title: this.$t('footer.bodyInfo.download'), path: '#' },
-          { title: this.$t('footer.bodyInfo.support'), path: '#' }
+          { title: 'footer.bodyInfo.forum', path: '#' },
+          { title: 'footer.bodyInfo.rules', path: '#' },
+          { title: 'footer.bodyInfo.commands', path: '#' },
+          { title: 'footer.bodyInfo.banList', path: '#' },
+          { title: 'footer.bodyInfo.download', path: '#' },
+          { title: 'footer.bodyInfo.support', path: '#' }
         ]
       }
     };

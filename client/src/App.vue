@@ -1,7 +1,6 @@
 <template>
   <v-app id="app" :class="$store.state.themeMode">
-    <div v-if="isLoading">Loading...</div>
-    <component v-else :is="layout">
+    <component :is="layout">
       <router-view/>
     </component>
   </v-app>
@@ -9,33 +8,18 @@
 
 <script>
 import {
-  VApp,
-  VSwitch
+  VApp
 } from 'vuetify/lib';
-import { FdwSidebar } from '@components';
-import EventBus from '@/EventBus';
 
 export default {
   name: 'App',
   components: {
-    VApp,
-    VSwitch,
-    FdwSidebar
-  },
-  data () {
-    return {
-      isLoading: true
-    };
+    VApp
   },
   computed: {
     layout () {
       return 'default-layout';
     }
-  },
-  mounted () {
-    EventBus.$on('i18n-load-start', () => { this.isLoading = true; });
-
-    EventBus.$on('i18n-load-complete', () => { this.isLoading = false; });
   }
 };
 </script>

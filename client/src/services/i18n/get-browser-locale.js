@@ -1,6 +1,6 @@
 const getBrowserLocaleUtil = {
   getBrowserLocale (options = {}) {
-    const defaultOptions = { countryCodeOnly: false },
+    const defaultOptions = { countryCodeOnly: true },
           opt = { ...defaultOptions, ...options },
           navigatorLocale = navigator.languages !== undefined
             ? navigator.languages[0]

@@ -1,11 +1,6 @@
-const SUPPORTED_LOCALES = [{
-  code: 'en',
-  base: '/en',
-  name: 'English'
-}, {
-  code: 'ru',
-  base: '',
-  name: 'Russian'
-}];
+const SUPPORTED_LOCALES = [
+  'ru',
+  'ua'
+];
 
 export { SUPPORTED_LOCALES };

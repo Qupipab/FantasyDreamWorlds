@@ -9,12 +9,12 @@
 </template>
 
 <script>
-import { FdwFooter, FdwHeader } from '@components';
+import { FdwHeader, FdwFooter } from '@components';
 
 export default {
   components: {
-    FdwFooter,
-    FdwHeader
+    FdwHeader,
+    FdwFooter
   }
 };
 </script>
