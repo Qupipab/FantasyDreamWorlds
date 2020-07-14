@@ -9,7 +9,7 @@
           :key="index"
           :href="$route.path + titleItem.path"
         >
-        {{ titleItem.title }}
+        {{ $t(titleItem.title) }}
         </a>
       </p>
       <p class="body-info-wrapper">
@@ -19,7 +19,7 @@
           :key="index"
           :href="$route.path + bodyItem.path"
         >
-          {{ bodyItem.title }}
+          {{ $t(bodyItem.title) }}
         </a>
       </p>
       <div class="about-info-wrapper">

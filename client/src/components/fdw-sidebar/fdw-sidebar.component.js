@@ -1,8 +1,11 @@
 import { VIcon } from 'vuetify/lib';
+import { LocalizedLink } from '@components';
+import i18n from '../../plugins/i18n.js';
 
 export default {
   components: {
-    VIcon
+    VIcon,
+    LocalizedLink
   },
   computed: {
     lang () {
@@ -105,11 +108,11 @@ export default {
   filters: {
     serversCount (val) {
       if (val === 1) {
-        return `${val + ' сервер'}`;
+        return `${val + i18n.t('sidebar.pluralServer1')}`;
       } else if (val > 1 && val < 5) {
-        return `${val + ' сервера'}`;
+        return `${val + i18n.t('sidebar.pluralServer2')}`;
       } else {
-        return `${val + ' серверов'}`;
+        return `${val + i18n.t('sidebar.pluralServer3')}`;
       }
     },
     getGeneralOnlineCount (val) {

@@ -4,13 +4,13 @@
     href="#"
   >
     <div class="btn-info">
-      <span>Скачать лаунчер</span>
-      <small>Начни игру в пару кликов</small>
+      <span>{{ $t('sidebar.download') }}</span>
+      <small>{{ $t('sidebar.startToPlay') }}</small>
     </div>
   </a>
   <div class="servers-status">
     <div class="title">
-      <h2>Наши сервера</h2>
+      <h2>{{ $t('sidebar.ourServers') }}</h2>
     </div>
     <div class="body">
       <ul class="servers-group-list">
@@ -29,15 +29,15 @@
               </span>
             </div>
             <div class="server-online server-purple">
-              <router-link
+              <localized-link
                 class="server-info-chips"
-                :to="`/${ lang }${ serverGroup.link }#server-info`"
+                :to="`${ serverGroup.link }#server-info`"
               >
                 <v-icon
                   class="info-icon"
                   x-small
                 >mdi-information-outline</v-icon>
-              </router-link>
+              </localized-link>
               <div class="general-online-count-wrapper">
                 <b class="general-online-count server-purple">
                   {{ serverGroup.serversList | getGeneralOnlineCount }}

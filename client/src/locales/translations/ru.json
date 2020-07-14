@@ -21,6 +21,14 @@
     "signIn": "Войти",
     "signUp": "Регистрация"
   },
+  "sidebar": {
+    "ourServers": "Наши сервера",
+    "startToPlay": "Начни игру в пару кликов",
+    "download": "Скачать лаунчер",
+    "pluralServer1": " сервер",
+    "pluralServer2": " сервера",
+    "pluralServer3": " серверов"
+  },
   "footer": {
     "titleInfo": {
       "team": "Команда проекта",
@@ -573,7 +581,7 @@
   },
   "locale": {
     "language": "Язык",
-    "enUS": "Английский",
+    "en": "Английский",
     "ru": "Русский"
   }
 }

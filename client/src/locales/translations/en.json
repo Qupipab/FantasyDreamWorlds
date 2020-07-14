@@ -18,8 +18,16 @@
       "team": "Project team",
       "commands": "Commands"
     },
-    "signIn": "SignIn",
-    "signUp": "SignUp"
+    "signIn": "SignIN",
+    "signUp": "SignUP"
+  },
+  "sidebar": {
+    "ourServers": "Our servers",
+    "startToPlay": "Start to play right now!",
+    "download": "Download launcher",
+    "pluralServer1": " server",
+    "pluralServer2": " servers",
+    "pluralServer3": " servers"
   },
   "footer": {
     "titleInfo": {
@@ -51,236 +59,102 @@
     },
     "infinity": {
       "title": "Infinity Evolved",
-      "features": [
-        {
-          "title": "Креативные предметы",
-          "content": "после долгих усилий вы будете вознаграждены такими вещами, как бесконечный бассейн маны, креативный танк с бесконечной жидкостью или бесконечный источник энергии! У нас разрешен крафт этих предметов, хотя он и очень сложен."
-        },
-        {
-          "title": "Чанк лоадер",
-          "content": "чанк работает, ты отдыхаешь! На сервере установлен плагин Chunk Loader. Благодаря ему Вы сможете оставить свой регион на какое-то время, но активность в нем будет продолжаться. Можно пойти погулять, а Ваш дом так и будет прогружен без Вашего присутствия!"
-        },
-        {
-          "title": "Квестовая линейка",
-          "content": "вместо тысячи хелперов поможет вам правильно выбрать путь развития, не допуская ошибок и не теряясь в таком количестве модификаций."
-        },
-        {
-          "title": "Карьер края",
-          "content": "куда же без Карьера края в этой сборке. Да бы не портить общий ландшафт мира и не отключать возможность Карьера грузить самого себя был выделен целый мир Deep Dark(глубокая темнота), где у вас доступен больше чем обычно приват."
-        },
-        {
-          "title": "Призовые кейсы",
-          "content": "голосуя за наш проект, вы прямо в игре можете получить бонусные ключи от лотерейных сундуков и выиграть много всякого полезного, от кучи ресурсов до топовых предметов из модов."
-        }
-      ],
-      "description": "От кирки из кремния до разрушителя миров! Главная особенность этой сборки – кастомные рецепты, которые были доработаны для игры на сервере. Благодаря им никак не получится заскучать на сервере, зная только один мод и развиваясь лишь в нем, так как большинство крафтов были усложнены. В отличии от оргинального проекта FTB, мы несколько облегчили сборку, убрав ряд декоративных и дублирующих модов, чтобы как можно больше игроков смогли играть у нас на серверах.",
+      "description": "From a silicon pickaxe to a world destroyer! The main feature of this assembly is custom recipes that have been modified to play on the server. Thanks to them, it will not be possible to get bored on the server, knowing only one mod and developing only in it, since most of the craft were complicated. Unlike the original FTB project, we made assembly a little easier by removing a number of decorative and duplicating mods so that as many players as possible could play on our servers.",
       "version": "[1.7.10]",
       "mode": "PVE",
-      "wipe": "1-го числа каждого месяца",
+      "wipe": "1st of every month",
       "worldsSize": [
         {
-          "title": "Основной",
+          "title": "Main",
           "size": "10000"
         },
         {
-          "title": "Нижний мир",
+          "title": "Nether",
           "size": "4000"
         },
         {
-          "title": "Край",
+          "title": "End",
           "size": "12000"
         },
         {
-          "title": "Дип дарк",
+          "title": "Deep dark",
           "size": "12000"
         }
       ],
-      "modsList": {
-        "appliedEnergistics2": {
-          "title": "Applied Energistics 2",
-          "addons": [
-            "AE2 Stuff",
-            "Extra Cells 2",
-            "Wireless Crafting Terminal"
-          ]
+      "features": [
+        {
+          "title": "Creative items",
+          "content": "after much effort you will be rewarded with such things as an infinite pool of mana, a creative tank with infinite fluid, or an infinite source of energy! We are allowed to craft these items, although it is very complicated."
         },
-        "industrialCraft2": {
-          "title": "Industrial Craft 2",
-          "addons": [
-            "Advanced Solar Panels",
-            "Advanced Machines",
-            "AFSU",
-            "Photonic Solar Panel",
-            "IC2 Nuclear Control",
-            "GraviSuite"
-          ]
+        {
+          "title": "Chunk loader",
+          "content": "the chunk is working, you are resting! The server has the Chunk Loader plugin installed. Thanks to him, you can leave your region for some time, but activity in it will continue. You can go for a walk, and your house will be unloaded without your presence!"
         },
-        "thaumcraft": {
-          "title": "Thaumcraft",
-          "addons": [
-            "ForbiddenMagic",
-            "Thaumic Tinkerer",
-            "Thaumic Energistics",
-            "Thaumic Exploration",
-            "Thaum Stability (кастомный мод)"
-          ]
+        {
+          "title": "Quest line",
+          "content": "instead of a thousand helpers, it will help you choose the right path of development, without making mistakes and without getting lost in so many modifications."
         },
-        "agriCraft": "AgriCraft",
-        "anotherOneBitesTheDust": "Another One Bites the Dust",
-        "avaritia": {
-          "title": "Avaritia",
-          "addons": [
-            "Avaritia Addons"
-          ]
+        {
+          "title": "End quarry",
+          "content": "where so without a career end in this assembly. In order not to spoil the general landscape of the world and not to disable the opportunity for Career to load oneself, a whole world of Dark Dark (High Darkness) was highlighted, where you have more private than usual."
         },
-        "baubles": "Baubles",
-        "betterQuesting": "BetterQuesting",
-        "biblioCraft": "BiblioCraft",
-        "bigReactors": "Big Reactors",
-        "biomesOPlenty": "Biomes O' Plenty",
-        "bloodMagic": "Blood Magic",
-        "botania": {
-          "title": "Botania",
-          "addons": [
-            "Botania++"
-          ]
-        },
-        "buildCraft": {
-          "title": "BuildCraft",
-          "addons": [
-            "BuildCraft Compact"
-          ]
-        },
-        "carpenterBlocks": "Carpenter's Blocks",
-        "chisel": "Chisel",
-        "openComputers": "Open Computers",
-        "craftTweaker": "CraftTweaker",
-        "denseOres": "Dense Ores",
-        "draconicEvolution": "Draconic Evolution",
-        "dragonsRadioMod": "Dragon's Radio Mod",
-        "enderIO": "Ender IO",
-        "enderStorage": "Ender Storage",
-        "enderZoo": "Ender Zoo",
-        "enderTech": "EnderTech",
-        "extraUtilities": "Extra Utilities",
-        "extraTiC": "ExtraTiC",
-        "forestry": {
-          "title": "Forestry",
-          "addons": [
-            "Gendustry",
-            "Binnie's Mods"
-          ]
-        },
-        "grimoireOfGaia": "Grimoire of Gaia",
-        "hats": "Hats",
-        "headcrumbs": "Headcrumbs",
-        "ironChest": "IronChest",
-        "immersiveEngineering": {
-          "title": "Immersive Engineering",
-          "addons": [
-            "Immersive Integration"
-          ]
-        },
-        "jabba": "Jabba",
-        "magicBees": "Magic Bees",
-        "minefactoryReloaded": "Minefactory Reloaded",
-        "modTweaker": "ModTweaker",
-        "natura": "Natura",
-        "netherOres": "NetherOres",
-        "openBlocks": "OpenBlocks",
-        "openPeripheralAddons": "Open Peripheral Addons",
-        "openPeripheralIntegration": "Open Peripheral Integration",
-        "projectRed": {
-          "title": "Project Red",
-          "addons": [
-            "Project Red - Base",
-            "Project Red - Compat",
-            "Project Red - Integration",
-            "Project Red - Lighting",
-            "Project Red - Mechanical",
-            "Project Red - World"
-          ]
-        },
-        "stevesCarts2": {
-          "title": "Steve's Carts 2",
-          "addons": [
-            "Steve's Addons",
-            "Steve's Factory Manager"
-          ]
-        },
-        "thermalExpansion": {
-          "title": "Thermal Expansion",
-          "addons": [
-            "Thermal Dynamics",
-            "Thermal Foundation"
-          ]
-        },
-        "pamsHarvestCraft": "Pam's HarvestCraft",
-        "redstoneArsenal": "Redstone Arsenal",
-        "simplyJetpacks": "Simply Jetpacks",
-        "solarExpansion": "Solar Expansion",
-        "storageDrawers": "Storage Drawers",
-        "tinkersConstruct": "Tinkers Construct",
-        "travellersGear": "Travellers Gear",
-        "waila": {
-          "title": "Waila",
-          "addons": [
-            "Waila Harvestability"
-          ]
+        {
+          "title": "Prize cases",
+          "content": "by voting for our project, right in the game you can get bonus keys from lottery chests and win a lot of useful stuff, from a bunch of resources to top items from mods."
         }
-      }
+      ]
     },
     "arcmagic": {
       "title": "Arcmagic",
-      "description": "Что обычно мы видим на теплых ламповых меджиках? Таум, дивайн, ботанию, арсмаджику и т.п. Все ходы записаны, все юзеры знают что надо делать ихор и халит и через пару дней можно \"ногибать\" все что шевелится, и шевелить все что нагибается. Удрученный таким скучным положением дел, мы решили попробовать сделать необычный сервер с новым взглядом на геймплей.",
+      "description": "What do we usually see on warm tube medzhiks? Thaum, devine, botany, arsmajiku, etc. All moves are recorded, all users know what to do ichor and halit, and after a couple of days you can \"bend\" everything that moves, and move everything that bends. Depressed by such a boring state of affairs, we decided to try to make an unusual server with a new look at the gameplay.",
       "version": "[1.7.10]",
       "mode": "PVE-PVE",
-      "wipe": "1-го числа каждого месяца",
+      "wipe": "1st of every month",
       "features": [
         {
-          "title": "Кроссмодовые крафты",
-          "content": "Сотни измененных рецептов, в том числе наполнения таума, новые исследования, и т.п. Для получения привычных вещей вам придется делать непривычные вещи. Наиболее \"топовые\" шмотки теперь требуют параллельного развития сразу в нескольких модах. Так же добавлены крафты для неиспользуемых предметов в модах, например \"Куб аннигиляции\" из Сумеречного леса - фантастический инструмент для постройки метро :)"
+          "title": "Cross-mod crafts",
+          "content": "Hundreds of modified recipes, including taum filling, new research, etc. To get familiar things you have to do unusual things. The most \"top\" clothes now require parallel development in several modes at once. Crafts for unused items in mods have also been added, for example, \"Annihilation Cube\" from the Twilight Forest - a fantastic tool for building the subway :)"
         },
         {
-          "title": "Сочетание магии с техникой в \"стимпанк\" стилe",
-          "content": "На сервере есть Immersive Engineering и несколько технических дополнений, а так же ClockWork Phase - оригинальный мод, который встроен в игру как расширение Immersiv'a. Многие магические рецепты требуют материалов Иммерсива, и наоборот. Есть своего рода \"предметные трубы\" для создания полноценных фабрик.. в общем, любителям техники будет чем заняться. Ну, конечно, можно дестабилизировать ноду и качать из нее электричество!"
+          "title": "The combination of magic with technology in the \"steampunk\" style",
+          "content": "The server has Immersive Engineering and several technical add-ons, as well as ClockWork Phase, an original mod that is built into the game as an extension of Immersiv. Many magic recipes require Immersive materials, and vice versa. There is a kind of \"subject pipe\" for creating full-fledged factories .. in general, technology lovers will have something to do. Well, of course, you can destabilize a node and pump electricity out of it!"
         },
         {
-          "title": "Измерения",
-          "content": "11 полноценных измерений доступных для исследований и фарма. Однако доступ к ним не так прост, как раньше."
+          "title": "Measurements",
+          "content": "11 complete measurements available for research and pharma. However, access to them is not as easy as before."
         },
         {
-          "title": "Отсутствие запретов",
-          "content": "Серьезно, на сервере нет запрещенных к крафту предметов (кроме нескольких, гриферский потенциал которых не удалось исправить). Однако, любой игрок сможет летать 7 разными способами, пользоваться \"связанными\" инструментами из БладМэджика, урной Леонарда из Витчери, превращаться в вампира, пользоваться динамической дощечкой и т.п. У нас нет ограничений такого характера, но для создания таких топовых вещей придется попотеть."
+          "title": "No bans",
+          "content": "Seriously, there are no items forbidden to craft on the server (except for a few, the gripper potential of which could not be fixed). However, any player will be able to fly in 7 different ways, use “related” tools from BloodMagic, Leonard’s urn from Witchery, turn into a vampire, use a dynamic tablet, etc. We have no restrictions of this nature, but to create such top-notch things you will have to sweat."
         },
         {
-          "title": "Квесты",
-          "content": "полноценная квестовая линейка с отдельным миром, множеством NPC и заданиями. Мир живет в соостветствии со своей историей, загадки которой вам предстоит раскрыть. Квесты - важная часть геймплея, т.к. некоторые варианты развития в модах требуют выполнения определенных квестов. Например получить некоторые книги Витчери можно или долгим поиском по деревням, или выполнив квест."
+          "title": "Quests",
+          "content": "full quest line with a separate world, a lot of NPCs and tasks. The world lives in accordance with its history, the mysteries of which you have to solve. Quests are an important part of the gameplay, as some development options in mods require certain quests to be completed. For example, you can get some books by Witcher either by a long search in the villages, or by completing the quest."
         },
         {
-          "title": "Система голосований",
-          "content": "прикольная система голосований и титулов за выполнение квестов."
+          "title": "Voting system",
+          "content": "cool system of voting and titles for completing quests."
         },
         {
-          "title": "Кастомные мини-боссы",
-          "content": "кастомные рандомные мини-боссы с уникальным лутом. С некоторыми из них справится сложнее, чем со стражем Гайи."
+          "title": "Custom mini bosses",
+          "content": "custom random mini-bosses with a unique loot. Some of them are more difficult to cope with than those of Gaia."
         },
         {
-          "title": "ПВП",
-          "content": "Выключено только днем и в обычном мире. Ночью и в других мирах никто не запретит вам ограбить соседа."
+          "title": "PVP",
+          "content": "It is turned off only during the day and in the ordinary world. At night and in other worlds, no one will forbid you to rob a neighbor."
         }
       ],
       "worldsSize": [
         {
-          "title": "Основной",
+          "title": "Main",
           "size": "10000"
         },
         {
-          "title": "Нижний мир",
+          "title": "Nether",
           "size": "4000"
         },
         {
-          "title": "Край",
+          "title": "End",
           "size": "5000"
         },
         {
@@ -288,7 +162,7 @@
           "size": "4000"
         },
         {
-          "title": "Эребус",
+          "title": "Erebus",
           "size": "4000"
         },
         {
@@ -315,227 +189,34 @@
           "title": "Авалон",
           "size": "1000"
         }
-      ],
-      "modsList": {
-        "arsMagica2": "Ars Magica 2",
-        "Additional Compression": "Additional Compression",
-        "Aether": "Aether",
-        "Automagy": "Automagy",
-        "Arcane Engineering": "Arcane Engineering",
-        "Avaritia": "Avaritia",
-        "Alfheim": "Alfheim",
-        "The Betweenlands": "The Betweenlands",
-        "BloodMagic": "BloodMagic",
-        "BiomesOPlenty": "BiomesOPlenty",
-        "Botania": "Botania",
-        "BiblioCraft": "BiblioCraft",
-        "The Erebus": "The Erebus",
-        "CustomNPCs": "CustomNPCs",
-        "Chisel": "Chisel",
-        "Clockwork Phase": "Clockwork Phase",
-        "Dragon's Radio Mod": "Dragon's Radio Mod",
-        "Forbidden Magic": "Forbidden Magic",
-        "Grimoire of Gaia": "Grimoire of Gaia",
-        "Gadomancy": "Gadomancy",
-        "Hardcore Ender Expansion": "Hardcore Ender Expansion",
-        "ImmersiveEngineering": "ImmersiveEngineering",
-        "Inventory Pets": "Inventory Pets",
-        "Iron Chests": "Iron Chests",
-        "Jabba": "Jabba",
-        "JourneyMap": "JourneyMap",
-        "OptiFine": "OptiFine",
-        "Reliquary": "Reliquary",
-        "Sanguimancy": "Sanguimancy",
-        "StorageDrawers": "StorageDrawers",
-        "Talismans 2": "Talismans 2",
-        "Tainted Magic": "Tainted Magic",
-        "Technomancy": "Technomancy",
-        "Thaumcraft": "Thaumcraft",
-        "Thaumic-horizons": "Thaumic-horizons",
-        "ThaumicTinkerer": "ThaumicTinkerer",
-        "TravellersGear": "TravellersGear",
-        "Twilight Forest": "Twilight Forest",
-        "Vending block": "Vending block",
-        "Waila": "Waila",
-        "Witchery": "Witchery",
-        "YeGamolChattels": "YeGamolChattels"
-      }
+      ]
     },
     "ozone": {
       "title": "Project Ozone 2",
-      "description": "Технический сервер, направленный на максимальную автоматизацию и добычу колоссального количества ресурсов. Вы начинаете в пустом мире на одиноком острове, с парой яблок в кармане, и развиваетесь до путешествий на другие планеты и создания вещей с бесконечными параметрами. Крафты очень усложнены и связаны с множеством модов. Доступны творческие предметы.",
+      "description": "A technical server aimed at maximizing automation and extracting a tremendous amount of resources. You start in an empty world on a lonely island, with a couple of apples in your pocket, and develop before traveling to other planets and creating things with infinite parameters. Crafts are very complicated and are associated with many mods. Creative items available.",
       "version": "[1.7.10]",
       "mode": "PVE",
-      "wipe": "1-го числа каждого месяца",
+      "wipe": "1st of every month",
       "features": [],
       "worldsSize": [
         {
-          "title": "Основной",
+          "title": "Main",
           "size": "10000"
         },
         {
-          "title": "Нижний мир",
+          "title": "Nether",
           "size": "4000"
         },
         {
-          "title": "Край",
+          "title": "End",
           "size": "5000"
-        },
-        {
-          "title": "Сумеречный лес",
-          "size": "4000"
         }
-      ],
-      "modsList": {
-        "CoFH Core": "CoFH Core",
-        "Mantle": "Mantle",
-        "Inventory Tweaks": "Inventory Tweaks",
-        "BiblioCraft": "BiblioCraft",
-        "Thermal Foundation": "Thermal Foundation",
-        "Thermal Expansion": "Thermal Expansion",
-        "CodeChickenCore": "CodeChickenCore",
-        "NotEnoughItems": "NotEnoughItems",
-        "Waila": "Waila",
-        "Waila Harvestability": "Waila Harvestability",
-        "Carpenter's Blocks": "Carpenter's Blocks",
-        "Extra Utilities": "Extra Utilities",
-        "NEI Integration": "NEI Integration",
-        "Tinkers Construct": "Tinkers Construct",
-        "TiC Tooltips": "TiC Tooltips",
-        "NEI Addons": "NEI Addons",
-        "Thermal Dynamics": "Thermal Dynamics",
-        "Minefactory Reloaded": "Minefactory Reloaded",
-        "Iron Chests": "Iron Chests",
-        "Baubles": "Baubles",
-        "Botania": "Botania",
-        "Custom Main Menu": "Custom Main Menu",
-        "Pam's HarvestCraft": "Pam's HarvestCraft",
-        "Resource Loader": "Resource Loader",
-        "OpenModsLib": "OpenModsLib",
-        "OpenBlocks": "OpenBlocks",
-        "ExtraTiC": "ExtraTiC",
-        "Natura": "Natura",
-        "CoFHLib": "CoFHLib",
-        "Simply Jetpacks": "Simply Jetpacks",
-        "Ender Storage": "Ender Storage",
-        "Redstone Arsenal": "Redstone Arsenal",
-        "NetherOres": "NetherOres",
-        "Aroma1997Core": "Aroma1997Core",
-        "ComputerCraft": "ComputerCraft",
-        "Dense Ores": "Dense Ores",
-        "Another One Bites the Dust": "Another One Bites the Dust",
-        "ChickenChunks": "ChickenChunks",
-        "Project Red - Base": "Project Red - Base",
-        "Project Red - Integration": "Project Red - Integration",
-        "AppleCore": "AppleCore",
-        "Wawla - What Are We Looking At": "Wawla - What Are We Looking At",
-        "McJtyLib": "McJtyLib",
-        "BiblioCraft: BiblioWoods Natura Edition": "BiblioCraft: BiblioWoods Natura Edition",
-        "ExtraCells2": "ExtraCells2",
-        "Project Red - Compat": "Project Red - Compat",
-        "Project Red - Lighting": "Project Red - Lighting",
-        "iChunUtil": "iChunUtil",
-        "Portal Gun": "Portal Gun",
-        "Project Red - World": "Project Red - World",
-        "Brandon's Core": "Brandon's Core",
-        "Ex Nihilo": "Ex Nihilo",
-        "Random Things": "Random Things",
-        "Solar Flux": "Solar Flux",
-        "WAILA Plugins": "WAILA Plugins",
-        "Project Red - Mechanical": "Project Red - Mechanical",
-        "StartingInventory": "StartingInventory",
-        "OpenModularTurrets": "OpenModularTurrets",
-        "InfiniBows": "InfiniBows",
-        "LunatriusCore": "LunatriusCore",
-        "MineTweaker RecipeMaker": "MineTweaker RecipeMaker",
-        "ProjectE": "ProjectE",
-        "Cooking for Blockheads": "Cooking for Blockheads",
-        "Aroma1997s Dimensional World": "Aroma1997s Dimensional World",
-        "Magical Crops: Core": "Magical Crops: Core",
-        "Magical Crops: Armoury": "Magical Crops: Armoury",
-        "Simple Achievements": "Simple Achievements",
-        "QuantumFlux": "QuantumFlux",
-        "Magical Crops: Decorative": "Magical Crops: Decorative",
-        "The Erebus": "The Erebus",
-        "Botania: Garden of Glass": "Botania: Garden of Glass",
-        "Baublelicious": "Baublelicious",
-        "MrCrayfish's Furniture Mod": "MrCrayfish's Furniture Mod",
-        "Moo Fluids": "Moo Fluids",
-        "Magical Crops Compat - Minefactory Reloaded": "Magical Crops Compat - Minefactory Reloaded",
-        "Hardcore Wither": "Hardcore Wither",
-        "TiConAutoToolStation": "TiConAutoToolStation",
-        "Magneticraft": "Magneticraft",
-        "Gilded Games Util": "Gilded Games Util",
-        "The Aether II": "The Aether II",
-        "EiraMoticons": "EiraMoticons",
-        "Redstonic": "Redstonic",
-        "Big Reactors": "Big Reactors",
-        "ProjectE Aether Addon": "ProjectE Aether Addon",
-        "Applied Exchange": "Applied Exchange",
-        "Snad": "Snad",
-        "Buildcraft Compat": "Buildcraft Compat",
-        "JourneyMap": "JourneyMap",
-        "Reliquary": "Reliquary",
-        "Ender IO": "Ender IO",
-        "KleeSlabs": "KleeSlabs",
-        "VeinMiner": "VeinMiner",
-        "PneumaticCraft": "PneumaticCraft",
-        "Avaritia": "Avaritia",
-        "RFTools": "RFTools",
-        "AgriCraft": "AgriCraft",
-        "Thermal Smeltery": "Thermal Smeltery",
-        "Epic Siege Mod": "Epic Siege Mod",
-        "No Mob Spawning on Trees": "No Mob Spawning on Trees",
-        "Iguanas Tinker Tweaks": "Iguanas Tinker Tweaks",
-        "Better Builder's Wands": "Better Builder's Wands",
-        "Buildcraft": "Buildcraft",
-        "Chance Cubes": "Chance Cubes",
-        "Draconic Evolution": "Draconic Evolution",
-        "EnderCore": "EnderCore",
-        "FastCraft": "FastCraft",
-        "LootBags": "LootBags",
-        "Immersive Engineering": "Immersive Engineering",
-        "Logistics Pipes": "Logistics Pipes",
-        "Storage Drawers": "Storage Drawers",
-        "BetterAchievements": "BetterAchievements",
-        "INpureCore": "INpureCore",
-        "Applied Energistics 2": "Applied Energistics 2",
-        "AE2 Stuff": "AE2 Stuff",
-        "Karat Garden": "Karat Garden",
-        "CustomThings": "CustomThings",
-        "Wireless Crafting Terminal": "Wireless Crafting Terminal",
-        "Ender IO Addons": "Ender IO Addons",
-        "SimpleLabels": "SimpleLabels",
-        "Tree Growing Simulator": "Tree Growing Simulator",
-        "Item Blacklist": "Item Blacklist",
-        "Chisel": "Chisel",
-        "MoreChisels": "MoreChisels",
-        "Thermal Singularities": "Thermal Singularities",
-        "Ender Batteries": "Ender Batteries",
-        "CraftTweaker": "CraftTweaker",
-        "ModTweaker": "ModTweaker",
-        "NetherPortalFix": "NetherPortalFix",
-        "Experience Rings": "Experience Rings",
-        "TreeGrowingSimulator": "TreeGrowingSimulator",
-        "Mekanism and MDK- Aidancbrady": "Mekanism and MDK- Aidancbrady",
-        "Galacticraft and micdoodleCore": "Galacticraft and micdoodleCore",
-        "Ex Astris Rebirth- LoveHoly": "Ex Astris Rebirth- LoveHoly",
-        "Better Furnaces": "Better Furnaces",
-        "UniDict": "UniDict",
-        "Avaritiaddons": "Avaritiaddons",
-        "Universal Singularities": "Universal Singularities",
-        "WanionLib": "WanionLib",
-        "Eternal Singularity": "Eternal Singularity",
-        "Better Questing": "Better Questing",
-        "Better Questing - Standard Expansion": "Better Questing - Standard Expansion",
-        "Better Questing - Quest Book": "Better Questing - Quest Book",
-        "Loot++": "Loot++"
-      }
+      ]
     }
   },
   "locale": {
     "language": "Language",
-    "enUS": "English",
+    "en": "English",
     "ru": "Russian"
   }
 }

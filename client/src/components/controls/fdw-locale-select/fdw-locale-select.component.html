@@ -1,7 +1,10 @@
 <v-select
+  class="language-select"
+  :background-color="$store.state.themeMode === 'dark' ? 'var(--d-third-level-bgc-color)' : '#FFF'"
+  item-color="var(--d-third-level-bgc-color)"
   outlined
   dense
-  :items="locales.map(l => l.name)"
-  :value="locales[0].name"
-  @change="changeLocale"
+  :label="$t('locale.language')"
+  :items="locales"
+  @change="changeLanguage"
 ></v-select>

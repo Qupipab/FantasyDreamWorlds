@@ -7,7 +7,7 @@ import {
   VMenu
 } from 'vuetify/lib';
 
-import { FdwThemeSwitch } from '@components';
+import { FdwThemeSwitch, LocalizedLink } from '@components';
 
 export default {
   components: {
@@ -17,39 +17,40 @@ export default {
     VList,
     VListItem,
     VListItemTitle,
-    FdwThemeSwitch
+    FdwThemeSwitch,
+    LocalizedLink
   },
   computed: {
     lang () {
-      return `/${this.$route.params.locale}`;
+      return this.$route.params.lang;
     }
   },
   data () {
     return {
       authorized: true,
       navList: [
-        { title: this.$t('header.forum'), path: '/' },
-        { title: this.$t('header.services'), path: '/' },
+        { title: 'header.forum', path: '/' },
+        { title: 'header.services', path: '/' },
         {
-          title: this.$t('header.serversTitle'),
+          title: 'header.serversTitle',
           path: '/',
           content: [
-            { title: 'Infinity', path: '/server/infinity' },
-            { title: 'Arcmagic', path: '/server/arcmagic' },
-            { title: 'Ozone', path: '/server/ozone' },
-            { title: 'AOE', path: '/server/aoe' }
+            { title: 'header.servers.infinity', path: '/server/infinity' },
+            { title: 'header.servers.arcmagic', path: '/server/arcmagic' },
+            { title: 'header.servers.ozone', path: '/server/ozone' },
+            { title: 'header.servers.aoe', path: '/server/aoe' }
           ]
         },
         {
-          title: this.$t('header.helpTitle'),
+          title: 'header.helpTitle',
           path: '/',
           content: [
-            { title: this.$t('header.helpList.rating'), path: '/' },
-            { title: this.$t('header.helpList.rules'), path: '/' },
-            { title: this.$t('header.helpList.banList'), path: '/' },
-            { title: this.$t('header.helpList.FAQ'), path: '/' },
-            { title: this.$t('header.helpList.team'), path: '/' },
-            { title: this.$t('header.helpList.commands'), path: '/' }
+            { title: 'header.helpList.rating', path: '/' },
+            { title: 'header.helpList.rules', path: '/' },
+            { title: 'header.helpList.banList', path: '/' },
+            { title: 'header.helpList.FAQ', path: '/' },
+            { title: 'header.helpList.team', path: '/' },
+            { title: 'header.helpList.commands', path: '/' }
           ]
         }
       ]

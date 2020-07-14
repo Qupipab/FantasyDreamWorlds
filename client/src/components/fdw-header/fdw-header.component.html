@@ -10,7 +10,7 @@
           :key="index"
           class="nav-item"
         >
-          <span class="link" :class="item.content ? 'drop-down' : ''" v-if="item.content">{{ item.title }}
+          <span class="link" :class="item.content ? 'drop-down' : ''" v-if="item.content">{{ $t(item.title) }}
             <ul
               :class="`menu-items-${index + 1}`"
               class="menu-items"
@@ -23,16 +23,16 @@
                   v-for="(content, index) in item.content"
                   :key="index"
                 >
-                  <router-link
+                  <localized-link
                     class="menu-item-link"
-                    :to="lang + content.path"
+                    :to="content.path"
                     replace
-                  >{{ content.title }}</router-link>
+                  >{{ $t(content.title) }}</localized-link>
                 </li>
               </div>
             </ul>
           </span>
-          <a class="link" href="#" v-else>{{ item.title }}</a>
+          <a class="link" href="#" v-else>{{ $t(item.title) }}</a>
         </li>
       </ul>
     </nav>

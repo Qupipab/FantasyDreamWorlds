@@ -1,22 +1,22 @@
+/* eslint-disable */
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 import Home from '../views/Home.vue';
 import Root from './Root';
-import i18n, { loadLocaleMessagesAsync } from '@/plugins/i18n';
+import store from '@store';
 import { ServerInfo } from '@views';
-
-import { i18nDocumentUtil } from '@utils';
+import { SUPPORTED_LOCALES } from '@constants';
 
 Vue.use(VueRouter);
 
-const { locale } = i18n,
+const lang = SUPPORTED_LOCALES.includes(store.state.locale.language) ? undefined : 'en',
       routes = [
         {
           path: '/',
-          redirect: locale
+          redirect: lang
         },
         {
-          path: '/:locale',
+          path: '/:lang?',
           component: Root,
           props: true,
           children: [
@@ -33,9 +33,8 @@ const { locale } = i18n,
             }
           ]
         }
-      ];
-/* eslint-disable */
-const router = new VueRouter({
+      ],
+      router = new VueRouter({
         mode: 'history',
         base: process.env.BASE_URL,
         routes
@@ -52,18 +51,13 @@ const router = new VueRouter({
 // }
 
 router.beforeEach((to, from, next) => {
-  if (to.params.locale === from.params.locale) {
+  const lang = to.params.lang || 'ru';
+  if (lang === from.params.lang) {
     next();
     return;
+  } else if (lang === 'en' || lang === 'ru') {
+    store.commit('locale/INIT_OR_CHANGE_LANGUAGE', lang);
   }
-
-  const { locale } = to.params;
-
-  loadLocaleMessagesAsync(locale)
-    .then(() => {
-      i18nDocumentUtil.setDocumentLang(locale);
-    });
-
   next();
 });
 
