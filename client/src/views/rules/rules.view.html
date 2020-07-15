@@ -1,3 +1,53 @@
-<div class="rules">
-  <span>sometext</span>
+<div class="rules-container">
+  <div class="rules">
+    <div class="title-content">
+      <h3>{{ $t('rules.title') }}</h3>
+      <p>{{ $t('rules.titleContent') }}</p>
+    </div>
+    <ul class="rules-sections-list">
+      <li
+        :id="`rules-section-${ i + 1 }`"
+        class="rules-section"
+        :class="{ 'checked-rules-section' : i === checkedRulesGroupIndex }"
+        v-for="(rulesSection, i) in $t('rules.content')"
+        :key="i"
+      >
+        <h3
+          class="rules-title"
+          @click="viewRules(i)"
+        >
+          <b>{{ `${ i + 1 }. `  }}</b>
+          {{ rulesSection.title }}
+        </h3>
+        <ul
+          class="rules-list"
+          :class="{ 'checked' : i === checkedRulesGroupIndex }"
+        >
+          <li
+            class="rule-item"
+            v-for="(ruleItem, j) in rulesSection.rulesList"
+            :key="j"
+            v-if="ruleItem.content"
+          >
+            <b class="rule-item-title">{{ `${ i + 1 }.${ j + 1 }` }}</b>
+            <div class="rule-content-container">
+              <p class="rule-content">{{ ruleItem.content }}</p>
+              <p class="rule-extra" v-if="ruleItem.extra">{{ ruleItem.extra }}</p>
+              <ul class="rule-extra-list" v-if="ruleItem.extraList">
+                <li
+                  class="rule-extra-item"
+                  v-for="(extraRuleItem, exIndex) in ruleItem.extraList"
+                  :key="exIndex"
+                >
+                  <p>{{ extraRuleItem }}</p>
+                </li>
+              </ul>
+              <p class="rule-punishment" v-if="ruleItem.punishment"><b>Наказание: </b>{{ ruleItem.punishment }}</p>
+            </div>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+  <fdw-sidebar class="sidebar"></fdw-sidebar>
 </div>
