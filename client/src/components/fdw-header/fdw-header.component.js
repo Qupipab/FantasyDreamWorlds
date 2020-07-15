@@ -46,7 +46,7 @@ export default {
           path: '/',
           content: [
             { title: 'header.helpList.rating', path: '/' },
-            { title: 'header.helpList.rules', path: '/' },
+            { title: 'header.helpList.rules', path: '/rules' },
             { title: 'header.helpList.banList', path: '/' },
             { title: 'header.helpList.FAQ', path: '/' },
             { title: 'header.helpList.team', path: '/' },

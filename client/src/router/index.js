@@ -1,39 +1,36 @@
-/* eslint-disable */
 import Vue from 'vue';
 import VueRouter from 'vue-router';
-import Home from '../views/Home.vue';
 import Root from './Root';
 import store from '@store';
-import { ServerInfo } from '@views';
-import { SUPPORTED_LOCALES } from '@constants';
+import { ServerInfo, Rules, Page404 } from '@views';
 
 Vue.use(VueRouter);
 
-const lang = SUPPORTED_LOCALES.includes(store.state.locale.language) ? undefined : 'en',
-      routes = [
-        {
-          path: '/',
-          redirect: lang
-        },
-        {
-          path: '/:lang?',
-          component: Root,
-          props: true,
-          children: [
-            {
-              path: '',
-              name: 'home',
-              component: Home
-            },
-            {
-              path: 'server/:serverName',
-              name: 'server',
-              component: ServerInfo,
-              props: true
-            }
-          ]
-        }
-      ],
+const routes = [
+  {
+    path: '*',
+    name: 'Page404',
+    component: Page404
+  },
+  {
+    path: '/:lang(en|ru)?',
+    component: Root,
+    props: true,
+    children: [
+      {
+        path: 'server/:serverName(infinity|ozone|arcmagic)',
+        name: 'Server',
+        component: ServerInfo,
+        props: true
+      },
+      {
+        path: 'rules/',
+        name: 'Rules',
+        component: Rules
+      }
+    ]
+  }
+],
       router = new VueRouter({
         mode: 'history',
         base: process.env.BASE_URL,
