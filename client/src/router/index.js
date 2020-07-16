@@ -2,7 +2,12 @@ import Vue from 'vue';
 import VueRouter from 'vue-router';
 import Root from './Root';
 import store from '@store';
-import { ServerInfo, Rules, Page404 } from '@views';
+import {
+  ServerInfo,
+  Rules,
+  Commands,
+  Page404
+} from '@views';
 
 Vue.use(VueRouter);
 
@@ -24,9 +29,14 @@ const routes = [
         props: true
       },
       {
-        path: 'rules/',
+        path: 'rules',
         name: 'Rules',
         component: Rules
+      },
+      {
+        path: 'commands',
+        name: 'Commands',
+        component: Commands
       }
     ]
   }

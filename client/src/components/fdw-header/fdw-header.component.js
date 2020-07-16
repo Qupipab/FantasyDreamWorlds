@@ -50,7 +50,7 @@ export default {
             { title: 'header.helpList.banList', path: '/' },
             { title: 'header.helpList.FAQ', path: '/' },
             { title: 'header.helpList.team', path: '/' },
-            { title: 'header.helpList.commands', path: '/' }
+            { title: 'header.helpList.commands', path: '/commands' }
           ]
         }
       ]
