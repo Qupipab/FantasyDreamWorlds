@@ -16,10 +16,17 @@
   --d-third-level-font-color: #FFF;
 
   --d-main-purple-font-color: #8e44ad;
+  --l-card-bgc: #F6F9FC;
 
   --breakpoint-xs: 0;
   --breakpoint-sm: 576px;
   --breakpoint-md: 767px;
   --breakpoint-lg: 992px;
   --breakpoint-xl: 1200px;
+
+  // @media (max-width: 1200px) {}
+  // @media (max-width: 1096px) {}
+  // @media (max-width: 992px) {}
+  // @media (max-width: 767px) {}
+  // @media (max-width: 576px) {}
 }

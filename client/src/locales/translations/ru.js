@@ -4,12 +4,14 @@ import footer from './footer/footer.ru.json';
 import serverInfo from './serverInfo/serverInfo.ru.json';
 import rules from './rules/rules.ru.json';
 import locale from './locale/locale.ru.json';
+import commands from './commands/commands.ru.json';
 
 export default {
+  locale,
   header,
   sidebar,
   footer,
   serverInfo,
   rules,
-  locale
+  commands
 };
