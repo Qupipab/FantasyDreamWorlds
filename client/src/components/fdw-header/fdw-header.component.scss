@@ -70,6 +70,7 @@
 }
 
 .desktop-menu {
+  position: relative;
   transition: .3s;
   margin: 0 auto;
   justify-content: space-between;
@@ -77,6 +78,7 @@
   max-width: 1480px;
   height: 95px;
   padding: 0 40px;
+  z-index: 2;
   @media (max-width: 576px) {
     padding: 0;
   }
@@ -90,7 +92,7 @@
   nav, .logo-wrap, .profile {
     flex-grow: 1;
     flex-basis: 300px;
-    z-index:2;
+    z-index: 2;
   }
   .logo-wrap {
     justify-content: center;
@@ -210,7 +212,7 @@
   transition: all .2s ease-in-out;
   transform: scale(.25);
   overflow: hidden;
-  z-index: 2;
+  z-index: 3;
   .line {
     width: 100%;
     height: 1px;
@@ -249,41 +251,6 @@
   }
 }
 
-.circles {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 95px;
-  overflow: hidden;
-  z-index: 1;
-}
-
-.circles li {
-  position: absolute;
-  display: block;
-  width: 20px;
-  height: 20px;
-  border-radius: 3px;
-  background: #EBECF9;
-  animation: animate 25s linear infinite;
-  bottom: -180px;
-}
-
-@for $i from 0 to 10 {
-  .circles li:nth-child(#{$i}) {
-    $size: (random(20) + 20) + px;
-    $delay: random(5) + s;
-    $duration: (random(40) + 10) + s;
-    $randPercent: percentage(random(100) / 100);
-    left: $randPercent;
-    width: $size;
-    height: $size;
-    animation-delay: $delay;
-    animation-duration: $duration;
-  }
-}
-
 .v-menu__content {
   box-shadow: none;
   max-height: 2000px;
@@ -297,18 +264,6 @@
   border-radius: 3px;
   right: 50px;
   opacity: 1;
-}
-
-@keyframes animate {
-
-  0% {
-    transform: translateY(0) rotate(0deg);
-  }
-
-  100% {
-    transform: translateY(-1000px) rotate(720deg);
-  }
-
 }
 
 @keyframes square-rotate {
@@ -476,9 +431,5 @@
     .menu-item-link {
       color: var(--d-third-level-font-color);
     }
-  }
-
-  .circles li {
-    background: #A6A7A8;
   }
 }
