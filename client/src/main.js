@@ -14,7 +14,7 @@ Vue.component('cabinet-layout', Cabinet);
 Vue.component('default-layout', Default);
 
 Vue.config.productionTip = false;
-Vue.prototype.$api = api;
+Vue.prototype.$api = api; // asdadad
 
 new Vue({
   vuetify,
