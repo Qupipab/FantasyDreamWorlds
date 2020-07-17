@@ -1,0 +1,10 @@
+<ul
+  class="squares"
+  :style="squaresStyle"
+>
+  <li
+    class="square"
+    v-for="s in count"
+    :style="squareStyle[s - 1]"
+  ></li>
+</ul>

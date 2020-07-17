@@ -7,7 +7,7 @@ import {
   VMenu
 } from 'vuetify/lib';
 
-import { FdwThemeSwitch, LocalizedLink } from '@components';
+import { FdwThemeSwitch, LocalizedLink, FdwSquares } from '@components';
 
 export default {
   components: {
@@ -18,7 +18,8 @@ export default {
     VListItem,
     VListItemTitle,
     FdwThemeSwitch,
-    LocalizedLink
+    LocalizedLink,
+    FdwSquares
   },
   computed: {
     lang () {
