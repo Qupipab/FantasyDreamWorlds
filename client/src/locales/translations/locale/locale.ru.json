@@ -1,5 +1,7 @@
 {
-  "language": "Язык",
-  "en": "Английский",
-  "ru": "Русский"
+  "title": "Языки",
+  "supportedLocales": [
+    "ru",
+    "en"
+  ]
 }
