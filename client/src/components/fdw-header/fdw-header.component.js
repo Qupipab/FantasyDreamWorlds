@@ -7,7 +7,7 @@ import {
   VMenu
 } from 'vuetify/lib';
 
-import { FdwThemeSwitch, LocalizedLink } from '@components';
+import { FdwThemeSwitch, LocalizedLink, FdwSquares } from '@components';
 
 export default {
   components: {
@@ -18,7 +18,8 @@ export default {
     VListItem,
     VListItemTitle,
     FdwThemeSwitch,
-    LocalizedLink
+    LocalizedLink,
+    FdwSquares
   },
   computed: {
     lang () {
@@ -46,11 +47,11 @@ export default {
           path: '/',
           content: [
             { title: 'header.helpList.rating', path: '/' },
-            { title: 'header.helpList.rules', path: '/' },
+            { title: 'header.helpList.rules', path: '/rules' },
             { title: 'header.helpList.banList', path: '/' },
             { title: 'header.helpList.FAQ', path: '/' },
             { title: 'header.helpList.team', path: '/' },
-            { title: 'header.helpList.commands', path: '/' }
+            { title: 'header.helpList.commands', path: '/commands' }
           ]
         }
       ]

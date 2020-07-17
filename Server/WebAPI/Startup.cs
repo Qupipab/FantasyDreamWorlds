@@ -11,13 +11,11 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
-using WebAPI.DTO;
 
 namespace WebAPI
 {
   public class Startup
   {
-    readonly string VueCorsPolicy = "_vueCorsPolicy";
     public Startup(IConfiguration configuration)
     {
       Configuration = configuration;
@@ -27,28 +25,13 @@ namespace WebAPI
 
     public void ConfigureServices(IServiceCollection services)
     {
-      var frontConfiguration = Configuration.GetSection("Front").Get<FrontConfiguration>();
-      services.AddCors(options =>
-      {
-        options.AddPolicy(name: VueCorsPolicy,
-                                builder =>
-                                {
-                                  builder
-                                          .AllowAnyHeader()
-                                          .AllowAnyMethod()
-                                          .AllowCredentials()
-                                          .WithOrigins(frontConfiguration.AddressFront);
-                                });
-      });
+      services.AddControllers();
 
       services.AddSwaggerGen(c =>
       {
         c.SwaggerDoc("FantasyDreamWorlds", 
           new OpenApiInfo { Title = "FantasyDreamWorlds API", Version = "v1" });
       });
-      
-      services.AddControllers();
-      services.AddSingleton(frontConfiguration);
     }
 
     public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -61,8 +44,6 @@ namespace WebAPI
       app.UseHttpsRedirection();
 
       app.UseRouting();
-
-      app.UseCors(VueCorsPolicy);
 
       app.UseAuthorization();
 

@@ -1,0 +1,129 @@
+.rules-container {
+  display: flex;
+  flex: 4 4 1px;
+  @media (max-width: 857px) {
+    flex-direction: column;
+  }
+  .rules {
+    padding-right: 40px;
+    @media (max-width: 857px) {
+      padding-right: 0px;
+      margin-bottom: 50px;
+    }
+    .title-content {
+      margin-bottom: 15px;
+    }
+    .rules-sections-list {
+      padding: 0;
+      .rules-section {
+        position: relative;
+        &::before {
+          content: '';
+          position: absolute;
+          width: 100%;
+          height: 1px;
+          background-color: lightgray;
+          top: 0px;
+        }
+        .rules-title {   
+          cursor: pointer;
+          position: relative;
+          user-select: none;
+          text-transform: uppercase;
+          padding: 10px 0;
+          font-size: 20px;
+          text-indent: 0px;
+          transition: text-indent .2s ease 0s, opacity .3s ease 0s;
+          &:hover {
+            text-indent: 15px;
+            opacity: .6;
+          }
+          b {
+            font-size: 20px;
+            margin-right: 11px;
+            color: var(--d-main-purple-font-color);
+          }
+        }
+        .rules-list {
+          display: none;
+          padding: 0;
+        }
+        .checked {
+          display: block;
+        }
+      }
+      .checked-rules-section {
+        background-color: #F6F9FC;
+        border-radius: 30px;
+        padding: 15px 30px 30px 30px;
+        .rules-title {
+          &:hover {
+            text-indent: 0px;
+            opacity: 1;
+          }
+        }
+      }
+      .checked-rules-section + li, .checked-rules-section {
+        &::before {
+          display: none;
+        }
+      }
+    }
+  }
+  .sidebar {
+    flex: 1 1 120px;
+  }
+}
+
+.rule-item {
+  display: flex;
+  margin: 10px 0;
+  .rule-item-title {
+    width: 34px;
+    flex-shrink: 0;
+  }
+  .rule-content-container {
+    margin: -2px 0;
+    p {
+      margin: 2px 0;
+    }
+    .rule-extra, .rule-extra-list {
+      opacity: .6;
+    }
+    .rule-extra-list {
+      list-style-type: disc;
+      padding-left: 18px;
+    }
+    .rule-punishment {
+      color:#e74c3c;
+      font-weight: 400;
+      b {
+        color: #e74c3c ;
+      }
+    }
+  }
+}
+
+.dark {
+  .rules-container {
+    .rules {
+      .rules-sections-list {
+        .checked-rules-section {
+          background-color: var(--d-second-level-bgc-color);
+        }  
+      }
+    }
+  }
+  .rule-item {
+    .rule-content-container {
+      .rule-content {
+        color: #FFF;
+      }
+      .rule-extra-list {
+        .rule-extra-item {
+          color: #FFF;
+        }
+      }
+    }
+  }
+}

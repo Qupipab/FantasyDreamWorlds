@@ -1,0 +1,169 @@
+{
+  "serverCardInfo": {
+    "title": "Server information",
+    "lastWipe": "Last wipe",
+    "features": "Features",
+    "mods": "Modifications",
+    "version": "Version",
+    "mode": "Mode",
+    "size": "Worlds size",
+    "additionalSize": "Additional worlds size",
+    "wipe": "Additional worlds wipe"
+  },
+  "infinity": {
+    "title": "Infinity Evolved",
+    "description": "From a silicon pickaxe to a world destroyer! The main feature of this assembly is custom recipes that have been modified to play on the server. Thanks to them, it will not be possible to get bored on the server, knowing only one mod and developing only in it, since most of the craft were complicated. Unlike the original FTB project, we made assembly a little easier by removing a number of decorative and duplicating mods so that as many players as possible could play on our servers.",
+    "version": "[1.7.10]",
+    "mode": "PVE",
+    "wipe": "1st of every month",
+    "worldsSize": [
+      {
+        "title": "Main",
+        "size": "10000"
+      },
+      {
+        "title": "Nether",
+        "size": "4000"
+      },
+      {
+        "title": "End",
+        "size": "12000"
+      },
+      {
+        "title": "Deep dark",
+        "size": "12000"
+      }
+    ],
+    "features": [
+      {
+        "title": "Creative items",
+        "content": "after much effort you will be rewarded with such things as an infinite pool of mana, a creative tank with infinite fluid, or an infinite source of energy! We are allowed to craft these items, although it is very complicated."
+      },
+      {
+        "title": "Chunk loader",
+        "content": "the chunk is working, you are resting! The server has the Chunk Loader plugin installed. Thanks to him, you can leave your region for some time, but activity in it will continue. You can go for a walk, and your house will be unloaded without your presence!"
+      },
+      {
+        "title": "Quest line",
+        "content": "instead of a thousand helpers, it will help you choose the right path of development, without making mistakes and without getting lost in so many modifications."
+      },
+      {
+        "title": "End quarry",
+        "content": "where so without a career end in this assembly. In order not to spoil the general landscape of the world and not to disable the opportunity for Career to load oneself, a whole world of Dark Dark (High Darkness) was highlighted, where you have more private than usual."
+      },
+      {
+        "title": "Prize cases",
+        "content": "by voting for our project, right in the game you can get bonus keys from lottery chests and win a lot of useful stuff, from a bunch of resources to top items from mods."
+      }
+    ]
+  },
+  "arcmagic": {
+    "title": "Arcmagic",
+    "description": "What do we usually see on warm tube medzhiks? Thaum, devine, botany, arsmajiku, etc. All moves are recorded, all users know what to do ichor and halit, and after a couple of days you can \"bend\" everything that moves, and move everything that bends. Depressed by such a boring state of affairs, we decided to try to make an unusual server with a new look at the gameplay.",
+    "version": "[1.7.10]",
+    "mode": "PVE-PVE",
+    "wipe": "1st of every month",
+    "features": [
+      {
+        "title": "Cross-mod crafts",
+        "content": "Hundreds of modified recipes, including taum filling, new research, etc. To get familiar things you have to do unusual things. The most \"top\" clothes now require parallel development in several modes at once. Crafts for unused items in mods have also been added, for example, \"Annihilation Cube\" from the Twilight Forest - a fantastic tool for building the subway :)"
+      },
+      {
+        "title": "The combination of magic with technology in the \"steampunk\" style",
+        "content": "The server has Immersive Engineering and several technical add-ons, as well as ClockWork Phase, an original mod that is built into the game as an extension of Immersiv. Many magic recipes require Immersive materials, and vice versa. There is a kind of \"subject pipe\" for creating full-fledged factories .. in general, technology lovers will have something to do. Well, of course, you can destabilize a node and pump electricity out of it!"
+      },
+      {
+        "title": "Measurements",
+        "content": "11 complete measurements available for research and pharma. However, access to them is not as easy as before."
+      },
+      {
+        "title": "No bans",
+        "content": "Seriously, there are no items forbidden to craft on the server (except for a few, the gripper potential of which could not be fixed). However, any player will be able to fly in 7 different ways, use “related” tools from BloodMagic, Leonard’s urn from Witchery, turn into a vampire, use a dynamic tablet, etc. We have no restrictions of this nature, but to create such top-notch things you will have to sweat."
+      },
+      {
+        "title": "Quests",
+        "content": "full quest line with a separate world, a lot of NPCs and tasks. The world lives in accordance with its history, the mysteries of which you have to solve. Quests are an important part of the gameplay, as some development options in mods require certain quests to be completed. For example, you can get some books by Witcher either by a long search in the villages, or by completing the quest."
+      },
+      {
+        "title": "Voting system",
+        "content": "cool system of voting and titles for completing quests."
+      },
+      {
+        "title": "Custom mini bosses",
+        "content": "custom random mini-bosses with a unique loot. Some of them are more difficult to cope with than those of Gaia."
+      },
+      {
+        "title": "PVP",
+        "content": "It is turned off only during the day and in the ordinary world. At night and in other worlds, no one will forbid you to rob a neighbor."
+      }
+    ],
+    "worldsSize": [
+      {
+        "title": "Main",
+        "size": "10000"
+      },
+      {
+        "title": "Nether",
+        "size": "4000"
+      },
+      {
+        "title": "End",
+        "size": "5000"
+      },
+      {
+        "title": "Сумеречный лес",
+        "size": "4000"
+      },
+      {
+        "title": "Erebus",
+        "size": "4000"
+      },
+      {
+        "title": "Великое болото",
+        "size": "4000"
+      },
+      {
+        "title": "Внешние земли",
+        "size": "4000"
+      },
+      {
+        "title": "Альвхейм",
+        "size": "4000"
+      },
+      {
+        "title": "Мир снов",
+        "size": "4000"
+      },
+      {
+        "title": "Бедрок-мир",
+        "size": "4000"
+      },
+      {
+        "title": "Авалон",
+        "size": "1000"
+      }
+    ]
+  },
+  "ozone": {
+    "title": "Project Ozone 2",
+    "description": "A technical server aimed at maximizing automation and extracting a tremendous amount of resources. You start in an empty world on a lonely island, with a couple of apples in your pocket, and develop before traveling to other planets and creating things with infinite parameters. Crafts are very complicated and are associated with many mods. Creative items available.",
+    "version": "[1.7.10]",
+    "mode": "PVE",
+    "wipe": "1st of every month",
+    "features": [],
+    "worldsSize": [
+      {
+        "title": "Main",
+        "size": "10000"
+      },
+      {
+        "title": "Nether",
+        "size": "4000"
+      },
+      {
+        "title": "End",
+        "size": "5000"
+      }
+    ]
+  }
+}
