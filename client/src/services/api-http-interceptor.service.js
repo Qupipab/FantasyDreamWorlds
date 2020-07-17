@@ -1,9 +1,8 @@
-import { apiSuffix, baseUrl } from '@config';
-
 import axios from 'axios';
+import { baseUrl } from '@config';
 
 const instance = axios.create({
-  baseURL: `${baseUrl}/${apiSuffix}`,
+  baseURL: `${baseUrl}`,
   headers: {
     Accept: 'application/json',
     'Content-Type': 'application/json'
