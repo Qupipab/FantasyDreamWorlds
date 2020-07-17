@@ -11,8 +11,6 @@ import {
   VApp
 } from 'vuetify/lib';
 
-const defaultLayout = 'default';
-
 export default {
   name: 'App',
   components: {
@@ -20,7 +18,7 @@ export default {
   },
   computed: {
     layout () {
-      return (this.$route.meta.layout || defaultLayout) + '-layout';
+      return 'default-layout';
     }
   }
 };

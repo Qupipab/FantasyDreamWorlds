@@ -2,8 +2,9 @@ import './registerServiceWorker';
 
 import { Cabinet, Default } from '@layouts';
 
-import Vue from 'vue';
 import App from './App.vue';
+import Vue from 'vue';
+import api from '@api';
 import i18n from './plugins/i18n';
 import router from '@router';
 import store from '@store';
@@ -13,6 +14,7 @@ Vue.component('cabinet-layout', Cabinet);
 Vue.component('default-layout', Default);
 
 Vue.config.productionTip = false;
+Vue.prototype.$api = api;
 
 new Vue({
   vuetify,

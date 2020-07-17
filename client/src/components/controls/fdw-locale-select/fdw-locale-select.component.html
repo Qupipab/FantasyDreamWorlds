@@ -1,13 +1,10 @@
-<div class="locale-select">
-  <h4>{{ $t('locale.title') }}</h4>
-  <ul class="locales-list">
-    <li
-      class="locale"
-      v-for="(locale, index) in $t('locale.supportedLocales')"
-      :key="index"
-      @click="setLocale(locale)"
-    >
-      <span>{{ locale }}</span>
-    </li>
-  </ul>
-</div>
+<v-select
+  class="language-select"
+  :background-color="$store.state.themeMode === 'dark' ? 'var(--d-third-level-bgc-color)' : '#FFF'"
+  item-color="var(--d-third-level-bgc-color)"
+  outlined
+  dense
+  :label="$t('locale.language')"
+  :items="locales"
+  @change="changeLanguage"
+></v-select>

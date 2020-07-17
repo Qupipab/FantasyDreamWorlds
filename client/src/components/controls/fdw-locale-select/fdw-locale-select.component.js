@@ -11,24 +11,30 @@ export default {
   },
   data () {
     return {
-      selectedLocale: this.$store.state.language
+      locales: [
+        {
+          text: this.$t('locale.en'),
+          value: 'en'
+        },
+        {
+          text: this.$t('locale.ru'),
+          value: 'ru'
+        }
+      ]
     };
   },
   methods: {
-    setLocale (language) {
-      if (language !== this.selectedLocale) {
-        this.selectedLocale = language;
-        this.$store.commit('locale/INIT_OR_CHANGE_LANGUAGE', language);
-        const fullRoute = this.$route.fullPath,
-              currentLang = this.$route.params.lang;
-        if (currentLang === language) {
-          return;
-        }
-        if (currentLang === 'en' || currentLang === 'ru') {
-          this.$router.push(`/${fullRoute.substring(fullRoute.indexOf('/', 2) + 1)}`);
-        } else {
-          this.$router.push(`/en${fullRoute}`);
-        }
+    changeLanguage (language) {
+      this.$store.commit('locale/INIT_OR_CHANGE_LANGUAGE', language);
+      const fullRoute = this.$route.fullPath,
+            currentLang = this.$route.params.lang;
+      if (currentLang === language) {
+        return;
+      }
+      if (currentLang === 'en' || currentLang === 'ru') {
+        this.$router.push(`/${fullRoute.substring(fullRoute.indexOf('/', 2) + 1)}`);
+      } else {
+        this.$router.push(`/en${fullRoute}`);
       }
     }
   }
