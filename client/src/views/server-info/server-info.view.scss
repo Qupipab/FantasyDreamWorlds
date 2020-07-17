@@ -2,6 +2,10 @@
   display: flex;
 }
 
+.server-info {
+  flex: 4 4 1px;
+}
+
 @media (max-width: 990px) {
   .server-card-info {
     flex-direction: column;
@@ -20,9 +24,6 @@
   .server-info {
     flex-direction: column;
     align-items: center;
-  }
-  .servers-sidebar {
-    width: 100%;
   }
 }
 
@@ -146,10 +147,6 @@
       }
     }
   }
-}
-
-.servers-sidebar {
-  flex-grow: 1;
 }
 
 .mods-info-card {

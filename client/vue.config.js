@@ -12,7 +12,7 @@ module.exports = {
       .set('@store', path.resolve('src/store/'))
       .set('@styles', path.resolve('src/styles/'))
       .set('@services', path.resolve('src/services/'))
-      .set('@layout', path.resolve('src/layouts/'))
+      .set('@layouts', path.resolve('src/layouts/'))
       .set('@locales', path.resolve('src/locales/'))
       .set('@constants', path.resolve('src/constants/'))
   }

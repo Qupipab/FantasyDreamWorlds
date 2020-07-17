@@ -1,11 +1,11 @@
 .rules-container {
   display: flex;
+  flex: 4 4 1px;
   @media (max-width: 857px) {
     flex-direction: column;
   }
   .rules {
     padding-right: 40px;
-    flex: 4 4 1px;
     @media (max-width: 857px) {
       padding-right: 0px;
       margin-bottom: 50px;
