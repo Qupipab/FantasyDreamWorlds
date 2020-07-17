@@ -1,6 +1,6 @@
 import './registerServiceWorker';
 
-import { Default } from '@layout';
+import { Cabinet, Default } from '@layouts';
 
 import Vue from 'vue';
 import App from './App.vue';
@@ -9,6 +9,7 @@ import router from '@router';
 import store from '@store';
 import vuetify from './plugins/vuetify';
 
+Vue.component('cabinet-layout', Cabinet);
 Vue.component('default-layout', Default);
 
 Vue.config.productionTip = false;

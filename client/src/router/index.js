@@ -47,6 +47,7 @@ const routes = [
         routes
       });
 
+// meta: { layout: 'cabinet' }
 // {
 //   path: "about",
 //   name: "about",

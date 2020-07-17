@@ -1,5 +1,6 @@
 .commands-container {
   display: flex;
+  flex: 4 4 1px;
   @media (max-width: 857px) {
     flex-direction: column;
   }
@@ -8,9 +9,6 @@
     @media (max-width: 857px) {
       margin: 0;
     }
-  }
-  .sidebar {
-    flex: 1 1 120px;
   }
 }
 
