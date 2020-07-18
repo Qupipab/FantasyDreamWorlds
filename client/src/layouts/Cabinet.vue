@@ -29,11 +29,16 @@ export default {
     }
   }
   .body-content {
+    position: relative;
+    z-index: 10;
     display: flex;
-    margin: 50px auto;
+    margin: 100px auto;
     max-width: 1480px;
     min-height: calc(100vh - 95px);
     padding: 0 60px;
+    @media (max-width: 857px) {
+      flex-direction: column;
+    }
   }
   @media (max-width: 767px) {
   .body-content {

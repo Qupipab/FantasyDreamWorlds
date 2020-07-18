@@ -64,8 +64,8 @@ export default {
       for (let i = 0; i < this.count; i++) {
         const size = this.getRandomInt(this.minSize, this.maxSize),
               position = this.getRandomInt(5, 95),
-              delay = this.getRandomInt(1, 5),
-              duration = this.getRandomInt(10, 40);
+              delay = this.getRandomInt(1, 40),
+              duration = this.getRandomInt(20, 40);
 
         arr.push(`width: ${size}px;
                   height: ${size}px;
