@@ -4,7 +4,11 @@
   }
   .locales-list {
     display: flex;
+    flex-direction: row-reverse;
     padding: 0;
+    @media (max-width: 857px) {
+      justify-content: center;
+    }
     .locale {
       cursor: pointer;
       span {
