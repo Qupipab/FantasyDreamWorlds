@@ -1,0 +1,74 @@
+<div class="desktop-header">
+  <nav class="desktop-nav">
+    <ul class="desktop-nav-list">
+      <li
+        class="desktop-nav-item"
+        v-for="(navItem, i) in $t('header.nav')"
+        :key="i"  
+      >
+        <localized-link
+          v-if="navItem.path"
+          class="nav-item nav-item-link"
+          :to="navItem.path"
+        >
+          {{ navItem.title }}
+        </localized-link>
+        <span
+          v-else
+          class="nav-item nav-item-list"
+        >
+          {{ navItem.title }}
+          <div
+            v-if="navItem.list"
+            class="dd-nav-list-wrapper"
+            :class="`dd-nav-list-${ i + 1 }`"
+          >
+            <div class="dd-nav-list">
+              <ul class="dd-items-list">
+                <li
+                  class="dd-item"
+                  v-for="(ddItem, j) in navItem.list"
+                  :key="j"
+                >
+                  <localized-link
+                    v-if="ddItem.path"
+                    class="nav-item nav-item-link"
+                    :to="ddItem.path"
+                  >
+                    {{ ddItem.title }}
+                  </localized-link>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </span>
+      </li>
+    </ul>
+  </nav>
+  <div class="logo"></div>
+  <div class="cabinet-nav">
+    <div
+      v-if="!authorized"
+      class="cabinet-nav-unauthorized"
+    >
+      <a
+        class="sign-in-button nav-item"
+        href="#"
+      >{{ $t('header.auth.signIn') }}</a>
+      <v-btn
+        class="sign-up-button nav-item"
+        color="#8e44ad"
+        outlined
+        large
+      >{{ $t('header.auth.signUp') }}</v-btn>
+    </div>
+    <div
+      v-else
+      class="cabinet-nav-authorized"
+    >
+      <a class="nav-item cabinet-item" href="#">{{ $t('header.cabinet') }}</a>
+      <a class="nav-item" href="#">{{ $t('header.auth.signOut') }}</a>
+    </div>
+    <fdw-theme-switch></fdw-theme-switch>
+  </div>
+</div>

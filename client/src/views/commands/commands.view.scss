@@ -106,7 +106,7 @@
     .commands {
       .command-cards-container {
         .command-card-group {
-          background-color: var(--d-second-level-bgc-color);
+          background-color: var(--d-third-level-bgc);
           .command-card-wrapper {
             &:not(:last-child) {
               border-bottom: 5px dashed #FFF;

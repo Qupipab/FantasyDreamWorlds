@@ -1,28 +1,20 @@
 :root {
-  --l-first-level-bgc-color: #FFF;
-  --d-first-level-bgc-color: #2F3136;
-  --l-first-level-font-color: #000;
-  --d-first-level-font-color: #FFF;
-  --d-first-level-border-color: #26272B;
+  --l-font-color: #353535;
+  --d-font-color: #FFF;
 
-  --l-second-level-bgc-color: #FFF;
-  --d-second-level-bgc-color:#202225 ;
-  --l-second-level-font-color: #FFF;
-  --d-second-level-font-color: #2F3136;
-
-  --l-third-level-bgc-color: #FFF;
-  --d-third-level-bgc-color: #36393F;
-  --l-third-level-font-color: #2F3136;
-  --d-third-level-font-color: #FFF;
-
+  --l-font-color-hover: rgba(0, 0, 0, 0.5);
+  --d-font-color-hover: rgba(255, 255, 255, 0.5);
+  
   --d-main-purple-font-color: #8e44ad;
   --l-card-bgc: #F6F9FC;
+  --l-bgc: #FFF;
+  
+  --l-bg-gradient-default: rgb(163,112,250);
+  --l-bg-gradient: linear-gradient(225deg, rgba(163,112,250,1) 0%, rgba(105,125,250,1) 40%, rgba(105,125,250,1) 60%, rgba(105,185,250,1) 100%);
 
-  --breakpoint-xs: 0;
-  --breakpoint-sm: 576px;
-  --breakpoint-md: 767px;
-  --breakpoint-lg: 992px;
-  --breakpoint-xl: 1200px;
+  --d-first-level-bgc: #2F3136;
+  --d-second-level-bgc:#36393F;
+  --d-third-level-bgc: #202225;
 
   // @media (max-width: 1200px) {}
   // @media (max-width: 1096px) {}

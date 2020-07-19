@@ -61,10 +61,7 @@
   }
   .server-card, .mods-info-card, .server-feature {
     border-radius: 25px;
-    -webkit-box-shadow: 0px 0px 20px -11px rgba(0,0,0,0.62);
-    -moz-box-shadow: 0px 0px 20px -11px rgba(0,0,0,0.62);
-    box-shadow: 0px 0px 20px -11px rgba(0,0,0,0.62);
-    background-color: var(--l-second-level-bgc-color);
+    background-color: var(--l-card-bgc);
     max-width: 985px;
   }
   .server-feature {
@@ -240,7 +237,7 @@
 
 .dark {
   .server-card, .mods-info-card, .server-feature {
-    background-color: var(--d-second-level-bgc-color);
+    background-color: var(--d-third-level-bgc);
     h2 {
       .info-link {
         color: #FFF;
@@ -253,7 +250,7 @@
   .server-card {
     .server-card-info {
       .server-info-card {
-        background-color: var(--d-first-level-bgc-color);
+        background-color: var(--d-first-level-bgc);
         box-shadow: none;
       }  
     }
