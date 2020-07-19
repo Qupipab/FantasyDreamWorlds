@@ -18,49 +18,6 @@
   flex: 1 1 120px;
 }
 
-.start-play-btn {
-  height: 100px;
-  justify-content: center;
-  align-items: center;
-  color: #8e44ad;
-  border: 5px solid #8e44ad;
-  position: relative;
-  top:0;
-  border-radius: 10px;
-  transition: .3s;
-  -webkit-box-shadow: 0px 2px 30px 0px rgba(0,0,0,0.15);
-  -moz-box-shadow: 0px 2px 30px 0px rgba(0,0,0,0.15);
-  box-shadow: 0px 2px 30px 0px rgba(0,0,0,0.15);
-  &:hover {
-    transition: .3s;
-    top: 2px;
-    
-    color: #FFF;
-    background-color: #8e44ad;
-    -webkit-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.25);
-    -moz-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.25);
-    box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.25);
-  }
-  &:active {
-    transition: .3s;
-    top: 4px;
-  }
-  .btn-info {
-    flex-direction: column;
-    span, small {
-      text-align: center;
-    }
-    span {
-      font-size: 25px;
-      font-weight: bold;
-      text-transform: uppercase;
-    }
-    small {
-      font-size: 15px;
-    }
-  }
-}
-
 .servers-status {
   flex-direction: column;
   .title {
@@ -71,7 +28,7 @@
   }
   .body {
     border-radius: 20px;
-    background: #F6F9FC;
+    background: var(--l-card-bgc);
     .servers-group-list {
       margin: 30px;
       @media (max-width: 250px) {
@@ -104,9 +61,8 @@
   border-radius: 5px;
   margin: 15px 0;
   cursor: pointer;
-  transition-duration: .2s;
+  transition: bottom .2s ease 0s;
   &:hover {
-    transition-duration: .2s;
     bottom: 3px;
     -webkit-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.3);
     -moz-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.3);
@@ -114,9 +70,9 @@
   }
   &:active {
     top: 0;
-    background-color: #F6F9FC;
+    background-color: var(--l-card-bgc);
   }
-  &:hover h4 {
+  &:hover h4, &:hover b {
     opacity: .8;
   }
   .server-info-chips {
@@ -137,11 +93,25 @@
     .server-group-info {
       flex-direction: column;
       justify-content: space-between;
+      h4 {
+        color: #8e44ad;
+        font-weight: 500;
+        transition: opacity .3s ease 0s;
+      }
+      span {
+        font-weight: 500;
+        font-size: 14px;
+      }
     }
     .server-online {
       opacity: .6;
       .general-online-count-wrapper {
         text-align: end;
+        font-weight: 400;
+        font-size: 13px;
+        b {
+          transition: opacity .3s ease 0s;
+        }
       }
       .general-online-count {
         display: block;
@@ -165,7 +135,7 @@
 
 .servers-list {
   display: none;
-  background-color: #F6F9FC;
+  background-color: var(--l-card-bgc);
   border-radius: 0 0 5px 5px;
   .server {
     padding: 10px 20px;
@@ -182,17 +152,23 @@
 .dark {
   .servers-status {
     .body {
-      background-color: var(--d-first-level-bgc-color);
+      background-color: var(--d-first-level-bgc);
     }
   }
   .server-group, .servers-list  {
-    background-color: var(--d-second-level-bgc-color);
+    background-color: var(--d-third-level-bgc);
   }
   .server-group {
-    transition: 0s;
+    .server-title-info { 
+      .server-online, .general-slots-count {
+        opacity: 1;
+      }
+    }
+  }
+  .server-group {
     &:active {
       top: 0;
-      background-color: var(--d-second-level-bgc-color);
+      background-color: var(--d-third-level-bgc);
     }
     .server-info-chips {
       .info-icon {
@@ -204,3 +180,4 @@
     }
   }
 }
+

@@ -1,0 +1,105 @@
+<div class="mobile-header">
+  <fdw-theme-switch></fdw-theme-switch>
+  <div
+    class="hamburger-button"
+    @click="mobileActive = !mobileActive"
+  >
+    <span class="hamburger-button-content"></span>
+  </div>
+  <div
+    class="mobile-header-content-bg"
+    :class="{ 'active' : mobileActive }"
+  >
+    <div class="mobile-header-content">
+      <div class="content-header">
+        <div class="title">
+          <h3>{{ $t('header.mobile.title') }}</h3>
+        </div>
+        <div class="dotted-line"></div>
+        <div
+          class="hamburger-button-close"
+          @click="mobileActive = !mobileActive"
+        >
+          <span class="hamburger-button-close-content"></span>
+        </div>
+      </div>
+      <div class="cabinet">
+        <div
+          v-if="authorized"
+          class="cabinet-authorized"
+        >
+          <a href="#">{{ $t('header.cabinet') }}</a>
+          <a href="#">{{ $t('header.auth.signOut') }}</a>
+        </div>
+        <div
+          v-else
+          class="cabinet-unauthorized"
+        >
+          <a href="#">{{ $t('header.auth.signIn') }}</a>
+          <a href="#">{{ $t('header.auth.signUp') }}</a>
+        </div>
+      </div>
+      <div class="nav-card">
+        <div class="main-nav">
+          <h6>{{ $t('header.mobile.nav') }}</h6>
+          <ul class="main-nav-list">
+            <li
+              class="main-nav-item"
+              v-for="(navItem, index) in $t('header.nav')"
+              :key="index"
+              v-if="navItem.path"
+              @click="mobileActive = !mobileActive"
+            >
+              <localized-link
+                class="nav-item nav-item-link"
+                :to="navItem.path"
+              >
+                {{ navItem.title }}
+              </localized-link>
+            </li>
+          </ul>
+        </div>
+        <div class="dd-nav">
+          <h6>{{ $t('header.nav')[3].title }}</h6>
+          <ul class="dd-nav-list">
+            <li
+              class="dd-nav-item"
+              v-for="(ddItem, index) in $t('header.nav')[3].list"
+              :key="index"
+              @click="mobileActive = !mobileActive"
+            >
+              <localized-link
+                v-if="ddItem.path"
+                class="nav-item nav-item-link"
+                :to="ddItem.path"
+              >
+                {{ ddItem.title }}
+              </localized-link>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="servers-card">
+        <h6>{{ $t('header.nav')[2].title }}</h6>
+        <ul class="servers-list">
+          <li
+            class="server-item"
+            v-for="(server, index) in $t('header.nav')[2].list"
+            :key="index"
+          >
+            <localized-link
+              class="nav-item nav-item-link"
+              :to="server.path"
+            >
+              {{ server.title }}
+            </localized-link>
+          </li>
+        </ul>
+      </div>
+      <div class="space-container"></div>
+      <div class="mobile-footer">
+        <fdw-locale-select class="lang-select"></fdw-locale-select>
+      </div>
+    </div>
+  </div>
+</div>

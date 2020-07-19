@@ -1,22 +1,36 @@
 {
-  "forum": "Forum",
-  "services": "Services",
-  "serversTitle": "Servers",
-  "servers": {
-    "infinity": "Infinity",
-    "arcmagic": "Arcmagic",
-    "ozone": "Ozone",
-    "aoe": "AOE"
+  "nav": [
+    { "title": "Forum", "path": "/forum" },
+    { "title": "Services", "path": "/services" },
+    {
+      "title": "Servers",
+      "list": [
+        { "title": "Infinity", "path": "/server/infinity" },
+        { "title": "Arcmagic", "path": "/server/arcmagic" },
+        { "title": "Ozone", "path": "/server/ozone" },
+        { "title": "AOE", "path": "/server/aoe" }
+      ]
+    },
+    {
+      "title": "Help",
+      "list": [
+        { "title": "Rating", "path": "/rating" },
+        { "title": "Rules", "path": "/rules" },
+        { "title": "Ban list", "path": "/banlist" },
+        { "title": "FAQ", "path": "/faq" },
+        { "title": "Project team", "path": "/project-team" },
+        { "title": "Commands", "path": "/commands" }
+      ]
+    }
+  ],
+  "auth": {
+    "signIn": "Sign In",
+    "signUp": "Sign Up",
+    "signOut": "Sign Out"
   },
-  "helpTitle": "Help",
-  "helpList": {
-    "rating": "Rating",
-    "rules": "Rules",
-    "banList": "Ban list",
-    "FAQ": "FAQ",
-    "team": "Project team",
-    "commands": "Commands"
-  },
-  "signIn": "SignIN",
-  "signUp": "SignUP"
+  "cabinet": "Cabinet",
+  "mobile": {
+    "title": "Menu",
+    "nav": "Navigation"
+  }
 }

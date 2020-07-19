@@ -21,21 +21,22 @@ export default {
 
 <style lang="scss" scoped>
   .content {
-    background-color: var(--l-third-level-bgc-color);
+    background-color: var(--l-second-level-bgc);
   }
   .dark {
     .content {
-      background-color: var(--d-third-level-bgc-color);
+      background-color: var(--d-second-level-bgc);
     }
   }
   .body-content {
     position: relative;
-    z-index: 10;
     display: flex;
     margin: 100px auto;
     max-width: 1480px;
     min-height: calc(100vh - 95px);
     padding: 0 60px;
+
+    z-index: 100;
     @media (max-width: 857px) {
       flex-direction: column;
     }

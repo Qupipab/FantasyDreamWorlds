@@ -1,22 +1,36 @@
 {
-  "forum": "Форум",
-  "services": "Услуги",
-  "serversTitle": "Сервера",
-  "servers": {
-    "infinity": "Infinity",
-    "arcmagic": "Arcmagic",
-    "ozone": "Ozone",
-    "aoe": "AOE"
+  "nav": [
+    { "title": "Форум", "path": "/forum" },
+    { "title": "Услуги", "path": "/services" },
+    {
+      "title": "Сервера",
+      "list": [
+        { "title": "Infinity", "path": "/server/infinity" },
+        { "title": "Arcmagic", "path": "/server/arcmagic" },
+        { "title": "Ozone", "path": "/server/ozone" },
+        { "title": "AOE", "path": "/server/aoe" }
+      ]
+    },
+    {
+      "title": "Помощь",
+      "list": [
+        { "title": "Рейтинг", "path": "/rating" },
+        { "title": "Правила", "path": "/rules" },
+        { "title": "Бан лист", "path": "/banlist" },
+        { "title": "Частые вопросы", "path": "/faq" },
+        { "title": "Команда проекта", "path": "/project-team" },
+        { "title": "Команды", "path": "/commands" }
+      ]
+    }
+  ],
+  "auth": {
+    "signIn": "Войти",
+    "signUp": "Регистрация",
+    "signOut": "Выход"
   },
-  "helpTitle": "Помощь",
-  "helpList": {
-    "rating": "Рейтинг",
-    "rules": "Правила",
-    "banList": "Бан лист",
-    "FAQ": "Частые вопросы",
-    "team": "Команда проекта",
-    "commands": "Команды"
-  },
-  "signIn": "Войти",
-  "signUp": "Регистрация"
+  "cabinet": "Кабинет",
+  "mobile": {
+    "title": "Меню",
+    "nav": "Навигация"
+  }
 }
