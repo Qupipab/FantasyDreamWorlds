@@ -1,8 +1,10 @@
-import { VIcon } from 'vuetify/lib';
+import FdwSun from '@icons/WhiteBalanceSunny';
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 
 export default {
   components: {
-    VIcon
+    FdwSun,
+    FontAwesomeIcon
   },
   methods: {
     switchTheme () {
