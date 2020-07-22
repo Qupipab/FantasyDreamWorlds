@@ -1,7 +1,7 @@
 <template>
   <div class="content">
     <fdw-header></fdw-header>
-    <div class="body-content">
+    <div class="body-content-wrapper">
       <slot></slot>
     </div>
     <fdw-footer></fdw-footer>
@@ -28,7 +28,7 @@ export default {
       background-color: var(--d-second-level-bgc);
     }
   }
-  .body-content {
+  .body-content-wrapper {
     position: relative;
     display: flex;
     margin: 100px auto;
@@ -42,7 +42,7 @@ export default {
     }
   }
   @media (max-width: 767px) {
-  .body-content {
+  .body-content-wrapper {
     padding: 0 10px;
   }
 }

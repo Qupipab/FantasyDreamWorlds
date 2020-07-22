@@ -1,8 +1,6 @@
 .commands-container {
   display: flex;
-  flex: 4 4 1px;
   .commands {
-    flex: 4 4 1px;
     @media (max-width: 857px) {
       margin: 0;
     }
