@@ -1,4 +1,3 @@
-/* eslint-disable */
 import i18n from '../../plugins/i18n';
 import { getBrowserLocaleUtil } from '@services';
 import { SUPPORTED_LOCALES } from '@constants';

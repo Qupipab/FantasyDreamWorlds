@@ -1,11 +1,11 @@
-import { VIcon } from 'vuetify/lib';
 import { FdwLocaleSelect, LocalizedLink } from '@components';
+import FdwBeer from '@icons/GlassMugVariant';
 
 export default {
   components: {
-    VIcon,
     FdwLocaleSelect,
-    LocalizedLink
+    LocalizedLink,
+    FdwBeer
   },
   data () {
     return {

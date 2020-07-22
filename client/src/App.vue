@@ -1,23 +1,21 @@
 <template>
-  <v-app id="app" :class="$store.state.themeMode">
+  <div id="app" :class="$store.state.themeMode">
     <component :is="layout">
       <router-view/>
     </component>
-  </v-app>
+  </div>
 </template>
 
 <script>
-import {
-  VApp
-} from 'vuetify/lib';
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { faMoon } from '@fortawesome/free-solid-svg-icons';
+
+library.add(faMoon);
 
 const defaultLayout = 'default';
 
 export default {
   name: 'App',
-  components: {
-    VApp
-  },
   computed: {
     layout () {
       return (this.$route.meta.layout || defaultLayout) + '-layout';
@@ -27,6 +25,6 @@ export default {
 </script>
 
 <style lang="scss">
-@import "@styles/common.scss";
 @import "@styles/variables.scss";
+@import "@styles/common.scss";
 </style>

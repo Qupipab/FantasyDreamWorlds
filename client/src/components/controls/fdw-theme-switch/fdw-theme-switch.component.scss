@@ -1,16 +1,10 @@
-.theme-mode-toggle {
-  color: #000;
-  user-select: none;
+.theme-switch {
   cursor: pointer;
-  padding: 8px;
-}
-
-.theme-mode-toggle::after {
-  display: none;
-}
-
-.dark {
-  .theme-mode-toggle {
-    color: #FFF;
+  user-select: none;
+  width: 24px;
+  display: flex;
+  justify-content: center;
+  .sun {
+    font-size: 20px;
   }
 }

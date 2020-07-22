@@ -1,9 +1,4 @@
-import { VSelect } from 'vuetify/lib';
-
 export default {
-  components: {
-    VSelect
-  },
   computed: {
     language () {
       return this.$store.state.language;

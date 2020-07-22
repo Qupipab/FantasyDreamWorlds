@@ -1,9 +1,6 @@
 const path = require('path');
 
 module.exports = {
-  transpileDependencies: [
-    'vuetify'
-  ],
   chainWebpack: config => {
     config.resolve.alias
       .set('@components', path.resolve('src/components/'))
@@ -17,6 +14,7 @@ module.exports = {
       .set('@constants', path.resolve('src/constants/'))
       .set('@config', path.resolve('src/config/config.dev.json'))
       .set('@api', path.resolve('src/services/api-service.service.js'))
+      .set('@icons', path.resolve(__dirname, 'node_modules/vue-material-design-icons'))
   }
 };
 
