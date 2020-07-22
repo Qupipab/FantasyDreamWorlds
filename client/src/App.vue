@@ -7,6 +7,11 @@
 </template>
 
 <script>
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { faMoon } from '@fortawesome/free-solid-svg-icons';
+
+library.add(faMoon);
+
 const defaultLayout = 'default';
 
 export default {
@@ -20,6 +25,6 @@ export default {
 </script>
 
 <style lang="scss">
-@import "@styles/common.scss";
 @import "@styles/variables.scss";
+@import "@styles/common.scss";
 </style>

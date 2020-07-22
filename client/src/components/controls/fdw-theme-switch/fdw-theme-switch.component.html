@@ -1,6 +1,16 @@
-<div
-  class="theme-mode-toggle"
-  @click="switchTheme"
->
-  mdi-white-balance-sunny
+<div class="theme-switch">
+  <fdw-sun
+    v-if="$store.state.themeMode === 'dark'"
+    class="sun"
+    title=""
+    decorative
+    @click="switchTheme"
+  ></fdw-sun>
+  <font-awesome-icon
+    v-else
+    class="moon"
+    icon="moon"
+    size="lg"
+    @click="switchTheme"
+  />
 </div>

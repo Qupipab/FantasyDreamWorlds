@@ -7,6 +7,9 @@ import Vue from 'vue';
 import i18n from './plugins/i18n';
 import router from '@router';
 import store from '@store';
+import { BootstrapVue } from 'bootstrap-vue';
+
+Vue.use(BootstrapVue);
 
 Vue.component('cabinet-layout', Cabinet);
 Vue.component('default-layout', Default);
