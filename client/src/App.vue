@@ -7,9 +7,7 @@
 </template>
 
 <script>
-import {
-  VApp
-} from 'vuetify/lib';
+import { VApp } from 'vuetify/lib';
 
 const defaultLayout = 'default';
 
