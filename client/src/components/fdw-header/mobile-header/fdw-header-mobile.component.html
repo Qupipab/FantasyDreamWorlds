@@ -2,7 +2,7 @@
   <fdw-theme-switch></fdw-theme-switch>
   <div
     class="hamburger-button"
-    @click="mobileActive = !mobileActive"
+    @click="openMobileMenu"
   >
     <span class="hamburger-button-content"></span>
   </div>
@@ -18,7 +18,7 @@
         <div class="dotted-line"></div>
         <div
           class="hamburger-button-close"
-          @click="mobileActive = !mobileActive"
+          @click="openMobileMenu"
         >
           <span class="hamburger-button-close-content"></span>
         </div>
@@ -48,7 +48,7 @@
               v-for="(navItem, index) in $t('header.nav')"
               :key="index"
               v-if="navItem.path"
-              @click="mobileActive = !mobileActive"
+              @click="openMobileMenu"
             >
               <localized-link
                 class="nav-item nav-item-link"
@@ -66,7 +66,7 @@
               class="dd-nav-item"
               v-for="(ddItem, index) in $t('header.nav')[3].list"
               :key="index"
-              @click="mobileActive = !mobileActive"
+              @click="openMobileMenu"
             >
               <localized-link
                 v-if="ddItem.path"

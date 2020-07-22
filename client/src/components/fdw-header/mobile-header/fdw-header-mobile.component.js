@@ -11,5 +11,16 @@ export default {
       authorized: false,
       mobileActive: false
     };
+  },
+  methods: {
+    openMobileMenu () {
+      const body = document.body;
+      if (this.mobileActive) {
+        body.classList.remove('fdw-modal');
+      } else {
+        body.classList.add('fdw-modal');
+      }
+      this.mobileActive = !this.mobileActive;
+    }
   }
 };

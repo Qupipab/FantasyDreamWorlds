@@ -102,3 +102,8 @@ h5 {
 h6 {
   font-size: 15px;
 }
+
+body.fdw-modal {
+  overflow: hidden;
+  position: fixed;
+}

@@ -2,8 +2,8 @@
   <header>
     <fdw-squares
       height="350px"
-      min-size="20px"
-      max-size="40px"
+      :min-size="20"
+      :max-size="40"
       :count="15"
     ></fdw-squares>
     <fdw-desktop-header></fdw-desktop-header>
