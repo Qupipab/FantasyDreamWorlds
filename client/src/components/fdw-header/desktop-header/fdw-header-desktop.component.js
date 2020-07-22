@@ -1,14 +1,7 @@
-import {
-  VBtn,
-  VIcon
-} from 'vuetify/lib';
-
 import { FdwThemeSwitch, LocalizedLink } from '@components';
 
 export default {
   components: {
-    VBtn,
-    VIcon,
     FdwThemeSwitch,
     LocalizedLink
   },

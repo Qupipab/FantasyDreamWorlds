@@ -1,10 +1,8 @@
-import { VIcon } from 'vuetify/lib';
 import { LocalizedLink } from '@components';
 import i18n from '../../plugins/i18n.js';
 
 export default {
   components: {
-    VIcon,
     LocalizedLink
   },
   computed: {

@@ -1,9 +1,7 @@
-import { VIcon } from 'vuetify/lib';
 import { FdwLocaleSelect, LocalizedLink } from '@components';
 
 export default {
   components: {
-    VIcon,
     FdwLocaleSelect,
     LocalizedLink
   },

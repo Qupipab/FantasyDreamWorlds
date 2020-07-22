@@ -1,9 +1,4 @@
-import { VIcon } from 'vuetify/lib';
-
 export default {
-  components: {
-    VIcon
-  },
   methods: {
     switchTheme () {
       if (this.$store.state.themeMode === 'light') {
