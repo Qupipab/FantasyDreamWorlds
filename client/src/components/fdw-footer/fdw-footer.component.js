@@ -1,9 +1,11 @@
 import { FdwLocaleSelect, LocalizedLink } from '@components';
+import FdwBeer from '@icons/GlassMugVariant';
 
 export default {
   components: {
     FdwLocaleSelect,
-    LocalizedLink
+    LocalizedLink,
+    FdwBeer
   },
   data () {
     return {

@@ -1,11 +1,9 @@
 import FdwSun from '@icons/WhiteBalanceSunny';
-import FdwMoon from '@icons/WeatherNight';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 
 export default {
   components: {
     FdwSun,
-    FdwMoon,
     FontAwesomeIcon
   },
   methods: {
