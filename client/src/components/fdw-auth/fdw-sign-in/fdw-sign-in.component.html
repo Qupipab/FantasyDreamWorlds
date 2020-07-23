@@ -1,1 +1,35 @@
-<h1>Sign In</h1>
+<div class="sign-in-modal">
+  <h1>Sign In</h1>
+  <b-form @submit="onSubmit">
+
+    <b-form-group
+      id="sign-in-login-group"
+      label="Nickname:"
+      label-for="sign-in-login-input"
+    >
+      <b-form-input
+        id="sign-in-login-input"
+        v-model="form.login"
+        type="text"
+        required
+        placeholder="Enter nickname"
+      ></b-form-input>
+    </b-form-group>
+
+    <b-form-group
+      id="sign-in-first-password-group"
+      label="Password:"
+      label-for="sign-in-first-password-input"
+    >
+      <b-form-input
+        id="sign-in-first-password-input"
+        v-model="form.password"
+        required
+        placeholder="Enter password"
+      ></b-form-input>
+    </b-form-group>
+
+    <b-button type="submit" variant="primary">Submit</b-button>
+
+  </b-form>
+</div>

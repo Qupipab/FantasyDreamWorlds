@@ -98,6 +98,7 @@
             class="server-item"
             v-for="(server, index) in $t('header.nav')[2].list"
             :key="index"
+            @click="openMobileMenu"
           >
             <localized-link
               class="nav-item nav-item-link"
