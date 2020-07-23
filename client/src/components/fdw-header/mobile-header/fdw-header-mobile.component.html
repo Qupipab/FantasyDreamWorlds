@@ -2,7 +2,7 @@
   <fdw-theme-switch></fdw-theme-switch>
   <div
     class="hamburger-button"
-    @click="mobileActive = !mobileActive"
+    @click="openMobileMenu"
   >
     <span class="hamburger-button-content"></span>
   </div>
@@ -18,7 +18,7 @@
         <div class="dotted-line"></div>
         <div
           class="hamburger-button-close"
-          @click="mobileActive = !mobileActive"
+          @click="openMobileMenu"
         >
           <span class="hamburger-button-close-content"></span>
         </div>
@@ -35,8 +35,20 @@
           v-else
           class="cabinet-unauthorized"
         >
-          <a href="#">{{ $t('header.auth.signIn') }}</a>
-          <a href="#">{{ $t('header.auth.signUp') }}</a>
+          <a
+            href="#"
+            v-b-modal.sign-in-modal
+            @click="openMobileMenu"
+          >
+            {{ $t('header.auth.signIn') }}
+          </a>
+          <a
+            href="#"
+            v-b-modal.sign-up-modal
+            @click="openMobileMenu"
+          >
+            {{ $t('header.auth.signUp') }}
+          </a>
         </div>
       </div>
       <div class="nav-card">
@@ -48,7 +60,7 @@
               v-for="(navItem, index) in $t('header.nav')"
               :key="index"
               v-if="navItem.path"
-              @click="mobileActive = !mobileActive"
+              @click="openMobileMenu"
             >
               <localized-link
                 class="nav-item nav-item-link"
@@ -66,7 +78,7 @@
               class="dd-nav-item"
               v-for="(ddItem, index) in $t('header.nav')[3].list"
               :key="index"
-              @click="mobileActive = !mobileActive"
+              @click="openMobileMenu"
             >
               <localized-link
                 v-if="ddItem.path"
@@ -86,6 +98,7 @@
             class="server-item"
             v-for="(server, index) in $t('header.nav')[2].list"
             :key="index"
+            @click="openMobileMenu"
           >
             <localized-link
               class="nav-item nav-item-link"

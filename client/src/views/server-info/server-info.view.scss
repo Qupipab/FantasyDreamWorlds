@@ -2,10 +2,6 @@
   display: flex;
 }
 
-.server-info {
-  flex: 4 4 1px;
-}
-
 @media (max-width: 990px) {
   .server-card-info {
     flex-direction: column;

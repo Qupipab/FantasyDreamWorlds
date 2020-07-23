@@ -1,5 +1,4 @@
 export default {
-  computed: {},
   data () {
     return {
       checkedRulesGroupIndex: ''
@@ -9,6 +8,5 @@ export default {
     viewRules (i) {
       this.checkedRulesGroupIndex = this.checkedRulesGroupIndex === i ? '' : i;
     }
-  },
-  mounted () {}
+  }
 };

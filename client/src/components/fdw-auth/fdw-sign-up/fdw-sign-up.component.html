@@ -1,0 +1,61 @@
+<div class="sign-up-modal">
+  <h1>Sign Up</h1>
+  <b-form @submit="onSubmit">
+
+    <b-form-group
+      id="sign-up-login-group"
+      label="Nickname:"
+      label-for="sign-up-login-input"
+    >
+      <b-form-input
+        id="sign-up-login-input"
+        v-model="form.login"
+        type="text"
+        required
+        placeholder="Enter nickname"
+      ></b-form-input>
+    </b-form-group>
+
+    <b-form-group
+      id="sign-up-email-group"
+      label="Email:"
+      label-for="sign-up-email-input"
+    >
+      <b-form-input
+        id="sign-up-email-input"
+        v-model="form.email"
+        required
+        placeholder="Enter email"
+      ></b-form-input>
+    </b-form-group>
+
+    <b-form-group
+      id="sign-up-first-password-group"
+      label="Password:"
+      label-for="sign-up-first-password-input"
+    >
+      <b-form-input
+        id="sign-up-first-password-input"
+        v-model="form.password"
+        required
+        placeholder="Enter password"
+      ></b-form-input>
+    </b-form-group>
+
+    <b-form-group
+      id="sign-up-second-password-group"
+      label="Password:"
+      label-for="sign-up-second-password-input"
+    >
+      <b-form-input
+        id="sign-up-second-password-input"
+        v-model="form.password"
+        required
+        placeholder="Enter password"
+      ></b-form-input>
+    </b-form-group>
+
+    <b-button type="submit" variant="primary">Submit</b-button>
+
+  </b-form>
+</div>

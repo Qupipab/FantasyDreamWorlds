@@ -10,6 +10,12 @@ export {
 export {
   default as FdwSquares
 } from './fdw-squares/fdw-squares.component.vue';
+export {
+  default as FdwSignIn
+} from './fdw-auth/fdw-sign-in/fdw-sign-in.component.vue';
+export {
+  default as FdwSignUp
+} from './fdw-auth/fdw-sign-up/fdw-sign-up.component.vue';
 export { default as FdwHeader } from './fdw-header/fdw-header.component.vue';
 export { default as FdwFooter } from './fdw-footer/fdw-footer.component.vue';
 export { default as FdwSidebar } from './fdw-sidebar/fdw-sidebar.component.vue';

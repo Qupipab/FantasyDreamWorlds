@@ -1,6 +1,4 @@
-import { FdwSidebar } from '@components';
 export default {
-  components: { FdwSidebar },
   props: [ 'serverName' ],
   computed: {
     lang () {

@@ -1,13 +1,15 @@
 <template>
   <cabinet>
-    <slot></slot>
+    <div class="body-content">
+      <slot></slot>
+    </div>
     <fdw-sidebar></fdw-sidebar>
   </cabinet>
 </template>
 
 <script>
-import { Cabinet } from '@layouts';
 import { FdwSidebar } from '@components';
+import { Cabinet } from '@layouts';
 
 export default {
   components: {
@@ -16,3 +18,10 @@ export default {
   }
 };
 </script>
+
+<style lang="scss">
+  .body-content {
+    display: flex;
+    flex: 4 4 1px;
+  }
+</style>
