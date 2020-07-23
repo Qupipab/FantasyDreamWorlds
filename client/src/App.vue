@@ -3,6 +3,7 @@
     <component :is="layout">
       <router-view/>
     </component>
+    <notifications group="fdw" />
   </div>
 </template>
 
