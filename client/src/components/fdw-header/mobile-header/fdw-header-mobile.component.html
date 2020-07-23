@@ -35,8 +35,20 @@
           v-else
           class="cabinet-unauthorized"
         >
-          <a href="#">{{ $t('header.auth.signIn') }}</a>
-          <a href="#">{{ $t('header.auth.signUp') }}</a>
+          <a
+            href="#"
+            v-b-modal.sign-in-modal
+            @click="openMobileMenu"
+          >
+            {{ $t('header.auth.signIn') }}
+          </a>
+          <a
+            href="#"
+            v-b-modal.sign-up-modal
+            @click="openMobileMenu"
+          >
+            {{ $t('header.auth.signUp') }}
+          </a>
         </div>
       </div>
       <div class="nav-card">

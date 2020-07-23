@@ -54,7 +54,12 @@
       <a
         class="sign-in-button nav-item"
         href="#"
+        v-b-modal.sign-in-modal
       >{{ $t('header.auth.signIn') }}</a>
+      <b-button
+        class="sign-up-button nav-item"
+        v-b-modal.sign-up-modal
+      >{{ $t('header.auth.signUp') }}</b-button>
     </div>
     <div
       v-else
