@@ -1,15 +1,10 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using Entities;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 using WebAPI.DTO;
 
@@ -50,6 +45,9 @@ namespace WebAPI
         c.SwaggerDoc("FantasyDreamWorlds", 
           new OpenApiInfo { Title = "FantasyDreamWorlds API", Version = "v1" });
       });
+
+      services.AddDbContext<RepositoryContext>(options =>
+            options.UseNpgsql(Configuration.GetConnectionString("PostgreSQLConnection")));
     }
 
     public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
