@@ -9,10 +9,10 @@
     <fdw-desktop-header></fdw-desktop-header>
     <fdw-mobile-header></fdw-mobile-header>
     <b-modal id="sign-in-modal" hide-header hide-footer centered>
-      <p class="my-4"><fdw-sign-in></fdw-sign-in></p>
+      <p><fdw-sign-in></fdw-sign-in></p>
     </b-modal>
     <b-modal id="sign-up-modal" hide-header hide-footer centered>
-      <p class="my-4"><fdw-sign-up></fdw-sign-up></p>
+      <p><fdw-sign-up></fdw-sign-up></p>
     </b-modal>
   </header>
 </template>
