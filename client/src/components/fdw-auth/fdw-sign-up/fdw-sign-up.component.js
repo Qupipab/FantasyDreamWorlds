@@ -1,17 +1,31 @@
-/* eslint-disable */
+import { minLength, required } from 'vuelidate/lib/validators';
+
+// const touchMap = new WeakMap();
+
 export default {
-  data() {
+  name: 'registration',
+  data () {
     return {
-      form: {
-        login: '',
-        email: '',
-        password: ''
-      }
+      text: '',
+      login: ''
+    };
+  },
+  validations: {
+    text: {
+      required,
+      minLength: minLength(5)
+    },
+    login: {
+      required,
+      minLength: minLength(5)
     }
   },
   methods: {
-    onSubmit (evt) {
-      evt.preventDefault();
+    status (validation) {
+      return {
+        error: validation.$error,
+        dirty: validation.$dirty
+      };
     }
   }
-}
+};
