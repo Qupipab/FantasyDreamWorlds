@@ -1,24 +1,24 @@
-import { minLength, required } from 'vuelidate/lib/validators';
+import { email, maxLength, minLength, required, sameAs } from 'vuelidate/lib/validators';
 
-// const touchMap = new WeakMap();
+const trueCheck = (value) => value === true;
 
 export default {
   name: 'registration',
   data () {
     return {
-      text: '',
-      login: ''
+      login: '',
+      email: '',
+      password: '',
+      repeatPassword: '',
+      rulesAccept: false
     };
   },
   validations: {
-    text: {
-      required,
-      minLength: minLength(5)
-    },
-    login: {
-      required,
-      minLength: minLength(5)
-    }
+    login: { required, minLength: minLength(4), maxLength: maxLength(30) },
+    email: { required, email },
+    password: { required, minLength: minLength(12), maxLength: maxLength(30) },
+    repeatPassword: { required, sameAsPassword: sameAs('password') },
+    rulesAccept: { trueCheck }
   },
   methods: {
     status (validation) {
@@ -26,6 +26,20 @@ export default {
         error: validation.$error,
         dirty: validation.$dirty
       };
+    },
+    submitHandler () {
+      if (this.$v.$invalid) {
+        this.$v.$touch();
+        return;
+      }
+
+      const formData = {
+        login: this.login,
+        email: this.email,
+        password: this.password
+      };
+
+      console.log(formData);
     }
   }
 };

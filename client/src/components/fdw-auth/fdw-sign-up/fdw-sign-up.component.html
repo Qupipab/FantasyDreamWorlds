@@ -1,19 +1,75 @@
 <div class="sign-up-modal">
   <h1>Sign Up</h1>
-    <div>
-      <label>Соси:</label>
-      <input
+  <b-form @submit.prevent="submitHandler">
+
+    <b-form-group
+      id="sign-up-login-group"
+      label="Nickname:"
+      label-for="sign-up-login-input"
+    >
+      <b-form-input
         id="sign-up-login-input"
-        v-model="$v.login.$model"
-      >
-      <div class="error" v-if="$v.login.$dirty && !$v.login.required">Field is required</div>
-      <div class="error" v-if="$v.login.$dirty && !$v.login.minLength">Name must have at least {{$v.login.$params.minLength.min}} letters.</div>
-      <!-- <pre>{{$v.login}}</pre> -->
-    </div>
-    <div>
-    <input v-model="$v.text.$model" :class="status($v.text)">
-    <div class="error" v-if="$v.text.$dirty && !$v.text.required">Field is required</div>
-    <div class="error" v-if="$v.text.$dirty && !$v.text.minLength">Name must have at least {{$v.text.$params.minLength.min}} letters.</div>
-    <!-- <pre>{{ $v }}</pre> -->
-    </div>
+        v-model.trim="$v.login.$model"
+        placeholder="Enter nickname"
+
+        :state="!$v.login.$invalid"
+      ></b-form-input>
+    </b-form-group>
+
+    <b-form-group
+      id="sign-up-email-group"
+      label="Email:"
+      label-for="sign-up-email-input"
+    >
+      <b-form-input
+        id="sign-up-email-input"
+        v-model.trim="$v.email.$model"
+        placeholder="Enter email"
+        autocomplete
+
+        :state="!$v.email.$invalid"
+      ></b-form-input>
+    </b-form-group>
+
+    <b-form-group
+      id="sign-up-first-password-group"
+      label="Password:"
+      label-for="sign-up-first-password-input"
+    >
+      <b-form-input
+        id="sign-up-first-password-input"
+        v-model="$v.password.$model"
+        placeholder="Enter password"
+
+        :state="!$v.password.$invalid"
+      ></b-form-input>
+    </b-form-group>
+
+    <b-form-group
+      id="sign-up-сonfirm-password-group"
+      label="Confirm password:"
+      label-for="sign-up-second-password-input"
+    >
+      <b-form-input
+        id="sign-up-сonfirm-password-input"
+        v-model="$v.repeatPassword.$model"
+        placeholder="Confirm password"
+
+        :state="!$v.repeatPassword.$invalid"
+      ></b-form-input>
+    </b-form-group>
+
+    <b-form-group>
+      <b-form-checkbox
+      id="sign-up-second-password-input"
+      v-model="rulesAccept"
+      name="rulesAccept"
+    >
+      I accept the rules and use
+    </b-form-checkbox>
+    </b-form-group>
+
+    <b-button type="submit" variant="primary" :disabled="$v.$invalid">Submit</b-button>
+
+  </b-form>
 </div>
