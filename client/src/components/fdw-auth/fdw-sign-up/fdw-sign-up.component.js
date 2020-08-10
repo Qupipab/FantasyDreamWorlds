@@ -1,6 +1,5 @@
-import { email, maxLength, minLength, required, sameAs } from 'vuelidate/lib/validators';
-
-const trueCheck = (value) => value === true;
+import { alphaNum, email, maxLength, minLength, required, sameAs } from 'vuelidate/lib/validators';
+import { haveNum, haveUppercase, trueCheck } from '@services/validators';
 
 export default {
   name: 'registration',
@@ -9,15 +8,32 @@ export default {
       login: '',
       email: '',
       password: '',
-      repeatPassword: '',
+      confirmPassword: '',
       rulesAccept: false
     };
   },
   validations: {
-    login: { required, minLength: minLength(4), maxLength: maxLength(30) },
-    email: { required, email },
-    password: { required, minLength: minLength(12), maxLength: maxLength(30) },
-    repeatPassword: { required, sameAsPassword: sameAs('password') },
+    login: {
+      required,
+      alphaNum,
+      minLength: minLength(4),
+      maxLength: maxLength(30)
+    },
+    email: {
+      required,
+      email
+    },
+    password: {
+      required,
+      minLength: minLength(12),
+      maxLength: maxLength(100),
+      haveUppercase,
+      haveNum
+    },
+    confirmPassword: {
+      required,
+      sameAsPassword: sameAs('password')
+    },
     rulesAccept: { trueCheck }
   },
   methods: {

@@ -1,75 +1,142 @@
 <div class="sign-up-modal">
-  <h1>Sign Up</h1>
-  <b-form @submit.prevent="submitHandler">
+  <h1 align="center">{{ $t('header.auth.signUp') }}</h1>
+  <form class="sign-form" @submit.prevent="submitHandler">
 
-    <b-form-group
-      id="sign-up-login-group"
-      label="Nickname:"
-      label-for="sign-up-login-input"
-    >
-      <b-form-input
-        id="sign-up-login-input"
+    <div class="input-block">
+      <label for="sign-up-input-login">Nickname</label>
+      <input
+        id="sign-up-input-field"
         v-model.trim="$v.login.$model"
         placeholder="Enter nickname"
+        autocomplete="username"
+        class="input-field"
+        :class="{invalid: ($v.login.$dirty && $v.login.$invalid)}"
+      >
+      <div
+        class="valid-error"
+        v-if="$v.login.$dirty && !$v.login.required"
+        >{{ $t('valid.required') }}
+      </div>
+      <div
+        class="valid-error"
+        v-else-if="$v.login.$dirty && !$v.login.alphaNum"
+        >{{ $t('valid.login.alphaNum') }}
+      </div>
+      <div
+        class="valid-error"
+        v-else-if="$v.login.$dirty && !$v.login.minLength"
+        >{{ $t('valid.login.MinLength', { minLength: $v.login.$params.minLength.min}) }}
+      </div>
+      <div
+        class="valid-error"
+        v-else-if="$v.login.$dirty && !$v.login.maxLength"
+       >{{ $t('valid.login.MaxLength', { maxLength: $v.login.$params.maxLength.max}) }}
+      </div>
+    </div>
 
-        :state="!$v.login.$invalid"
-      ></b-form-input>
-    </b-form-group>
-
-    <b-form-group
-      id="sign-up-email-group"
-      label="Email:"
-      label-for="sign-up-email-input"
-    >
-      <b-form-input
+    <div class="input-block">
+      <label for="sign-up-email-input">Email:</label>
+      <input
         id="sign-up-email-input"
         v-model.trim="$v.email.$model"
         placeholder="Enter email"
-        autocomplete
+        autocomplete="email"
+        class="input-field"
+        :class="{invalid: ($v.email.$dirty && $v.email.$invalid)}"
+      >
+      <div
+        class="valid-error"
+        v-if="$v.email.$dirty && !$v.email.required"
+        >{{ $t('valid.required') }}
+      </div>
+      <div
+        class="valid-error"
+        v-else-if="$v.email.$dirty && !$v.email.email"
+        >{{ $t('valid.email') }}
+      </div>
+    </div>
 
-        :state="!$v.email.$invalid"
-      ></b-form-input>
-    </b-form-group>
-
-    <b-form-group
-      id="sign-up-first-password-group"
-      label="Password:"
-      label-for="sign-up-first-password-input"
-    >
-      <b-form-input
-        id="sign-up-first-password-input"
+    <div class="input-block">
+      <label for="sign-up-password-input">Password:</label>
+      <input
+        id="sign-up-password-input"
         v-model="$v.password.$model"
         placeholder="Enter password"
+        type="password"
+        autocomplete="new-password"
+        class="input-field"
+        :class="{invalid: ($v.password.$dirty && $v.password.$invalid)}"
+      >
+      <div
+        class="valid-error"
+        v-if="$v.password.$dirty && !$v.password.required"
+        >{{ $t('valid.required') }}
+      </div>
+      <div
+        class="valid-error"
+        v-else-if="$v.password.$dirty && !$v.password.haveNum"
+        >{{ $t('valid.password.Num') }}
+     </div>
+     <div
+        class="valid-error"
+        v-else-if="$v.password.$dirty && !$v.password.haveUppercase"
+        >{{ $t('valid.password.Uppercase') }}
+      </div>
+      <div
+        class="valid-error"
+        v-else-if="$v.password.$dirty && !$v.password.minLength"
+        >{{ $t('valid.password.MinLength', { minLength: $v.password.$params.minLength.min}) }}
+      </div>
+      <div
+        class="valid-error"
+        v-else-if="$v.password.$dirty && !$v.password.maxLength"
+        >{{ $t('valid.password.MaxLength', { maxLength: $v.password.$params.maxLength.max}) }}
+      </div>
+    </div>
 
-        :state="!$v.password.$invalid"
-      ></b-form-input>
-    </b-form-group>
-
-    <b-form-group
-      id="sign-up-сonfirm-password-group"
-      label="Confirm password:"
-      label-for="sign-up-second-password-input"
-    >
-      <b-form-input
+    <div class="input-block">
+      <label for="sign-up-сonfirm-password-input">Confirm password:</label>
+      <input
         id="sign-up-сonfirm-password-input"
-        v-model="$v.repeatPassword.$model"
+        v-model="$v.confirmPassword.$model"
         placeholder="Confirm password"
+        type="password"
+        autocomplete="new-password"
+        class="input-field"
+        :class="{ invalid: 
+          ($v.confirmPassword.$dirty && $v.confirmPassword.$invalid) ||
+          ($v.confirmPassword.$dirty && $v.password.$invalid) }"
+      >
+      <div
+        class="valid-error"
+        v-if="$v.confirmPassword.$dirty && !$v.confirmPassword.required"
+        >{{ $t('valid.required') }}
+      </div>
+      <div
+        class="valid-error"
+        v-else-if="$v.confirmPassword.$dirty && !$v.confirmPassword.sameAsPassword"
+        >{{ $t('valid.confirmPassword') }}
+      </div>
+    </div>
 
-        :state="!$v.repeatPassword.$invalid"
-      ></b-form-input>
-    </b-form-group>
-
-    <b-form-group>
-      <b-form-checkbox
-      id="sign-up-second-password-input"
+    <div class="checkbox-rules">
+      <input
+      id="sign-up-rulesAccept"
       v-model="rulesAccept"
       name="rulesAccept"
-    >
-      I accept the rules and use
-    </b-form-checkbox>
-    </b-form-group>
+      type="checkbox"
+      >
+      <label for="sign-up-rulesAccept">I accept the rules and use</label>
+    </div>
 
-    <b-button type="submit" variant="primary" :disabled="$v.$invalid">Submit</b-button>
-
-  </b-form>
+  </form>
+    <button
+      type="submit"
+      variant="primary"
+      :disabled="$v.$invalid"
+      class="bnt-submit"
+      :class="{btn_disabled: ($v.$invalid)}"
+      >
+      {{ $t('header.auth.signUp') }}
+    </button>
 </div>
