@@ -1,0 +1,35 @@
+<div class = "faq-container">
+  <div class = "faq-header">
+    <h1 class = "title">{{ $t('faq.headerTitle') }}</h1>
+    <p class = "content">{{ $t('faq.headerParagraph') }}</p>
+  </div>
+  <div class="faq-body">
+    <div
+      class = "faq-cluster"
+      v-for = "(cluster, i) in $t('faq.faqBody')"
+      :key = "i"
+    >
+      <h3 class = "cluster-title">{{ cluster.title }}</h3>
+      <div class = "faq-cards">
+        <div
+          :id = "`q-${ i + 1 }-${ j + 1 }`"
+          class = "faq-card"
+          v-for = "(card, j) in cluster.body"
+          :key = "j"
+        >
+          <div class="q-icon">
+            <a :href="`#q-${ i + 1 }-${ j + 1 }`">
+              <font-awesome-icon
+                class="question"
+                icon="question-circle"
+                size="lg"
+              />
+            </a>
+          </div>
+          <h5 class = "faq-card-title">{{ card.title }}</h5>
+          <p class = "faq-card-content">{{ card.content }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

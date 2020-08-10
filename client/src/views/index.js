@@ -4,3 +4,4 @@ export { default as Main } from './main/main.view.vue';
 export { default as ServerInfo } from './server-info/server-info.view.vue';
 export { default as Rules } from './rules/rules.view.vue';
 export { default as Commands } from './commands/commands.view.vue';
+export { default as Faq } from './faq/faq.view.vue';

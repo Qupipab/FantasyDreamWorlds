@@ -1,4 +1,5 @@
 import commands from './commands/commands.en.json';
+import faq from './faq/faq.en.json';
 import footer from './footer/footer.en.json';
 import header from './header/header.en.json';
 import locale from './locale/locale.en.json';
@@ -15,5 +16,6 @@ export default {
   serverInfo,
   rules,
   commands,
-  valid
+  valid,
+  faq
 };

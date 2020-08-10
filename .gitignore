@@ -17,8 +17,8 @@
 mono_crash.*
 
 #configs
-*config.dev.json
-*appsettings.Development.json
+*[Cc]onfig.[Dd]ev.[Jj]son
+*[Aa]ppsettings.[Dd]evelopment.[Jj]son
 
 # Build results
 [Dd]ebug/
@@ -352,3 +352,4 @@ MigrationBackup/
 
 # Ionide (cross platform F# VS Code tools) working folder
 .ionide/
+Server/WebAPI/appsettings.development.json

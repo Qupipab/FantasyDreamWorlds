@@ -1,12 +1,10 @@
-using Entities;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.OpenApi.Models;
-using WebAPI.DTO;
+using WebAPI.Installers;
+using WebAPI.Options;
 
 namespace WebAPI
 {
@@ -22,32 +20,7 @@ namespace WebAPI
 
     public void ConfigureServices(IServiceCollection services)
     {
-      var frontConfiguration = Configuration.GetSection("Front").Get<FrontConfiguration>();
-      services.AddCors(options =>
-      {
-        options.AddPolicy(name: VueCorsPolicy,
-                                builder =>
-                                {
-                                  builder
-                                          .AllowAnyHeader()
-                                          .AllowAnyMethod()
-                                          .AllowCredentials()
-                                          .WithOrigins(frontConfiguration.AddressFront);
-                                });
-      });
-
-      services.AddControllers();
-
-      services.AddSingleton(frontConfiguration);
-
-      services.AddSwaggerGen(c =>
-      {
-        c.SwaggerDoc("FantasyDreamWorlds", 
-          new OpenApiInfo { Title = "FantasyDreamWorlds API", Version = "v1" });
-      });
-
-      services.AddDbContext<RepositoryContext>(options =>
-            options.UseNpgsql(Configuration.GetConnectionString("PostgreSQLConnection")));
+      services.InstallServicesInAssembly(Configuration);
     }
 
     public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -57,10 +30,24 @@ namespace WebAPI
         app.UseDeveloperExceptionPage();
       }
 
+      var swaggerOptions = new SwaggerOptions();
+      Configuration.GetSection(nameof(SwaggerOptions)).Bind(swaggerOptions);
+
+      app.UseSwagger(option =>
+      {
+        option.RouteTemplate = swaggerOptions.JsonRoute;
+      });
+
+      app.UseSwaggerUI(option =>
+      {
+        option.SwaggerEndpoint(swaggerOptions.UiEndpoint, swaggerOptions.Description);
+      });
+
       app.UseHttpsRedirection();
 
       app.UseRouting();
 
+      app.UseAuthentication();
       app.UseAuthorization();
 
       app.UseCors(VueCorsPolicy);
