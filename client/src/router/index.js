@@ -6,6 +6,7 @@ import {
   ServerInfo,
   Rules,
   Commands,
+  Faq,
   Page404
 } from '@views';
 
@@ -37,6 +38,11 @@ const routes = [
         path: 'commands',
         name: 'Commands',
         component: Commands
+      },
+      {
+        path: 'faq',
+        name: 'FAQ',
+        component: Faq
       }
     ]
   }
