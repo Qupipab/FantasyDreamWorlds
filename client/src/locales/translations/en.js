@@ -5,6 +5,7 @@ import serverInfo from './serverInfo/serverInfo.en.json';
 import rules from './rules/rules.en.json';
 import locale from './locale/locale.en.json';
 import commands from './commands/commands.en.json';
+import faq from './faq/faq.en.json';
 
 export default {
   locale,
@@ -13,5 +14,6 @@ export default {
   footer,
   serverInfo,
   rules,
-  commands
+  commands,
+  faq
 };

@@ -9,9 +9,10 @@
 
 <script>
 import { library } from '@fortawesome/fontawesome-svg-core';
-import { faMoon } from '@fortawesome/free-solid-svg-icons';
+import { faMoon, faQuestionCircle } from '@fortawesome/free-solid-svg-icons';
 
 library.add(faMoon);
+library.add(faQuestionCircle);
 
 const defaultLayout = 'default';
 

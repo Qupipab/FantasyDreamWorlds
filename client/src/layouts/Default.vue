@@ -23,5 +23,9 @@ export default {
   .body-content {
     display: flex;
     flex: 4 4 1px;
+    margin-right: 40px;
+    @media (max-width: 857px) {
+      margin: 0;
+    }
   }
 </style>
