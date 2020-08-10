@@ -1,8 +1,8 @@
 ﻿using Entities.Models;
 using Entities.Repositories.Interfaces;
-using Microsoft.AspNetCore.Identity;
 using Microsoft.IdentityModel.Tokens;
 using System;
+using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
 using System.Security.Claims;
@@ -86,23 +86,25 @@ namespace WebAPI.Services
       return GenerateAuthenticationResultForUser(user);
     }
 
-    private AuthenticationResult GenerateAuthenticationResultForUser(IdentityUser newUser)
+    private AuthenticationResult GenerateAuthenticationResultForUser(User user)
     {
       var tokenHandler = new JwtSecurityTokenHandler();
       var key = Encoding.ASCII.GetBytes(_jwtSettings.Secret);
+
+      var claims = new List<Claim>
+        {
+          new Claim("id", user.Id),
+          new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
+          new Claim(JwtRegisteredClaimNames.Sub, user.UserName),
+          new Claim(JwtRegisteredClaimNames.Email, user.Email)
+        };
+
       var tokenDescriptor = new SecurityTokenDescriptor
       {
-        Subject = new ClaimsIdentity(new[]
-        {
-          new Claim(JwtRegisteredClaimNames.Sub, newUser.UserName),
-          new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
-          new Claim(JwtRegisteredClaimNames.Email, newUser.Email),
-          new Claim("id", newUser.Id)
-        }),
+        Subject = new ClaimsIdentity(claims),
         Expires = DateTime.UtcNow.AddHours(2),
-        SigningCredentials = new SigningCredentials(
-          new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature
-        )
+        SigningCredentials =
+          new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
       };
 
       var token = tokenHandler.CreateToken(tokenDescriptor);
