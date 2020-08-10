@@ -1,0 +1,20 @@
+.modal-dialog {
+  max-width: 440px;
+}
+
+.modal-content {
+  background-color: var(--d-first-level-bgc);
+  border-radius: 20px;
+}
+
+.modal-content-dark {
+  background-color: var(--d-first-level-bgc);
+}
+
+.modal-content-light {
+  background-color: #fff;
+}
+
+.modal-body {
+  padding: 3rem;
+}
