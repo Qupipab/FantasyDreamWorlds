@@ -1,35 +1,48 @@
 <div class="sign-in-modal">
-  <h1>Sign In</h1>
-  <b-form @submit="onSubmit">
+  <h1 align="center">{{ $t('header.auth.signIn') }}</h1>
+  <form class="sign-form" @submit.prevent="submitHandler">
 
-    <b-form-group
-      id="sign-in-login-group"
-      label="Nickname:"
-      label-for="sign-in-login-input"
-    >
-      <b-form-input
-        id="sign-in-login-input"
-        v-model="form.login"
-        type="text"
-        required
+    <div class="input-block">
+      <label for="sign-up-input-login">Nickname</label>
+      <input
+        id="sign-up-input-field"
+        v-model.trim="$v.login.$model"
         placeholder="Enter nickname"
-      ></b-form-input>
-    </b-form-group>
+        autocomplete="username"
+        class="input-field"
+        :class="{invalid: ($v.login.$dirty && $v.login.$invalid)}"
+      >
+      <div
+        class="valid-error"
+        v-if="$v.login.$dirty && !$v.login.required"
+        >{{ $t('valid.required') }}
+      </div>
+    </div>
 
-    <b-form-group
-      id="sign-in-first-password-group"
-      label="Password:"
-      label-for="sign-in-first-password-input"
-    >
-      <b-form-input
-        id="sign-in-first-password-input"
-        v-model="form.password"
-        required
+    <div class="input-block">
+      <label for="sign-up-password-input">Password:</label>
+      <input
+        id="sign-up-password-input"
+        v-model="$v.password.$model"
         placeholder="Enter password"
-      ></b-form-input>
-    </b-form-group>
-
-    <b-button type="submit" variant="primary">Submit</b-button>
-
-  </b-form>
+        type="password"
+        autocomplete="new-password"
+        class="input-field"
+        :class="{invalid: ($v.password.$dirty && $v.password.$invalid)}"
+      >
+      <div
+        class="valid-error"
+        v-if="$v.password.$dirty && !$v.password.required"
+        >{{ $t('valid.required') }}
+      </div>
+    </div>
+  </form>
+  <button
+    type="submit"
+    variant="primary"
+    :disabled="$v.$invalid"
+    class="bnt-submit"
+    :class="{btn_disabled: ($v.$invalid)}"
+    >{{ $t('header.auth.signIn') }}
+</button>
 </div>
