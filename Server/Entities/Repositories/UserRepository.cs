@@ -1,7 +1,6 @@
 ﻿using Entities.Models;
 using Entities.Repositories.Interfaces;
 using Microsoft.AspNetCore.Identity;
-using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
 
 namespace Entities.Repositories
@@ -14,6 +13,11 @@ namespace Entities.Repositories
     public UserRepository(UserManager<User> userManager)
     {
       _userManager = userManager;
+    }
+
+    public async Task<User> FindByUserNameAsync(string userName)
+    {
+      return await _userManager.FindByNameAsync(userName);
     }
 
     public async Task<User> FindByEmailAsync(string email)

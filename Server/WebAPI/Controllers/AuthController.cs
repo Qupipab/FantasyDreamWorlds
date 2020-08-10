@@ -1,5 +1,4 @@
 ﻿using System.Linq;
-using System.Reflection.Metadata.Ecma335;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using WebAPI.DTO.Request;
@@ -68,6 +67,20 @@ namespace WebAPI.Controllers
       {
         Token = authResponse.Token
       });
+    }
+
+    [HttpPost]
+    [Route(ApiRoutes.Auth.CheckByUserName)]
+    public async Task<IActionResult> CheckByUserName([FromBody] CheckUserNameRequest userForCheck)
+    {
+      var user = await _authService.FindByUserNameAsync(userForCheck.UserName);
+
+      if(user != null)
+      {
+        return UnprocessableEntity();
+      }
+
+      return Ok();
     }
 
   }

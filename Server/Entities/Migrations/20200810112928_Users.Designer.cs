@@ -10,7 +10,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace Entities.Migrations
 {
     [DbContext(typeof(RepositoryContext))]
-    [Migration("20200810020048_Users")]
+    [Migration("20200810112928_Users")]
     partial class Users
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -45,7 +45,7 @@ namespace Entities.Migrations
                     b.Property<DateTime?>("DateOfBirth")
                         .HasColumnType("timestamp without time zone");
 
-                    b.Property<int>("DonateRoleId")
+                    b.Property<int>("DonateRole")
                         .HasColumnType("integer");
 
                     b.Property<long?>("Econs")

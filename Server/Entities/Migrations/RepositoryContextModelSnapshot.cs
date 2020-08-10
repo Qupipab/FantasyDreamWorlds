@@ -43,7 +43,7 @@ namespace Entities.Migrations
                     b.Property<DateTime?>("DateOfBirth")
                         .HasColumnType("timestamp without time zone");
 
-                    b.Property<int>("DonateRoleId")
+                    b.Property<int>("DonateRole")
                         .HasColumnType("integer");
 
                     b.Property<long?>("Econs")

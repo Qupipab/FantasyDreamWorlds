@@ -1,14 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace WebAPI.DTO.Request
 {
   public class AuthSignInRequest
   {
 
+    [Required]
+    [StringLength(30, MinimumLength = 4)]
     public string UserNameOrEmail { get; set; }
+
+    [Required]
+    [MinLength(12)]
     public string Password { get; set; }
 
   }

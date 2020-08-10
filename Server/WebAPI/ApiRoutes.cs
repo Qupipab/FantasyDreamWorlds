@@ -8,7 +8,7 @@ namespace WebAPI.Models
   public class ApiRoutes
   {
 
-    public const string Api = "api";
+    public const string Api = "Api";
     public const string Controller = "[controller]";
     public const string Base = Api + "/" + Controller;
 
@@ -16,6 +16,7 @@ namespace WebAPI.Models
     {
       public const string SignIn = "SignIn";
       public const string SignUp = "SignUp";
+      public const string CheckByUserName = "CheckByUserName";
     }
 
   }

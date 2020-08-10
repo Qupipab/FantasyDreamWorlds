@@ -41,7 +41,10 @@ namespace WebAPI.Services
       var newUser = new User
       {
         UserName = authSignUpRequest.UserName,
-        Email = authSignUpRequest.Email
+        Email = authSignUpRequest.Email,
+        RegistrationDate = DateTime.UtcNow,
+        LastActivity = DateTime.UtcNow,
+        DonateRole = DonateRole.User
       };
 
       var createdUser = _userRepository.CreateUserAsync(newUser, authSignUpRequest.Password);
@@ -59,7 +62,8 @@ namespace WebAPI.Services
 
     public async Task<AuthenticationResult> SignInAsync(AuthSignInRequest authSignInRequest)
     {
-      var user = await _userRepository.FindByEmailAsync(authSignInRequest.UserNameOrEmail);
+
+      var user = await FindByUserNameOrEmailAsync(authSignInRequest.UserNameOrEmail);
 
       if (user == null)
       {
@@ -108,6 +112,28 @@ namespace WebAPI.Services
         Success = true,
         Token = tokenHandler.WriteToken(token)
       };
+    }
+
+    public async Task<User> FindByUserNameAsync(string userName)
+    {
+      return await _userRepository.FindByUserNameAsync(userName);
+    }
+
+    private async Task<User> FindByEmailAsync(string email)
+    {
+      return await _userRepository.FindByEmailAsync(email);
+    }
+
+    private async Task<User> FindByUserNameOrEmailAsync(string userNameOrEmail)
+    {
+      var user = await FindByUserNameAsync(userNameOrEmail);
+
+      if (user == null)
+      {
+        user = await FindByEmailAsync(userNameOrEmail);
+      }
+
+      return user;
     }
 
   }
