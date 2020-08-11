@@ -7,6 +7,8 @@ import {
   Rules,
   Commands,
   Faq,
+  Shop,
+  Privileges,
   Page404
 } from '@views';
 
@@ -43,6 +45,16 @@ const routes = [
         path: 'faq',
         name: 'FAQ',
         component: Faq
+      },
+      {
+        path: 'services/shop',
+        name: 'Shop',
+        component: Shop
+      },
+      {
+        path: 'services/privileges',
+        name: 'Privileges',
+        component: Privileges
       }
     ]
   }

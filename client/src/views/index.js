@@ -5,3 +5,5 @@ export { default as ServerInfo } from './server-info/server-info.view.vue';
 export { default as Rules } from './rules/rules.view.vue';
 export { default as Commands } from './commands/commands.view.vue';
 export { default as Faq } from './faq/faq.view.vue';
+export { default as Shop } from './shop/shop.view.vue';
+export { default as Privileges } from './privileges/privileges.view.vue';
