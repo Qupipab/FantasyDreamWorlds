@@ -1,5 +1,5 @@
 <div class="sign-in-modal">
-  <h1 align="center">{{ $t('header.auth.signIn') }}</h1>
+  <h1>{{ $t('header.auth.signIn') }}</h1>
   <form class="sign-form" @submit.prevent="submitHandler">
 
     <div class="input-block">
@@ -44,5 +44,5 @@
     class="bnt-submit"
     :class="{btn_disabled: ($v.$invalid)}"
     >{{ $t('header.auth.signIn') }}
-</button>
+  </button>
 </div>
