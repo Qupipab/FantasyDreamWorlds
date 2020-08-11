@@ -1,0 +1,15 @@
+<div class="fdw-select-wrapper">
+  <v-select
+    class="fdw-select"
+    :placeholder="placeholder"
+    :options="options"
+    @search:blur="isActive = false"
+    @search:focus="isActive = true"
+  ></v-select>
+  <div class="arrows-wrapper">
+    <span
+      class = arrows
+      :class="{ 'arrows--active': isActive }"
+    ></span>
+  </div>
+</div>

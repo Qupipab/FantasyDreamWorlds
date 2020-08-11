@@ -72,6 +72,25 @@
           </ul>
         </div>
         <div class="dd-nav">
+          <h6>{{ $t('header.nav')[1].title }}</h6>
+          <ul class="dd-nav-list">
+            <li
+              class="dd-nav-item"
+              v-for="(ddItem, index) in $t('header.nav')[1].list"
+              :key="index"
+              @click="openMobileMenu"
+            >
+              <localized-link
+                v-if="ddItem.path"
+                class="nav-item nav-item-link"
+                :to="ddItem.path"
+              >
+                {{ ddItem.title }}
+              </localized-link>
+            </li>
+          </ul>
+        </div>
+        <div class="dd-nav">
           <h6>{{ $t('header.nav')[3].title }}</h6>
           <ul class="dd-nav-list">
             <li

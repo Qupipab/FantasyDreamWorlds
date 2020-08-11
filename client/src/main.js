@@ -10,6 +10,7 @@ import Vuelidate from 'vuelidate';
 import i18n from './plugins/i18n';
 import router from '@router';
 import store from '@store';
+import vSelect from 'vue-select';
 
 Vue.use(Vuelidate);
 Vue.use(BootstrapVue);
@@ -17,6 +18,7 @@ Vue.use(Notifications);
 
 Vue.component('cabinet-layout', Cabinet);
 Vue.component('default-layout', Default);
+Vue.component('v-select', vSelect);
 
 Vue.config.productionTip = false;
 

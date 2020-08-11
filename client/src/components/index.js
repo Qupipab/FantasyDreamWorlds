@@ -5,6 +5,9 @@ export {
   default as FdwLocaleSelect
 } from './controls/fdw-locale-select/fdw-locale-select.component.vue';
 export {
+  default as FdwSelect
+} from './controls/fdw-select/fdw-select.component.vue';
+export {
   default as LocalizedLink
 } from './utils/localized-link/localized-link.component.vue';
 export {

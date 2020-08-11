@@ -1,0 +1,81 @@
+$vs-component-line-height: 2;
+@import "vue-select/src/scss/vue-select.scss";
+
+.fdw-select-wrapper {
+  position: relative;
+  .arrows-wrapper {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 100%;
+    .arrows {
+      z-index: 1001;
+      user-select: none;
+      cursor: text;
+      position: relative;
+      &::before, &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        width: 8px;
+        height: 2px;
+        background-color: #000;
+        transition: transform .07s ease-in 0s;
+      }
+      &::before {
+        transform: rotate(-35deg);
+        left: -9px;
+      }
+      &::after {
+        transform: rotate(35deg);
+        left: -3px;
+      }
+      &--active {
+        &::before {
+          transform: rotate(35deg);
+        }
+        &::after {
+          transform: rotate(-35deg);
+        }
+      }
+    }
+  }
+}
+
+.fdw-select {
+  .vs__search,
+  .vs__search::placeholder,
+  .vs__dropdown-toggle,
+  .vs__dropdown-menu,
+  .vs__dropdown-option,
+  .vs__selected {
+    font-size: 20px;
+    background: var(--d-second-level-bgc);
+    color: #FFF;
+  }
+
+  .vs__search {
+    padding-right: 20px;
+  }
+
+  .vs__dropdown-menu {
+    z-index: 1002;
+  }
+
+  .vs__dropdown-option:hover {
+    background-color: var(--d-third-level-bgc);
+  }
+
+  .vs__clear,
+  .vs__open-indicator {
+    display: none;
+  }
+  .vs__fade-enter-active,
+  .vs__fade-leave-active {
+      transition: none;
+  }
+}
