@@ -1,7 +1,13 @@
 {
   "nav": [
     { "title": "Forum", "path": "/forum" },
-    { "title": "Services", "path": "/services" },
+    { 
+      "title": "Services",
+      "list": [
+        { "title": "Shop", "path": "/services/shop" },
+        { "title": "Privileges", "path": "/services/privileges" }
+      ]
+    },
     {
       "title": "Servers",
       "list": [
