@@ -9,7 +9,7 @@ using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
 using WebAPI.DTO;
-using WebAPI.DTO.Request;
+using WebAPI.DTO.Auth.Request;
 using WebAPI.Options;
 using WebAPI.Services.Interfaces;
 

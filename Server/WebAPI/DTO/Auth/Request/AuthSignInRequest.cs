@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace WebAPI.DTO.Request
+namespace WebAPI.DTO.Auth.Request
 {
   public class AuthSignInRequest
   {

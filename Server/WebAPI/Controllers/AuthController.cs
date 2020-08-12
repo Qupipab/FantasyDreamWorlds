@@ -1,8 +1,8 @@
 ﻿using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using WebAPI.DTO.Request;
-using WebAPI.DTO.Response;
+using WebAPI.DTO.Auth.Request;
+using WebAPI.DTO.Auth.Response;
 using WebAPI.Models;
 using WebAPI.Services.Interfaces;
 

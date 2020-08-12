@@ -1,4 +1,4 @@
-﻿namespace WebAPI.DTO.Response
+﻿namespace WebAPI.DTO.Auth.Response
 {
   public class AuthSuccessResponse
   {

@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace WebAPI.DTO.Response
+namespace WebAPI.DTO.Auth.Response
 {
   public class AuthFailedResponse
   {

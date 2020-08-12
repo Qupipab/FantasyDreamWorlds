@@ -15,6 +15,10 @@ namespace WebAPI.Installers
 
       services.AddTransient<IAuthService, AuthService>();
       services.AddTransient<IUserRepository, UserRepository>();
+
+      services.AddTransient<IShopService, ShopService>();
+      services.AddTransient<IShopRepository, ShopRepository>();
+
     }
 
   }

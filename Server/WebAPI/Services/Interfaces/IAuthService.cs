@@ -1,7 +1,7 @@
 ﻿using Entities.Models;
 using System.Threading.Tasks;
 using WebAPI.DTO;
-using WebAPI.DTO.Request;
+using WebAPI.DTO.Auth.Request;
 
 namespace WebAPI.Services.Interfaces
 {

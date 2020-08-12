@@ -19,5 +19,20 @@ namespace WebAPI.Models
       public const string CheckByUserName = "CheckByUserName";
     }
 
+    public static class Shop
+    {
+      public const string AddGameServer = "AddGameServer";
+      public const string EditGameServer = "EditGameServer";
+      public const string RemoveGameServer = "RemoveGameServer";
+
+      public const string AddCategory = "AddCategory";
+      public const string EditCategory = "EditCategory";
+      public const string RemoveCategory = "RemoveCategory";
+
+      public const string AddItem = "AddItem";
+      public const string EditItem = "EditItem";
+      public const string RemoveItem = "RemoveItem";
+    }
+
   }
 }
