@@ -9,9 +9,7 @@ namespace Entities
 
     public RepositoryContext(DbContextOptions<RepositoryContext> options)
       : base(options)
-    {
-      Database.EnsureCreated();
-    }
+    {}
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {

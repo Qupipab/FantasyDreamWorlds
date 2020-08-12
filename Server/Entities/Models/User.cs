@@ -6,6 +6,7 @@ namespace Entities.Models
 {
   public class User : IdentityUser
   {
+
     [StringLength(36)]
     public string Uuid { get; set; }
     public uint? Coins { get; set; }
@@ -18,5 +19,6 @@ namespace Entities.Models
     public string Avatar { get; set; }
     public string Skin { get; set; }
     public string Cape { get; set; }
+
   }
 }
