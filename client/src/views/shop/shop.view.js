@@ -8,6 +8,12 @@ export default {
   },
   data () {
     return {
+      servers: [
+        { label: 'Infinity', id: 0 },
+        { label: 'Unfinity', id: 1 },
+        { label: 'Ozone', id: 2 },
+        { label: 'Arcmagic', id: 3 }
+      ]
     };
   }
 };

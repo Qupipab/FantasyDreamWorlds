@@ -1,21 +1,13 @@
 export default {
-  props: [ 'placeholder' ],
+  props: ['placeholder', 'options', 'test'],
   data () {
     return {
-      isActive: false,
-      options: [
-        'one',
-        'two',
-        'three',
-        'four',
-        'five',
-        'six',
-        'seven',
-        'eight',
-        'nine',
-        'ten',
-        'eleven'
-      ]
+      isActive: false
     };
+  },
+  methods: {
+    test (val) {
+      console.log(val);
+    }
   }
 };

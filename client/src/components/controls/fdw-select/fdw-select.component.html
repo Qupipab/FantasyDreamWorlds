@@ -3,8 +3,10 @@
     class="fdw-select"
     :placeholder="placeholder"
     :options="options"
+    v-model="test"
     @search:blur="isActive = false"
     @search:focus="isActive = true"
+    @input="test"
   ></v-select>
   <div class="arrows-wrapper">
     <span

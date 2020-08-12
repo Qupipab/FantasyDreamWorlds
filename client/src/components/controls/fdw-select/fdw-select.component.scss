@@ -65,7 +65,8 @@ $vs-component-line-height: 2;
   .vs__dropdown-menu {
     z-index: 1002;
   }
-
+  
+  .vs__dropdown-option--highlight,
   .vs__dropdown-option:hover {
     background-color: var(--d-third-level-bgc);
   }
