@@ -2,7 +2,7 @@
 
 namespace WebAPI.DTO.Shop.Request
 {
-  public class CreateCategoryRequest
+  public class CategoryRequest
   {
 
     [Required]

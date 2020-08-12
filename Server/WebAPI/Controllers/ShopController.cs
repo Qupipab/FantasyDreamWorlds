@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using WebAPI.DTO.Request;
@@ -11,6 +13,7 @@ using WebAPI.Services.Interfaces;
 
 namespace WebAPI.Controllers
 {
+  [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Roles = "Admin")]
   [Route(ApiRoutes.Base)]
   [ApiController]
   public class ShopController : ControllerBase
@@ -31,6 +34,7 @@ namespace WebAPI.Controllers
     [Route(ApiRoutes.Shop.AddGameServer)]
     public async Task<IActionResult> AddGameServer([FromBody] GameServerRequest gameServerRequest)
     {
+      Console.WriteLine("1");
       return Ok();
     }
 

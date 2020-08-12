@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace WebAPI.DTO.Shop.Request
 {
-  public class CreateGameServerRequest
+  public class GameServerRequest
   {
 
     public string Title { get; set; }

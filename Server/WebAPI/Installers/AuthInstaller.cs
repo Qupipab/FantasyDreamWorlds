@@ -16,6 +16,16 @@ namespace WebAPI.Installers
 
       services.AddSingleton(jwtSettings);
 
+      var tokenValidationParameters = new TokenValidationParameters
+      {
+        ValidateIssuerSigningKey = true,
+        IssuerSigningKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(jwtSettings.Secret)),
+        ValidateIssuer = false,
+        ValidateAudience = false,
+        RequireExpirationTime = false,
+        ValidateLifetime = true
+      };
+
       services
         .AddAuthentication(a =>
         {
@@ -26,17 +36,11 @@ namespace WebAPI.Installers
         .AddJwtBearer(b =>
         {
           b.SaveToken = true;
-          b.TokenValidationParameters = new TokenValidationParameters
-          {
-            ValidateIssuerSigningKey = true,
-            IssuerSigningKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(jwtSettings.Secret)),
-            ValidateIssuer = false,
-            ValidateAudience = false,
-            RequireExpirationTime = false,
-            ValidateLifetime = true
-          };
+          b.TokenValidationParameters = tokenValidationParameters;
         });
-        
+
+      services.AddSingleton(tokenValidationParameters);
+
     }
   }
 }

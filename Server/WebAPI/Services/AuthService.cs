@@ -1,5 +1,6 @@
 ﻿using Entities.Models;
 using Entities.Repositories.Interfaces;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.IdentityModel.Tokens;
 using System;
 using System.Collections.Generic;
@@ -17,13 +18,16 @@ namespace WebAPI.Services
 {
   public class AuthService : IAuthService
   {
-
+    private readonly UserManager<User> _userManager;
+    private readonly RoleManager<IdentityRole> _roleManager;
     private readonly IUserRepository _userRepository;
     private readonly JwtSettings _jwtSettings;
-    public AuthService(IUserRepository userRepository, JwtSettings jwtSettings)
+    public AuthService(IUserRepository userRepository, UserManager<User> userManager, RoleManager<IdentityRole> roleManager, JwtSettings jwtSettings)
     {
       _userRepository = userRepository;
       _jwtSettings = jwtSettings;
+      _userManager = userManager;
+      _roleManager = roleManager;
     }
 
     public async Task<AuthenticationResult> SignUpAsync(AuthSignUpRequest authSignUpRequest)
@@ -57,7 +61,7 @@ namespace WebAPI.Services
         };
       }
 
-      return GenerateAuthenticationResultForUser(newUser);
+      return await GenerateAuthenticationResultForUserAsync(newUser);
     }
 
     public async Task<AuthenticationResult> SignInAsync(AuthSignInRequest authSignInRequest)
@@ -83,10 +87,10 @@ namespace WebAPI.Services
         };
       }
 
-      return GenerateAuthenticationResultForUser(user);
+      return await GenerateAuthenticationResultForUserAsync(user);
     }
 
-    private AuthenticationResult GenerateAuthenticationResultForUser(User user)
+    private async Task<AuthenticationResult> GenerateAuthenticationResultForUserAsync(User user)
     {
       var tokenHandler = new JwtSecurityTokenHandler();
       var key = Encoding.ASCII.GetBytes(_jwtSettings.Secret);
@@ -98,6 +102,24 @@ namespace WebAPI.Services
           new Claim(JwtRegisteredClaimNames.Sub, user.UserName),
           new Claim(JwtRegisteredClaimNames.Email, user.Email)
         };
+
+      var userRoles = await _userManager.GetRolesAsync(user);
+
+      foreach (var userRole in userRoles)
+      {
+        claims.Add(new Claim(ClaimTypes.Role, userRole));
+        var role = await _roleManager.FindByNameAsync(userRole);
+        if (role == null) continue;
+        var roleClaims = await _roleManager.GetClaimsAsync(role);
+
+        foreach (var roleClaim in roleClaims)
+        {
+          if (claims.Contains(roleClaim))
+            continue;
+
+          claims.Add(roleClaim);
+        }
+      }
 
       var tokenDescriptor = new SecurityTokenDescriptor
       {
