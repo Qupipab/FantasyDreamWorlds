@@ -1,4 +1,5 @@
-﻿using Entities.Repositories;
+﻿using Entities;
+using Entities.Repositories;
 using Entities.Repositories.Interfaces;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -12,6 +13,8 @@ namespace WebAPI.Installers
 
     public void InstallServices(IServiceCollection services, IConfiguration configuration)
     {
+
+      services.AddTransient<IRepositoryContext, RepositoryContext>();
 
       services.AddTransient<IAuthService, AuthService>();
       services.AddTransient<IUserRepository, UserRepository>();
