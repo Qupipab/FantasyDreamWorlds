@@ -42,7 +42,6 @@ namespace Entities.Migrations
                     Uuid = table.Column<string>(maxLength: 36, nullable: true),
                     Coins = table.Column<long>(nullable: true),
                     Econs = table.Column<long>(nullable: true),
-                    DonateRole = table.Column<int>(nullable: false),
                     FirstName = table.Column<string>(nullable: true),
                     DateOfBirth = table.Column<DateTime>(nullable: true),
                     RegistrationDate = table.Column<DateTime>(nullable: false),

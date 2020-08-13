@@ -47,8 +47,7 @@ namespace WebAPI.Services
         UserName = authSignUpRequest.UserName,
         Email = authSignUpRequest.Email,
         RegistrationDate = DateTime.UtcNow,
-        LastActivity = DateTime.UtcNow,
-        DonateRole = DonateRole.User
+        LastActivity = DateTime.UtcNow
       };
 
       var createdUser = _userRepository.CreateUserAsync(newUser, authSignUpRequest.Password);

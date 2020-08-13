@@ -11,7 +11,6 @@ namespace Entities.Models
     public string Uuid { get; set; }
     public uint? Coins { get; set; }
     public uint? Econs { get; set; }
-    public DonateRole DonateRole { get; set; }
     public string FirstName { get; set; }
     public DateTime? DateOfBirth { get; set; }
     public DateTime RegistrationDate { get; set; }
