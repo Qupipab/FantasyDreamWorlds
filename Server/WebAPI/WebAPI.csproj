@@ -19,4 +19,14 @@
     <Compile Remove="WeatherForecast.cs" />
     <Compile Remove="Controllers\WeatherForecastController.cs" />
   </ItemGroup>
+
+
+  <ItemGroup>
+    <Folder Include="DTO\Roles\Respons\" />
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <None Include="wwwroot\swagger-ui\SwaggerStyle.css" />
+  </ItemGroup>
 </Project>

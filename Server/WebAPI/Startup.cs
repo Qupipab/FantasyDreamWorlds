@@ -25,6 +25,8 @@ namespace WebAPI
 
     public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
     {
+      app.UseStaticFiles();
+
       if (env.IsDevelopment())
       {
         app.UseDeveloperExceptionPage();
@@ -63,6 +65,7 @@ namespace WebAPI
       {
         c.SwaggerEndpoint("/swagger/FantasyDreamWorlds/swagger.json", "FantasyDreamWorlds API");
         c.RoutePrefix = string.Empty;
+        c.InjectStylesheet("/swagger-ui/SwaggerStyle.css");
       });
 
     }
