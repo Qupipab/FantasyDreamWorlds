@@ -37,16 +37,16 @@ namespace Entities
         .ValueGeneratedOnAdd();
 
       modelBuilder.Entity<ItemCategory>()
-            .HasKey(ic => new { ic.ItemId, ic.CategoryId });
+        .HasKey(ic => new { ic.ItemId, ic.CategoryId });
 
       modelBuilder.Entity<ItemCategory>()
-        .HasOne<Item>(i => i.Item)
-        .WithMany(ic => ic.ItemCategories)
-        .HasForeignKey(ic => ic.ItemId);
+        .HasOne<Item>(iс => iс.Item)
+        .WithMany(i => i.ItemCategories)
+        .HasForeignKey(iс => iс.ItemId);
 
       modelBuilder.Entity<ItemCategory>()
-        .HasOne<Category>(c => c.Category)
-        .WithMany(ic => ic.ItemCategories)
+        .HasOne<Category>(ic => ic.Category)
+        .WithMany(c => c.ItemCategories)
         .HasForeignKey(ic => ic.CategoryId);
 
       modelBuilder.Seed();

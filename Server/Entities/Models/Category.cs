@@ -18,7 +18,8 @@ namespace Entities.Models
     public DateTime UpdatedAt { get; set; }
 
     [Required]
-    public int ServerId { get; set; }
+    public int GameServerId { get; set; }
+    public GameServer GameServer { get; set; }
     public ICollection<ItemCategory> ItemCategories { get; set; }
 
   }

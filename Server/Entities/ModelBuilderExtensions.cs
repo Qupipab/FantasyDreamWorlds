@@ -57,7 +57,7 @@ namespace Entities
             EnTitle = "Category " + (i + 1) * -1,
             CreatedAt = dateNow,
             UpdatedAt = dateNow,
-            ServerId = GetRandomNumber(-4, 0)
+            GameServerId = GetRandomNumber(-4, 0)
           };
       }
 
