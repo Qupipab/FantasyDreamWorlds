@@ -24,6 +24,18 @@ namespace Entities
         .Ignore(u => u.PhoneNumber)
         .Ignore(u => u.PhoneNumberConfirmed);
 
+      modelBuilder.Entity<GameServer>()
+        .Property(i => i.Id)
+        .ValueGeneratedOnAdd();
+
+      modelBuilder.Entity<Category>()
+        .Property(i => i.Id)
+        .ValueGeneratedOnAdd();
+
+      modelBuilder.Entity<Item>()
+        .Property(i => i.Id)
+        .ValueGeneratedOnAdd();
+
       modelBuilder.Entity<ItemCategory>()
             .HasKey(ic => new { ic.ItemId, ic.CategoryId });
 

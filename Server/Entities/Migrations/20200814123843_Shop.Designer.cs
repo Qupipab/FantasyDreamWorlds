@@ -10,7 +10,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace Entities.Migrations
 {
     [DbContext(typeof(RepositoryContext))]
-    [Migration("20200813135159_Shop")]
+    [Migration("20200814123843_Shop")]
     partial class Shop
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -58,103 +58,103 @@ namespace Entities.Migrations
                     b.HasData(
                         new
                         {
-                            Id = 1,
-                            CreatedAt = new DateTime(2020, 8, 13, 13, 51, 58, 815, DateTimeKind.Utc).AddTicks(8116),
+                            Id = -1,
+                            CreatedAt = new DateTime(2020, 8, 14, 12, 38, 42, 675, DateTimeKind.Utc).AddTicks(5477),
                             CreatorId = new Guid("95024899-0ae4-4916-bdf4-7cd55c11128b"),
-                            EnTitle = "Category 1",
-                            RuTitle = "Категория 1",
-                            ServerId = 1,
-                            UpdatedAt = new DateTime(2020, 8, 13, 13, 51, 58, 815, DateTimeKind.Utc).AddTicks(8116)
+                            EnTitle = "Category -1",
+                            RuTitle = "Категория -1",
+                            ServerId = -4,
+                            UpdatedAt = new DateTime(2020, 8, 14, 12, 38, 42, 675, DateTimeKind.Utc).AddTicks(5477)
                         },
                         new
                         {
-                            Id = 2,
-                            CreatedAt = new DateTime(2020, 8, 13, 13, 51, 58, 815, DateTimeKind.Utc).AddTicks(8116),
+                            Id = -2,
+                            CreatedAt = new DateTime(2020, 8, 14, 12, 38, 42, 675, DateTimeKind.Utc).AddTicks(5477),
                             CreatorId = new Guid("95024899-0ae4-4916-bdf4-7cd55c11128b"),
-                            EnTitle = "Category 2",
-                            RuTitle = "Категория 2",
-                            ServerId = 4,
-                            UpdatedAt = new DateTime(2020, 8, 13, 13, 51, 58, 815, DateTimeKind.Utc).AddTicks(8116)
+                            EnTitle = "Category -2",
+                            RuTitle = "Категория -2",
+                            ServerId = -1,
+                            UpdatedAt = new DateTime(2020, 8, 14, 12, 38, 42, 675, DateTimeKind.Utc).AddTicks(5477)
                         },
                         new
                         {
-                            Id = 3,
-                            CreatedAt = new DateTime(2020, 8, 13, 13, 51, 58, 815, DateTimeKind.Utc).AddTicks(8116),
+                            Id = -3,
+                            CreatedAt = new DateTime(2020, 8, 14, 12, 38, 42, 675, DateTimeKind.Utc).AddTicks(5477),
                             CreatorId = new Guid("95024899-0ae4-4916-bdf4-7cd55c11128b"),
-                            EnTitle = "Category 3",
-                            RuTitle = "Категория 3",
-                            ServerId = 2,
-                            UpdatedAt = new DateTime(2020, 8, 13, 13, 51, 58, 815, DateTimeKind.Utc).AddTicks(8116)
+                            EnTitle = "Category -3",
+                            RuTitle = "Категория -3",
+                            ServerId = -1,
+                            UpdatedAt = new DateTime(2020, 8, 14, 12, 38, 42, 675, DateTimeKind.Utc).AddTicks(5477)
                         },
                         new
                         {
-                            Id = 4,
-                            CreatedAt = new DateTime(2020, 8, 13, 13, 51, 58, 815, DateTimeKind.Utc).AddTicks(8116),
+                            Id = -4,
+                            CreatedAt = new DateTime(2020, 8, 14, 12, 38, 42, 675, DateTimeKind.Utc).AddTicks(5477),
                             CreatorId = new Guid("95024899-0ae4-4916-bdf4-7cd55c11128b"),
-                            EnTitle = "Category 4",
-                            RuTitle = "Категория 4",
-                            ServerId = 3,
-                            UpdatedAt = new DateTime(2020, 8, 13, 13, 51, 58, 815, DateTimeKind.Utc).AddTicks(8116)
+                            EnTitle = "Category -4",
+                            RuTitle = "Категория -4",
+                            ServerId = -3,
+                            UpdatedAt = new DateTime(2020, 8, 14, 12, 38, 42, 675, DateTimeKind.Utc).AddTicks(5477)
                         },
                         new
                         {
-                            Id = 5,
-                            CreatedAt = new DateTime(2020, 8, 13, 13, 51, 58, 815, DateTimeKind.Utc).AddTicks(8116),
+                            Id = -5,
+                            CreatedAt = new DateTime(2020, 8, 14, 12, 38, 42, 675, DateTimeKind.Utc).AddTicks(5477),
                             CreatorId = new Guid("95024899-0ae4-4916-bdf4-7cd55c11128b"),
-                            EnTitle = "Category 5",
-                            RuTitle = "Категория 5",
-                            ServerId = 1,
-                            UpdatedAt = new DateTime(2020, 8, 13, 13, 51, 58, 815, DateTimeKind.Utc).AddTicks(8116)
+                            EnTitle = "Category -5",
+                            RuTitle = "Категория -5",
+                            ServerId = -1,
+                            UpdatedAt = new DateTime(2020, 8, 14, 12, 38, 42, 675, DateTimeKind.Utc).AddTicks(5477)
                         },
                         new
                         {
-                            Id = 6,
-                            CreatedAt = new DateTime(2020, 8, 13, 13, 51, 58, 815, DateTimeKind.Utc).AddTicks(8116),
+                            Id = -6,
+                            CreatedAt = new DateTime(2020, 8, 14, 12, 38, 42, 675, DateTimeKind.Utc).AddTicks(5477),
                             CreatorId = new Guid("95024899-0ae4-4916-bdf4-7cd55c11128b"),
-                            EnTitle = "Category 6",
-                            RuTitle = "Категория 6",
-                            ServerId = 4,
-                            UpdatedAt = new DateTime(2020, 8, 13, 13, 51, 58, 815, DateTimeKind.Utc).AddTicks(8116)
+                            EnTitle = "Category -6",
+                            RuTitle = "Категория -6",
+                            ServerId = -2,
+                            UpdatedAt = new DateTime(2020, 8, 14, 12, 38, 42, 675, DateTimeKind.Utc).AddTicks(5477)
                         },
                         new
                         {
-                            Id = 7,
-                            CreatedAt = new DateTime(2020, 8, 13, 13, 51, 58, 815, DateTimeKind.Utc).AddTicks(8116),
+                            Id = -7,
+                            CreatedAt = new DateTime(2020, 8, 14, 12, 38, 42, 675, DateTimeKind.Utc).AddTicks(5477),
                             CreatorId = new Guid("95024899-0ae4-4916-bdf4-7cd55c11128b"),
-                            EnTitle = "Category 7",
-                            RuTitle = "Категория 7",
-                            ServerId = 2,
-                            UpdatedAt = new DateTime(2020, 8, 13, 13, 51, 58, 815, DateTimeKind.Utc).AddTicks(8116)
+                            EnTitle = "Category -7",
+                            RuTitle = "Категория -7",
+                            ServerId = -1,
+                            UpdatedAt = new DateTime(2020, 8, 14, 12, 38, 42, 675, DateTimeKind.Utc).AddTicks(5477)
                         },
                         new
                         {
-                            Id = 8,
-                            CreatedAt = new DateTime(2020, 8, 13, 13, 51, 58, 815, DateTimeKind.Utc).AddTicks(8116),
+                            Id = -8,
+                            CreatedAt = new DateTime(2020, 8, 14, 12, 38, 42, 675, DateTimeKind.Utc).AddTicks(5477),
                             CreatorId = new Guid("95024899-0ae4-4916-bdf4-7cd55c11128b"),
-                            EnTitle = "Category 8",
-                            RuTitle = "Категория 8",
-                            ServerId = 2,
-                            UpdatedAt = new DateTime(2020, 8, 13, 13, 51, 58, 815, DateTimeKind.Utc).AddTicks(8116)
+                            EnTitle = "Category -8",
+                            RuTitle = "Категория -8",
+                            ServerId = -3,
+                            UpdatedAt = new DateTime(2020, 8, 14, 12, 38, 42, 675, DateTimeKind.Utc).AddTicks(5477)
                         },
                         new
                         {
-                            Id = 9,
-                            CreatedAt = new DateTime(2020, 8, 13, 13, 51, 58, 815, DateTimeKind.Utc).AddTicks(8116),
+                            Id = -9,
+                            CreatedAt = new DateTime(2020, 8, 14, 12, 38, 42, 675, DateTimeKind.Utc).AddTicks(5477),
                             CreatorId = new Guid("95024899-0ae4-4916-bdf4-7cd55c11128b"),
-                            EnTitle = "Category 9",
-                            RuTitle = "Категория 9",
-                            ServerId = 3,
-                            UpdatedAt = new DateTime(2020, 8, 13, 13, 51, 58, 815, DateTimeKind.Utc).AddTicks(8116)
+                            EnTitle = "Category -9",
+                            RuTitle = "Категория -9",
+                            ServerId = -1,
+                            UpdatedAt = new DateTime(2020, 8, 14, 12, 38, 42, 675, DateTimeKind.Utc).AddTicks(5477)
                         },
                         new
                         {
-                            Id = 10,
-                            CreatedAt = new DateTime(2020, 8, 13, 13, 51, 58, 815, DateTimeKind.Utc).AddTicks(8116),
+                            Id = -10,
+                            CreatedAt = new DateTime(2020, 8, 14, 12, 38, 42, 675, DateTimeKind.Utc).AddTicks(5477),
                             CreatorId = new Guid("95024899-0ae4-4916-bdf4-7cd55c11128b"),
-                            EnTitle = "Category 10",
-                            RuTitle = "Категория 10",
-                            ServerId = 3,
-                            UpdatedAt = new DateTime(2020, 8, 13, 13, 51, 58, 815, DateTimeKind.Utc).AddTicks(8116)
+                            EnTitle = "Category -10",
+                            RuTitle = "Категория -10",
+                            ServerId = -4,
+                            UpdatedAt = new DateTime(2020, 8, 14, 12, 38, 42, 675, DateTimeKind.Utc).AddTicks(5477)
                         });
                 });
 
@@ -184,35 +184,35 @@ namespace Entities.Migrations
                     b.HasData(
                         new
                         {
-                            Id = 1,
-                            CreatedAt = new DateTime(2020, 8, 13, 13, 51, 58, 815, DateTimeKind.Utc).AddTicks(8116),
+                            Id = -1,
+                            CreatedAt = new DateTime(2020, 8, 14, 12, 38, 42, 675, DateTimeKind.Utc).AddTicks(5477),
                             CreatorId = new Guid("95024899-0ae4-4916-bdf4-7cd55c11128b"),
                             Title = "Infinity",
-                            UpdatedAt = new DateTime(2020, 8, 13, 13, 51, 58, 815, DateTimeKind.Utc).AddTicks(8116)
+                            UpdatedAt = new DateTime(2020, 8, 14, 12, 38, 42, 675, DateTimeKind.Utc).AddTicks(5477)
                         },
                         new
                         {
-                            Id = 2,
-                            CreatedAt = new DateTime(2020, 8, 13, 13, 51, 58, 815, DateTimeKind.Utc).AddTicks(8116),
+                            Id = -2,
+                            CreatedAt = new DateTime(2020, 8, 14, 12, 38, 42, 675, DateTimeKind.Utc).AddTicks(5477),
                             CreatorId = new Guid("95024899-0ae4-4916-bdf4-7cd55c11128b"),
                             Title = "Unfinity",
-                            UpdatedAt = new DateTime(2020, 8, 13, 13, 51, 58, 815, DateTimeKind.Utc).AddTicks(8116)
+                            UpdatedAt = new DateTime(2020, 8, 14, 12, 38, 42, 675, DateTimeKind.Utc).AddTicks(5477)
                         },
                         new
                         {
-                            Id = 3,
-                            CreatedAt = new DateTime(2020, 8, 13, 13, 51, 58, 815, DateTimeKind.Utc).AddTicks(8116),
+                            Id = -3,
+                            CreatedAt = new DateTime(2020, 8, 14, 12, 38, 42, 675, DateTimeKind.Utc).AddTicks(5477),
                             CreatorId = new Guid("95024899-0ae4-4916-bdf4-7cd55c11128b"),
                             Title = "Ozone",
-                            UpdatedAt = new DateTime(2020, 8, 13, 13, 51, 58, 815, DateTimeKind.Utc).AddTicks(8116)
+                            UpdatedAt = new DateTime(2020, 8, 14, 12, 38, 42, 675, DateTimeKind.Utc).AddTicks(5477)
                         },
                         new
                         {
-                            Id = 4,
-                            CreatedAt = new DateTime(2020, 8, 13, 13, 51, 58, 815, DateTimeKind.Utc).AddTicks(8116),
+                            Id = -4,
+                            CreatedAt = new DateTime(2020, 8, 14, 12, 38, 42, 675, DateTimeKind.Utc).AddTicks(5477),
                             CreatorId = new Guid("95024899-0ae4-4916-bdf4-7cd55c11128b"),
                             Title = "Arcmagic",
-                            UpdatedAt = new DateTime(2020, 8, 13, 13, 51, 58, 815, DateTimeKind.Utc).AddTicks(8116)
+                            UpdatedAt = new DateTime(2020, 8, 14, 12, 38, 42, 675, DateTimeKind.Utc).AddTicks(5477)
                         });
                 });
 
@@ -262,153 +262,153 @@ namespace Entities.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("f47c540b-caf4-4a6e-91ac-b5db5716971e"),
-                            Coins = 80,
+                            Id = new Guid("c5c20d89-bf65-478a-8220-dd213557afc7"),
+                            Coins = 51,
                             Count = 5,
-                            CreatedAt = new DateTime(2020, 8, 13, 13, 51, 58, 815, DateTimeKind.Utc).AddTicks(8116),
+                            CreatedAt = new DateTime(2020, 8, 14, 12, 38, 42, 675, DateTimeKind.Utc).AddTicks(5477),
                             CreatorId = new Guid("95024899-0ae4-4916-bdf4-7cd55c11128b"),
                             Discount = 0.0,
-                            DiscountEndDate = new DateTime(2020, 8, 13, 13, 51, 58, 815, DateTimeKind.Utc).AddTicks(8116),
+                            DiscountEndDate = new DateTime(2020, 8, 14, 12, 38, 42, 675, DateTimeKind.Utc).AddTicks(5477),
                             ECoins = 0,
-                            EnTitle = "Item 1",
+                            EnTitle = "Item -1",
                             Icon = "Icon",
-                            RuTitle = "Предмет 1",
-                            UpdatedAt = new DateTime(2020, 8, 13, 13, 51, 58, 815, DateTimeKind.Utc).AddTicks(8116)
+                            RuTitle = "Предмет -1",
+                            UpdatedAt = new DateTime(2020, 8, 14, 12, 38, 42, 675, DateTimeKind.Utc).AddTicks(5477)
                         },
                         new
                         {
-                            Id = new Guid("2c32eb66-2a05-49f1-b894-bf48fc0bfee5"),
-                            Coins = 28,
-                            Count = 3,
-                            CreatedAt = new DateTime(2020, 8, 13, 13, 51, 58, 815, DateTimeKind.Utc).AddTicks(8116),
-                            CreatorId = new Guid("95024899-0ae4-4916-bdf4-7cd55c11128b"),
-                            Discount = 0.0,
-                            DiscountEndDate = new DateTime(2020, 8, 13, 13, 51, 58, 815, DateTimeKind.Utc).AddTicks(8116),
-                            ECoins = 0,
-                            EnTitle = "Item 2",
-                            Icon = "Icon",
-                            RuTitle = "Предмет 2",
-                            UpdatedAt = new DateTime(2020, 8, 13, 13, 51, 58, 815, DateTimeKind.Utc).AddTicks(8116)
-                        },
-                        new
-                        {
-                            Id = new Guid("7e1294d3-b9bc-442d-8da7-7087fc801222"),
-                            Coins = 17,
+                            Id = new Guid("46e28c72-845b-40df-b394-cddf6f7b72e1"),
+                            Coins = 54,
                             Count = 9,
-                            CreatedAt = new DateTime(2020, 8, 13, 13, 51, 58, 815, DateTimeKind.Utc).AddTicks(8116),
+                            CreatedAt = new DateTime(2020, 8, 14, 12, 38, 42, 675, DateTimeKind.Utc).AddTicks(5477),
                             CreatorId = new Guid("95024899-0ae4-4916-bdf4-7cd55c11128b"),
                             Discount = 0.0,
-                            DiscountEndDate = new DateTime(2020, 8, 13, 13, 51, 58, 815, DateTimeKind.Utc).AddTicks(8116),
+                            DiscountEndDate = new DateTime(2020, 8, 14, 12, 38, 42, 675, DateTimeKind.Utc).AddTicks(5477),
                             ECoins = 0,
-                            EnTitle = "Item 3",
+                            EnTitle = "Item -2",
                             Icon = "Icon",
-                            RuTitle = "Предмет 3",
-                            UpdatedAt = new DateTime(2020, 8, 13, 13, 51, 58, 815, DateTimeKind.Utc).AddTicks(8116)
+                            RuTitle = "Предмет -2",
+                            UpdatedAt = new DateTime(2020, 8, 14, 12, 38, 42, 675, DateTimeKind.Utc).AddTicks(5477)
                         },
                         new
                         {
-                            Id = new Guid("2af07970-00e2-4623-a370-e8e5d8ec5797"),
-                            Coins = 69,
-                            Count = 5,
-                            CreatedAt = new DateTime(2020, 8, 13, 13, 51, 58, 815, DateTimeKind.Utc).AddTicks(8116),
+                            Id = new Guid("1f7d5d70-be1e-4142-990e-29469fa0dbfd"),
+                            Coins = 31,
+                            Count = 4,
+                            CreatedAt = new DateTime(2020, 8, 14, 12, 38, 42, 675, DateTimeKind.Utc).AddTicks(5477),
                             CreatorId = new Guid("95024899-0ae4-4916-bdf4-7cd55c11128b"),
                             Discount = 0.0,
-                            DiscountEndDate = new DateTime(2020, 8, 13, 13, 51, 58, 815, DateTimeKind.Utc).AddTicks(8116),
+                            DiscountEndDate = new DateTime(2020, 8, 14, 12, 38, 42, 675, DateTimeKind.Utc).AddTicks(5477),
                             ECoins = 0,
-                            EnTitle = "Item 4",
+                            EnTitle = "Item -3",
                             Icon = "Icon",
-                            RuTitle = "Предмет 4",
-                            UpdatedAt = new DateTime(2020, 8, 13, 13, 51, 58, 815, DateTimeKind.Utc).AddTicks(8116)
+                            RuTitle = "Предмет -3",
+                            UpdatedAt = new DateTime(2020, 8, 14, 12, 38, 42, 675, DateTimeKind.Utc).AddTicks(5477)
                         },
                         new
                         {
-                            Id = new Guid("62b5b7db-d52e-48d1-aa9b-ec50ad46fe59"),
-                            Coins = 61,
-                            Count = 1,
-                            CreatedAt = new DateTime(2020, 8, 13, 13, 51, 58, 815, DateTimeKind.Utc).AddTicks(8116),
-                            CreatorId = new Guid("95024899-0ae4-4916-bdf4-7cd55c11128b"),
-                            Discount = 0.0,
-                            DiscountEndDate = new DateTime(2020, 8, 13, 13, 51, 58, 815, DateTimeKind.Utc).AddTicks(8116),
-                            ECoins = 0,
-                            EnTitle = "Item 5",
-                            Icon = "Icon",
-                            RuTitle = "Предмет 5",
-                            UpdatedAt = new DateTime(2020, 8, 13, 13, 51, 58, 815, DateTimeKind.Utc).AddTicks(8116)
-                        },
-                        new
-                        {
-                            Id = new Guid("23971dcb-fd37-4df5-961b-329e6488ff5f"),
-                            Coins = 74,
-                            Count = 3,
-                            CreatedAt = new DateTime(2020, 8, 13, 13, 51, 58, 815, DateTimeKind.Utc).AddTicks(8116),
-                            CreatorId = new Guid("95024899-0ae4-4916-bdf4-7cd55c11128b"),
-                            Discount = 0.0,
-                            DiscountEndDate = new DateTime(2020, 8, 13, 13, 51, 58, 815, DateTimeKind.Utc).AddTicks(8116),
-                            ECoins = 0,
-                            EnTitle = "Item 6",
-                            Icon = "Icon",
-                            RuTitle = "Предмет 6",
-                            UpdatedAt = new DateTime(2020, 8, 13, 13, 51, 58, 815, DateTimeKind.Utc).AddTicks(8116)
-                        },
-                        new
-                        {
-                            Id = new Guid("deae84c9-21a6-4331-9ac1-8afca4bfb6d6"),
-                            Coins = 82,
+                            Id = new Guid("31a9f930-b04a-4298-b5a4-e0b685eecdc7"),
+                            Coins = 95,
                             Count = 8,
-                            CreatedAt = new DateTime(2020, 8, 13, 13, 51, 58, 815, DateTimeKind.Utc).AddTicks(8116),
+                            CreatedAt = new DateTime(2020, 8, 14, 12, 38, 42, 675, DateTimeKind.Utc).AddTicks(5477),
                             CreatorId = new Guid("95024899-0ae4-4916-bdf4-7cd55c11128b"),
                             Discount = 0.0,
-                            DiscountEndDate = new DateTime(2020, 8, 13, 13, 51, 58, 815, DateTimeKind.Utc).AddTicks(8116),
+                            DiscountEndDate = new DateTime(2020, 8, 14, 12, 38, 42, 675, DateTimeKind.Utc).AddTicks(5477),
                             ECoins = 0,
-                            EnTitle = "Item 7",
+                            EnTitle = "Item -4",
                             Icon = "Icon",
-                            RuTitle = "Предмет 7",
-                            UpdatedAt = new DateTime(2020, 8, 13, 13, 51, 58, 815, DateTimeKind.Utc).AddTicks(8116)
+                            RuTitle = "Предмет -4",
+                            UpdatedAt = new DateTime(2020, 8, 14, 12, 38, 42, 675, DateTimeKind.Utc).AddTicks(5477)
                         },
                         new
                         {
-                            Id = new Guid("204e41c7-040e-4904-8473-4c6a1b01e86c"),
-                            Coins = 37,
-                            Count = 5,
-                            CreatedAt = new DateTime(2020, 8, 13, 13, 51, 58, 815, DateTimeKind.Utc).AddTicks(8116),
-                            CreatorId = new Guid("95024899-0ae4-4916-bdf4-7cd55c11128b"),
-                            Discount = 0.0,
-                            DiscountEndDate = new DateTime(2020, 8, 13, 13, 51, 58, 815, DateTimeKind.Utc).AddTicks(8116),
-                            ECoins = 0,
-                            EnTitle = "Item 8",
-                            Icon = "Icon",
-                            RuTitle = "Предмет 8",
-                            UpdatedAt = new DateTime(2020, 8, 13, 13, 51, 58, 815, DateTimeKind.Utc).AddTicks(8116)
-                        },
-                        new
-                        {
-                            Id = new Guid("854826f3-eb47-4fc1-a1dd-3810e3784e63"),
+                            Id = new Guid("fb60ca79-055c-423e-a539-97faa22c06f2"),
                             Coins = 77,
-                            Count = 10,
-                            CreatedAt = new DateTime(2020, 8, 13, 13, 51, 58, 815, DateTimeKind.Utc).AddTicks(8116),
+                            Count = 5,
+                            CreatedAt = new DateTime(2020, 8, 14, 12, 38, 42, 675, DateTimeKind.Utc).AddTicks(5477),
                             CreatorId = new Guid("95024899-0ae4-4916-bdf4-7cd55c11128b"),
                             Discount = 0.0,
-                            DiscountEndDate = new DateTime(2020, 8, 13, 13, 51, 58, 815, DateTimeKind.Utc).AddTicks(8116),
+                            DiscountEndDate = new DateTime(2020, 8, 14, 12, 38, 42, 675, DateTimeKind.Utc).AddTicks(5477),
                             ECoins = 0,
-                            EnTitle = "Item 9",
+                            EnTitle = "Item -5",
                             Icon = "Icon",
-                            RuTitle = "Предмет 9",
-                            UpdatedAt = new DateTime(2020, 8, 13, 13, 51, 58, 815, DateTimeKind.Utc).AddTicks(8116)
+                            RuTitle = "Предмет -5",
+                            UpdatedAt = new DateTime(2020, 8, 14, 12, 38, 42, 675, DateTimeKind.Utc).AddTicks(5477)
                         },
                         new
                         {
-                            Id = new Guid("d4ed8bed-fa7c-444f-807e-b75b67b15f40"),
-                            Coins = 65,
-                            Count = 1,
-                            CreatedAt = new DateTime(2020, 8, 13, 13, 51, 58, 815, DateTimeKind.Utc).AddTicks(8116),
+                            Id = new Guid("05b52641-7e0b-4b37-9001-ef88456aed1d"),
+                            Coins = 19,
+                            Count = 10,
+                            CreatedAt = new DateTime(2020, 8, 14, 12, 38, 42, 675, DateTimeKind.Utc).AddTicks(5477),
                             CreatorId = new Guid("95024899-0ae4-4916-bdf4-7cd55c11128b"),
                             Discount = 0.0,
-                            DiscountEndDate = new DateTime(2020, 8, 13, 13, 51, 58, 815, DateTimeKind.Utc).AddTicks(8116),
+                            DiscountEndDate = new DateTime(2020, 8, 14, 12, 38, 42, 675, DateTimeKind.Utc).AddTicks(5477),
                             ECoins = 0,
-                            EnTitle = "Item 10",
+                            EnTitle = "Item -6",
                             Icon = "Icon",
-                            RuTitle = "Предмет 10",
-                            UpdatedAt = new DateTime(2020, 8, 13, 13, 51, 58, 815, DateTimeKind.Utc).AddTicks(8116)
+                            RuTitle = "Предмет -6",
+                            UpdatedAt = new DateTime(2020, 8, 14, 12, 38, 42, 675, DateTimeKind.Utc).AddTicks(5477)
+                        },
+                        new
+                        {
+                            Id = new Guid("a1d831b0-9b0e-49d8-96a9-eb29f8ba9ae5"),
+                            Coins = 38,
+                            Count = 5,
+                            CreatedAt = new DateTime(2020, 8, 14, 12, 38, 42, 675, DateTimeKind.Utc).AddTicks(5477),
+                            CreatorId = new Guid("95024899-0ae4-4916-bdf4-7cd55c11128b"),
+                            Discount = 0.0,
+                            DiscountEndDate = new DateTime(2020, 8, 14, 12, 38, 42, 675, DateTimeKind.Utc).AddTicks(5477),
+                            ECoins = 0,
+                            EnTitle = "Item -7",
+                            Icon = "Icon",
+                            RuTitle = "Предмет -7",
+                            UpdatedAt = new DateTime(2020, 8, 14, 12, 38, 42, 675, DateTimeKind.Utc).AddTicks(5477)
+                        },
+                        new
+                        {
+                            Id = new Guid("266e0fee-58be-4ec0-84ac-dfcbbd8ff35d"),
+                            Coins = 16,
+                            Count = 10,
+                            CreatedAt = new DateTime(2020, 8, 14, 12, 38, 42, 675, DateTimeKind.Utc).AddTicks(5477),
+                            CreatorId = new Guid("95024899-0ae4-4916-bdf4-7cd55c11128b"),
+                            Discount = 0.0,
+                            DiscountEndDate = new DateTime(2020, 8, 14, 12, 38, 42, 675, DateTimeKind.Utc).AddTicks(5477),
+                            ECoins = 0,
+                            EnTitle = "Item -8",
+                            Icon = "Icon",
+                            RuTitle = "Предмет -8",
+                            UpdatedAt = new DateTime(2020, 8, 14, 12, 38, 42, 675, DateTimeKind.Utc).AddTicks(5477)
+                        },
+                        new
+                        {
+                            Id = new Guid("e3a978b2-b6f1-42b3-bd34-e9b7c7c484f2"),
+                            Coins = 75,
+                            Count = 10,
+                            CreatedAt = new DateTime(2020, 8, 14, 12, 38, 42, 675, DateTimeKind.Utc).AddTicks(5477),
+                            CreatorId = new Guid("95024899-0ae4-4916-bdf4-7cd55c11128b"),
+                            Discount = 0.0,
+                            DiscountEndDate = new DateTime(2020, 8, 14, 12, 38, 42, 675, DateTimeKind.Utc).AddTicks(5477),
+                            ECoins = 0,
+                            EnTitle = "Item -9",
+                            Icon = "Icon",
+                            RuTitle = "Предмет -9",
+                            UpdatedAt = new DateTime(2020, 8, 14, 12, 38, 42, 675, DateTimeKind.Utc).AddTicks(5477)
+                        },
+                        new
+                        {
+                            Id = new Guid("2ded42df-bdf3-4d3d-aadc-a49c3354ed5a"),
+                            Coins = 81,
+                            Count = 10,
+                            CreatedAt = new DateTime(2020, 8, 14, 12, 38, 42, 675, DateTimeKind.Utc).AddTicks(5477),
+                            CreatorId = new Guid("95024899-0ae4-4916-bdf4-7cd55c11128b"),
+                            Discount = 0.0,
+                            DiscountEndDate = new DateTime(2020, 8, 14, 12, 38, 42, 675, DateTimeKind.Utc).AddTicks(5477),
+                            ECoins = 0,
+                            EnTitle = "Item -10",
+                            Icon = "Icon",
+                            RuTitle = "Предмет -10",
+                            UpdatedAt = new DateTime(2020, 8, 14, 12, 38, 42, 675, DateTimeKind.Utc).AddTicks(5477)
                         });
                 });
 
@@ -429,53 +429,53 @@ namespace Entities.Migrations
                     b.HasData(
                         new
                         {
-                            ItemId = new Guid("f47c540b-caf4-4a6e-91ac-b5db5716971e"),
-                            CategoryId = 1
+                            ItemId = new Guid("c5c20d89-bf65-478a-8220-dd213557afc7"),
+                            CategoryId = -1
                         },
                         new
                         {
-                            ItemId = new Guid("2c32eb66-2a05-49f1-b894-bf48fc0bfee5"),
-                            CategoryId = 2
+                            ItemId = new Guid("46e28c72-845b-40df-b394-cddf6f7b72e1"),
+                            CategoryId = -2
                         },
                         new
                         {
-                            ItemId = new Guid("7e1294d3-b9bc-442d-8da7-7087fc801222"),
-                            CategoryId = 3
+                            ItemId = new Guid("1f7d5d70-be1e-4142-990e-29469fa0dbfd"),
+                            CategoryId = -3
                         },
                         new
                         {
-                            ItemId = new Guid("2af07970-00e2-4623-a370-e8e5d8ec5797"),
-                            CategoryId = 4
+                            ItemId = new Guid("31a9f930-b04a-4298-b5a4-e0b685eecdc7"),
+                            CategoryId = -4
                         },
                         new
                         {
-                            ItemId = new Guid("62b5b7db-d52e-48d1-aa9b-ec50ad46fe59"),
-                            CategoryId = 5
+                            ItemId = new Guid("fb60ca79-055c-423e-a539-97faa22c06f2"),
+                            CategoryId = -5
                         },
                         new
                         {
-                            ItemId = new Guid("23971dcb-fd37-4df5-961b-329e6488ff5f"),
-                            CategoryId = 6
+                            ItemId = new Guid("05b52641-7e0b-4b37-9001-ef88456aed1d"),
+                            CategoryId = -6
                         },
                         new
                         {
-                            ItemId = new Guid("deae84c9-21a6-4331-9ac1-8afca4bfb6d6"),
-                            CategoryId = 7
+                            ItemId = new Guid("a1d831b0-9b0e-49d8-96a9-eb29f8ba9ae5"),
+                            CategoryId = -7
                         },
                         new
                         {
-                            ItemId = new Guid("204e41c7-040e-4904-8473-4c6a1b01e86c"),
-                            CategoryId = 8
+                            ItemId = new Guid("266e0fee-58be-4ec0-84ac-dfcbbd8ff35d"),
+                            CategoryId = -8
                         },
                         new
                         {
-                            ItemId = new Guid("854826f3-eb47-4fc1-a1dd-3810e3784e63"),
-                            CategoryId = 9
+                            ItemId = new Guid("e3a978b2-b6f1-42b3-bd34-e9b7c7c484f2"),
+                            CategoryId = -9
                         },
                         new
                         {
-                            ItemId = new Guid("d4ed8bed-fa7c-444f-807e-b75b67b15f40"),
-                            CategoryId = 10
+                            ItemId = new Guid("2ded42df-bdf3-4d3d-aadc-a49c3354ed5a"),
+                            CategoryId = -10
                         });
                 });
 
