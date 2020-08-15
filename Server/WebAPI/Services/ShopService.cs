@@ -1,13 +1,16 @@
 ﻿using AutoMapper;
 using Entities.Models;
 using Entities.Repositories.Interfaces;
+using Microsoft.EntityFrameworkCore.Internal;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using WebAPI.DTO.Pagination.Request;
+using WebAPI.DTO.Pagination.Response;
 using WebAPI.DTO.Request;
 using WebAPI.DTO.Shop.Request;
 using WebAPI.DTO.Shop.Response;
+using WebAPI.Helpers;
 using WebAPI.Services.Interfaces;
 
 namespace WebAPI.Services

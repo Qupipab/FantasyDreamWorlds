@@ -9,6 +9,7 @@ using WebAPI.DTO.Request;
 using WebAPI.DTO.Shop.Request;
 using WebAPI.DTO.Shop.Response;
 using WebAPI.Extensions;
+using WebAPI.Helpers;
 using WebAPI.Models;
 using WebAPI.Services.Interfaces;
 
@@ -125,9 +126,7 @@ namespace WebAPI.Controllers
     {
       var items = await _shopService.GetItemsAsync(getItemsRequest, getItemsRequest.PaginationQuery);
 
-      var paginationResponse = new PagedResponse<ItemResponse>(items);
-
-      return Ok(paginationResponse);
+      return Ok(PaginationHelper.CreatePaginatedResponse(getItemsRequest.PaginationQuery, items));
     }
 
   }
