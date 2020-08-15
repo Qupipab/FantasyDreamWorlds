@@ -36,10 +36,10 @@ namespace Entities
       modelBuilder
         .Entity<GameServer>()
         .HasData(
-          new GameServer { Id = -1, CreatorId = creatorId, Title = "Infinity", CreatedAt = dateNow, UpdatedAt = dateNow },
-          new GameServer { Id = -2, CreatorId = creatorId, Title = "Unfinity", CreatedAt = dateNow, UpdatedAt = dateNow },
-          new GameServer { Id = -3, CreatorId = creatorId, Title = "Ozone", CreatedAt = dateNow, UpdatedAt = dateNow },
-          new GameServer { Id = -4, CreatorId = creatorId, Title = "Arcmagic", CreatedAt = dateNow, UpdatedAt = dateNow }
+          new GameServer { Id = -1, CreatorId = creatorId, Title = "infinity", CreatedAt = dateNow, UpdatedAt = dateNow },
+          new GameServer { Id = -2, CreatorId = creatorId, Title = "unfinity", CreatedAt = dateNow, UpdatedAt = dateNow },
+          new GameServer { Id = -3, CreatorId = creatorId, Title = "ozone", CreatedAt = dateNow, UpdatedAt = dateNow },
+          new GameServer { Id = -4, CreatorId = creatorId, Title = "arcmagic", CreatedAt = dateNow, UpdatedAt = dateNow }
         );
 
       // Categories
@@ -53,8 +53,8 @@ namespace Entities
           {
             Id = (i + 1) * -1,
             CreatorId = creatorId,
-            RuTitle = "Категория " + (i + 1) * -1,
-            EnTitle = "Category " + (i + 1) * -1,
+            RuTitle = "категория " + (i + 1) * -1,
+            EnTitle = "category " + (i + 1) * -1,
             CreatedAt = dateNow,
             UpdatedAt = dateNow,
             GameServerId = GetRandomNumber(-4, 0)
@@ -74,9 +74,9 @@ namespace Entities
           {
             Id = itemsGuids[i],
             CreatorId = creatorId,
-            RuTitle = "Предмет " + (i + 1) * -1,
-            EnTitle = "Item " + (i + 1) * -1,
-            Icon = "Icon",
+            RuTitle = "предмет " + (i + 1) * -1,
+            EnTitle = "item " + (i + 1) * -1,
+            Icon = "icon",
             Count = GetRandomNumber(1, 11),
             Coins = GetRandomNumber(10, 101),
             Discount = 0,

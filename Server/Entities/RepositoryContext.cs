@@ -1,6 +1,7 @@
 ﻿using Entities.Models;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using System;
 
 namespace Entities
 {
@@ -23,6 +24,10 @@ namespace Entities
       modelBuilder.Entity<User>()
         .Ignore(u => u.PhoneNumber)
         .Ignore(u => u.PhoneNumberConfirmed);
+
+      modelBuilder.Entity<GameServer>()
+        .HasIndex(gs => gs.Title)
+        .IsUnique();
 
       modelBuilder.Entity<GameServer>()
         .Property(i => i.Id)
