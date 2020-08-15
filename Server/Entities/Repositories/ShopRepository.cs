@@ -1,7 +1,9 @@
 ﻿using Entities.Models;
 using Entities.Repositories.Interfaces;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -10,13 +12,31 @@ namespace Entities.Repositories
   public class ShopRepository : IShopRepository
   {
 
+    private readonly IRepositoryContext _repositoryContext;
+
+    public ShopRepository(IRepositoryContext repositoryContext)
+    {
+      _repositoryContext = repositoryContext;
+    }
+
 
     // <---------- GameServer ---------->
 
 
-    public Task<bool> CreateGameServerAsync(GameServer gameServer)
+    public async Task<GameServer> CreateGameServerAsync(GameServer gameServer)
     {
-      throw new NotImplementedException();
+      var title = await _repositoryContext.GameServers
+                    .FirstOrDefaultAsync(gs => gs.Title.ToLower().Equals(gameServer.Title));
+
+      if(title == null)
+      {
+        await _repositoryContext.GameServers.AddAsync(gameServer);
+        _repositoryContext.SaveChanges();
+
+        return gameServer;
+      }
+
+      return null;
     }
 
     public Task<bool> EditGameServerAsync(GameServer gameServer)
@@ -65,6 +85,35 @@ namespace Entities.Repositories
     public Task<bool> RemoveItemAsync(Item item)
     {
       throw new NotImplementedException();
+    }
+
+    public async Task<ICollection<Item>> GetItemsAsync(int serverId, int categoryId, string itemsForSearch, ItemsSortType sortType, Language language, PaginationFilter paginationFilter)
+    {
+
+      var items = _repositoryContext.Items
+        .Where(i => i.ItemCategories.Any(ic => ic.Category.GameServer.Id.Equals(serverId)))
+        .Where(i => categoryId != 0
+                    ? i.ItemCategories.Any(ic => ic.Category.Id.Equals(categoryId))
+                    : i.ItemCategories.Any())
+        .Where(i => language.Equals(Language.En)
+                    ? i.EnTitle.Contains(itemsForSearch)
+                    : i.RuTitle.Contains(itemsForSearch));
+
+      items = sortType switch
+      {
+        ItemsSortType.DescendingPrice => items.OrderByDescending(i => i.Coins),
+        ItemsSortType.Discount => items.OrderByDescending(i => i.Discount),
+        _ => items.OrderBy(i => i.Coins)
+      };
+
+      if (paginationFilter != null)
+      {
+        var skip = (paginationFilter.PageNumber - 1) * paginationFilter.PageSize;
+
+        items =  items.Skip(skip).Take(paginationFilter.PageSize);
+      }
+
+      return await items.ToListAsync();
     }
   }
 }

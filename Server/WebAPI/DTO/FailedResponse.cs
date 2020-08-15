@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
 
-namespace WebAPI.DTO.Auth.Response
+namespace WebAPI.DTO
 {
-  public class AuthFailedResponse
+  public class FailedResponse
   {
 
     public IEnumerable<string> Errors { get; set; }

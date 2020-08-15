@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace WebAPI.DTO
+namespace WebAPI.DTO.Auth
 {
   public class AuthenticationResult
   {

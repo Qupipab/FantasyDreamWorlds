@@ -1,4 +1,5 @@
 ﻿using Entities.Models;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace Entities.Repositories.Interfaces
@@ -6,7 +7,7 @@ namespace Entities.Repositories.Interfaces
   public interface IShopRepository
   {
 
-    Task<bool> CreateGameServerAsync(GameServer gameServer);
+    Task<GameServer> CreateGameServerAsync(GameServer gameServer);
     Task<bool> EditGameServerAsync(GameServer gameServer);
     Task<bool> RemoveGameServerAsync(GameServer gameServer);
 
@@ -19,6 +20,7 @@ namespace Entities.Repositories.Interfaces
     Task<bool> CreateItemAsync(Item item);
     Task<bool> EditItemAsync(Item item);
     Task<bool> RemoveItemAsync(Item item);
+    Task<ICollection<Item>> GetItemsAsync(int serverId, int categoryId, string ItemsForSearch, ItemsSortType sortType, Language language, PaginationFilter paginationFilter);
 
   }
 }

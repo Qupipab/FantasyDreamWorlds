@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 namespace WebAPI.DTO.Request
 {
-  public class ItemRequest
+  public class TransformItemRequest
   {
 
     [Required]
@@ -24,7 +24,7 @@ namespace WebAPI.DTO.Request
     public int Coins { get; set; }
     public int ECoins { get; set; }
     public double Discount { get; set; }
-    public DateTime DiscountEndDate { get; set; }
+    public DateTimeOffset DiscountEndDate { get; set; }
 
   }
 }

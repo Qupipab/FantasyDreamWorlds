@@ -1,17 +1,19 @@
-﻿using System;
+﻿using Entities.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using WebAPI.DTO.Pagination.Request;
 using WebAPI.DTO.Request;
 using WebAPI.DTO.Shop.Request;
 using WebAPI.DTO.Shop.Response;
 
 namespace WebAPI.Services.Interfaces
 {
-  interface IShopService
+  public interface IShopService
   {
 
-    Task<GameServerResponse> CreateGameServerAsync(GameServerRequest createGameServerRequest);
+    Task<GameServerResponse> CreateGameServerAsync(GameServerRequest gameServerRequest, string creatorId);
     Task<GameServerResponse> EditGameServerAsync(GameServerRequest createGameServerRequest);
     Task<GameServerResponse> RemoveGameServerAsync(GameServerRequest createGameServerRequest);
 
@@ -21,9 +23,9 @@ namespace WebAPI.Services.Interfaces
     Task<CategoryResponse> RemoveCategoryAsync(CategoryRequest categoryRequest);
 
 
-    Task<ItemResponse> CreateItemAsync(ItemRequest itemRequest);
-    Task<ItemResponse> EditItemAsync(ItemRequest itemRequest);
-    Task<ItemResponse> RemoveItemAsync(ItemRequest itemRequest);
-
+    Task<ItemResponse> CreateItemAsync(TransformItemRequest itemRequest);
+    Task<ItemResponse> EditItemAsync(TransformItemRequest itemRequest);
+    Task<ItemResponse> RemoveItemAsync(TransformItemRequest itemRequest);
+    Task<ICollection<ItemResponse>> GetItemsAsync(GetItemsRequest getItemsRequest, PaginationQuery paginationQuery = null);
   }
 }
