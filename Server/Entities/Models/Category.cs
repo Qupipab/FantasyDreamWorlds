@@ -14,8 +14,8 @@ namespace Entities.Models
     public Guid CreatorId { get; set; }
     public string RuTitle { get; set; }
     public string EnTitle { get; set; }
-    public DateTime CreatedAt { get; set; }
-    public DateTime UpdatedAt { get; set; }
+    public DateTimeOffset CreatedAt { get; set; }
+    public DateTimeOffset UpdatedAt { get; set; }
 
     [Required]
     public int GameServerId { get; set; }

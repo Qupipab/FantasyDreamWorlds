@@ -19,9 +19,9 @@ namespace Entities.Models
     public int Coins { get; set; }
     public int ECoins { get; set; }
     public double Discount { get; set; }
-    public DateTime DiscountEndDate { get; set; }
-    public DateTime CreatedAt { get; set; }
-    public DateTime UpdatedAt { get; set; }
+    public DateTimeOffset DiscountEndDate { get; set; }
+    public DateTimeOffset CreatedAt { get; set; }
+    public DateTimeOffset UpdatedAt { get; set; }
     public ICollection<ItemCategory> ItemCategories { get; set; }
 
   }
