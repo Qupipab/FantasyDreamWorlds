@@ -13,8 +13,6 @@ namespace WebAPI.DTO.Shop.Request
     [Required]
     public int CategoryId { get; set; }
 
-    [Required]
-    [StringLength(30, MinimumLength = 3)]
     public string ItemsForSearch { get; set; }
 
     [Required, Range(0, 2)]
@@ -23,6 +21,7 @@ namespace WebAPI.DTO.Shop.Request
     [Required, Range(0, 1)]
     public Language Language { get; set; }
 
+    [Required]
     public PaginationQuery PaginationQuery { get; set; }
 
   }

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using WebAPI.DTO.Pagination.Request;
+using WebAPI.DTO.Pagination.Response;
 using WebAPI.DTO.Request;
 using WebAPI.DTO.Shop.Request;
 using WebAPI.DTO.Shop.Response;
@@ -26,6 +27,6 @@ namespace WebAPI.Services.Interfaces
     Task<ItemResponse> CreateItemAsync(TransformItemRequest itemRequest);
     Task<ItemResponse> EditItemAsync(TransformItemRequest itemRequest);
     Task<ItemResponse> RemoveItemAsync(TransformItemRequest itemRequest);
-    Task<ICollection<ItemResponse>> GetItemsAsync(GetItemsRequest getItemsRequest, PaginationQuery paginationQuery = null);
+    Task<PagedResponse<ItemResponse>> GetPaginatedItemsAsync(GetItemsRequest getItemsRequest);
   }
 }

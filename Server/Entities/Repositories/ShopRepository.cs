@@ -87,7 +87,7 @@ namespace Entities.Repositories
       throw new NotImplementedException();
     }
 
-    public async Task<ICollection<Item>> GetItemsAsync(int serverId, int categoryId, string itemsForSearch, ItemsSortType sortType, Language language, PaginationFilter paginationFilter)
+    public IQueryable<Item> GetItems(int serverId, int categoryId, string itemsForSearch, ItemsSortType sortType, Language language)
     {
 
       var items = _repositoryContext.Items
@@ -106,14 +106,7 @@ namespace Entities.Repositories
         _ => items.OrderBy(i => i.Coins)
       };
 
-      if (paginationFilter != null)
-      {
-        var skip = (paginationFilter.PageNumber - 1) * paginationFilter.PageSize;
-
-        items =  items.Skip(skip).Take(paginationFilter.PageSize);
-      }
-
-      return await items.ToListAsync();
+      return items;
     }
   }
 }

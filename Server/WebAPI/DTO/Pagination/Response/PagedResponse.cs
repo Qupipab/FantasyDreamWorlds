@@ -16,6 +16,7 @@ namespace WebAPI.DTO.Pagination.Response
 
     public int? PageNumber { get; set; }
     public int? PageSize { get; set; }
+    public int? TotalCount { get; set; }
     public bool NextPage { get; set; }
     public bool PreviousPage { get; set; }
 

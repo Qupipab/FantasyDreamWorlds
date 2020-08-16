@@ -1,9 +1,12 @@
 ﻿using AutoMapper;
+using Entities.Helpers;
 using Entities.Models;
 using Entities.Repositories.Interfaces;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Internal;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using WebAPI.DTO.Pagination.Request;
 using WebAPI.DTO.Pagination.Response;
@@ -100,22 +103,22 @@ namespace WebAPI.Services
       throw new NotImplementedException();
     }
 
-    public async Task<ICollection<ItemResponse>> GetItemsAsync(GetItemsRequest getItemsRequest, PaginationQuery paginationQuery = null)
+    public async Task<PagedResponse<ItemResponse>> GetPaginatedItemsAsync(GetItemsRequest getItemsRequest)
     {
 
-      var paginationFilter = _mapper.Map<PaginationFilter>(paginationQuery);
+      var paginationFilter = _mapper.Map<PaginationFilter>(getItemsRequest.PaginationQuery);
 
-      var items = await _shopRepository
-        .GetItemsAsync(getItemsRequest.ServerId,
-                       getItemsRequest.CategoryId,
-                       getItemsRequest.ItemsForSearch.ToLower(),
-                       getItemsRequest.SortType,
-                       getItemsRequest.Language,
-                       paginationFilter);
+      var items = _shopRepository.GetItems(getItemsRequest.ServerId,
+                                           getItemsRequest.CategoryId,
+                                           getItemsRequest.ItemsForSearch.ToLower(),
+                                           getItemsRequest.SortType,
+                                           getItemsRequest.Language);
 
-      var itemsResponse = _mapper.Map<ICollection<ItemResponse>>(items);
+      var paginatedItems = await RequestPaginationHelper.PaginateAsync(items, paginationFilter);
 
-      return itemsResponse;
+      var itemsResponse = _mapper.Map<ICollection<ItemResponse>>(paginatedItems);
+
+      return ResponsePaginationHelper.CreatePaginatedResponse(paginationFilter, itemsResponse, items.Count());
     }
 
   }

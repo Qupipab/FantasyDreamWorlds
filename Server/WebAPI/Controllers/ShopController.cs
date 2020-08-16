@@ -40,6 +40,7 @@ namespace WebAPI.Controllers
     public async Task<IActionResult> AddGameServer([FromBody] GameServerRequest gameServerRequest)
     {
       var created = await _shopService.CreateGameServerAsync(gameServerRequest, HttpContext.GetUserId());
+
       if (created != null)
       {
         return Ok(created);
@@ -122,11 +123,18 @@ namespace WebAPI.Controllers
     [HttpPost]
     [Route(ApiRoutes.Shop.GetItems)]
     [ProducesResponseType(typeof(PagedResponse<ItemResponse>), 200)]
+    [ProducesResponseType(typeof(FailedResponse), 400)]
     public async Task<IActionResult> GetItems([FromBody] GetItemsRequest getItemsRequest)
     {
-      var items = await _shopService.GetItemsAsync(getItemsRequest, getItemsRequest.PaginationQuery);
 
-      return Ok(PaginationHelper.CreatePaginatedResponse(getItemsRequest.PaginationQuery, items));
+      if(getItemsRequest.ItemsForSearch == null)
+      {
+        return BadRequest(new FailedResponse { Errors = new List<string> { "The ItemsForSearch field is required" } });
+      }
+
+      var items = await _shopService.GetPaginatedItemsAsync(getItemsRequest);
+
+      return Ok(items);
     }
 
   }
