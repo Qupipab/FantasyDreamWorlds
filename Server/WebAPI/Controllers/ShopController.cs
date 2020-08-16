@@ -89,6 +89,8 @@ namespace WebAPI.Controllers
     [HttpPost]
     [Authorize(AuthenticationSchemes = ApiRoutes.AuthScheme, Roles = "Admin")]
     [Route(ApiRoutes.Shop.AddCategory)]
+    [ProducesResponseType(typeof(CategoryResponse), 200)]
+    [ProducesResponseType(typeof(FailedResponse), 400)]
     public async Task<IActionResult> AddCategory([FromBody] CategoryRequest categoryRequest)
     {
       var isGameServerExists = await _shopService.IsGameServerExistsAsync(categoryRequest.GameServerId);
@@ -111,6 +113,8 @@ namespace WebAPI.Controllers
     [HttpPut]
     [Authorize(AuthenticationSchemes = ApiRoutes.AuthScheme, Roles = "Admin")]
     [Route(ApiRoutes.Shop.EditCategory)]
+    [ProducesResponseType(typeof(CategoryResponse), 200)]
+    [ProducesResponseType(typeof(FailedResponse), 400)]
     public async Task<IActionResult> EditCategory([FromBody] EditCategoryRequest editCategoryRequest)
     {
       var editedCategory = await _shopService.EditCategoryAsync(editCategoryRequest);
@@ -126,6 +130,8 @@ namespace WebAPI.Controllers
     [HttpDelete]
     [Authorize(AuthenticationSchemes = ApiRoutes.AuthScheme, Roles = "Admin")]
     [Route(ApiRoutes.Shop.RemoveCategory)]
+    [ProducesResponseType(200)]
+    [ProducesResponseType(typeof(FailedResponse), 400)]
     public async Task<IActionResult> RemoveCategory([FromBody] DeleteCategoryRequest categoryRequest)
     {
       var removedCategory = await _shopService.RemoveCategoryAsync(categoryRequest);
