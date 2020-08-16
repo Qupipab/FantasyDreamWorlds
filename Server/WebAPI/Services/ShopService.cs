@@ -47,39 +47,50 @@ namespace WebAPI.Services
 
       var createdGameServer = await _shopRepository.CreateGameServerAsync(gameServer);
 
-      if(createdGameServer != null)
+      if(createdGameServer == null)
       {
-        return _mapper.Map<GameServerResponse>(createdGameServer);
+        return null;
       }
 
-      return null;
+      return _mapper.Map<GameServerResponse>(createdGameServer);
     }
     
-    public Task<GameServerResponse> EditGameServerAsync(GameServerRequest createGameServerRequest)
+    public async Task<GameServerResponse> EditGameServerAsync(EditGameServerRequest editGameServer)
     {
-      throw new NotImplementedException();
+      var editedGameServer = await _shopRepository.EditGameServerAsync(editGameServer.NewTitle, editGameServer.OldTitle);
+
+      if (editedGameServer == null)
+      {
+        return null;
+      }
+
+      return _mapper.Map<GameServerResponse>(editedGameServer);
     }
 
-    public Task<GameServerResponse> RemoveGameServerAsync(GameServerRequest createGameServerRequest)
+    public async Task<bool> RemoveGameServerAsync(GameServerRequest gameServerRequest)
     {
-      throw new NotImplementedException();
+      var gameServer = _mapper.Map<GameServer>(gameServerRequest);
+
+      var romovedGameServer = await _shopRepository.RemoveGameServerAsync(gameServer);
+
+      return romovedGameServer;
     }
 
 
     // <---------- Category ---------->
 
 
-    public Task<CategoryResponse> CreateCategoryAsync(CategoryRequest categoryRequest)
+    public async Task<CategoryResponse> CreateCategoryAsync(CategoryRequest categoryRequest)
     {
       throw new NotImplementedException();
     }
 
-    public Task<CategoryResponse> EditCategoryAsync(CategoryRequest categoryRequest)
+    public async Task<CategoryResponse> EditCategoryAsync(CategoryRequest categoryRequest)
     {
       throw new NotImplementedException();
     }
 
-    public Task<CategoryResponse> RemoveCategoryAsync(CategoryRequest categoryRequest)
+    public async Task<CategoryResponse> RemoveCategoryAsync(CategoryRequest categoryRequest)
     {
       throw new NotImplementedException();
     }
@@ -88,17 +99,17 @@ namespace WebAPI.Services
     // <---------- Item ---------->
 
 
-    public Task<ItemResponse> CreateItemAsync(TransformItemRequest itemRequest)
+    public async Task<ItemResponse> CreateItemAsync(TransformItemRequest itemRequest)
     {
       throw new NotImplementedException();
     }
 
-    public Task<ItemResponse> EditItemAsync(TransformItemRequest itemRequest)
+    public async Task<ItemResponse> EditItemAsync(TransformItemRequest itemRequest)
     {
       throw new NotImplementedException();
     }
 
-    public Task<ItemResponse> RemoveItemAsync(TransformItemRequest itemRequest)
+    public async Task<ItemResponse> RemoveItemAsync(TransformItemRequest itemRequest)
     {
       throw new NotImplementedException();
     }

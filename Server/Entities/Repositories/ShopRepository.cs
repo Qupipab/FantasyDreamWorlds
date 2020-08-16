@@ -25,45 +25,68 @@ namespace Entities.Repositories
 
     public async Task<GameServer> CreateGameServerAsync(GameServer gameServer)
     {
-      var title = await _repositoryContext.GameServers
+      var server = await _repositoryContext.GameServers
                     .FirstOrDefaultAsync(gs => gs.Title.ToLower().Equals(gameServer.Title));
 
-      if(title == null)
+      if(server == null)
       {
         await _repositoryContext.GameServers.AddAsync(gameServer);
         _repositoryContext.SaveChanges();
 
-        return gameServer;
+        return server;
       }
 
       return null;
     }
 
-    public Task<bool> EditGameServerAsync(GameServer gameServer)
+    public async Task<GameServer> EditGameServerAsync(string newTitle, string oldTitle)
     {
-      throw new NotImplementedException();
+      var server = await _repositoryContext.GameServers
+                    .FirstOrDefaultAsync(gs => gs.Title.ToLower().Equals(oldTitle.ToLower()));
+
+      if (server != null)
+      {
+        server.Title = newTitle.ToLower();
+        server.UpdatedAt = DateTimeOffset.UtcNow;
+
+        _repositoryContext.SaveChanges();
+        return server;
+      }
+
+      return null;
     }
 
-    public Task<bool> RemoveGameServerAsync(GameServer gameServer)
+    public async Task<bool> RemoveGameServerAsync(GameServer gameServer)
     {
-      throw new NotImplementedException();
+      var server = await _repositoryContext.GameServers
+                    .FirstOrDefaultAsync(gs => 
+                        gs.Title.ToLower().Equals(gameServer.Title.ToLower()));
+
+      if (server != null)
+      {
+        _repositoryContext.GameServers.Remove(server);
+        _repositoryContext.SaveChanges();
+        return true;
+      }
+
+      return false;
     }
 
 
     // <---------- Category ---------->
 
 
-    public Task<bool> CreateCategoryAsync(Category category)
+    public async Task<bool> CreateCategoryAsync(Category category)
     {
       throw new NotImplementedException();
     }
 
-    public Task<bool> EditCategoryAsync(Category category)
+    public async Task<bool> EditCategoryAsync(Category category)
     {
       throw new NotImplementedException();
     }
 
-    public Task<bool> RemoveCategoryAsync(Category category)
+    public async Task<bool> RemoveCategoryAsync(Category category)
     {
       throw new NotImplementedException();
     }
@@ -72,17 +95,17 @@ namespace Entities.Repositories
     // <---------- Item ---------->
 
 
-    public Task<bool> CreateItemAsync(Item item)
+    public async Task<bool> CreateItemAsync(Item item)
     {
       throw new NotImplementedException();
     }
 
-    public Task<bool> EditItemAsync(Item item)
+    public async Task<bool> EditItemAsync(Item item)
     {
       throw new NotImplementedException();
     }
 
-    public Task<bool> RemoveItemAsync(Item item)
+    public async Task<bool> RemoveItemAsync(Item item)
     {
       throw new NotImplementedException();
     }

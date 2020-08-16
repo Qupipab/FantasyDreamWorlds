@@ -15,14 +15,12 @@ namespace WebAPI.Services.Interfaces
   {
 
     Task<GameServerResponse> CreateGameServerAsync(GameServerRequest gameServerRequest, string creatorId);
-    Task<GameServerResponse> EditGameServerAsync(GameServerRequest createGameServerRequest);
-    Task<GameServerResponse> RemoveGameServerAsync(GameServerRequest createGameServerRequest);
-
+    Task<GameServerResponse> EditGameServerAsync(EditGameServerRequest editGameServerRequest);
+    Task<bool> RemoveGameServerAsync(GameServerRequest createGameServerRequest);
 
     Task<CategoryResponse> CreateCategoryAsync(CategoryRequest categoryRequest);
     Task<CategoryResponse> EditCategoryAsync(CategoryRequest categoryRequest);
     Task<CategoryResponse> RemoveCategoryAsync(CategoryRequest categoryRequest);
-
 
     Task<ItemResponse> CreateItemAsync(TransformItemRequest itemRequest);
     Task<ItemResponse> EditItemAsync(TransformItemRequest itemRequest);

@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Runtime.InteropServices;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
@@ -39,11 +40,11 @@ namespace WebAPI.Controllers
     [ProducesResponseType(typeof(FailedResponse), 400)]
     public async Task<IActionResult> AddGameServer([FromBody] GameServerRequest gameServerRequest)
     {
-      var created = await _shopService.CreateGameServerAsync(gameServerRequest, HttpContext.GetUserId());
+      var createdGameServer = await _shopService.CreateGameServerAsync(gameServerRequest, HttpContext.GetUserId());
 
-      if (created != null)
+      if (createdGameServer != null)
       {
-        return Ok(created);
+        return Ok(createdGameServer);
       }
 
       return BadRequest(new FailedResponse { Errors = new List<string> { "Game server already exists" } });
@@ -52,9 +53,16 @@ namespace WebAPI.Controllers
     [HttpPut]
     [Authorize(AuthenticationSchemes = ApiRoutes.AuthScheme, Roles = "Admin")]
     [Route(ApiRoutes.Shop.EditGameServer)]
-    public async Task<IActionResult> EditGameServer([FromBody] GameServerRequest gameServerRequest)
+    public async Task<IActionResult> EditGameServer([FromBody] EditGameServerRequest gameServerRequest)
     {
-      return Ok();
+      var editedGameServer = await _shopService.EditGameServerAsync(gameServerRequest);
+
+      if (editedGameServer != null)
+      {
+        return Ok(editedGameServer);
+      }
+
+      return BadRequest(new FailedResponse { Errors = new List<string> { "Game server not found" } });
     }
 
     [HttpDelete]
@@ -62,7 +70,12 @@ namespace WebAPI.Controllers
     [Route(ApiRoutes.Shop.RemoveGameServer)]
     public async Task<IActionResult> RemoveGameServer([FromBody] GameServerRequest gameServerRequest)
     {
-      return Ok();
+      var removedServer = await _shopService.RemoveGameServerAsync(gameServerRequest);
+
+      if(removedServer)
+        return Ok();
+      else
+        return BadRequest(new FailedResponse { Errors = new List<string> { "Game server not found" } });
     }
 
 

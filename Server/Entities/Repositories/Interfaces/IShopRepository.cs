@@ -9,7 +9,7 @@ namespace Entities.Repositories.Interfaces
   {
 
     Task<GameServer> CreateGameServerAsync(GameServer gameServer);
-    Task<bool> EditGameServerAsync(GameServer gameServer);
+    Task<GameServer> EditGameServerAsync(string newTitle, string oldTitle);
     Task<bool> RemoveGameServerAsync(GameServer gameServer);
 
 
