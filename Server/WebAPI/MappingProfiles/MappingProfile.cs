@@ -12,10 +12,11 @@ namespace WebAPI.MappingProfiles
       CreateMap<Item, ItemResponse>();
 
       CreateMap<GameServerRequest, GameServer>();
-      CreateMap<EditGameServerRequest, GameServer>()
-        .ForMember(model => model.Title, opt => opt.MapFrom(dto => dto.NewTitle));
-
       CreateMap<GameServer, GameServerResponse>();
+
+      CreateMap<CategoryRequest, Category>();
+      CreateMap<Category, CategoryResponse>();
+      CreateMap<DeleteCategoryRequest, Category>();
     }
   }
 }

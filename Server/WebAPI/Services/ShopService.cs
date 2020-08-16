@@ -2,13 +2,10 @@
 using Entities.Helpers;
 using Entities.Models;
 using Entities.Repositories.Interfaces;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Internal;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using WebAPI.DTO.Pagination.Request;
 using WebAPI.DTO.Pagination.Response;
 using WebAPI.DTO.Request;
 using WebAPI.DTO.Shop.Request;
@@ -71,28 +68,52 @@ namespace WebAPI.Services
     {
       var gameServer = _mapper.Map<GameServer>(gameServerRequest);
 
-      var romovedGameServer = await _shopRepository.RemoveGameServerAsync(gameServer);
+      var removedGameServer = await _shopRepository.RemoveGameServerAsync(gameServer);
 
-      return romovedGameServer;
+      return removedGameServer;
     }
 
 
     // <---------- Category ---------->
 
 
-    public async Task<CategoryResponse> CreateCategoryAsync(CategoryRequest categoryRequest)
+    public async Task<CategoryResponse> CreateCategoryAsync(CategoryRequest categoryRequest, string creatorId)
     {
-      throw new NotImplementedException();
+      var dateNow = DateTimeOffset.UtcNow;
+
+      var category = _mapper.Map<Category>(categoryRequest);
+
+      category.CreatorId = Guid.Parse(creatorId);
+      category.CreatedAt = dateNow;
+      category.UpdatedAt = dateNow;
+
+      var createdCategory = await _shopRepository.CreateCategoryAsync(category);
+
+      if (createdCategory == null)
+      {
+        return null;
+      }
+
+      return _mapper.Map<CategoryResponse>(createdCategory);
     }
 
-    public async Task<CategoryResponse> EditCategoryAsync(CategoryRequest categoryRequest)
+    public async Task<CategoryResponse> EditCategoryAsync(EditCategoryRequest editCategory)
     {
-      throw new NotImplementedException();
+      var editedCategory = await _shopRepository.EditCategoryAsync(editCategory.CategoryId, editCategory.NewRuTitle, editCategory.NewEnTitle);
+
+      if (editedCategory == null)
+      {
+        return null;
+      }
+
+      return _mapper.Map<CategoryResponse>(editedCategory);
     }
 
-    public async Task<CategoryResponse> RemoveCategoryAsync(CategoryRequest categoryRequest)
+    public async Task<bool> RemoveCategoryAsync(DeleteCategoryRequest categoryRequest)
     {
-      throw new NotImplementedException();
+      var removedCategory = await _shopRepository.RemoveCategoryAsync(categoryRequest.CategoryId);
+
+      return removedCategory;
     }
 
 
@@ -130,6 +151,11 @@ namespace WebAPI.Services
       var itemsResponse = _mapper.Map<ICollection<ItemResponse>>(paginatedItems);
 
       return ResponsePaginationHelper.CreatePaginatedResponse(paginationFilter, itemsResponse, items.Count());
+    }
+
+    public async Task<bool> IsGameServerExistsAsync(int gameServerId)
+    {
+      return await _shopRepository.IsGameServerExistsAsync(gameServerId);
     }
 
   }

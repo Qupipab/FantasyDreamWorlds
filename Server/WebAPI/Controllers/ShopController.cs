@@ -42,40 +42,44 @@ namespace WebAPI.Controllers
     {
       var createdGameServer = await _shopService.CreateGameServerAsync(gameServerRequest, HttpContext.GetUserId());
 
-      if (createdGameServer != null)
+      if (createdGameServer == null)
       {
-        return Ok(createdGameServer);
+        return BadRequest(new FailedResponse { Errors = new List<string> { "Game server already exists" } });
       }
 
-      return BadRequest(new FailedResponse { Errors = new List<string> { "Game server already exists" } });
+      return Ok(createdGameServer); 
     }
 
     [HttpPut]
     [Authorize(AuthenticationSchemes = ApiRoutes.AuthScheme, Roles = "Admin")]
     [Route(ApiRoutes.Shop.EditGameServer)]
+    [ProducesResponseType(typeof(GameServerResponse), 200)]
+    [ProducesResponseType(typeof(FailedResponse), 400)]
     public async Task<IActionResult> EditGameServer([FromBody] EditGameServerRequest gameServerRequest)
     {
       var editedGameServer = await _shopService.EditGameServerAsync(gameServerRequest);
 
-      if (editedGameServer != null)
+      if (editedGameServer == null)
       {
-        return Ok(editedGameServer);
+        return BadRequest(new FailedResponse { Errors = new List<string> { "Game server not found" } });
       }
 
-      return BadRequest(new FailedResponse { Errors = new List<string> { "Game server not found" } });
+      return Ok(editedGameServer);
     }
 
     [HttpDelete]
     [Authorize(AuthenticationSchemes = ApiRoutes.AuthScheme, Roles = "Admin")]
     [Route(ApiRoutes.Shop.RemoveGameServer)]
+    [ProducesResponseType(200)]
+    [ProducesResponseType(typeof(FailedResponse), 400)]
     public async Task<IActionResult> RemoveGameServer([FromBody] GameServerRequest gameServerRequest)
     {
       var removedServer = await _shopService.RemoveGameServerAsync(gameServerRequest);
 
-      if(removedServer)
-        return Ok();
-      else
+      if (!removedServer)
         return BadRequest(new FailedResponse { Errors = new List<string> { "Game server not found" } });
+      else
+        return Ok();
     }
 
 
@@ -87,23 +91,49 @@ namespace WebAPI.Controllers
     [Route(ApiRoutes.Shop.AddCategory)]
     public async Task<IActionResult> AddCategory([FromBody] CategoryRequest categoryRequest)
     {
-      return Ok();
+      var isGameServerExists = await _shopService.IsGameServerExistsAsync(categoryRequest.GameServerId);
+
+      if (!isGameServerExists)
+      {
+        return BadRequest(new FailedResponse { Errors = new List<string> { "Game server is not exist" } });
+      }
+
+      var createdCategory = await _shopService.CreateCategoryAsync(categoryRequest, HttpContext.GetUserId());
+
+      if (createdCategory == null)
+      {
+        return BadRequest(new FailedResponse { Errors = new List<string> { "Category already exists" } });
+      }
+
+      return Ok(createdCategory);
     }
 
     [HttpPut]
     [Authorize(AuthenticationSchemes = ApiRoutes.AuthScheme, Roles = "Admin")]
     [Route(ApiRoutes.Shop.EditCategory)]
-    public async Task<IActionResult> EditCategory([FromBody] CategoryRequest categoryRequest)
+    public async Task<IActionResult> EditCategory([FromBody] EditCategoryRequest editCategoryRequest)
     {
-      return Ok();
+      var editedCategory = await _shopService.EditCategoryAsync(editCategoryRequest);
+
+      if (editedCategory == null)
+      {
+        return BadRequest(new FailedResponse { Errors = new List<string> { "Category not found" } });
+      }
+
+      return Ok(editedCategory);
     }
 
     [HttpDelete]
     [Authorize(AuthenticationSchemes = ApiRoutes.AuthScheme, Roles = "Admin")]
     [Route(ApiRoutes.Shop.RemoveCategory)]
-    public async Task<IActionResult> RemoveCategory([FromBody] CategoryRequest categoryRequest)
+    public async Task<IActionResult> RemoveCategory([FromBody] DeleteCategoryRequest categoryRequest)
     {
-      return Ok();
+      var removedCategory = await _shopService.RemoveCategoryAsync(categoryRequest);
+
+      if (!removedCategory)
+        return BadRequest(new FailedResponse { Errors = new List<string> { "Category not found" } });
+      else
+        return Ok();
     }
 
     // <---------- Item ---------->

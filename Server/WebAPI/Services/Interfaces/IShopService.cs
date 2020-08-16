@@ -18,13 +18,15 @@ namespace WebAPI.Services.Interfaces
     Task<GameServerResponse> EditGameServerAsync(EditGameServerRequest editGameServerRequest);
     Task<bool> RemoveGameServerAsync(GameServerRequest createGameServerRequest);
 
-    Task<CategoryResponse> CreateCategoryAsync(CategoryRequest categoryRequest);
-    Task<CategoryResponse> EditCategoryAsync(CategoryRequest categoryRequest);
-    Task<CategoryResponse> RemoveCategoryAsync(CategoryRequest categoryRequest);
+    Task<CategoryResponse> CreateCategoryAsync(CategoryRequest categoryRequest, string creatorId);
+    Task<CategoryResponse> EditCategoryAsync(EditCategoryRequest editCategoryRequest);
+    Task<bool> RemoveCategoryAsync(DeleteCategoryRequest categoryRequest);
 
     Task<ItemResponse> CreateItemAsync(TransformItemRequest itemRequest);
     Task<ItemResponse> EditItemAsync(TransformItemRequest itemRequest);
     Task<ItemResponse> RemoveItemAsync(TransformItemRequest itemRequest);
     Task<PagedResponse<ItemResponse>> GetPaginatedItemsAsync(GetItemsRequest getItemsRequest);
+
+    Task<bool> IsGameServerExistsAsync(int gameServerId);
   }
 }

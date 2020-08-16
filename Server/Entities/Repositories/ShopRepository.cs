@@ -76,19 +76,54 @@ namespace Entities.Repositories
     // <---------- Category ---------->
 
 
-    public async Task<bool> CreateCategoryAsync(Category category)
-    {
-      throw new NotImplementedException();
+    public async Task<Category> CreateCategoryAsync(Category newCategory)
+    { 
+      var category = await _repositoryContext.Categories
+                  .Where(c => c.GameServerId.Equals(newCategory.GameServerId)
+                            && (c.RuTitle.Equals(newCategory.RuTitle)
+                            || c.EnTitle.Equals(newCategory.EnTitle)))
+                  .FirstOrDefaultAsync();
+
+      if (category == null)
+      {
+        await _repositoryContext.Categories.AddAsync(newCategory);
+        _repositoryContext.SaveChanges();
+
+        return newCategory;
+      }
+
+      return null;
     }
 
-    public async Task<bool> EditCategoryAsync(Category category)
+    public async Task<Category> EditCategoryAsync(int categoryId, string newRuTitle, string newEnTitle)
     {
-      throw new NotImplementedException();
+      var category = await _repositoryContext.Categories.FirstOrDefaultAsync(c => c.Id == categoryId);
+
+      if (category != null)
+      {
+        category.RuTitle = newRuTitle.ToLower();
+        category.EnTitle = newEnTitle.ToLower();
+        category.UpdatedAt = DateTimeOffset.UtcNow;
+
+        _repositoryContext.SaveChanges();
+        return category;
+      }
+
+      return null;
     }
 
-    public async Task<bool> RemoveCategoryAsync(Category category)
+    public async Task<bool> RemoveCategoryAsync(int categoryId)
     {
-      throw new NotImplementedException();
+      var category = await _repositoryContext.Categories.FirstOrDefaultAsync(c => c.Id == categoryId);
+
+      if (category != null)
+      {
+        _repositoryContext.Categories.Remove(category);
+        _repositoryContext.SaveChanges();
+        return true;
+      }
+
+      return false;
     }
 
 
@@ -130,6 +165,12 @@ namespace Entities.Repositories
       };
 
       return items;
+    }
+
+    public async Task<bool> IsGameServerExistsAsync(int gameServerId)
+    {
+      return await _repositoryContext.GameServers
+        .AnyAsync(gs => gs.Id.Equals(gameServerId));
     }
   }
 }

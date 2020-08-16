@@ -2,19 +2,19 @@
 
 namespace WebAPI.DTO.Shop.Request
 {
-  public class CategoryRequest
+  public class EditCategoryRequest
   {
 
     [Required]
-    public int GameServerId { get; set; }
+    public int CategoryId { get; set; }
 
     [Required]
     [StringLength(30, MinimumLength = 3)]
-    public string RuTitle { get; set; }
+    public string NewRuTitle { get; set; }
 
     [Required]
     [StringLength(30, MinimumLength = 3)]
-    public string EnTitle { get; set; }
+    public string NewEnTitle { get; set; }
 
   }
 }

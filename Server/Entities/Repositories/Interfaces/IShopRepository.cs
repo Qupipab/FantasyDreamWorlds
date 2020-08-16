@@ -13,15 +13,17 @@ namespace Entities.Repositories.Interfaces
     Task<bool> RemoveGameServerAsync(GameServer gameServer);
 
 
-    Task<bool> CreateCategoryAsync(Category category);
-    Task<bool> EditCategoryAsync(Category category);
-    Task<bool> RemoveCategoryAsync(Category category);
+    Task<Category> CreateCategoryAsync(Category category);
+    Task<Category> EditCategoryAsync(int categoryId, string newRuTitle, string newEnTitle);
+    Task<bool> RemoveCategoryAsync(int categoryId);
 
 
     Task<bool> CreateItemAsync(Item item);
     Task<bool> EditItemAsync(Item item);
     Task<bool> RemoveItemAsync(Item item);
     IQueryable<Item> GetItems(int serverId, int categoryId, string ItemsForSearch, ItemsSortType sortType, Language language);
+
+    Task<bool> IsGameServerExistsAsync(int gameServerId);
 
   }
 }
