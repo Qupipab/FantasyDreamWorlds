@@ -33,6 +33,9 @@ namespace WebAPI.DTO.Shop.Request
     public double Discount { get; set; }
 
     [Required]
+    public DateTimeOffset DiscountStartDate { get; set; }
+
+    [Required]
     public DateTimeOffset DiscountEndDate { get; set; }
 
   }

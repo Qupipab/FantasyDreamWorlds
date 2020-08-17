@@ -26,8 +26,8 @@ namespace Entities.Migrations
                         .HasColumnType("integer")
                         .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
 
-                    b.Property<DateTime>("CreatedAt")
-                        .HasColumnType("timestamp without time zone");
+                    b.Property<DateTimeOffset>("CreatedAt")
+                        .HasColumnType("timestamp with time zone");
 
                     b.Property<Guid>("CreatorId")
                         .HasColumnType("uuid");
@@ -41,8 +41,8 @@ namespace Entities.Migrations
                     b.Property<string>("RuTitle")
                         .HasColumnType("text");
 
-                    b.Property<DateTime>("UpdatedAt")
-                        .HasColumnType("timestamp without time zone");
+                    b.Property<DateTimeOffset>("UpdatedAt")
+                        .HasColumnType("timestamp with time zone");
 
                     b.HasKey("Id");
 
@@ -54,102 +54,102 @@ namespace Entities.Migrations
                         new
                         {
                             Id = -1,
-                            CreatedAt = new DateTime(2020, 8, 14, 22, 59, 31, 696, DateTimeKind.Utc).AddTicks(8045),
+                            CreatedAt = new DateTimeOffset(new DateTime(2020, 8, 17, 14, 8, 56, 609, DateTimeKind.Unspecified).AddTicks(6481), new TimeSpan(0, 0, 0, 0, 0)),
                             CreatorId = new Guid("95024899-0ae4-4916-bdf4-7cd55c11128b"),
-                            EnTitle = "Category -1",
+                            EnTitle = "category -1",
                             GameServerId = -2,
-                            RuTitle = "Категория -1",
-                            UpdatedAt = new DateTime(2020, 8, 14, 22, 59, 31, 696, DateTimeKind.Utc).AddTicks(8045)
+                            RuTitle = "категория -1",
+                            UpdatedAt = new DateTimeOffset(new DateTime(2020, 8, 17, 14, 8, 56, 609, DateTimeKind.Unspecified).AddTicks(6481), new TimeSpan(0, 0, 0, 0, 0))
                         },
                         new
                         {
                             Id = -2,
-                            CreatedAt = new DateTime(2020, 8, 14, 22, 59, 31, 696, DateTimeKind.Utc).AddTicks(8045),
+                            CreatedAt = new DateTimeOffset(new DateTime(2020, 8, 17, 14, 8, 56, 609, DateTimeKind.Unspecified).AddTicks(6481), new TimeSpan(0, 0, 0, 0, 0)),
                             CreatorId = new Guid("95024899-0ae4-4916-bdf4-7cd55c11128b"),
-                            EnTitle = "Category -2",
-                            GameServerId = -4,
-                            RuTitle = "Категория -2",
-                            UpdatedAt = new DateTime(2020, 8, 14, 22, 59, 31, 696, DateTimeKind.Utc).AddTicks(8045)
+                            EnTitle = "category -2",
+                            GameServerId = -1,
+                            RuTitle = "категория -2",
+                            UpdatedAt = new DateTimeOffset(new DateTime(2020, 8, 17, 14, 8, 56, 609, DateTimeKind.Unspecified).AddTicks(6481), new TimeSpan(0, 0, 0, 0, 0))
                         },
                         new
                         {
                             Id = -3,
-                            CreatedAt = new DateTime(2020, 8, 14, 22, 59, 31, 696, DateTimeKind.Utc).AddTicks(8045),
+                            CreatedAt = new DateTimeOffset(new DateTime(2020, 8, 17, 14, 8, 56, 609, DateTimeKind.Unspecified).AddTicks(6481), new TimeSpan(0, 0, 0, 0, 0)),
                             CreatorId = new Guid("95024899-0ae4-4916-bdf4-7cd55c11128b"),
-                            EnTitle = "Category -3",
-                            GameServerId = -4,
-                            RuTitle = "Категория -3",
-                            UpdatedAt = new DateTime(2020, 8, 14, 22, 59, 31, 696, DateTimeKind.Utc).AddTicks(8045)
+                            EnTitle = "category -3",
+                            GameServerId = -2,
+                            RuTitle = "категория -3",
+                            UpdatedAt = new DateTimeOffset(new DateTime(2020, 8, 17, 14, 8, 56, 609, DateTimeKind.Unspecified).AddTicks(6481), new TimeSpan(0, 0, 0, 0, 0))
                         },
                         new
                         {
                             Id = -4,
-                            CreatedAt = new DateTime(2020, 8, 14, 22, 59, 31, 696, DateTimeKind.Utc).AddTicks(8045),
+                            CreatedAt = new DateTimeOffset(new DateTime(2020, 8, 17, 14, 8, 56, 609, DateTimeKind.Unspecified).AddTicks(6481), new TimeSpan(0, 0, 0, 0, 0)),
                             CreatorId = new Guid("95024899-0ae4-4916-bdf4-7cd55c11128b"),
-                            EnTitle = "Category -4",
-                            GameServerId = -4,
-                            RuTitle = "Категория -4",
-                            UpdatedAt = new DateTime(2020, 8, 14, 22, 59, 31, 696, DateTimeKind.Utc).AddTicks(8045)
+                            EnTitle = "category -4",
+                            GameServerId = -2,
+                            RuTitle = "категория -4",
+                            UpdatedAt = new DateTimeOffset(new DateTime(2020, 8, 17, 14, 8, 56, 609, DateTimeKind.Unspecified).AddTicks(6481), new TimeSpan(0, 0, 0, 0, 0))
                         },
                         new
                         {
                             Id = -5,
-                            CreatedAt = new DateTime(2020, 8, 14, 22, 59, 31, 696, DateTimeKind.Utc).AddTicks(8045),
+                            CreatedAt = new DateTimeOffset(new DateTime(2020, 8, 17, 14, 8, 56, 609, DateTimeKind.Unspecified).AddTicks(6481), new TimeSpan(0, 0, 0, 0, 0)),
                             CreatorId = new Guid("95024899-0ae4-4916-bdf4-7cd55c11128b"),
-                            EnTitle = "Category -5",
-                            GameServerId = -1,
-                            RuTitle = "Категория -5",
-                            UpdatedAt = new DateTime(2020, 8, 14, 22, 59, 31, 696, DateTimeKind.Utc).AddTicks(8045)
+                            EnTitle = "category -5",
+                            GameServerId = -3,
+                            RuTitle = "категория -5",
+                            UpdatedAt = new DateTimeOffset(new DateTime(2020, 8, 17, 14, 8, 56, 609, DateTimeKind.Unspecified).AddTicks(6481), new TimeSpan(0, 0, 0, 0, 0))
                         },
                         new
                         {
                             Id = -6,
-                            CreatedAt = new DateTime(2020, 8, 14, 22, 59, 31, 696, DateTimeKind.Utc).AddTicks(8045),
+                            CreatedAt = new DateTimeOffset(new DateTime(2020, 8, 17, 14, 8, 56, 609, DateTimeKind.Unspecified).AddTicks(6481), new TimeSpan(0, 0, 0, 0, 0)),
                             CreatorId = new Guid("95024899-0ae4-4916-bdf4-7cd55c11128b"),
-                            EnTitle = "Category -6",
-                            GameServerId = -3,
-                            RuTitle = "Категория -6",
-                            UpdatedAt = new DateTime(2020, 8, 14, 22, 59, 31, 696, DateTimeKind.Utc).AddTicks(8045)
+                            EnTitle = "category -6",
+                            GameServerId = -2,
+                            RuTitle = "категория -6",
+                            UpdatedAt = new DateTimeOffset(new DateTime(2020, 8, 17, 14, 8, 56, 609, DateTimeKind.Unspecified).AddTicks(6481), new TimeSpan(0, 0, 0, 0, 0))
                         },
                         new
                         {
                             Id = -7,
-                            CreatedAt = new DateTime(2020, 8, 14, 22, 59, 31, 696, DateTimeKind.Utc).AddTicks(8045),
+                            CreatedAt = new DateTimeOffset(new DateTime(2020, 8, 17, 14, 8, 56, 609, DateTimeKind.Unspecified).AddTicks(6481), new TimeSpan(0, 0, 0, 0, 0)),
                             CreatorId = new Guid("95024899-0ae4-4916-bdf4-7cd55c11128b"),
-                            EnTitle = "Category -7",
-                            GameServerId = -4,
-                            RuTitle = "Категория -7",
-                            UpdatedAt = new DateTime(2020, 8, 14, 22, 59, 31, 696, DateTimeKind.Utc).AddTicks(8045)
+                            EnTitle = "category -7",
+                            GameServerId = -2,
+                            RuTitle = "категория -7",
+                            UpdatedAt = new DateTimeOffset(new DateTime(2020, 8, 17, 14, 8, 56, 609, DateTimeKind.Unspecified).AddTicks(6481), new TimeSpan(0, 0, 0, 0, 0))
                         },
                         new
                         {
                             Id = -8,
-                            CreatedAt = new DateTime(2020, 8, 14, 22, 59, 31, 696, DateTimeKind.Utc).AddTicks(8045),
+                            CreatedAt = new DateTimeOffset(new DateTime(2020, 8, 17, 14, 8, 56, 609, DateTimeKind.Unspecified).AddTicks(6481), new TimeSpan(0, 0, 0, 0, 0)),
                             CreatorId = new Guid("95024899-0ae4-4916-bdf4-7cd55c11128b"),
-                            EnTitle = "Category -8",
-                            GameServerId = -4,
-                            RuTitle = "Категория -8",
-                            UpdatedAt = new DateTime(2020, 8, 14, 22, 59, 31, 696, DateTimeKind.Utc).AddTicks(8045)
+                            EnTitle = "category -8",
+                            GameServerId = -2,
+                            RuTitle = "категория -8",
+                            UpdatedAt = new DateTimeOffset(new DateTime(2020, 8, 17, 14, 8, 56, 609, DateTimeKind.Unspecified).AddTicks(6481), new TimeSpan(0, 0, 0, 0, 0))
                         },
                         new
                         {
                             Id = -9,
-                            CreatedAt = new DateTime(2020, 8, 14, 22, 59, 31, 696, DateTimeKind.Utc).AddTicks(8045),
+                            CreatedAt = new DateTimeOffset(new DateTime(2020, 8, 17, 14, 8, 56, 609, DateTimeKind.Unspecified).AddTicks(6481), new TimeSpan(0, 0, 0, 0, 0)),
                             CreatorId = new Guid("95024899-0ae4-4916-bdf4-7cd55c11128b"),
-                            EnTitle = "Category -9",
+                            EnTitle = "category -9",
                             GameServerId = -4,
-                            RuTitle = "Категория -9",
-                            UpdatedAt = new DateTime(2020, 8, 14, 22, 59, 31, 696, DateTimeKind.Utc).AddTicks(8045)
+                            RuTitle = "категория -9",
+                            UpdatedAt = new DateTimeOffset(new DateTime(2020, 8, 17, 14, 8, 56, 609, DateTimeKind.Unspecified).AddTicks(6481), new TimeSpan(0, 0, 0, 0, 0))
                         },
                         new
                         {
                             Id = -10,
-                            CreatedAt = new DateTime(2020, 8, 14, 22, 59, 31, 696, DateTimeKind.Utc).AddTicks(8045),
+                            CreatedAt = new DateTimeOffset(new DateTime(2020, 8, 17, 14, 8, 56, 609, DateTimeKind.Unspecified).AddTicks(6481), new TimeSpan(0, 0, 0, 0, 0)),
                             CreatorId = new Guid("95024899-0ae4-4916-bdf4-7cd55c11128b"),
-                            EnTitle = "Category -10",
-                            GameServerId = -3,
-                            RuTitle = "Категория -10",
-                            UpdatedAt = new DateTime(2020, 8, 14, 22, 59, 31, 696, DateTimeKind.Utc).AddTicks(8045)
+                            EnTitle = "category -10",
+                            GameServerId = -1,
+                            RuTitle = "категория -10",
+                            UpdatedAt = new DateTimeOffset(new DateTime(2020, 8, 17, 14, 8, 56, 609, DateTimeKind.Unspecified).AddTicks(6481), new TimeSpan(0, 0, 0, 0, 0))
                         });
                 });
 
@@ -160,8 +160,8 @@ namespace Entities.Migrations
                         .HasColumnType("integer")
                         .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
 
-                    b.Property<DateTime>("CreatedAt")
-                        .HasColumnType("timestamp without time zone");
+                    b.Property<DateTimeOffset>("CreatedAt")
+                        .HasColumnType("timestamp with time zone");
 
                     b.Property<Guid>("CreatorId")
                         .HasColumnType("uuid");
@@ -169,10 +169,13 @@ namespace Entities.Migrations
                     b.Property<string>("Title")
                         .HasColumnType("text");
 
-                    b.Property<DateTime>("UpdatedAt")
-                        .HasColumnType("timestamp without time zone");
+                    b.Property<DateTimeOffset>("UpdatedAt")
+                        .HasColumnType("timestamp with time zone");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("Title")
+                        .IsUnique();
 
                     b.ToTable("GameServers");
 
@@ -180,34 +183,34 @@ namespace Entities.Migrations
                         new
                         {
                             Id = -1,
-                            CreatedAt = new DateTime(2020, 8, 14, 22, 59, 31, 696, DateTimeKind.Utc).AddTicks(8045),
+                            CreatedAt = new DateTimeOffset(new DateTime(2020, 8, 17, 14, 8, 56, 609, DateTimeKind.Unspecified).AddTicks(6481), new TimeSpan(0, 0, 0, 0, 0)),
                             CreatorId = new Guid("95024899-0ae4-4916-bdf4-7cd55c11128b"),
-                            Title = "Infinity",
-                            UpdatedAt = new DateTime(2020, 8, 14, 22, 59, 31, 696, DateTimeKind.Utc).AddTicks(8045)
+                            Title = "infinity",
+                            UpdatedAt = new DateTimeOffset(new DateTime(2020, 8, 17, 14, 8, 56, 609, DateTimeKind.Unspecified).AddTicks(6481), new TimeSpan(0, 0, 0, 0, 0))
                         },
                         new
                         {
                             Id = -2,
-                            CreatedAt = new DateTime(2020, 8, 14, 22, 59, 31, 696, DateTimeKind.Utc).AddTicks(8045),
+                            CreatedAt = new DateTimeOffset(new DateTime(2020, 8, 17, 14, 8, 56, 609, DateTimeKind.Unspecified).AddTicks(6481), new TimeSpan(0, 0, 0, 0, 0)),
                             CreatorId = new Guid("95024899-0ae4-4916-bdf4-7cd55c11128b"),
-                            Title = "Unfinity",
-                            UpdatedAt = new DateTime(2020, 8, 14, 22, 59, 31, 696, DateTimeKind.Utc).AddTicks(8045)
+                            Title = "unfinity",
+                            UpdatedAt = new DateTimeOffset(new DateTime(2020, 8, 17, 14, 8, 56, 609, DateTimeKind.Unspecified).AddTicks(6481), new TimeSpan(0, 0, 0, 0, 0))
                         },
                         new
                         {
                             Id = -3,
-                            CreatedAt = new DateTime(2020, 8, 14, 22, 59, 31, 696, DateTimeKind.Utc).AddTicks(8045),
+                            CreatedAt = new DateTimeOffset(new DateTime(2020, 8, 17, 14, 8, 56, 609, DateTimeKind.Unspecified).AddTicks(6481), new TimeSpan(0, 0, 0, 0, 0)),
                             CreatorId = new Guid("95024899-0ae4-4916-bdf4-7cd55c11128b"),
-                            Title = "Ozone",
-                            UpdatedAt = new DateTime(2020, 8, 14, 22, 59, 31, 696, DateTimeKind.Utc).AddTicks(8045)
+                            Title = "ozone",
+                            UpdatedAt = new DateTimeOffset(new DateTime(2020, 8, 17, 14, 8, 56, 609, DateTimeKind.Unspecified).AddTicks(6481), new TimeSpan(0, 0, 0, 0, 0))
                         },
                         new
                         {
                             Id = -4,
-                            CreatedAt = new DateTime(2020, 8, 14, 22, 59, 31, 696, DateTimeKind.Utc).AddTicks(8045),
+                            CreatedAt = new DateTimeOffset(new DateTime(2020, 8, 17, 14, 8, 56, 609, DateTimeKind.Unspecified).AddTicks(6481), new TimeSpan(0, 0, 0, 0, 0)),
                             CreatorId = new Guid("95024899-0ae4-4916-bdf4-7cd55c11128b"),
-                            Title = "Arcmagic",
-                            UpdatedAt = new DateTime(2020, 8, 14, 22, 59, 31, 696, DateTimeKind.Utc).AddTicks(8045)
+                            Title = "arcmagic",
+                            UpdatedAt = new DateTimeOffset(new DateTime(2020, 8, 17, 14, 8, 56, 609, DateTimeKind.Unspecified).AddTicks(6481), new TimeSpan(0, 0, 0, 0, 0))
                         });
                 });
 
@@ -223,8 +226,8 @@ namespace Entities.Migrations
                     b.Property<int>("Count")
                         .HasColumnType("integer");
 
-                    b.Property<DateTime>("CreatedAt")
-                        .HasColumnType("timestamp without time zone");
+                    b.Property<DateTimeOffset>("CreatedAt")
+                        .HasColumnType("timestamp with time zone");
 
                     b.Property<Guid>("CreatorId")
                         .HasColumnType("uuid");
@@ -232,8 +235,11 @@ namespace Entities.Migrations
                     b.Property<double>("Discount")
                         .HasColumnType("double precision");
 
-                    b.Property<DateTime>("DiscountEndDate")
-                        .HasColumnType("timestamp without time zone");
+                    b.Property<DateTimeOffset>("DiscountEndDate")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<DateTimeOffset>("DiscountStartDate")
+                        .HasColumnType("timestamp with time zone");
 
                     b.Property<int>("ECoins")
                         .HasColumnType("integer");
@@ -247,8 +253,8 @@ namespace Entities.Migrations
                     b.Property<string>("RuTitle")
                         .HasColumnType("text");
 
-                    b.Property<DateTime>("UpdatedAt")
-                        .HasColumnType("timestamp without time zone");
+                    b.Property<DateTimeOffset>("UpdatedAt")
+                        .HasColumnType("timestamp with time zone");
 
                     b.HasKey("Id");
 
@@ -257,153 +263,163 @@ namespace Entities.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("51bfc407-478a-404d-a5a8-c6b6d5bc8d60"),
-                            Coins = 26,
+                            Id = new Guid("fcf610bd-e0f5-4d66-ae84-c451434b479a"),
+                            Coins = 42,
+                            Count = 3,
+                            CreatedAt = new DateTimeOffset(new DateTime(2020, 8, 17, 14, 8, 56, 609, DateTimeKind.Unspecified).AddTicks(6481), new TimeSpan(0, 0, 0, 0, 0)),
+                            CreatorId = new Guid("95024899-0ae4-4916-bdf4-7cd55c11128b"),
+                            Discount = 0.0,
+                            DiscountEndDate = new DateTimeOffset(new DateTime(2020, 8, 17, 14, 8, 56, 609, DateTimeKind.Unspecified).AddTicks(6481), new TimeSpan(0, 0, 0, 0, 0)),
+                            DiscountStartDate = new DateTimeOffset(new DateTime(2020, 8, 17, 14, 8, 56, 609, DateTimeKind.Unspecified).AddTicks(6481), new TimeSpan(0, 0, 0, 0, 0)),
+                            ECoins = 0,
+                            EnTitle = "item -1",
+                            Icon = "icon",
+                            RuTitle = "предмет -1",
+                            UpdatedAt = new DateTimeOffset(new DateTime(2020, 8, 17, 14, 8, 56, 609, DateTimeKind.Unspecified).AddTicks(6481), new TimeSpan(0, 0, 0, 0, 0))
+                        },
+                        new
+                        {
+                            Id = new Guid("a426acc9-a2f4-4531-98bb-68508c3d6220"),
+                            Coins = 52,
                             Count = 4,
-                            CreatedAt = new DateTime(2020, 8, 14, 22, 59, 31, 696, DateTimeKind.Utc).AddTicks(8045),
+                            CreatedAt = new DateTimeOffset(new DateTime(2020, 8, 17, 14, 8, 56, 609, DateTimeKind.Unspecified).AddTicks(6481), new TimeSpan(0, 0, 0, 0, 0)),
                             CreatorId = new Guid("95024899-0ae4-4916-bdf4-7cd55c11128b"),
                             Discount = 0.0,
-                            DiscountEndDate = new DateTime(2020, 8, 14, 22, 59, 31, 696, DateTimeKind.Utc).AddTicks(8045),
+                            DiscountEndDate = new DateTimeOffset(new DateTime(2020, 8, 17, 14, 8, 56, 609, DateTimeKind.Unspecified).AddTicks(6481), new TimeSpan(0, 0, 0, 0, 0)),
+                            DiscountStartDate = new DateTimeOffset(new DateTime(2020, 8, 17, 14, 8, 56, 609, DateTimeKind.Unspecified).AddTicks(6481), new TimeSpan(0, 0, 0, 0, 0)),
                             ECoins = 0,
-                            EnTitle = "Item -1",
-                            Icon = "Icon",
-                            RuTitle = "Предмет -1",
-                            UpdatedAt = new DateTime(2020, 8, 14, 22, 59, 31, 696, DateTimeKind.Utc).AddTicks(8045)
+                            EnTitle = "item -2",
+                            Icon = "icon",
+                            RuTitle = "предмет -2",
+                            UpdatedAt = new DateTimeOffset(new DateTime(2020, 8, 17, 14, 8, 56, 609, DateTimeKind.Unspecified).AddTicks(6481), new TimeSpan(0, 0, 0, 0, 0))
                         },
                         new
                         {
-                            Id = new Guid("67c5c6a7-d547-40a8-9699-850d41ff168a"),
-                            Coins = 84,
-                            Count = 8,
-                            CreatedAt = new DateTime(2020, 8, 14, 22, 59, 31, 696, DateTimeKind.Utc).AddTicks(8045),
-                            CreatorId = new Guid("95024899-0ae4-4916-bdf4-7cd55c11128b"),
-                            Discount = 0.0,
-                            DiscountEndDate = new DateTime(2020, 8, 14, 22, 59, 31, 696, DateTimeKind.Utc).AddTicks(8045),
-                            ECoins = 0,
-                            EnTitle = "Item -2",
-                            Icon = "Icon",
-                            RuTitle = "Предмет -2",
-                            UpdatedAt = new DateTime(2020, 8, 14, 22, 59, 31, 696, DateTimeKind.Utc).AddTicks(8045)
-                        },
-                        new
-                        {
-                            Id = new Guid("8c73e29e-81b5-46fe-b1da-334133355320"),
-                            Coins = 26,
+                            Id = new Guid("b620d15d-bc45-4785-b075-18db300c8c35"),
+                            Coins = 45,
                             Count = 9,
-                            CreatedAt = new DateTime(2020, 8, 14, 22, 59, 31, 696, DateTimeKind.Utc).AddTicks(8045),
+                            CreatedAt = new DateTimeOffset(new DateTime(2020, 8, 17, 14, 8, 56, 609, DateTimeKind.Unspecified).AddTicks(6481), new TimeSpan(0, 0, 0, 0, 0)),
                             CreatorId = new Guid("95024899-0ae4-4916-bdf4-7cd55c11128b"),
                             Discount = 0.0,
-                            DiscountEndDate = new DateTime(2020, 8, 14, 22, 59, 31, 696, DateTimeKind.Utc).AddTicks(8045),
+                            DiscountEndDate = new DateTimeOffset(new DateTime(2020, 8, 17, 14, 8, 56, 609, DateTimeKind.Unspecified).AddTicks(6481), new TimeSpan(0, 0, 0, 0, 0)),
+                            DiscountStartDate = new DateTimeOffset(new DateTime(2020, 8, 17, 14, 8, 56, 609, DateTimeKind.Unspecified).AddTicks(6481), new TimeSpan(0, 0, 0, 0, 0)),
                             ECoins = 0,
-                            EnTitle = "Item -3",
-                            Icon = "Icon",
-                            RuTitle = "Предмет -3",
-                            UpdatedAt = new DateTime(2020, 8, 14, 22, 59, 31, 696, DateTimeKind.Utc).AddTicks(8045)
+                            EnTitle = "item -3",
+                            Icon = "icon",
+                            RuTitle = "предмет -3",
+                            UpdatedAt = new DateTimeOffset(new DateTime(2020, 8, 17, 14, 8, 56, 609, DateTimeKind.Unspecified).AddTicks(6481), new TimeSpan(0, 0, 0, 0, 0))
                         },
                         new
                         {
-                            Id = new Guid("b7531636-8db0-40e1-91b0-08df652fcb5f"),
-                            Coins = 83,
-                            Count = 1,
-                            CreatedAt = new DateTime(2020, 8, 14, 22, 59, 31, 696, DateTimeKind.Utc).AddTicks(8045),
+                            Id = new Guid("5bef3437-99d5-4828-9004-8177c8d5b47e"),
+                            Coins = 77,
+                            Count = 3,
+                            CreatedAt = new DateTimeOffset(new DateTime(2020, 8, 17, 14, 8, 56, 609, DateTimeKind.Unspecified).AddTicks(6481), new TimeSpan(0, 0, 0, 0, 0)),
                             CreatorId = new Guid("95024899-0ae4-4916-bdf4-7cd55c11128b"),
                             Discount = 0.0,
-                            DiscountEndDate = new DateTime(2020, 8, 14, 22, 59, 31, 696, DateTimeKind.Utc).AddTicks(8045),
+                            DiscountEndDate = new DateTimeOffset(new DateTime(2020, 8, 17, 14, 8, 56, 609, DateTimeKind.Unspecified).AddTicks(6481), new TimeSpan(0, 0, 0, 0, 0)),
+                            DiscountStartDate = new DateTimeOffset(new DateTime(2020, 8, 17, 14, 8, 56, 609, DateTimeKind.Unspecified).AddTicks(6481), new TimeSpan(0, 0, 0, 0, 0)),
                             ECoins = 0,
-                            EnTitle = "Item -4",
-                            Icon = "Icon",
-                            RuTitle = "Предмет -4",
-                            UpdatedAt = new DateTime(2020, 8, 14, 22, 59, 31, 696, DateTimeKind.Utc).AddTicks(8045)
+                            EnTitle = "item -4",
+                            Icon = "icon",
+                            RuTitle = "предмет -4",
+                            UpdatedAt = new DateTimeOffset(new DateTime(2020, 8, 17, 14, 8, 56, 609, DateTimeKind.Unspecified).AddTicks(6481), new TimeSpan(0, 0, 0, 0, 0))
                         },
                         new
                         {
-                            Id = new Guid("95d03040-46ca-42e6-bc32-6aae87c3e1ac"),
-                            Coins = 30,
-                            Count = 2,
-                            CreatedAt = new DateTime(2020, 8, 14, 22, 59, 31, 696, DateTimeKind.Utc).AddTicks(8045),
-                            CreatorId = new Guid("95024899-0ae4-4916-bdf4-7cd55c11128b"),
-                            Discount = 0.0,
-                            DiscountEndDate = new DateTime(2020, 8, 14, 22, 59, 31, 696, DateTimeKind.Utc).AddTicks(8045),
-                            ECoins = 0,
-                            EnTitle = "Item -5",
-                            Icon = "Icon",
-                            RuTitle = "Предмет -5",
-                            UpdatedAt = new DateTime(2020, 8, 14, 22, 59, 31, 696, DateTimeKind.Utc).AddTicks(8045)
-                        },
-                        new
-                        {
-                            Id = new Guid("cdedb443-907b-4a75-8941-3ba021aea0bc"),
-                            Coins = 95,
-                            Count = 8,
-                            CreatedAt = new DateTime(2020, 8, 14, 22, 59, 31, 696, DateTimeKind.Utc).AddTicks(8045),
-                            CreatorId = new Guid("95024899-0ae4-4916-bdf4-7cd55c11128b"),
-                            Discount = 0.0,
-                            DiscountEndDate = new DateTime(2020, 8, 14, 22, 59, 31, 696, DateTimeKind.Utc).AddTicks(8045),
-                            ECoins = 0,
-                            EnTitle = "Item -6",
-                            Icon = "Icon",
-                            RuTitle = "Предмет -6",
-                            UpdatedAt = new DateTime(2020, 8, 14, 22, 59, 31, 696, DateTimeKind.Utc).AddTicks(8045)
-                        },
-                        new
-                        {
-                            Id = new Guid("8da7ebea-8c10-4088-b56e-f26eb15f81a4"),
-                            Coins = 97,
-                            Count = 6,
-                            CreatedAt = new DateTime(2020, 8, 14, 22, 59, 31, 696, DateTimeKind.Utc).AddTicks(8045),
-                            CreatorId = new Guid("95024899-0ae4-4916-bdf4-7cd55c11128b"),
-                            Discount = 0.0,
-                            DiscountEndDate = new DateTime(2020, 8, 14, 22, 59, 31, 696, DateTimeKind.Utc).AddTicks(8045),
-                            ECoins = 0,
-                            EnTitle = "Item -7",
-                            Icon = "Icon",
-                            RuTitle = "Предмет -7",
-                            UpdatedAt = new DateTime(2020, 8, 14, 22, 59, 31, 696, DateTimeKind.Utc).AddTicks(8045)
-                        },
-                        new
-                        {
-                            Id = new Guid("830a0946-4f90-462d-b6ce-63b7707ce8b5"),
-                            Coins = 48,
+                            Id = new Guid("ce3403ab-2f21-44ce-9fdc-392bd839e944"),
+                            Coins = 62,
                             Count = 4,
-                            CreatedAt = new DateTime(2020, 8, 14, 22, 59, 31, 696, DateTimeKind.Utc).AddTicks(8045),
+                            CreatedAt = new DateTimeOffset(new DateTime(2020, 8, 17, 14, 8, 56, 609, DateTimeKind.Unspecified).AddTicks(6481), new TimeSpan(0, 0, 0, 0, 0)),
                             CreatorId = new Guid("95024899-0ae4-4916-bdf4-7cd55c11128b"),
                             Discount = 0.0,
-                            DiscountEndDate = new DateTime(2020, 8, 14, 22, 59, 31, 696, DateTimeKind.Utc).AddTicks(8045),
+                            DiscountEndDate = new DateTimeOffset(new DateTime(2020, 8, 17, 14, 8, 56, 609, DateTimeKind.Unspecified).AddTicks(6481), new TimeSpan(0, 0, 0, 0, 0)),
+                            DiscountStartDate = new DateTimeOffset(new DateTime(2020, 8, 17, 14, 8, 56, 609, DateTimeKind.Unspecified).AddTicks(6481), new TimeSpan(0, 0, 0, 0, 0)),
                             ECoins = 0,
-                            EnTitle = "Item -8",
-                            Icon = "Icon",
-                            RuTitle = "Предмет -8",
-                            UpdatedAt = new DateTime(2020, 8, 14, 22, 59, 31, 696, DateTimeKind.Utc).AddTicks(8045)
+                            EnTitle = "item -5",
+                            Icon = "icon",
+                            RuTitle = "предмет -5",
+                            UpdatedAt = new DateTimeOffset(new DateTime(2020, 8, 17, 14, 8, 56, 609, DateTimeKind.Unspecified).AddTicks(6481), new TimeSpan(0, 0, 0, 0, 0))
                         },
                         new
                         {
-                            Id = new Guid("7c003f7e-d2c2-4ab0-8a6b-2e4f25a62c6a"),
-                            Coins = 51,
-                            Count = 8,
-                            CreatedAt = new DateTime(2020, 8, 14, 22, 59, 31, 696, DateTimeKind.Utc).AddTicks(8045),
+                            Id = new Guid("4b7b6ca8-d812-4328-a929-58f76b242333"),
+                            Coins = 71,
+                            Count = 1,
+                            CreatedAt = new DateTimeOffset(new DateTime(2020, 8, 17, 14, 8, 56, 609, DateTimeKind.Unspecified).AddTicks(6481), new TimeSpan(0, 0, 0, 0, 0)),
                             CreatorId = new Guid("95024899-0ae4-4916-bdf4-7cd55c11128b"),
                             Discount = 0.0,
-                            DiscountEndDate = new DateTime(2020, 8, 14, 22, 59, 31, 696, DateTimeKind.Utc).AddTicks(8045),
+                            DiscountEndDate = new DateTimeOffset(new DateTime(2020, 8, 17, 14, 8, 56, 609, DateTimeKind.Unspecified).AddTicks(6481), new TimeSpan(0, 0, 0, 0, 0)),
+                            DiscountStartDate = new DateTimeOffset(new DateTime(2020, 8, 17, 14, 8, 56, 609, DateTimeKind.Unspecified).AddTicks(6481), new TimeSpan(0, 0, 0, 0, 0)),
                             ECoins = 0,
-                            EnTitle = "Item -9",
-                            Icon = "Icon",
-                            RuTitle = "Предмет -9",
-                            UpdatedAt = new DateTime(2020, 8, 14, 22, 59, 31, 696, DateTimeKind.Utc).AddTicks(8045)
+                            EnTitle = "item -6",
+                            Icon = "icon",
+                            RuTitle = "предмет -6",
+                            UpdatedAt = new DateTimeOffset(new DateTime(2020, 8, 17, 14, 8, 56, 609, DateTimeKind.Unspecified).AddTicks(6481), new TimeSpan(0, 0, 0, 0, 0))
                         },
                         new
                         {
-                            Id = new Guid("85843659-e96f-4549-9c48-266c9333a088"),
-                            Coins = 14,
+                            Id = new Guid("37c0074d-ebf9-4f56-987a-76095237498d"),
+                            Coins = 44,
                             Count = 2,
-                            CreatedAt = new DateTime(2020, 8, 14, 22, 59, 31, 696, DateTimeKind.Utc).AddTicks(8045),
+                            CreatedAt = new DateTimeOffset(new DateTime(2020, 8, 17, 14, 8, 56, 609, DateTimeKind.Unspecified).AddTicks(6481), new TimeSpan(0, 0, 0, 0, 0)),
                             CreatorId = new Guid("95024899-0ae4-4916-bdf4-7cd55c11128b"),
                             Discount = 0.0,
-                            DiscountEndDate = new DateTime(2020, 8, 14, 22, 59, 31, 696, DateTimeKind.Utc).AddTicks(8045),
+                            DiscountEndDate = new DateTimeOffset(new DateTime(2020, 8, 17, 14, 8, 56, 609, DateTimeKind.Unspecified).AddTicks(6481), new TimeSpan(0, 0, 0, 0, 0)),
+                            DiscountStartDate = new DateTimeOffset(new DateTime(2020, 8, 17, 14, 8, 56, 609, DateTimeKind.Unspecified).AddTicks(6481), new TimeSpan(0, 0, 0, 0, 0)),
                             ECoins = 0,
-                            EnTitle = "Item -10",
-                            Icon = "Icon",
-                            RuTitle = "Предмет -10",
-                            UpdatedAt = new DateTime(2020, 8, 14, 22, 59, 31, 696, DateTimeKind.Utc).AddTicks(8045)
+                            EnTitle = "item -7",
+                            Icon = "icon",
+                            RuTitle = "предмет -7",
+                            UpdatedAt = new DateTimeOffset(new DateTime(2020, 8, 17, 14, 8, 56, 609, DateTimeKind.Unspecified).AddTicks(6481), new TimeSpan(0, 0, 0, 0, 0))
+                        },
+                        new
+                        {
+                            Id = new Guid("e00234c5-a343-495a-b036-f1098bfeb971"),
+                            Coins = 82,
+                            Count = 6,
+                            CreatedAt = new DateTimeOffset(new DateTime(2020, 8, 17, 14, 8, 56, 609, DateTimeKind.Unspecified).AddTicks(6481), new TimeSpan(0, 0, 0, 0, 0)),
+                            CreatorId = new Guid("95024899-0ae4-4916-bdf4-7cd55c11128b"),
+                            Discount = 0.0,
+                            DiscountEndDate = new DateTimeOffset(new DateTime(2020, 8, 17, 14, 8, 56, 609, DateTimeKind.Unspecified).AddTicks(6481), new TimeSpan(0, 0, 0, 0, 0)),
+                            DiscountStartDate = new DateTimeOffset(new DateTime(2020, 8, 17, 14, 8, 56, 609, DateTimeKind.Unspecified).AddTicks(6481), new TimeSpan(0, 0, 0, 0, 0)),
+                            ECoins = 0,
+                            EnTitle = "item -8",
+                            Icon = "icon",
+                            RuTitle = "предмет -8",
+                            UpdatedAt = new DateTimeOffset(new DateTime(2020, 8, 17, 14, 8, 56, 609, DateTimeKind.Unspecified).AddTicks(6481), new TimeSpan(0, 0, 0, 0, 0))
+                        },
+                        new
+                        {
+                            Id = new Guid("c628d527-6a12-40db-a33d-04cf8ad431b6"),
+                            Coins = 59,
+                            Count = 6,
+                            CreatedAt = new DateTimeOffset(new DateTime(2020, 8, 17, 14, 8, 56, 609, DateTimeKind.Unspecified).AddTicks(6481), new TimeSpan(0, 0, 0, 0, 0)),
+                            CreatorId = new Guid("95024899-0ae4-4916-bdf4-7cd55c11128b"),
+                            Discount = 0.0,
+                            DiscountEndDate = new DateTimeOffset(new DateTime(2020, 8, 17, 14, 8, 56, 609, DateTimeKind.Unspecified).AddTicks(6481), new TimeSpan(0, 0, 0, 0, 0)),
+                            DiscountStartDate = new DateTimeOffset(new DateTime(2020, 8, 17, 14, 8, 56, 609, DateTimeKind.Unspecified).AddTicks(6481), new TimeSpan(0, 0, 0, 0, 0)),
+                            ECoins = 0,
+                            EnTitle = "item -9",
+                            Icon = "icon",
+                            RuTitle = "предмет -9",
+                            UpdatedAt = new DateTimeOffset(new DateTime(2020, 8, 17, 14, 8, 56, 609, DateTimeKind.Unspecified).AddTicks(6481), new TimeSpan(0, 0, 0, 0, 0))
+                        },
+                        new
+                        {
+                            Id = new Guid("773dc83b-8600-4657-951c-bd25983a7d5d"),
+                            Coins = 39,
+                            Count = 9,
+                            CreatedAt = new DateTimeOffset(new DateTime(2020, 8, 17, 14, 8, 56, 609, DateTimeKind.Unspecified).AddTicks(6481), new TimeSpan(0, 0, 0, 0, 0)),
+                            CreatorId = new Guid("95024899-0ae4-4916-bdf4-7cd55c11128b"),
+                            Discount = 0.0,
+                            DiscountEndDate = new DateTimeOffset(new DateTime(2020, 8, 17, 14, 8, 56, 609, DateTimeKind.Unspecified).AddTicks(6481), new TimeSpan(0, 0, 0, 0, 0)),
+                            DiscountStartDate = new DateTimeOffset(new DateTime(2020, 8, 17, 14, 8, 56, 609, DateTimeKind.Unspecified).AddTicks(6481), new TimeSpan(0, 0, 0, 0, 0)),
+                            ECoins = 0,
+                            EnTitle = "item -10",
+                            Icon = "icon",
+                            RuTitle = "предмет -10",
+                            UpdatedAt = new DateTimeOffset(new DateTime(2020, 8, 17, 14, 8, 56, 609, DateTimeKind.Unspecified).AddTicks(6481), new TimeSpan(0, 0, 0, 0, 0))
                         });
                 });
 
@@ -424,52 +440,52 @@ namespace Entities.Migrations
                     b.HasData(
                         new
                         {
-                            ItemId = new Guid("51bfc407-478a-404d-a5a8-c6b6d5bc8d60"),
+                            ItemId = new Guid("fcf610bd-e0f5-4d66-ae84-c451434b479a"),
                             CategoryId = -1
                         },
                         new
                         {
-                            ItemId = new Guid("67c5c6a7-d547-40a8-9699-850d41ff168a"),
+                            ItemId = new Guid("a426acc9-a2f4-4531-98bb-68508c3d6220"),
                             CategoryId = -2
                         },
                         new
                         {
-                            ItemId = new Guid("8c73e29e-81b5-46fe-b1da-334133355320"),
+                            ItemId = new Guid("b620d15d-bc45-4785-b075-18db300c8c35"),
                             CategoryId = -3
                         },
                         new
                         {
-                            ItemId = new Guid("b7531636-8db0-40e1-91b0-08df652fcb5f"),
+                            ItemId = new Guid("5bef3437-99d5-4828-9004-8177c8d5b47e"),
                             CategoryId = -4
                         },
                         new
                         {
-                            ItemId = new Guid("95d03040-46ca-42e6-bc32-6aae87c3e1ac"),
+                            ItemId = new Guid("ce3403ab-2f21-44ce-9fdc-392bd839e944"),
                             CategoryId = -5
                         },
                         new
                         {
-                            ItemId = new Guid("cdedb443-907b-4a75-8941-3ba021aea0bc"),
+                            ItemId = new Guid("4b7b6ca8-d812-4328-a929-58f76b242333"),
                             CategoryId = -6
                         },
                         new
                         {
-                            ItemId = new Guid("8da7ebea-8c10-4088-b56e-f26eb15f81a4"),
+                            ItemId = new Guid("37c0074d-ebf9-4f56-987a-76095237498d"),
                             CategoryId = -7
                         },
                         new
                         {
-                            ItemId = new Guid("830a0946-4f90-462d-b6ce-63b7707ce8b5"),
+                            ItemId = new Guid("e00234c5-a343-495a-b036-f1098bfeb971"),
                             CategoryId = -8
                         },
                         new
                         {
-                            ItemId = new Guid("7c003f7e-d2c2-4ab0-8a6b-2e4f25a62c6a"),
+                            ItemId = new Guid("c628d527-6a12-40db-a33d-04cf8ad431b6"),
                             CategoryId = -9
                         },
                         new
                         {
-                            ItemId = new Guid("85843659-e96f-4549-9c48-266c9333a088"),
+                            ItemId = new Guid("773dc83b-8600-4657-951c-bd25983a7d5d"),
                             CategoryId = -10
                         });
                 });
@@ -495,8 +511,8 @@ namespace Entities.Migrations
                         .IsConcurrencyToken()
                         .HasColumnType("text");
 
-                    b.Property<DateTime?>("DateOfBirth")
-                        .HasColumnType("timestamp without time zone");
+                    b.Property<DateTimeOffset?>("DateOfBirth")
+                        .HasColumnType("timestamp with time zone");
 
                     b.Property<long?>("Econs")
                         .HasColumnType("bigint");
@@ -511,8 +527,8 @@ namespace Entities.Migrations
                     b.Property<string>("FirstName")
                         .HasColumnType("text");
 
-                    b.Property<DateTime>("LastActivity")
-                        .HasColumnType("timestamp without time zone");
+                    b.Property<DateTimeOffset>("LastActivity")
+                        .HasColumnType("timestamp with time zone");
 
                     b.Property<bool>("LockoutEnabled")
                         .HasColumnType("boolean");
@@ -531,8 +547,8 @@ namespace Entities.Migrations
                     b.Property<string>("PasswordHash")
                         .HasColumnType("text");
 
-                    b.Property<DateTime>("RegistrationDate")
-                        .HasColumnType("timestamp without time zone");
+                    b.Property<DateTimeOffset>("RegistrationDate")
+                        .HasColumnType("timestamp with time zone");
 
                     b.Property<string>("SecurityStamp")
                         .HasColumnType("text");

@@ -33,7 +33,7 @@ namespace Entities.Repositories
         await _repositoryContext.GameServers.AddAsync(gameServer);
         _repositoryContext.SaveChanges();
 
-        return server;
+        return gameServer;
       }
 
       return null;
@@ -70,6 +70,13 @@ namespace Entities.Repositories
       }
 
       return false;
+    }
+
+    public async Task<ICollection<GameServer>> GetGameServersAsync()
+    {
+      var gameServers = await _repositoryContext.GameServers.OrderBy(gs => gs.Title).ToListAsync();
+
+      return gameServers;
     }
 
 
@@ -124,6 +131,21 @@ namespace Entities.Repositories
       }
 
       return false;
+    }
+
+    public async Task<ICollection<Category>> GetCategoriesAsync(int gameServerId)
+    {
+      var categories = await _repositoryContext.Categories
+        .Where(c => c.GameServerId == gameServerId)
+        .OrderBy(c => c.RuTitle)
+        .ToListAsync();
+
+      if (categories.Any())
+      {
+         return categories;
+      }
+
+      return null;
     }
 
 

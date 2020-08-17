@@ -80,6 +80,7 @@ namespace Entities
             Count = GetRandomNumber(1, 11),
             Coins = GetRandomNumber(10, 101),
             Discount = 0,
+            DiscountStartDate = dateNow,
             DiscountEndDate = dateNow,
             CreatedAt = dateNow,
             UpdatedAt = dateNow

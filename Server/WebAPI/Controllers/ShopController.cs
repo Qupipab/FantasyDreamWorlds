@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Runtime.InteropServices;
+using System.Security.Policy;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
@@ -82,6 +83,23 @@ namespace WebAPI.Controllers
         return Ok("The server has been removed");
     }
 
+    [HttpGet]
+    [Route(ApiRoutes.Shop.GetGameServers)]
+    [ProducesResponseType(typeof(ICollection<GameServerResponse>), 200)]
+    [ProducesResponseType(typeof(FailedResponse), 400)]
+    public async Task<IActionResult> GetGameServers()
+    {
+      var gameServers = await _shopService.GetGameServersAsync();
+
+      if(!gameServers.Success)
+      {
+        return BadRequest(gameServers.Errors);
+      }
+
+      return Ok(gameServers.Response);
+    }
+
+
 
     // <---------- Category ---------->
 
@@ -135,6 +153,21 @@ namespace WebAPI.Controllers
         return Ok("The category has been removed");
     }
 
+    [HttpPost]
+    [Route(ApiRoutes.Shop.GetCategories)]
+    [ProducesResponseType(typeof(ICollection<GameServerResponse>), 200)]
+    [ProducesResponseType(typeof(FailedResponse), 400)]
+    public async Task<IActionResult> GetCategories([FromBody] GetCategoryRequest categoryRequest)
+    {
+      var categories = await _shopService.GetCategoriesAsync(categoryRequest);
+
+      if (!categories.Success)
+      {
+        return BadRequest(categories.Errors);
+      }
+
+      return Ok(categories.Response);
+    }
 
     // <---------- Item ---------->
 

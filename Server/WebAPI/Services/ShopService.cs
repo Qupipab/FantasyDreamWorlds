@@ -103,6 +103,19 @@ namespace WebAPI.Services
       };
     }
 
+    public async Task<ResponseResult<ICollection<GameServerResponse>>> GetGameServersAsync()
+    {
+      var gameServers = await _shopRepository.GetGameServersAsync();
+      
+      var mappedGameServers = _mapper.Map<ICollection<GameServerResponse>>(gameServers);
+
+      return new ResponseResult<ICollection<GameServerResponse>>
+      {
+        Success = true,
+        Response = mappedGameServers
+      };
+    }
+    
 
     // <---------- Category ---------->
 
@@ -186,6 +199,26 @@ namespace WebAPI.Services
       };
     }
 
+    public async Task<ResponseResult<ICollection<CategoryResponse>>> GetCategoriesAsync(GetCategoryRequest categoryRequest)
+    {
+      var categories = await _shopRepository.GetCategoriesAsync(categoryRequest.GameServerId);
+
+      if (categories == null)
+      {
+        return new ResponseResult<ICollection<CategoryResponse>>
+        {
+          Errors = new string[] { "Categories with this server Id not found" }
+        };
+      }
+
+      var mappedCategories = _mapper.Map<ICollection<CategoryResponse>>(categories);
+
+      return new ResponseResult<ICollection<CategoryResponse>>
+      {
+        Success = true,
+        Response = mappedCategories
+      };
+    }
 
     // <---------- Item ---------->
 
@@ -292,7 +325,6 @@ namespace WebAPI.Services
 
     public async Task<PagedResponse<ItemResponse>> GetPaginatedItemsAsync(GetItemsRequest getItemsRequest)
     {
-
       var paginationFilter = _mapper.Map<PaginationFilter>(getItemsRequest.PaginationQuery);
 
       var items = _shopRepository.GetItems(getItemsRequest.ServerId,
