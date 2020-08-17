@@ -1,13 +1,8 @@
 export default {
-  props: ['placeholder', 'options', 'test'],
+  props: ['placeholder', 'options'],
   data () {
     return {
       isActive: false
     };
-  },
-  methods: {
-    test (val) {
-      console.log(val);
-    }
   }
 };

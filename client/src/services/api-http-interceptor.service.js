@@ -1,8 +1,8 @@
 import axios from 'axios';
-import { baseUrl } from '@config';
+import { baseUrl, apiSuffix } from '@config';
 
 const instance = axios.create({
-  baseURL: `${baseUrl}`,
+  baseURL: `${baseUrl}/${apiSuffix}`,
   headers: {
     Accept: 'application/json',
     'Content-Type': 'application/json'
@@ -11,9 +11,9 @@ const instance = axios.create({
 
 instance.interceptors.request.use(
   config => {
-    const token = JSON.parse(localStorage.getItem('user'));
+    const token = JSON.parse(localStorage.getItem('token'));
     if (token) {
-      config.headers.common.Authorization = `Bearer ${token.accessToken}`;
+      config.headers.common.Authorization = `Bearer ${token}`;
     }
     return config;
   },

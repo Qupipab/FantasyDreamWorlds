@@ -9,10 +9,10 @@ export default {
   data () {
     return {
       servers: [
-        { label: 'Infinity', id: 0 },
-        { label: 'Unfinity', id: 1 },
-        { label: 'Ozone', id: 2 },
-        { label: 'Arcmagic', id: 3 }
+        { title: 'Infinity', id: 0 },
+        { title: 'Unfinity', id: 1 },
+        { title: 'Ozone', id: 2 },
+        { title: 'Arcmagic', id: 3 }
       ]
     };
   }
