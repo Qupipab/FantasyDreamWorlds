@@ -80,8 +80,8 @@ namespace Entities.Repositories
     { 
       var category = await _repositoryContext.Categories
                   .Where(c => c.GameServerId.Equals(newCategory.GameServerId)
-                            && (c.RuTitle.Equals(newCategory.RuTitle)
-                            || c.EnTitle.Equals(newCategory.EnTitle)))
+                              && (c.RuTitle.Equals(newCategory.RuTitle)
+                              || c.EnTitle.Equals(newCategory.EnTitle)))
                   .FirstOrDefaultAsync();
 
       if (category == null)
@@ -130,19 +130,61 @@ namespace Entities.Repositories
     // <---------- Item ---------->
 
 
-    public async Task<bool> CreateItemAsync(Item item)
+    public async Task<Item> CreateItemAsync(Item newItem, int categoryId)
     {
-      throw new NotImplementedException();
+      var item = await _repositoryContext.Items
+                    .Where(i => i.ItemCategories.Any(ic => ic.CategoryId.Equals(categoryId))
+                                && (i.RuTitle.Equals(newItem.RuTitle)
+                                || i.EnTitle.Equals(newItem.EnTitle)))
+                    .FirstOrDefaultAsync();
+
+      if (item == null)
+      {
+        await _repositoryContext.Items.AddAsync(newItem);
+        _repositoryContext.SaveChanges();
+
+        return newItem;
+      }
+
+      return null;
     }
 
-    public async Task<bool> EditItemAsync(Item item)
+    public async Task<Item> EditItemAsync(Item editItem)
     {
-      throw new NotImplementedException();
+      var item = await _repositoryContext.Items.FirstOrDefaultAsync(i => i.Id == editItem.Id);
+
+      if (item != null)
+      {
+
+        item.RuTitle = editItem.RuTitle;
+        item.EnTitle = editItem.EnTitle;
+        item.Icon = editItem.Icon;
+        item.Count = editItem.Count;
+        item.Coins = editItem.Coins;
+        item.ECoins = editItem.ECoins;
+        item.Discount = editItem.Discount;
+        item.DiscountEndDate = editItem.DiscountEndDate;
+        item.UpdatedAt = editItem.UpdatedAt;
+
+        _repositoryContext.SaveChanges();
+        return item;
+      }
+
+      return null;
     }
 
-    public async Task<bool> RemoveItemAsync(Item item)
+    public async Task<bool> RemoveItemAsync(Guid itemId)
     {
-      throw new NotImplementedException();
+      var item = await _repositoryContext.Items.FirstOrDefaultAsync(i => i.Id == itemId);
+
+      if (item != null)
+      {
+        _repositoryContext.Items.Remove(item);
+        _repositoryContext.SaveChanges();
+        return true;
+      }
+
+      return false;
     }
 
     public IQueryable<Item> GetItems(int serverId, int categoryId, string itemsForSearch, ItemsSortType sortType, Language language)
@@ -167,10 +209,36 @@ namespace Entities.Repositories
       return items;
     }
 
+
+    public async Task<ItemCategory> CreateItemCategoryAsync(ItemCategory itemCategory)
+    {
+      var isItemCategoryExist = await _repositoryContext.ItemCategories
+                    .Where(ic => ic.CategoryId.Equals(itemCategory.CategoryId)
+                                 && ic.ItemId.Equals(itemCategory.ItemId))
+                    .AnyAsync();
+
+      if (!isItemCategoryExist)
+      {
+        await _repositoryContext.ItemCategories.AddAsync(itemCategory);
+        _repositoryContext.SaveChanges();
+
+        return itemCategory;
+      }
+
+      return null;
+    }
+
+
     public async Task<bool> IsGameServerExistsAsync(int gameServerId)
     {
       return await _repositoryContext.GameServers
         .AnyAsync(gs => gs.Id.Equals(gameServerId));
+    }
+
+    public async Task<bool> IsCategoryExistsAsync(int categoryId)
+    {
+      return await _repositoryContext.Categories
+        .AnyAsync(c => c.Id.Equals(categoryId));
     }
   }
 }

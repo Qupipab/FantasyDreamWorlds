@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using Entities.Models;
+using WebAPI.DTO.Request;
 using WebAPI.DTO.Shop.Request;
 using WebAPI.DTO.Shop.Response;
 
@@ -17,6 +18,10 @@ namespace WebAPI.MappingProfiles
       CreateMap<CategoryRequest, Category>();
       CreateMap<Category, CategoryResponse>();
       CreateMap<DeleteCategoryRequest, Category>();
+
+      CreateMap<ItemRequest, Item>();
+      CreateMap<Item, ItemResponse>();
+      CreateMap<EditItemRequest, Item>();
     }
   }
 }

@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using WebAPI.DTO;
 using WebAPI.DTO.Pagination.Response;
 using WebAPI.DTO.Request;
 using WebAPI.DTO.Shop.Request;
@@ -32,7 +33,7 @@ namespace WebAPI.Services
     // <---------- GameServer ---------->
 
 
-    public async Task<GameServerResponse> CreateGameServerAsync(GameServerRequest gameServerRequest, string creatorId)
+    public async Task<ResponseResult<GameServerResponse>> CreateGameServerAsync(GameServerRequest gameServerRequest, string creatorId)
     {
       var dateNow = DateTimeOffset.UtcNow;
 
@@ -46,39 +47,79 @@ namespace WebAPI.Services
 
       if(createdGameServer == null)
       {
-        return null;
+        return new ResponseResult<GameServerResponse>
+        {
+          Errors = new[] { "Game server already exists" }
+        };
       }
 
-      return _mapper.Map<GameServerResponse>(createdGameServer);
+      var mappedGameServerResponse = _mapper.Map<GameServerResponse>(createdGameServer);
+
+      return new ResponseResult<GameServerResponse>
+      {
+        Success = true,
+        Response = mappedGameServerResponse
+      };
     }
     
-    public async Task<GameServerResponse> EditGameServerAsync(EditGameServerRequest editGameServer)
+    public async Task<ResponseResult<GameServerResponse>> EditGameServerAsync(EditGameServerRequest editGameServer)
     {
       var editedGameServer = await _shopRepository.EditGameServerAsync(editGameServer.NewTitle, editGameServer.OldTitle);
 
       if (editedGameServer == null)
       {
-        return null;
+        return new ResponseResult<GameServerResponse>
+        {
+          Errors = new[] { "Game server not found" }
+        };
       }
 
-      return _mapper.Map<GameServerResponse>(editedGameServer);
+      var mappedGameServerResponse = _mapper.Map<GameServerResponse>(editedGameServer);
+
+      return new ResponseResult<GameServerResponse>
+      {
+        Success = true,
+        Response = mappedGameServerResponse
+      };
     }
 
-    public async Task<bool> RemoveGameServerAsync(GameServerRequest gameServerRequest)
+    public async Task<ResponseResult<bool>> RemoveGameServerAsync(GameServerRequest gameServerRequest)
     {
       var gameServer = _mapper.Map<GameServer>(gameServerRequest);
 
       var removedGameServer = await _shopRepository.RemoveGameServerAsync(gameServer);
 
-      return removedGameServer;
+      if (!removedGameServer)
+      {
+        return new ResponseResult<bool>
+        {
+          Errors = new[] { "Game server not found" }
+        };
+      }
+
+      return new ResponseResult<bool>
+      {
+        Success = true
+      };
     }
 
 
     // <---------- Category ---------->
 
 
-    public async Task<CategoryResponse> CreateCategoryAsync(CategoryRequest categoryRequest, string creatorId)
+    public async Task<ResponseResult<CategoryResponse>> CreateCategoryAsync(CategoryRequest categoryRequest, string creatorId)
     {
+
+      var isGameServerExists = await _shopRepository.IsGameServerExistsAsync(categoryRequest.GameServerId);
+
+      if(!isGameServerExists)
+      {
+        return new ResponseResult<CategoryResponse>
+        {
+          Errors = new[] { "Game server is not exist" }
+        };
+      }
+
       var dateNow = DateTimeOffset.UtcNow;
 
       var category = _mapper.Map<Category>(categoryRequest);
@@ -91,48 +132,162 @@ namespace WebAPI.Services
 
       if (createdCategory == null)
       {
-        return null;
+        return new ResponseResult<CategoryResponse>
+        {
+          Errors = new[] { "Category already exists" }
+        };
       }
 
-      return _mapper.Map<CategoryResponse>(createdCategory);
+      var mappedCategoryResponse = _mapper.Map<CategoryResponse>(createdCategory);
+
+      return new ResponseResult<CategoryResponse>
+      {
+        Success = true,
+        Response = mappedCategoryResponse
+      };
     }
 
-    public async Task<CategoryResponse> EditCategoryAsync(EditCategoryRequest editCategory)
+    public async Task<ResponseResult<CategoryResponse>> EditCategoryAsync(EditCategoryRequest editCategory)
     {
       var editedCategory = await _shopRepository.EditCategoryAsync(editCategory.CategoryId, editCategory.NewRuTitle, editCategory.NewEnTitle);
 
       if (editedCategory == null)
       {
-        return null;
+        return new ResponseResult<CategoryResponse>
+        {
+          Errors = new[] { "Category not found" }
+        };
       }
 
-      return _mapper.Map<CategoryResponse>(editedCategory);
+      var mappedEditedCategory = _mapper.Map<CategoryResponse>(editedCategory);
+
+      return new ResponseResult<CategoryResponse>
+      {
+        Success = true,
+        Response = mappedEditedCategory
+      };
     }
 
-    public async Task<bool> RemoveCategoryAsync(DeleteCategoryRequest categoryRequest)
+    public async Task<ResponseResult<bool>> RemoveCategoryAsync(DeleteCategoryRequest categoryRequest)
     {
       var removedCategory = await _shopRepository.RemoveCategoryAsync(categoryRequest.CategoryId);
 
-      return removedCategory;
+      if (!removedCategory)
+      {
+        return new ResponseResult<bool>
+        {
+          Errors = new[] { "Category not found" }
+        };
+      }
+
+      return new ResponseResult<bool>
+      {
+        Success = true
+      };
     }
 
 
     // <---------- Item ---------->
 
 
-    public async Task<ItemResponse> CreateItemAsync(TransformItemRequest itemRequest)
+    public async Task<ResponseResult<ItemResponse>> CreateItemAsync(ItemRequest itemRequest, string creatorId)
     {
-      throw new NotImplementedException();
+      var isCategoryExists = await _shopRepository.IsCategoryExistsAsync(itemRequest.CategoryId);
+
+      if(!isCategoryExists)
+      {
+        return new ResponseResult<ItemResponse>
+        {
+          Errors = new[] { "Item category is not exists" }
+        };
+      }
+
+      var dateNow = DateTimeOffset.UtcNow;
+
+      var item = _mapper.Map<Item>(itemRequest);
+
+      item.Id = Guid.NewGuid();
+      item.CreatorId = Guid.Parse(creatorId);
+      item.CreatedAt = dateNow;
+      item.UpdatedAt = dateNow;
+
+      var createdItem = await _shopRepository.CreateItemAsync(item, itemRequest.CategoryId);
+
+      if (createdItem == null)
+      {
+        return new ResponseResult<ItemResponse>
+        {
+          Errors = new[] { "Item with this name already exists" }
+        };
+      }
+
+      var itemCategory = new ItemCategory
+      {
+        ItemId = item.Id,
+        CategoryId = itemRequest.CategoryId
+      };
+
+      var createdItemCategory = await _shopRepository.CreateItemCategoryAsync(itemCategory);
+
+      if (createdItemCategory == null)
+      {
+        return new ResponseResult<ItemResponse>
+        {
+          Errors = new[] { "Item with this category already exists" }
+        };
+      }
+
+      var mappedItemResponse = _mapper.Map<ItemResponse>(createdItem);
+
+      return new ResponseResult<ItemResponse>
+      {
+        Success = true,
+        Response = mappedItemResponse
+      };
     }
 
-    public async Task<ItemResponse> EditItemAsync(TransformItemRequest itemRequest)
+    public async Task<ResponseResult<ItemResponse>> EditItemAsync(EditItemRequest requestItem)
     {
-      throw new NotImplementedException();
+
+      var item = _mapper.Map<Item>(requestItem);
+
+      item.UpdatedAt = DateTimeOffset.UtcNow;
+
+      var editedItem = await _shopRepository.EditItemAsync(item);
+
+      if (editedItem == null)
+      {
+        return new ResponseResult<ItemResponse>
+        {
+          Errors = new[] { "Item not found" }
+        };
+      }
+
+      var mappedEditedItem = _mapper.Map<ItemResponse>(editedItem);
+
+      return new ResponseResult<ItemResponse>
+      {
+        Success = true,
+        Response = mappedEditedItem
+      };
     }
 
-    public async Task<ItemResponse> RemoveItemAsync(TransformItemRequest itemRequest)
+    public async Task<ResponseResult<bool>> RemoveItemAsync(DeleteItemRequest itemRequest)
     {
-      throw new NotImplementedException();
+      var removedItem = await _shopRepository.RemoveItemAsync(itemRequest.Id);
+
+      if (!removedItem)
+      {
+        return new ResponseResult<bool>
+        {
+          Errors = new[] { "Item not found" }
+        };
+      }
+
+      return new ResponseResult<bool>
+      {
+        Success = true
+      };
     }
 
     public async Task<PagedResponse<ItemResponse>> GetPaginatedItemsAsync(GetItemsRequest getItemsRequest)
@@ -152,11 +307,5 @@ namespace WebAPI.Services
 
       return ResponsePaginationHelper.CreatePaginatedResponse(paginationFilter, itemsResponse, items.Count());
     }
-
-    public async Task<bool> IsGameServerExistsAsync(int gameServerId)
-    {
-      return await _shopRepository.IsGameServerExistsAsync(gameServerId);
-    }
-
   }
 }

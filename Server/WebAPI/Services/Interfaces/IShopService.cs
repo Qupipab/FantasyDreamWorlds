@@ -1,9 +1,5 @@
-﻿using Entities.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using WebAPI.DTO.Pagination.Request;
+﻿using System.Threading.Tasks;
+using WebAPI.DTO;
 using WebAPI.DTO.Pagination.Response;
 using WebAPI.DTO.Request;
 using WebAPI.DTO.Shop.Request;
@@ -14,19 +10,18 @@ namespace WebAPI.Services.Interfaces
   public interface IShopService
   {
 
-    Task<GameServerResponse> CreateGameServerAsync(GameServerRequest gameServerRequest, string creatorId);
-    Task<GameServerResponse> EditGameServerAsync(EditGameServerRequest editGameServerRequest);
-    Task<bool> RemoveGameServerAsync(GameServerRequest createGameServerRequest);
+    Task<ResponseResult<GameServerResponse>> CreateGameServerAsync(GameServerRequest gameServerRequest, string creatorId);
+    Task<ResponseResult<GameServerResponse>> EditGameServerAsync(EditGameServerRequest editGameServerRequest);
+    Task<ResponseResult<bool>> RemoveGameServerAsync(GameServerRequest createGameServerRequest);
 
-    Task<CategoryResponse> CreateCategoryAsync(CategoryRequest categoryRequest, string creatorId);
-    Task<CategoryResponse> EditCategoryAsync(EditCategoryRequest editCategoryRequest);
-    Task<bool> RemoveCategoryAsync(DeleteCategoryRequest categoryRequest);
+    Task<ResponseResult<CategoryResponse>> CreateCategoryAsync(CategoryRequest categoryRequest, string creatorId);
+    Task<ResponseResult<CategoryResponse>> EditCategoryAsync(EditCategoryRequest editCategoryRequest);
+    Task<ResponseResult<bool>> RemoveCategoryAsync(DeleteCategoryRequest categoryRequest);
 
-    Task<ItemResponse> CreateItemAsync(TransformItemRequest itemRequest);
-    Task<ItemResponse> EditItemAsync(TransformItemRequest itemRequest);
-    Task<ItemResponse> RemoveItemAsync(TransformItemRequest itemRequest);
+    Task<ResponseResult<ItemResponse>> CreateItemAsync(ItemRequest itemRequest, string creatorId);
+    Task<ResponseResult<ItemResponse>> EditItemAsync(EditItemRequest itemRequest);
+    Task<ResponseResult<bool>> RemoveItemAsync(DeleteItemRequest itemRequest);
     Task<PagedResponse<ItemResponse>> GetPaginatedItemsAsync(GetItemsRequest getItemsRequest);
 
-    Task<bool> IsGameServerExistsAsync(int gameServerId);
   }
 }

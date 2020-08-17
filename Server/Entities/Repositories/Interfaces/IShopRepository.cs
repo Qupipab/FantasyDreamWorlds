@@ -1,5 +1,5 @@
 ﻿using Entities.Models;
-using System.Collections.Generic;
+using System;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -18,12 +18,15 @@ namespace Entities.Repositories.Interfaces
     Task<bool> RemoveCategoryAsync(int categoryId);
 
 
-    Task<bool> CreateItemAsync(Item item);
-    Task<bool> EditItemAsync(Item item);
-    Task<bool> RemoveItemAsync(Item item);
+    Task<Item> CreateItemAsync(Item newItem, int categoryId);
+    Task<Item> EditItemAsync(Item editItem);
+    Task<bool> RemoveItemAsync(Guid itemId);
     IQueryable<Item> GetItems(int serverId, int categoryId, string ItemsForSearch, ItemsSortType sortType, Language language);
 
+    Task<ItemCategory> CreateItemCategoryAsync(ItemCategory itemCategory);
+
     Task<bool> IsGameServerExistsAsync(int gameServerId);
+    Task<bool> IsCategoryExistsAsync(int categoryId);
 
   }
 }

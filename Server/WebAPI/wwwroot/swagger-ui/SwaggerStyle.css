@@ -11,7 +11,11 @@ html,
   background: var(--d-second-level-bgc) !important;
 }
 
-h1, h2, h3, h4, h5, h6, span, p, a, td, button, label, select, input, textarea {
+h1, h2, h3, h4, h5, h6, span, a, td, button, label, select, input, textarea {
+  color: var(--d-font-color) !important;
+}
+
+.swagger-ui p {
   color: var(--d-font-color) !important;
 }
 
@@ -50,4 +54,8 @@ select,
 .btn.execute {
   background-color: #ff5b37 !important;
   border: none !important;
+}
+
+.authorization__btn {
+  display: none;
 }

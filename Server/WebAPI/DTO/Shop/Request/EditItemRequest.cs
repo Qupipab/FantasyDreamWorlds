@@ -1,17 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
+
 namespace WebAPI.DTO.Request
 {
-  public class TransformItemRequest
+  public class EditItemRequest
   {
 
     [Required]
-    public int ServerId { get; set; }
-
-    [Required]
-    public int CategoryId { get; set; }
+    public Guid Id { get; set; }
 
     [Required]
     public string RuTitle { get; set; }
@@ -19,11 +15,22 @@ namespace WebAPI.DTO.Request
     [Required]
     public string EnTitle { get; set; }
 
+    [Required]
     public string Icon { get; set; }
+
+    [Required, Range(1, 256)]
     public int Count { get; set; }
+
+    [Required, Range(1, int.MaxValue)]
     public int Coins { get; set; }
+
+    [Required, Range(1, int.MaxValue)]
     public int ECoins { get; set; }
+
+    [Range(0, 1)]
     public double Discount { get; set; }
+
+    [Required]
     public DateTimeOffset DiscountEndDate { get; set; }
 
   }

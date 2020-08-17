@@ -42,12 +42,12 @@ namespace WebAPI.Controllers
     {
       var createdGameServer = await _shopService.CreateGameServerAsync(gameServerRequest, HttpContext.GetUserId());
 
-      if (createdGameServer == null)
+      if (!createdGameServer.Success)
       {
-        return BadRequest(new FailedResponse { Errors = new List<string> { "Game server already exists" } });
+        return BadRequest(createdGameServer.Errors);
       }
 
-      return Ok(createdGameServer); 
+      return Ok(createdGameServer.Response);
     }
 
     [HttpPut]
@@ -59,12 +59,12 @@ namespace WebAPI.Controllers
     {
       var editedGameServer = await _shopService.EditGameServerAsync(gameServerRequest);
 
-      if (editedGameServer == null)
+      if (!editedGameServer.Success)
       {
-        return BadRequest(new FailedResponse { Errors = new List<string> { "Game server not found" } });
+        return BadRequest(editedGameServer.Errors);
       }
 
-      return Ok(editedGameServer);
+      return Ok(editedGameServer.Response);
     }
 
     [HttpDelete]
@@ -76,10 +76,10 @@ namespace WebAPI.Controllers
     {
       var removedServer = await _shopService.RemoveGameServerAsync(gameServerRequest);
 
-      if (!removedServer)
-        return BadRequest(new FailedResponse { Errors = new List<string> { "Game server not found" } });
+      if (!removedServer.Success)
+        return BadRequest(removedServer.Errors);
       else
-        return Ok();
+        return Ok("The server has been removed");
     }
 
 
@@ -93,21 +93,14 @@ namespace WebAPI.Controllers
     [ProducesResponseType(typeof(FailedResponse), 400)]
     public async Task<IActionResult> AddCategory([FromBody] CategoryRequest categoryRequest)
     {
-      var isGameServerExists = await _shopService.IsGameServerExistsAsync(categoryRequest.GameServerId);
-
-      if (!isGameServerExists)
-      {
-        return BadRequest(new FailedResponse { Errors = new List<string> { "Game server is not exist" } });
-      }
-
       var createdCategory = await _shopService.CreateCategoryAsync(categoryRequest, HttpContext.GetUserId());
 
-      if (createdCategory == null)
+      if (!createdCategory.Success)
       {
-        return BadRequest(new FailedResponse { Errors = new List<string> { "Category already exists" } });
+        return BadRequest(createdCategory.Errors);
       }
 
-      return Ok(createdCategory);
+      return Ok(createdCategory.Response);
     }
 
     [HttpPut]
@@ -119,12 +112,12 @@ namespace WebAPI.Controllers
     {
       var editedCategory = await _shopService.EditCategoryAsync(editCategoryRequest);
 
-      if (editedCategory == null)
+      if (!editedCategory.Success)
       {
-        return BadRequest(new FailedResponse { Errors = new List<string> { "Category not found" } });
+        return BadRequest(editedCategory.Errors);
       }
 
-      return Ok(editedCategory);
+      return Ok(editedCategory.Response);
     }
 
     [HttpDelete]
@@ -136,11 +129,12 @@ namespace WebAPI.Controllers
     {
       var removedCategory = await _shopService.RemoveCategoryAsync(categoryRequest);
 
-      if (!removedCategory)
-        return BadRequest(new FailedResponse { Errors = new List<string> { "Category not found" } });
+      if (!removedCategory.Success)
+        return BadRequest(removedCategory.Errors);
       else
-        return Ok();
+        return Ok("The category has been removed");
     }
+
 
     // <---------- Item ---------->
 
@@ -148,25 +142,50 @@ namespace WebAPI.Controllers
     [HttpPost]
     [Authorize(AuthenticationSchemes = ApiRoutes.AuthScheme, Roles = "Admin")]
     [Route(ApiRoutes.Shop.AddItem)]
-    public async Task<IActionResult> AddItem([FromBody] TransformItemRequest itemRequest)
+    [ProducesResponseType(typeof(ItemResponse), 200)]
+    [ProducesResponseType(typeof(FailedResponse), 400)]
+    public async Task<IActionResult> AddItem([FromBody] ItemRequest itemRequest)
     {
-      return Ok();
+      var createdItem = await _shopService.CreateItemAsync(itemRequest, HttpContext.GetUserId());
+
+      if (!createdItem.Success)
+      {
+        return BadRequest(createdItem.Errors);
+      }
+
+      return Ok(createdItem.Response);
     }
 
     [HttpPut]
     [Authorize(AuthenticationSchemes = ApiRoutes.AuthScheme, Roles = "Admin")]
     [Route(ApiRoutes.Shop.EditItem)]
-    public async Task<IActionResult> EditItem([FromBody] TransformItemRequest itemRequest)
+    [ProducesResponseType(typeof(ItemResponse), 200)]
+    [ProducesResponseType(typeof(FailedResponse), 400)]
+    public async Task<IActionResult> EditItem([FromBody] EditItemRequest editItemRequest)
     {
-      return Ok();
+      var editedItem = await _shopService.EditItemAsync(editItemRequest);
+
+      if (!editedItem.Success)
+      {
+        return BadRequest(editedItem.Errors);
+      }
+
+      return Ok(editedItem.Response);
     }
 
     [HttpDelete]
     [Authorize(AuthenticationSchemes = ApiRoutes.AuthScheme, Roles = "Admin")]
     [Route(ApiRoutes.Shop.RemoveItem)]
-    public async Task<IActionResult> RemoveItem([FromBody] TransformItemRequest itemRequest)
+    [ProducesResponseType(200)]
+    [ProducesResponseType(typeof(FailedResponse), 400)]
+    public async Task<IActionResult> RemoveItem([FromBody] DeleteItemRequest itemRequest)
     {
-      return Ok();
+      var removedItem = await _shopService.RemoveItemAsync(itemRequest);
+
+      if (!removedItem.Success)
+        return BadRequest(removedItem.Errors);
+      else
+        return Ok("The item has been removed");
     }
 
     [HttpPost]
