@@ -1,8 +1,13 @@
 import { alphaNum, email, maxLength, minLength, required, sameAs } from 'vuelidate/lib/validators';
 import { haveNum, haveUppercase, trueCheck } from '@services/validators';
 
+import { mapActions } from 'vuex';
+import validConfig from '@/config/config.validation.json';
+
+const touchMap = new WeakMap();
+
 export default {
-  name: 'registration',
+  name: 'sign-up',
   data () {
     return {
       login: '',
@@ -16,8 +21,20 @@ export default {
     login: {
       required,
       alphaNum,
-      minLength: minLength(4),
-      maxLength: maxLength(30)
+      minLength: minLength(validConfig.login.minLength),
+      maxLength: maxLength(validConfig.login.maxLength),
+      async isUnique (value) {
+        if (value === '') {
+          return true;
+        };
+
+        if (this.$v.login.$dirty
+            && this.$v.login.alphaNum
+            && this.$v.login.minLength
+            && this.$v.login.maxLength) {
+          return this.CheckByUserName(value);
+        }
+      }
     },
     email: {
       required,
@@ -25,8 +42,8 @@ export default {
     },
     password: {
       required,
-      minLength: minLength(12),
-      maxLength: maxLength(100),
+      minLength: minLength(validConfig.password.minLength),
+      maxLength: maxLength(validConfig.password.maxLength),
       haveUppercase,
       haveNum
     },
@@ -37,25 +54,27 @@ export default {
     rulesAccept: { trueCheck }
   },
   methods: {
-    status (validation) {
-      return {
-        error: validation.$error,
-        dirty: validation.$dirty
-      };
-    },
-    submitHandler () {
+    ...mapActions(['signUp', 'CheckByUserName']),
+    submit () {
       if (this.$v.$invalid) {
         this.$v.$touch();
         return;
       }
 
       const formData = {
-        login: this.login,
+        userName: this.login,
         email: this.email,
         password: this.password
       };
 
-      console.log(formData);
+      this.signUp(formData);
+    },
+    delayTouch ($v) {
+      $v.$reset();
+      if (touchMap.has($v)) {
+        clearTimeout(touchMap.get($v));
+      }
+      touchMap.set($v, setTimeout($v.$touch, 500));
     }
   }
 };

@@ -2,8 +2,6 @@ input:focus {
   outline: none;
 }
 
-
-
 .sign-up-modal {
   color: var(--l-card-bgc);
   font-family: var(--main-font);
@@ -91,3 +89,40 @@ input:-webkit-autofill:focus {
 .btn_disabled {
   background-color: #808080;
 }
+
+.form-group--error {
+  animation-name: shakeError;
+  animation-fill-mode: forwards;
+  animation-duration: .6s;
+  animation-timing-function: ease-in-out; }
+
+.form-group--loading {
+  border: 1px solid;
+  border-image-slice: 1;
+  animation: loading-frame 1s infinite; }
+
+@keyframes loading-frame {
+  0% {
+    border-color: var(--d-main-purple-font-color); }
+  50% {
+    border-color: #268a8d; }
+  100% {
+    border-color: var(--d-main-purple-font-color); } }
+
+@keyframes shakeError {
+  0% {
+    transform: translateX(0); }
+  15% {
+    transform: translateX(0.375rem); }
+  30% {
+    transform: translateX(-0.375rem); }
+  45% {
+    transform: translateX(0.375rem); }
+  60% {
+    transform: translateX(-0.375rem); }
+  75% {
+    transform: translateX(0.375rem); }
+  90% {
+    transform: translateX(-0.375rem); }
+  100% {
+    transform: translateX(0); } }
