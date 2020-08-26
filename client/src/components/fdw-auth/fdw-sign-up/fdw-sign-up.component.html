@@ -8,7 +8,6 @@
         id="sign-up-input-field"
         v-model.trim="$v.login.$model"
         @input="delayTouch($v.login)"
-        @blur="$v.login.$touch()"
         placeholder="Enter nickname"
         autocomplete="username"
         class="input-field"
@@ -27,8 +26,8 @@
       >{{ $t('valid.login.alphaNum') }}
       </div>
       <div
-      class="valid-error"
-      v-else-if="$v.login.$dirty && !$v.login.minLength"
+        class="valid-error"
+        v-else-if="$v.login.$dirty && !$v.login.minLength"
       >{{ $t('valid.login.minLength', { minLength: $v.login.$params.minLength.min}) }}
       </div>
       <div
@@ -51,17 +50,18 @@
         placeholder="Enter email"
         autocomplete="email"
         class="input-field"
-        :class="{invalid: ($v.email.$dirty && $v.email.$invalid)}"
+        :class="{invalid: ($v.email.$dirty && $v.email.$invalid),
+          'form-group--error': $v.email.$error}"
       >
       <div
         class="valid-error"
         v-if="$v.email.$dirty && !$v.email.required"
-        >{{ $t('valid.required') }}
+      >{{ $t('valid.required') }}
       </div>
       <div
         class="valid-error"
         v-else-if="$v.email.$dirty && !$v.email.email"
-        >{{ $t('valid.email') }}
+      >{{ $t('valid.email') }}
       </div>
     </div>
 
@@ -74,32 +74,33 @@
         type="password"
         autocomplete="new-password"
         class="input-field"
-        :class="{invalid: ($v.password.$dirty && $v.password.$invalid)}"
+        :class="{invalid: ($v.password.$dirty && $v.password.$invalid),
+          'form-group--error': $v.login.$error}"
       >
       <div
         class="valid-error"
         v-if="$v.password.$dirty && !$v.password.required"
-        >{{ $t('valid.required') }}
+      >{{ $t('valid.required') }}
       </div>
       <div
         class="valid-error"
         v-else-if="$v.password.$dirty && !$v.password.minLength"
-        >{{ $t('valid.password.minLength', { minLength: $v.password.$params.minLength.min}) }}
+      >{{ $t('valid.password.minLength', { minLength: $v.password.$params.minLength.min}) }}
       </div>
       <div
         class="valid-error"
         v-else-if="$v.password.$dirty && !$v.password.maxLength"
-        >{{ $t('valid.password.maxLength', { maxLength: $v.password.$params.maxLength.max}) }}
+      >{{ $t('valid.password.maxLength', { maxLength: $v.password.$params.maxLength.max}) }}
       </div>
       <div
         class="valid-error"
         v-else-if="$v.password.$dirty && !$v.password.haveNum"
-        >{{ $t('valid.password.num') }}
-     </div>
-     <div
+      >{{ $t('valid.password.num') }}
+      </div>
+      <div
         class="valid-error"
         v-else-if="$v.password.$dirty && !$v.password.haveUppercase"
-        >{{ $t('valid.password.uppercase') }}
+      >{{ $t('valid.password.uppercase') }}
       </div>
     </div>
 
@@ -114,26 +115,27 @@
         class="input-field"
         :class="{ invalid:
           ($v.confirmPassword.$dirty && $v.confirmPassword.$invalid) ||
-          ($v.confirmPassword.$dirty && $v.password.$invalid) }"
+          ($v.confirmPassword.$dirty && $v.password.$invalid),
+          'form-group--error': $v.login.$error }"
       >
       <div
         class="valid-error"
         v-if="$v.confirmPassword.$dirty && !$v.confirmPassword.required"
-        >{{ $t('valid.required') }}
+      >{{ $t('valid.required') }}
       </div>
       <div
         class="valid-error"
         v-else-if="$v.confirmPassword.$dirty && !$v.confirmPassword.sameAsPassword"
-        >{{ $t('valid.confirmPassword') }}
+      >{{ $t('valid.confirmPassword') }}
       </div>
     </div>
 
-    <div class="checkbox-rules">
+    <div class="checkbox-rules" :class="{'form-group--error': $v.rulesAccept.$error}">
       <input
-      id="sign-up-rulesAccept"
-      v-model="rulesAccept"
-      name="rulesAccept"
-      type="checkbox"
+        id="sign-up-rulesAccept"
+        v-model="rulesAccept"
+        name="rulesAccept"
+        type="checkbox"
       >
       <label for="sign-up-rulesAccept">I accept the rules and use</label>
     </div>
@@ -141,7 +143,6 @@
     <button
       type="submit"
       variant="primary"
-      :disabled="$v.$invalid"
       class="bnt-submit"
       :class="{btn_disabled: ($v.$invalid)}"
       >

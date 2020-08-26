@@ -32,7 +32,7 @@ export default {
             && this.$v.login.alphaNum
             && this.$v.login.minLength
             && this.$v.login.maxLength) {
-          return this.CheckByUserName(value);
+          return await this.CheckByUserName(value);
         }
       }
     },
@@ -55,7 +55,7 @@ export default {
   },
   methods: {
     ...mapActions(['signUp', 'CheckByUserName']),
-    submit () {
+    async submit () {
       if (this.$v.$invalid) {
         this.$v.$touch();
         return;
@@ -67,7 +67,12 @@ export default {
         password: this.password
       };
 
-      this.signUp(formData);
+      if (await this.signUp(formData)) {
+        this.modalClose();
+      }
+    },
+    modalClose () {
+      this.$bvModal.hide('sign-up-modal');
     },
     delayTouch ($v) {
       $v.$reset();
