@@ -3,20 +3,14 @@ import api from '@api';
 
 export default {
   state: {
-    status: '',
-    token: localStorage.getItem('token') || '',
-    user: JSON.parse(localStorage.getItem('user')) || '',
-    isLoginVisible: false,
-    isConfirmationVisible: false
+    token: localStorage.getItem('token') || ''
   },
   mutations: {
-    SET_USER_DATA (state, userData) {
-      state.user = userData;
-      localStorage.setItem('user', JSON.stringify(userData));
+    SET_TOKEN (state, userData) {
+      localStorage.setItem('token', userData.token);
     },
-    CLEAR_USER_DATA (state) {
-      localStorage.removeItem('user');
-      state.user = null;
+    CLEAR_TOKEN (state) {
+      localStorage.removeItem('token');
     }
   },
   actions: {
@@ -30,7 +24,7 @@ export default {
         .catch(err => {
           Vue.notify({
             group: 'fdw',
-            title: err.data.status,
+            title: `Error ${err.data.status}`,
             type: 'error',
             text: err.data.title
           });
@@ -38,15 +32,43 @@ export default {
         });
     },
 
-    async signUp (ctx, body) {
-      return await api.post('/Auth/SignUp', body);
+    async signUp ({ commit }, body) {
+      return await api.post('/Auth/SignUp', body)
+        .then(({ data }) => {
+          commit('SET_TOKEN', data);
+          return true;
+        })
+        .catch(err => {
+          Vue.notify({
+            group: 'fdw',
+            title: 'Error',
+            type: 'error',
+            text: err.data.errors[0]
+          });
+          return false;
+        });
+    },
+    async signIn ({ commit }, credentials) {
+      return await api.post('/Auth/SignIn', credentials)
+        .then(({ data }) => {
+          commit('SET_TOKEN', data);
+          return true;
+        })
+        .catch(err => {
+          Vue.notify({
+            group: 'fdw',
+            title: 'Error',
+            type: 'error',
+            text: err.data.errors[0]
+          });
+          return false;
+        });
+    },
+    async logout ({ commit }) {
+      return await new Promise((resolve, reject) => {
+        commit('CLEAR_TOKEN');
+      });
     }
-    // login ({ commit }, credentials) {
-    //   return api.post('/Auth/SignIn', credentials)
-    //     .then(({ data }) => {
-    //       commit('SET_USER_DATA', data);
-    //     });
-    // }
   },
   getters: {
   }
