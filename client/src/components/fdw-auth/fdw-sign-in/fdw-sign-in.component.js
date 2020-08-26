@@ -1,5 +1,6 @@
 import { alphaNum, maxLength, minLength, required } from 'vuelidate/lib/validators';
-import { haveNum, haveUppercase } from '@services/validators';
+
+import { mapActions } from 'vuex';
 
 export default {
   name: 'sign-in',
@@ -19,31 +20,28 @@ export default {
     password: {
       required,
       minLength: minLength(12),
-      maxLength: maxLength(100),
-      haveUppercase,
-      haveNum
+      maxLength: maxLength(100)
     }
   },
   methods: {
-    status (validation) {
-      return {
-        error: validation.$error,
-        dirty: validation.$dirty
-      };
-    },
-    submitHandler () {
+    ...mapActions([ 'signIn' ]),
+    async submitLogin () {
       if (this.$v.$invalid) {
         this.$v.$touch();
         return;
       }
 
-      const formData = {
-        login: this.login,
-        email: this.email,
+      const loginData = {
+        userNameOrEmail: this.login,
         password: this.password
       };
 
-      console.log(formData);
+      if (await this.signIn(loginData)) {
+        this.modalClose();
+      }
+    },
+    modalClose () {
+      this.$bvModal.hide('sign-in-modal');
     }
   }
 };
