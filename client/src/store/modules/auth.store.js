@@ -8,9 +8,12 @@ export default {
   mutations: {
     SET_TOKEN (state, userData) {
       localStorage.setItem('token', userData.token);
+      state.token = userData.token;
     },
     CLEAR_TOKEN (state) {
       localStorage.removeItem('token');
+      state.token = '';
+      location.reload();
     }
   },
   actions: {
@@ -31,7 +34,6 @@ export default {
           return false;
         });
     },
-
     async signUp ({ commit }, body) {
       return await api.post('/Auth/SignUp', body)
         .then(({ data }) => {
@@ -71,5 +73,10 @@ export default {
     }
   },
   getters: {
+    userInfo: state => {
+      const userInfo = JSON.parse(atob(state.token.split('.')[1]));
+      return userInfo;
+    },
+    authorized: state => !!state.token
   }
 };
