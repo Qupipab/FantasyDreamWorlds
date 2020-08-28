@@ -47,8 +47,16 @@
   </nav>
   <div class="logo"></div>
   <div class="cabinet-nav">
+    <div class="nav-item cabinet-item token" href="/cabinet">{{ token }}</div>
     <div
-      v-if="!authorized"
+      v-if="authorized"
+      class="cabinet-nav-authorized"
+      >
+      <a class="nav-item cabinet-item" href="/cabinet">{{ userInfo.sub }}</a>
+      <a class="nav-item" href="#" @click="logout()">{{ $t('header.auth.signOut') }}</a>
+    </div>
+    <div
+      v-else
       class="cabinet-nav-unauthorized"
     >
       <a
@@ -60,13 +68,6 @@
         class="sign-up-button nav-item"
         v-b-modal.sign-up-modal
       >{{ $t('header.auth.signUp') }}</b-button>
-    </div>
-    <div
-      v-else
-      class="cabinet-nav-authorized"
-    >
-      <a class="nav-item cabinet-item" href="#">{{ $t('header.cabinet') }}</a>
-      <a class="nav-item" href="#">{{ $t('header.auth.signOut') }}</a>
     </div>
     <fdw-theme-switch></fdw-theme-switch>
   </div>
