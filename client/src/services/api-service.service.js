@@ -22,10 +22,11 @@ const api = {
       data: data
     });
   },
-  delete (path) {
+  delete (path, data) {
     return instance({
       url: path,
-      method: 'DELETE'
+      method: 'DELETE',
+      data: data
     });
   },
   postFile (path, formData) {

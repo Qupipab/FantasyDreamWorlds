@@ -5,15 +5,15 @@ const instance = axios.create({
   baseURL: `${baseUrl}/${apiSuffix}`,
   headers: {
     Accept: 'application/json',
-    'Content-Type': 'application/json'
+    'Content-Type': 'multipart/form-data'
   }
 });
 
 instance.interceptors.request.use(
   config => {
-    const token = JSON.parse(localStorage.getItem('token'));
+    const token = localStorage.getItem('token');
     if (token) {
-      config.headers.common.Authorization = `Bearer ${token}`;
+      config.headers.common.Authorization = `bearer ${token}`;
     }
     return config;
   },

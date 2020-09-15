@@ -1,0 +1,28 @@
+.file-input {
+  display: none;
+}
+
+.file-upload {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 15px;
+  width: 100%;
+  height: 52px;
+  background-color: var(--d-second-level-bgc);
+  border-radius: 4px;
+  cursor: pointer;
+  &:hover .file-icon {
+    opacity: .7;
+  }
+  i {
+    color: var(--d-font-color);
+    opacity: .5;
+    font-size: 18px;
+    font-style: normal;
+  }
+  .file-icon {
+    color: var(--d-font-color);
+  }
+}

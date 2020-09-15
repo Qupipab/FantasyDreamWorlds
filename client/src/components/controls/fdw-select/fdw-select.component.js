@@ -1,8 +1,16 @@
+/* eslint-disable */
+
 export default {
-  props: ['placeholder', 'options'],
+  props: ['placeholder', 'options', 'label', 'value', "reduce"],
   data () {
     return {
-      isActive: false
+      isActive: false,
+      selected: { title: 'somethin' }
     };
+  },
+  methods: {
+    input (val) {
+      this.$emit('input', val);
+    }
   }
 };

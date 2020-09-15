@@ -1,11 +1,13 @@
 <div class="fdw-select-wrapper">
   <v-select
     class="fdw-select"
-    label="title"
+    :label="label"
     :placeholder="placeholder"
     :options="options"
+    :reduce="reduce"
     @search:blur="isActive = false"
     @search:focus="isActive = true"
+    @input="input"
   ></v-select>
   <div class="arrows-wrapper">
     <span

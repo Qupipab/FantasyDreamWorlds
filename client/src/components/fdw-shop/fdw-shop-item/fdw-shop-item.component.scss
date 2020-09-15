@@ -1,0 +1,17 @@
+@import "../fdw-shop-services.scss";
+.item {
+  margin-bottom: 20px;
+}
+.input-container {
+  .file-input {
+    cursor: pointer;
+    .custom-file-label {
+      background-color: var(--d-second-level-bgc);
+      color: var(--d-font-color);
+      border: none;
+    }
+    &:data-browse {
+      background-color: red;
+    }
+  }
+}

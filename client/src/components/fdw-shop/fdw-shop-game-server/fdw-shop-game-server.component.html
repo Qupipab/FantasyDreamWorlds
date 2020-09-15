@@ -1,0 +1,64 @@
+<div class="game-server">
+  <h3 class="admin-title-group">Игровые сервера</h3>
+  <div class="admin-service-group game-server">
+    <div class="first-container add-game-server">
+      <h5>Добавить</h5>
+      <div class="input-container">
+        <b-form-input
+          class="admin-input service-input add-game-server-input"
+          placeholder="Название"
+          size="lg"
+          v-model="addGameServerPayload.title"
+        ></b-form-input>
+      </div>
+      <b-button
+        class="admin-button"
+        variant="success"
+        @click="addServer"
+      >Добавить</b-button>
+    </div>
+    <div class="second-container edit-game-server">
+      <h5>Редактировать</h5>
+      <div class="input-container">
+        <fdw-select
+          class="service-input server-select"
+          :options="gameServers"
+          :reduce="gameServers => gameServers.title"
+          label="title"
+          placeholder="Сервер"
+          v-model="editGameServerPayload.oldTitle"
+          @input="setNewTitle"
+        />
+        <b-form-input
+          class="service-input admin-input edit-game-server-input"
+          placeholder="Новое название"
+          size="lg"
+          v-model="editGameServerPayload.newTitle"
+        ></b-form-input>
+      </div>
+      <b-button
+        class="admin-button"
+        variant="warning"
+        @click="editServer"
+      >Редактировать</b-button>
+    </div>
+    <div class="third-container delete-game-server">
+      <h5>Удалить</h5>
+      <div class="input-container">
+        <fdw-select
+          class="service-input server-select"
+          :options="gameServers"
+          :reduce="gameServers => gameServers.title"
+          label="title"
+          placeholder="Сервер"
+          v-model="deleteGameServerPayload.title"
+        />
+      </div>
+      <b-button
+        class="admin-button"
+        variant="danger"
+        @click="deleteServer"
+      >Удалить</b-button>
+    </div>
+  </div>
+</div>

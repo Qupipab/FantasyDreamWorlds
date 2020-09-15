@@ -15,6 +15,7 @@ module.exports = {
       .set('@config', path.resolve('src/config/config.dev.json'))
       .set('@api', path.resolve('src/services/api-service.service.js'))
       .set('@icons', path.resolve(__dirname, 'node_modules/vue-material-design-icons'))
+      .set('@mixins', path.resolve('src/mixins/'));
   }
 };
 

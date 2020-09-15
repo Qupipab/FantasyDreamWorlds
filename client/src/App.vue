@@ -9,10 +9,11 @@
 
 <script>
 import { library } from '@fortawesome/fontawesome-svg-core';
-import { faMoon, faQuestionCircle } from '@fortawesome/free-solid-svg-icons';
+import { faMoon, faQuestionCircle, faFileAlt } from '@fortawesome/free-solid-svg-icons';
 
 library.add(faMoon);
 library.add(faQuestionCircle);
+library.add(faFileAlt);
 
 const defaultLayout = 'default';
 
@@ -29,4 +30,11 @@ export default {
 <style lang="scss">
 @import "@styles/variables.scss";
 @import "@styles/common.scss";
+.notification-title {
+  margin-bottom: 10px;
+  font-size: 15px;
+}
+.notification-content {
+  font-weight: 400;
+}
 </style>
