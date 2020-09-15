@@ -1,5 +1,6 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
+import auth from './modules/auth.store';
 import locale from './modules/locale.store';
 import shop from './modules/shop.store';
 import user from './modules/user.store';
@@ -18,6 +19,7 @@ export default new Vuex.Store({
   modules: {
     locale,
     shop,
-    user
+    user,
+    auth
   }
 });

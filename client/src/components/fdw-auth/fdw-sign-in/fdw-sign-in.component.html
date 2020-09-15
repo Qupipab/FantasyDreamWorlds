@@ -1,35 +1,79 @@
 <div class="sign-in-modal">
-  <h1>Sign In</h1>
-  <b-form @submit="onSubmit">
+  <h1>{{ $t('header.auth.signIn') }}</h1>
+  <form class="sign-form" @submit.prevent="submitLogin">
 
-    <b-form-group
-      id="sign-in-login-group"
-      label="Nickname:"
-      label-for="sign-in-login-input"
-    >
-      <b-form-input
-        id="sign-in-login-input"
-        v-model="form.login"
-        type="text"
-        required
+    <div class="input-block">
+      <label for="sign-up-input-login">Nickname</label>
+      <input
+        id="sign-up-input-field"
+        v-model.trim="$v.login.$model"
         placeholder="Enter nickname"
-      ></b-form-input>
-    </b-form-group>
+        autocomplete="username"
+        class="input-field"
+        :class="{invalid: ($v.login.$dirty && $v.login.$invalid),
+          'form-group--error': $v.login.$error}"
+      >
+      <div
+        class="valid-error"
+        v-if="$v.login.$dirty && !$v.login.required"
+      >{{ $t('valid.required') }}
+      </div>
+      <div
+        class="valid-error"
+        v-else-if="$v.login.$dirty && !$v.login.alphaNum"
+      >{{ $t('valid.login.alphaNum') }}
+      </div>
+      <div
+        class="valid-error"
+        v-else-if="$v.login.$dirty && !$v.login.minLength"
+      >{{ $t('valid.login.minLength', { minLength: $v.login.$params.minLength.min}) }}
+      </div>
+      <div
+        class="valid-error"
+        v-else-if="$v.login.$dirty && !$v.login.maxLength"
+      >{{ $t('valid.login.maxLength', { maxLength: $v.login.$params.maxLength.max}) }}
+      </div>
+    </div>
 
-    <b-form-group
-      id="sign-in-first-password-group"
-      label="Password:"
-      label-for="sign-in-first-password-input"
-    >
-      <b-form-input
-        id="sign-in-first-password-input"
-        v-model="form.password"
-        required
+    <div class="input-block">
+      <label for="sign-up-password-input">Password</label>
+      <input
+        id="sign-up-password-input"
+        v-model="$v.password.$model"
         placeholder="Enter password"
-      ></b-form-input>
-    </b-form-group>
-
-    <b-button type="submit" variant="primary">Submit</b-button>
-
-  </b-form>
+        type="password"
+        autocomplete="current-password"
+        class="input-field"
+        :class="{invalid: ($v.password.$dirty && $v.password.$invalid),
+          'form-group--error': $v.password.$error}"
+      >
+      <div
+        class="valid-error"
+        v-if="$v.password.$dirty && !$v.password.required"
+      >{{ $t('valid.required') }}
+      </div>
+      <div
+        class="valid-error"
+        v-else-if="$v.password.$dirty && !$v.password.minLength"
+      >{{ $t('valid.password.minLength', { minLength: $v.password.$params.minLength.min}) }}
+      </div>
+      <div
+        class="valid-error"
+        v-else-if="$v.password.$dirty && !$v.password.maxLength"
+      >{{ $t('valid.password.maxLength', { maxLength: $v.password.$params.maxLength.max}) }}
+      </div>
+      <div
+        class="valid-error"
+        v-else-if="$v.password.$dirty && !$v.password.maxLength"
+      >{{ $t('valid.password.maxLength', { maxLength: $v.password.$params.maxLength.max}) }}
+      </div>
+    </div>
+    <button
+      type="submitLogin"
+      variant="primary"
+      class="bnt-submit"
+      :class="{btn_disabled: ($v.$invalid)}"
+    >{{ $t('header.auth.signIn' ) }}
+    </button>
+  </form>
 </div>

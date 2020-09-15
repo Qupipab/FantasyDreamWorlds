@@ -1,5 +1,5 @@
+import { apiSuffix, baseUrl } from '@config';
 import axios from 'axios';
-import { baseUrl, apiSuffix } from '@config';
 
 const instance = axios.create({
   baseURL: `${baseUrl}/${apiSuffix}`,

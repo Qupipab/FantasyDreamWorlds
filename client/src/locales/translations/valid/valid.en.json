@@ -1,0 +1,17 @@
+{
+  "required": "This field can't be empty",
+  "login": {
+    "alphaNum": "Login can only consist of Latin letters and numbers",
+    "minLength": "Login should be at least {minLength} characters",
+    "maxLength": "Login should be no more than {maxLength} characters",
+    "busy": "This login is busy"
+  },
+  "email": "Please provide a valid email address",
+  "password": {
+    "num": "Password should be at least one number",
+    "uppercase": "Password should be at least one uppercase letter",
+    "minLength": "Password should be at least {minLength} characters",
+    "maxLength": "Password should be no more than {maxLength} characters"
+  },
+  "confirmPassword": "The entered password do not match"
+}
