@@ -37,6 +37,8 @@ namespace WebAPI.Services
     {
       var dateNow = DateTimeOffset.UtcNow;
 
+      gameServerRequest.Title.ToLower();
+
       var gameServer = _mapper.Map<GameServer>(gameServerRequest);
 
       gameServer.CreatorId = Guid.Parse(creatorId);
@@ -219,6 +221,7 @@ namespace WebAPI.Services
         Response = mappedCategories
       };
     }
+
 
     // <---------- Item ---------->
 

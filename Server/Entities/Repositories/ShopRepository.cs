@@ -4,7 +4,6 @@ using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace Entities.Repositories
@@ -26,7 +25,7 @@ namespace Entities.Repositories
     public async Task<GameServer> CreateGameServerAsync(GameServer gameServer)
     {
       var server = await _repositoryContext.GameServers
-                    .FirstOrDefaultAsync(gs => gs.Title.ToLower().Equals(gameServer.Title));
+                    .FirstOrDefaultAsync(gs => gs.Title.ToLower().Equals(gameServer.Title.ToLower()));
 
       if(server == null)
       {

@@ -22,17 +22,17 @@ namespace WebAPI.Models
     {
       public const string AddGameServer = "AddGameServer";
       public const string EditGameServer = "EditGameServer";
-      public const string RemoveGameServer = "RemoveGameServer";
+      public const string RemoveGameServer = "DeleteGameServer";
       public const string GetGameServers = "GetGameServers";
 
       public const string AddCategory = "AddCategory";
       public const string EditCategory = "EditCategory";
-      public const string RemoveCategory = "RemoveCategory";
+      public const string RemoveCategory = "DeleteCategory";
       public const string GetCategories = "GetCategories";
 
       public const string AddItem = "AddItem";
       public const string EditItem = "EditItem";
-      public const string RemoveItem = "RemoveItem";
+      public const string RemoveItem = "DeleteItem";
       public const string GetItems = "GetItems";
     }
 
