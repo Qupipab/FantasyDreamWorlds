@@ -1,0 +1,106 @@
+<div class="item">
+  <h3 class="admin-title-group">Предметы</h3>
+  <div class="admin-service-group">
+    <div class="first-container add-item">
+      <h5>Добавить</h5>
+      <div class="input-container">
+        <fdw-select
+          class="service-input server-select"
+          :options="gameServers"
+          :reduce="gameServers => gameServers.id"
+          label="title"
+          placeholder="Сервер"
+          @input="getCategories"
+        />
+        <fdw-select
+          class="service-input server-select"
+          :options="categories"
+          :reduce="categories => categories.id"
+          label="ruTitle"
+          placeholder="Категория"
+          v-model="addItemPayload.categoryId"
+          @input="setCategories"
+        />
+        <b-form-input
+          class="service-input admin-input edit-game-server-input"
+          placeholder="Ру название"
+          size="lg"
+          v-model="addItemPayload.ruTitle"
+        ></b-form-input>
+        <b-form-input
+          class="service-input admin-input edit-game-server-input"
+          placeholder="Анг название"
+          size="lg"
+          v-model="addItemPayload.enTitle"
+        ></b-form-input>
+        <b-form-input
+          class="service-input admin-input edit-game-server-input"
+          placeholder="Количество"
+          size="lg"
+          v-model="addItemPayload.count"
+        ></b-form-input>
+        <b-form-input
+          class="service-input admin-input edit-game-server-input"
+          placeholder="Монеты"
+          size="lg"
+          v-model="addItemPayload.coins"
+        ></b-form-input>
+        <b-form-input
+          class="service-input admin-input edit-game-server-input"
+          placeholder="Эконы"
+          size="lg"
+          v-model="addItemPayload.eCoins"
+        ></b-form-input>
+        <fdw-file-upload
+          title="Иконка"
+          @change="onChange"
+        >
+
+        </fdw-file-upload>
+        <b-form-input
+          class="service-input admin-input edit-game-server-input"
+          placeholder="Скидка"
+          size="lg"
+          v-model="addItemPayload.discount"
+        ></b-form-input>
+        <b-form-datepicker
+          class="service-input admin-input date-picker"
+          v-model="addItemPayload.discountStartDate"
+          placeholder="Начало скидки"
+        ></b-form-datepicker>
+        <b-form-datepicker
+          class="service-input admin-input date-picker"
+          v-model="addItemPayload.discountEndDate"
+          placeholder="Конец скидки"
+        ></b-form-datepicker>
+      </div>
+      <b-button
+        class="admin-button"
+        variant="success"
+        @click="addItem"
+      >Добавить</b-button>
+    </div>
+    <div class="second-container">
+      <h5>Редактировать</h5>
+      <div class="input-container">
+        
+      </div>
+      <b-button
+        class="admin-button"
+        variant="warning"
+        @click="editItem"
+      >Редактировать</b-button>
+    </div>
+    <div class="third-container">
+      <h5>Удалить</h5>
+      <div class="input-container">
+        
+      </div>
+      <b-button
+        class="admin-button"
+        variant="danger"
+        @click="deleteItem"
+      >Удалить</b-button>
+    </div>
+  </div>
+</div>

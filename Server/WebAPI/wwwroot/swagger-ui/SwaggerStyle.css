@@ -1,0 +1,61 @@
+:root {
+  --d-font-color: #e9e4e3;
+  --d-first-level-bgc: #2F3136;
+  --d-second-level-bgc: #36393F;
+  --d-third-level-bgc: #202225;
+}
+
+.swagger-ui,
+html,
+.scheme-container {
+  background: var(--d-second-level-bgc) !important;
+}
+
+h1, h2, h3, h4, h5, h6, span, a, td, button, label, select, input, textarea {
+  color: var(--d-font-color) !important;
+}
+
+.swagger-ui p {
+  color: var(--d-font-color) !important;
+}
+
+svg {
+  fill: var(--d-font-color) !important;
+}
+
+.body-param__text {
+  background: var(--d-first-level-bgc) !important;
+}
+
+.modal-ux,
+.model-container,
+.opblock-section-header,
+.parameters-container,
+.opblock,
+select,
+input {
+  background: var(--d-third-level-bgc) !important;
+}
+
+select,
+.btn.try-out__btn,
+.btn.authorize {
+  border: 3px solid #e74c3c !important;
+}
+
+.modal-ux {
+  border: 2px solid #e74c3c !important;
+}
+
+.modal-ux-header {
+  border-bottom: 2px solid #e74c3c !important;
+}
+
+.btn.execute {
+  background-color: #ff5b37 !important;
+  border: none !important;
+}
+
+.authorization__btn {
+  display: none;
+}

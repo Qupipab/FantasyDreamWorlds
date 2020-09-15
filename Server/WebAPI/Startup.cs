@@ -2,7 +2,9 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.FileProviders;
 using Microsoft.Extensions.Hosting;
+using System.IO;
 using WebAPI.Installers;
 using WebAPI.Options;
 
@@ -25,6 +27,8 @@ namespace WebAPI
 
     public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
     {
+      app.UseStaticFiles();
+
       if (env.IsDevelopment())
       {
         app.UseDeveloperExceptionPage();
@@ -63,6 +67,16 @@ namespace WebAPI
       {
         c.SwaggerEndpoint("/swagger/FantasyDreamWorlds/swagger.json", "FantasyDreamWorlds API");
         c.RoutePrefix = string.Empty;
+        c.InjectStylesheet("/swagger-ui/SwaggerStyle.css");
+      });
+
+      app.UseFileServer(new FileServerOptions
+      {
+        FileProvider = new PhysicalFileProvider(
+                    Path.Combine(Directory.GetCurrentDirectory())),
+        RequestPath = "/assets",
+        EnableDirectoryBrowsing = true,
+        StaticFileOptions = { ServeUnknownFileTypes = true }
       });
 
     }

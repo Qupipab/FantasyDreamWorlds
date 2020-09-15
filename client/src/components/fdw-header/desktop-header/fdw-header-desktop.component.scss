@@ -120,10 +120,14 @@ ul {
                   animation-timing-function: ease-in-out;
                   animation-fill-mode: both;
                 }
-              } 
+              }
             }
           }
         }
+      }
+      .dd-nav-list-2 {
+        width: 140px;
+        left: calc((100% - 140px) / 2);
       }
       .dd-nav-list-3 {
         width: 125px;

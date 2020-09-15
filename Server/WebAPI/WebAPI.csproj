@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
@@ -18,5 +18,15 @@
   <ItemGroup>
     <Compile Remove="WeatherForecast.cs" />
     <Compile Remove="Controllers\WeatherForecastController.cs" />
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <Folder Include="DTO\Roles\Response\" />
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <None Include="wwwroot\swagger-ui\SwaggerStyle.css" />
   </ItemGroup>
 </Project>

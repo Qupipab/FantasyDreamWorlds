@@ -1,0 +1,59 @@
+.admin-title-group {
+  margin: 20px 0;
+}
+
+.admin-service-group {
+  display: grid;
+  grid-gap: 20px;
+  grid-template:
+    [service-containers] "first-container second-container third-container" 1fr [service-containers] / 1fr 1fr 1fr;
+
+  border-radius: 15px;
+  padding: 10px 20px 20px 20px;
+  background-color: var(--d-third-level-bgc);
+  @media (max-width: 576px) {
+    grid-template:
+      [first-container] "first-container" 1fr [first-container]
+      [second-container] "second-container" 1fr [second-container]
+      [third-container] "third-container" 1fr [third-container];
+  }
+  .first-container {
+    grid-area: first-container;
+  }
+  .second-container {
+    grid-area: second-container;
+  }
+  .third-container {
+    grid-area: third-container;
+  }
+  .first-container,
+  .second-container,
+  .third-container {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    @media (max-width: 576px) {
+      grid-template-rows: repeat(3, auto);
+    }
+    h5 {
+      text-align: center;
+    }
+    .input-container {
+      .service-input {
+        margin: 20px 0;
+      }
+    }
+  }
+  .admin-input {
+    background-color: var(--d-second-level-bgc);
+    color: var(--d-font-color);
+    height: 52px;
+    border: none;
+    font-weight: 600;
+  }
+  .admin-button {
+    width: 100%;
+  }
+  .date-picker {
+    z-index: 1010;
+  }
+}

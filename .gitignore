@@ -19,6 +19,7 @@ mono_crash.*
 #configs
 *[Cc]onfig.[Dd]ev.[Jj]son
 *[Aa]ppsettings.[Dd]evelopment.[Jj]son
+*[Tt]est[Cc]ontroller.[Cc]s
 
 # Build results
 [Dd]ebug/

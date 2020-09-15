@@ -1,0 +1,102 @@
+<div class="category">
+  <h3 class="admin-title-group">Категории</h3>
+  <div class="admin-service-group">
+    <div class="first-container add-category">
+      <h5>Добавить</h5>
+      <div class="input-container">
+        <fdw-select
+          class="service-input server-select"
+          :options="gameServers"
+          :reduce="gameServers => gameServers.id"
+          label="title"
+          placeholder="Сервер"
+          v-model="addCategoryPayload.gameServerId"
+        />
+        <b-form-input
+          class="service-input admin-input edit-game-server-input"
+          placeholder="Ру название"
+          size="lg"
+          v-model="addCategoryPayload.ruTitle"
+        ></b-form-input>
+        <b-form-input
+          class="service-input admin-input edit-game-server-input"
+          placeholder="Анг название"
+          size="lg"
+          v-model="addCategoryPayload.enTitle"
+        ></b-form-input>
+      </div>
+      <b-button
+        class="admin-button"
+        variant="success"
+        @click="addCategory"
+      >Добавить</b-button>
+    </div>
+    <div class="second-container">
+      <h5>Редактировать</h5>
+      <div class="input-container">
+        <fdw-select
+          class="service-input server-select"
+          :options="gameServers"
+          :reduce="gameServers => gameServers.id"
+          label="title"
+          placeholder="Сервер"
+          v-model="editCategoryPayload.gameServerId"
+          @input="getCategories"
+        />
+        <fdw-select
+          class="service-input server-select"
+          :options="categories"
+          :reduce="categories => categories.id"
+          label="ruTitle"
+          placeholder="Категория"
+          v-model="editCategoryPayload.categoryId"
+          @input="setEditCategory"
+        />
+        <b-form-input
+          class="service-input admin-input edit-game-server-input"
+          placeholder="Ру название"
+          size="lg"
+          v-model="editCategoryPayload.newRuTitle"
+        ></b-form-input>
+        <b-form-input
+          class="service-input admin-input edit-game-server-input"
+          placeholder="Анг название"
+          size="lg"
+          v-model="editCategoryPayload.newEnTitle"
+        ></b-form-input>
+      </div>
+      <b-button
+        class="admin-button"
+        variant="warning"
+        @click="editCategory"
+      >Редактировать</b-button>
+    </div>
+    <div class="third-container">
+      <h5>Удалить</h5>
+      <div class="input-container">
+        <fdw-select
+          class="service-input server-select"
+          :options="gameServers"
+          :reduce="gameServers => gameServers.id"
+          label="title"
+          placeholder="Сервер"
+          v-model="editCategoryPayload.gameServerId"
+          @input="getCategories"
+        />
+        <fdw-select
+          class="service-input server-select"
+          :options="categories"
+          :reduce="categories => categories.id"
+          label="ruTitle"
+          placeholder="Категория"
+          v-model="editCategoryPayload.categoryId"
+        />
+      </div>
+      <b-button
+        class="admin-button"
+        variant="danger"
+        @click="deleteCategory"
+      >Удалить</b-button>
+    </div>
+  </div>
+</div>

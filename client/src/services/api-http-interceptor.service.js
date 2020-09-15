@@ -1,12 +1,11 @@
 import { apiSuffix, baseUrl } from '@config';
-
 import axios from 'axios';
 
 const instance = axios.create({
   baseURL: `${baseUrl}/${apiSuffix}`,
   headers: {
     Accept: 'application/json',
-    'Content-Type': 'application/json'
+    'Content-Type': 'multipart/form-data'
   }
 });
 

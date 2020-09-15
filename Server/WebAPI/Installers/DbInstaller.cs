@@ -21,6 +21,7 @@ namespace WebAPI.Installers
         opt.Password.RequireLowercase = false;
         opt.Password.RequireNonAlphanumeric = false;
       })
+        .AddRoles<IdentityRole>()
         .AddEntityFrameworkStores<RepositoryContext>()
         .AddTop10000PasswordValidator<User>();
     }

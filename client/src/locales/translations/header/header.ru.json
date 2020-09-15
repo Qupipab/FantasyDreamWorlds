@@ -1,7 +1,13 @@
 {
   "nav": [
     { "title": "Форум", "path": "/forum" },
-    { "title": "Услуги", "path": "/services" },
+    { 
+      "title": "Услуги",
+      "list": [
+        { "title": "Магазин", "path": "/services/shop" },
+        { "title": "Привилегии", "path": "/services/privileges" }
+      ]
+    },
     {
       "title": "Сервера",
       "list": [
