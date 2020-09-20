@@ -8,7 +8,7 @@
         id="sign-up-input-field"
         v-model.trim="$v.login.$model"
         @input="delayTouch($v.login)"
-        placeholder="Enter nickname"
+        :placeholder="$t('auth.placeholder.nickname')"
         autocomplete="username"
         class="input-field"
         :class="{invalid: ($v.login.$dirty && $v.login.$invalid),
@@ -47,7 +47,7 @@
       <input
         id="sign-up-email-input"
         v-model.trim="$v.email.$model"
-        placeholder="Enter email"
+        :placeholder="$t('auth.placeholder.email')"
         autocomplete="email"
         class="input-field"
         :class="{invalid: ($v.email.$dirty && $v.email.$invalid),
@@ -70,7 +70,7 @@
       <input
         id="sign-up-password-input"
         v-model="$v.password.$model"
-        placeholder="Enter password"
+        :placeholder="$t('auth.placeholder.password')"
         type="password"
         autocomplete="new-password"
         class="input-field"
@@ -109,7 +109,7 @@
       <input
         id="sign-up-сonfirm-password-input"
         v-model="$v.confirmPassword.$model"
-        placeholder="Confirm password"
+        :placeholder="$t('auth.placeholder.confirmPassword')"
         type="password"
         autocomplete="new-password"
         class="input-field"

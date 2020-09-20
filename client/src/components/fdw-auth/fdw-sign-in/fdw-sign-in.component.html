@@ -7,7 +7,7 @@
       <input
         id="sign-up-input-field"
         v-model.trim="$v.login.$model"
-        placeholder="Enter nickname"
+        :placeholder="$t('auth.placeholder.nickname')"
         autocomplete="username"
         class="input-field"
         :class="{invalid: ($v.login.$dirty && $v.login.$invalid),
@@ -40,7 +40,7 @@
       <input
         id="sign-up-password-input"
         v-model="$v.password.$model"
-        placeholder="Enter password"
+        :placeholder="$t('auth.placeholder.password')"
         type="password"
         autocomplete="current-password"
         class="input-field"
