@@ -1,3 +1,4 @@
+import auth from './auth/auth.en.json';
 import commands from './commands/commands.en.json';
 import faq from './faq/faq.en.json';
 import footer from './footer/footer.en.json';
@@ -17,5 +18,6 @@ export default {
   rules,
   commands,
   valid,
-  faq
+  faq,
+  auth
 };

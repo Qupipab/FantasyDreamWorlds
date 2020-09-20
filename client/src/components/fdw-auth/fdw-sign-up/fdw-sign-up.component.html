@@ -3,12 +3,12 @@
   <form class="sign-form" @submit.prevent="submit">
 
     <div class="input-block">
-      <label for="sign-up-input-login">Nickname</label>
+      <label for="sign-up-input-login">{{ $t('auth.nickname') }}</label>
       <input
         id="sign-up-input-field"
         v-model.trim="$v.login.$model"
         @input="delayTouch($v.login)"
-        placeholder="Enter nickname"
+        :placeholder="$t('auth.placeholder.nickname')"
         autocomplete="username"
         class="input-field"
         :class="{invalid: ($v.login.$dirty && $v.login.$invalid),
@@ -43,11 +43,11 @@
     </div>
 
     <div class="input-block">
-      <label for="sign-up-email-input">Email</label>
+      <label for="sign-up-email-input">{{ $t('auth.email') }}</label>
       <input
         id="sign-up-email-input"
         v-model.trim="$v.email.$model"
-        placeholder="Enter email"
+        :placeholder="$t('auth.placeholder.email')"
         autocomplete="email"
         class="input-field"
         :class="{invalid: ($v.email.$dirty && $v.email.$invalid),
@@ -66,11 +66,11 @@
     </div>
 
     <div class="input-block">
-      <label for="sign-up-password-input">Password</label>
+      <label for="sign-up-password-input">{{ $t('auth.password') }}</label>
       <input
         id="sign-up-password-input"
         v-model="$v.password.$model"
-        placeholder="Enter password"
+        :placeholder="$t('auth.placeholder.password')"
         type="password"
         autocomplete="new-password"
         class="input-field"
@@ -105,11 +105,11 @@
     </div>
 
     <div class="input-block">
-      <label for="sign-up-сonfirm-password-input">Confirm password</label>
+      <label for="sign-up-сonfirm-password-input">{{ $t('auth.confirmPassword') }}</label>
       <input
         id="sign-up-сonfirm-password-input"
         v-model="$v.confirmPassword.$model"
-        placeholder="Confirm password"
+        :placeholder="$t('auth.placeholder.confirmPassword')"
         type="password"
         autocomplete="new-password"
         class="input-field"
@@ -132,12 +132,12 @@
 
     <div class="checkbox-rules" :class="{'form-group--error': $v.rulesAccept.$error}">
       <input
-        id="sign-up-rulesAccept"
-        v-model="rulesAccept"
-        name="rulesAccept"
-        type="checkbox"
+      id="sign-up-rulesAccept"
+      v-model="rulesAccept"
+      name="rulesAccept"
+      type="checkbox"
       >
-      <label for="sign-up-rulesAccept">I accept the rules and use</label>
+      <label class="label-sign-up-rulesAccept" for="sign-up-rulesAccept">{{ $t('auth.rulesAccept') }}</label>
     </div>
 
     <button
@@ -146,7 +146,7 @@
       class="bnt-submit"
       :class="{btn_disabled: ($v.$invalid)}"
       >
-      {{ $t('header.auth.signUp') }}
+      {{ $t('auth.signUp') }}
     </button>
   </form>
 </div>

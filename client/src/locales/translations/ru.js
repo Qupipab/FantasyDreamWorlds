@@ -1,3 +1,4 @@
+import auth from './auth/auth.ru.json';
 import commands from './commands/commands.ru.json';
 import faq from './faq/faq.ru.json';
 import footer from './footer/footer.ru.json';
@@ -17,5 +18,6 @@ export default {
   rules,
   commands,
   valid,
-  faq
+  faq,
+  auth
 };

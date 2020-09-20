@@ -51,7 +51,12 @@ h1 {
 }
 
 .checkbox-rules {
-  margin: 0 0 40px 0;
+  display: inline-table;
+  line-height: 125%;
+  label {
+    display: inline;
+    margin: 0 0 0 6px;
+  }
 }
 
 input:-webkit-autofill,
@@ -74,10 +79,10 @@ input:-webkit-autofill:focus {
   border: 1px solid #d10e0e;
 }
 
-
 .bnt-submit {
   width: 100%;
   height: calc(1.5em + .75rem + 2px);
+  margin: 32px 0 0 0;
   color: #dad8d8;
   background-color: var(--d-main-purple-font-color);
   background-clip: padding-box;
@@ -100,6 +105,10 @@ input:-webkit-autofill:focus {
   animation-fill-mode: forwards;
   animation-duration: .6s;
   animation-timing-function: ease-in-out;
+  .label-sign-up-rulesAccept {
+    font-weight: 500;
+    color: #d10e0e;
+  }
 }
 
 .form-group--loading {
