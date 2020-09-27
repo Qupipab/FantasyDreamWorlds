@@ -35,7 +35,6 @@ ul {
       position: relative;
       .nav-item-list {
         position: relative;
-
         z-index: 110;
         &::before, &::after {
           content: '';
@@ -94,6 +93,7 @@ ul {
           padding: 20px 30px 10px 30px;
           .dd-items-list {
             .dd-item {
+              margin: 5px 0;
               .nav-item-link {
                 position: relative;
                 font-size: 14px;
@@ -104,7 +104,7 @@ ul {
                 &::before {
                   content: '';
                   position: absolute;
-                  top: 8px;
+                  top: 2px;
                   left: -50px;
                   width: 12px;
                   height: 12px;
