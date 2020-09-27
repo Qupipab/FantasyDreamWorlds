@@ -7,7 +7,7 @@
     "nickname": "Enter nickname",
     "email": "Enter email",
     "password": "Enter password",
-    "confirnPassword": "Confirm password"
+    "confirmPassword": "Confirm password"
   },
   "rulesAccept": "I agree to the terms and privacy policy",
   "signUp": "Sign up",
