@@ -5,7 +5,7 @@ const instance = axios.create({
   baseURL: `${baseUrl}/${apiSuffix}`,
   headers: {
     Accept: 'application/json',
-    'Content-Type': 'multipart/form-data'
+    'Content-Type': 'application/json'
   }
 });
 
