@@ -8,8 +8,8 @@
     <fdw-shop-item></fdw-shop-item>
   </div>
   <div class="shop-header">
-    <h1>Title</h1>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum, ipsa?</p>
+    <h1>Магазин</h1>
+    <p>Рады Вас приветствовать в онлайн-магазине! Для начала выберите нужный сервер и приступайте к покупкам!</p>
   </div>
   <div class="shop-search-tools">
     <div class="search-wrapper">
@@ -23,6 +23,8 @@
         class="search-field"
         type="text"
         placeholder="Введите текст для поиска..."
+        v-model="getItemsPayload.itemsForSearch"
+        @input="instantGetItemsQuery"
       >
     </div>
     <fdw-select
@@ -55,7 +57,7 @@
         :key="i"
       >
         <h6 class="item-title">{{ item.ruTitle }}</h6>
-        <img src="https://s3.streamcraft.net/items/LOG@2.png" alt="icon">
+        <img :src="item.icon" alt="icon">
         <div class="buy-btn">
           <p>{{ item.coins }} монет</p>
           <p>{{ item.count }} шт.</p>
