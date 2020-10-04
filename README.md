@@ -3,7 +3,7 @@
 Fantasy Dream Worlds is a game project based on reworked high quality [FTB][FTB] modpacks and maps for Minecraft.  
 It provides the ability to play on popular builds such as [Infinity Evolved][Infinity] and [Project Ozone 2][Ozone], as well as several custom builds.
 
-P.S. The project is under development
+**P.S. The project is under development**
 
 ---
 
