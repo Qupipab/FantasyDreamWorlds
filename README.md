@@ -33,7 +33,7 @@ Description
   <summary>Details</summary>
   test
 </details>
-<img align="left" title="Theme" alt="Theme" src="https://user-images.githubusercontent.com/54445583/95020636-f9b08400-0674-11eb-9ed0-1932f21ca98f.gif" />
+<img title="Theme" alt="Theme" src="https://user-images.githubusercontent.com/54445583/95020636-f9b08400-0674-11eb-9ed0-1932f21ca98f.gif" />
 
 ---
 
