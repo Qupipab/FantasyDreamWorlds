@@ -1,7 +1,7 @@
 /* eslint-disable */
 import { FdwSelect, FdwShopGameServer, FdwShopCategory, FdwShopItem } from '@components';
 import Magnify from '@icons/Magnify';
-import { mapMutations, mapActions, mapState } from 'vuex';
+import { mapActions } from 'vuex';
 
 export default {
   components: {
@@ -57,6 +57,12 @@ export default {
     async getQueryItems () {
       await this.getItemsRequest(this.getItemsPayload);
       this.items = this.$store.state.shop.items;
+    },
+    async instantGetItemsQuery () {
+      if(this.getItemsPayload.itemsForSearch.length > 3 || this.getItemsPayload.itemsForSearch === "") {
+        await this.getItemsRequest(this.getItemsPayload);
+        this.items = this.$store.state.shop.items;
+      }
     }
   },
   async mounted () {
