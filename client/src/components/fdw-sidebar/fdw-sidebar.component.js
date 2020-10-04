@@ -23,19 +23,19 @@ export default {
           link: '/server/infinity',
           serversList: [
             {
-              onlineCount: 50,
-              maxSlotCount: 100
+              onlineCount: 26,
+              maxSlotCount: 50
             },
             {
-              onlineCount: 50,
-              maxSlotCount: 100
+              onlineCount: 37,
+              maxSlotCount: 80
             },
             {
-              onlineCount: 50,
-              maxSlotCount: 100
+              onlineCount: 64,
+              maxSlotCount: 90
             },
             {
-              onlineCount: 50,
+              onlineCount: 46,
               maxSlotCount: 100
             }
           ]
@@ -47,15 +47,15 @@ export default {
           serversList: [
             {
               onlineCount: 50,
-              maxSlotCount: 100
+              maxSlotCount: 60
             },
             {
-              onlineCount: 50,
-              maxSlotCount: 100
+              onlineCount: 70,
+              maxSlotCount: 70
             },
             {
-              onlineCount: 50,
-              maxSlotCount: 100
+              onlineCount: 30,
+              maxSlotCount: 40
             }
           ]
         },

@@ -49,10 +49,17 @@
                   <span>{{ serverGroup.groupTitle | setServerNumber(j + 1, serverGroup.serversList.length) }}</span>
                 </div>
                 <div class="server-online">
-                  <span>{{ server.onlineCount }}</span>
+                  <span>{{ server.maxSlotCount }}</span>
                 </div>
               </div>
-              <div class="server-progress-wrapper"></div>
+              <b-progress
+                class="fdw-progress"
+                :value="server.onlineCount"
+                height="1.5rem"
+                :max="server.maxSlotCount"
+                striped
+                animated
+              ></b-progress>
             </li>
           </ul>
         </li>

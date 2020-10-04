@@ -75,7 +75,7 @@
         autocomplete="new-password"
         class="input-field"
         :class="{invalid: ($v.password.$dirty && $v.password.$invalid),
-          'form-group--error': $v.login.$error}"
+          'form-group--error': $v.password.$error}"
       >
       <div
         class="valid-error"
@@ -116,7 +116,7 @@
         :class="{ invalid:
           ($v.confirmPassword.$dirty && $v.confirmPassword.$invalid) ||
           ($v.confirmPassword.$dirty && $v.password.$invalid),
-          'form-group--error': $v.login.$error }"
+          'form-group--error': $v.password.$error }"
       >
       <div
         class="valid-error"

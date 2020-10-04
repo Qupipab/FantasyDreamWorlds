@@ -138,9 +138,16 @@
   background-color: var(--l-card-bgc);
   border-radius: 0 0 5px 5px;
   .server {
-    padding: 10px 20px;
+    margin: 10px 20px;
+    .fdw-progress {
+      background-color: var(--d-second-level-bgc);
+    }
+    .progress-bar {
+      background-color: #8e44ad;
+    }
     .server-info {
       justify-content: space-between;
+      margin-bottom: 5px;
     }
     .server-progress-wrapper {
       height: 20px;
