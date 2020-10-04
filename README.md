@@ -20,6 +20,11 @@ P.S. The project is under development
 
 ## Features
 
+* Dark theme
+* Localisation
+* Adaptability
+* Pop-up notifications
+
 ---
 
 ## Theme
