@@ -57,6 +57,7 @@ Description
   <summary>Details</summary>
   test
 </details>
+<img title="MobileMenu" alt="MobileMenu" src="https://user-images.githubusercontent.com/54445583/95022890-7b5ade80-0682-11eb-8a18-48852d45e4ab.gif" />
 
 ---
 
@@ -66,6 +67,7 @@ Description
   <summary>Details</summary>
   test
 </details>
+<img title="Sidebar" alt="Sidebar" src="https://user-images.githubusercontent.com/54445583/95023014-426f3980-0683-11eb-9f15-28b5d56702a6.gif" />
 
 ---
 
@@ -75,6 +77,7 @@ Description
   <summary>Details</summary>
   test
 </details>
+<img title="Commands" alt="Commands" src="https://user-images.githubusercontent.com/54445583/95023261-c2e26a00-0684-11eb-9c35-9c8d43de9f2f.gif" />
 
 ---
 
@@ -84,6 +87,7 @@ Description
   <summary>Details</summary>
   test
 </details>
+<img title="Rules" alt="Rules" src="https://user-images.githubusercontent.com/54445583/95023346-384e3a80-0685-11eb-9d94-f0225a20742a.gif" />
 
 ---
 
@@ -93,6 +97,7 @@ Description
   <summary>Details</summary>
   test
 </details>
+<img title="Rules" alt="Rules" src="https://user-images.githubusercontent.com/54445583/95023590-9596bb80-0686-11eb-93e5-62b5111b789f.gif" />
 
 ---
 
