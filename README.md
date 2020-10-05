@@ -108,9 +108,12 @@ Commands are used to communicate between the game and the web server. For exampl
 ---
 
 ## Rules page
-Description
+Rules of conduct for players in the game.
 <details>
   <summary>Details</summary>
+
+  [Rules page code][isc30]
+
 </details>
 <img title="Rules" alt="Rules" src="https://user-images.githubusercontent.com/54445583/95023346-384e3a80-0685-11eb-9d94-f0225a20742a.gif" />
 
@@ -129,21 +132,30 @@ Frequently asked questions, HTML anchor link implemented.
 ---
 
 ## Shop page
-Description
+The page of the shop allows you to search by game branches, categories and items to make their further purchase, sorting by prices and discounts is also implemented.
 <details>
   <summary>Details</summary>
-  test
+
+  The store also has an admin block where you can add products to the database.  
+  The display of this block depends on claim's of jwt token's payload. [click][shop_1]  
+  On the backend, the role is checked using the attribute - [Authorize(Roles = "Admin")]. [click][shop_2]
+  Full shop code: [1][shop_3] [2][shop_4] [3][shop_5] [4][shop_6] [5][shop_7] [6][shop_8]
+  <img title="AdminShop" alt="AdminShop" src="https://user-images.githubusercontent.com/54556157/95130041-a3bb0980-0764-11eb-94a7-11bb8b729ac8.gif" />
+
 </details>
 <img title="Shop" alt="Shop" src="https://user-images.githubusercontent.com/54556157/95026992-d817c280-069d-11eb-960a-77f9b9786d26.gif" />
 
 ---
 
 ## API | Swagger
-Description
+Communication between frontend and backend takes place using the REST API. Swagger simplifies and document work with server REST API. 
 <details>
   <summary>Details</summary>
-  test
+  You can authorize to Swagger using a token and send requests as an authorized user
+<img title="SwaggerAuth1" alt="Swagger" src="https://user-images.githubusercontent.com/54445583/95128860-b7fe0700-0762-11eb-83e0-10a57d48c567.png" />
+<img title="SwaggerAuth2" alt="Swagger" src="https://user-images.githubusercontent.com/54445583/95128959-e24fc480-0762-11eb-8a51-383d8a57094a.png" />
 </details>
+<img title="SwaggerMain" alt="SwaggerMain" src="https://user-images.githubusercontent.com/54445583/95127778-38236d00-0761-11eb-931e-a3d9162cc148.png" />
 
 [FTB]: https://www.feed-the-beast.com/
 [Infinity]: https://www.curseforge.com/minecraft/modpacks/ftb-infinity-evolved
@@ -169,3 +181,14 @@ Description
 [isc35]: https://github.com/Qupipab/FantasyDreamWorlds/tree/master/client/src/views/commands
 
 [isc63]: https://github.com/Qupipab/FantasyDreamWorlds/tree/master/client/src/views/faq
+
+[isc30]: https://github.com/Qupipab/FantasyDreamWorlds/tree/master/client/src/views/rules
+
+[shop_1]: https://github.com/Qupipab/FantasyDreamWorlds/blob/master/client/src/store/modules/user.store.js
+[shop_2]: https://github.com/Qupipab/FantasyDreamWorlds/blob/master/Server/WebAPI/Controllers/ShopController.cs
+[shop_3]: https://github.com/Qupipab/FantasyDreamWorlds/tree/master/client/src/views/shop
+[shop_4]: https://github.com/Qupipab/FantasyDreamWorlds/blob/master/client/src/store/modules/shop.store.js
+[shop_5]: https://github.com/Qupipab/FantasyDreamWorlds/blob/master/Server/WebAPI/Controllers/ShopController.cs
+[shop_6]: https://github.com/Qupipab/FantasyDreamWorlds/blob/master/Server/WebAPI/Services/ShopService.cs
+[shop_7]: https://github.com/Qupipab/FantasyDreamWorlds/blob/master/Server/Entities/Repositories/ShopRepository.cs
+[shop_8]: https://github.com/Qupipab/FantasyDreamWorlds/blob/master/Server/WebAPI/ApiRoutes.cs
