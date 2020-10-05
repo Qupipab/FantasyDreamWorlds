@@ -28,7 +28,7 @@ It provides the ability to play on popular builds such as [Infinity Evolved][Inf
 ---
 
 ## Theme
-Dark Mode is a supplemental mode that can be used to display mostly dark surfaces on the UI. The advantages of Dark Mode are, it enhances visual ergonomics by reducing eye strain, facilitating screens to adjust according to current light conditions and providing comfort of use at night or in dark environments.
+  Dark Mode is a supplemental mode that can be used to display mostly dark surfaces on the UI. The advantages of Dark Mode are, it enhances visual ergonomics by reducing eye strain, facilitating screens to adjust according to current light conditions and providing comfort of use at night or in dark environments.
 <details>
   <summary>Details</summary>
 
@@ -41,10 +41,13 @@ Dark Mode is a supplemental mode that can be used to display mostly dark surface
 ---
 
 ## Auth
-Description
+  Authorization allows you to upload your character skins, buy items and resources from the store and other perks.
 <details>
   <summary>Details</summary>
-  test
+  Registration is implemented through ASP.NET Core Identity. Authorization with JSON Web Tokens. Front-end validation is implemented using the Vuelidate library, and server validation errors through popup notifications.
+
+  Auth code: [1][isc8_1] [2][isc8_2]
+
 </details>
 <img title="SignUp" width="700px" alt="SignUp" src="https://user-images.githubusercontent.com/54445583/95021523-1ef3c100-067a-11eb-8a7a-5683a049154e.gif" />
 <img title="SignIn" width="700px" alt="SignIn" src="https://user-images.githubusercontent.com/54445583/95021631-c7098a00-067a-11eb-98d6-5f4e3874df38.gif" />
@@ -52,20 +55,29 @@ Description
 ---
 
 ## Game Servers
-Description
+On the pages of game servers, you can see a description of a specific game branch, as well as find out more detailed information about the configuration and modifications of the game server.  
+
+Also FDW has English localization.
 <details>
   <summary>Details</summary>
-  test
+  The i18n library was used for localization. You can switch the language both using the switch in the footer and using the address bar.  
+    
+  [Localisation issue][iss21]  
+  Localisation code: [1][isc21_1] [2][isc21_2] [3][isc21_3] [4][isc21_4]  
+  
+  [Game servers issue][iss27]  
+  [Game servers code][isc27]
+
+  
 </details>
 <img title="GameServers" alt="GameServers" src="https://user-images.githubusercontent.com/54445583/95022424-e9ea6d00-067f-11eb-9547-c1836c5636a8.gif" />
 
 ---
 
 ## Mobile menu
-Description
 <details>
   <summary>Details</summary>
-  test
+  The sass preprocessor was used. Layout made using flexbox and grid.
 </details>
 <img title="MobileMenu" alt="MobileMenu" src="https://user-images.githubusercontent.com/54445583/95022890-7b5ade80-0682-11eb-8a18-48852d45e4ab.gif" />
 
@@ -131,5 +143,18 @@ Description
 [FTB]: https://www.feed-the-beast.com/
 [Infinity]: https://www.curseforge.com/minecraft/modpacks/ftb-infinity-evolved
 [Ozone]: https://www.curseforge.com/minecraft/modpacks/project-ozone-2-reloaded
+
 [isc6]: https://github.com/Qupipab/FantasyDreamWorlds/tree/master/client/src/components/controls/fdw-theme-switch
-[iss6]: https://github.com/Qupipab/FantasyDreamWorlds/issues/6 
+[iss6]: https://github.com/Qupipab/FantasyDreamWorlds/issues/6
+
+[isc8_1]: https://github.com/Qupipab/FantasyDreamWorlds/tree/master/client/src/components/fdw-auth
+[isc8_2]: https://github.com/Qupipab/FantasyDreamWorlds/blob/master/Server/WebAPI/Services/AuthService.cs
+
+[iss21]: https://github.com/Qupipab/FantasyDreamWorlds/issues/21
+[isc21_1]: https://github.com/Qupipab/FantasyDreamWorlds/blob/master/client/src/services/i18n/get-browser-locale.js
+[isc21_2]: https://github.com/Qupipab/FantasyDreamWorlds/tree/master/client/src/components/controls/fdw-locale-select
+[isc21_3]: https://github.com/Qupipab/FantasyDreamWorlds/tree/master/client/src/components/utils/localized-link
+[isc21_4]: https://github.com/Qupipab/FantasyDreamWorlds/tree/master/client/src/locales
+
+[iss27]: https://github.com/Qupipab/FantasyDreamWorlds/issues/27
+[isc27]: https://github.com/Qupipab/FantasyDreamWorlds/tree/master/client/src/views/server-info
