@@ -84,20 +84,24 @@ Also FDW has English localization.
 ---
 
 ## Sidebar
-Description
+The sidebar allows you to view the current online on the game servers, the general information on the game branch is displayed in an unfolded form, in the expanded form, more detailed information about the online on the servers of the branch is displayed.
 <details>
   <summary>Details</summary>
-  test
+
+  [Sidebar code][isc10]
+
 </details>
 <img title="Sidebar" alt="Sidebar" src="https://user-images.githubusercontent.com/54445583/95023014-426f3980-0683-11eb-9f15-28b5d56702a6.gif" />
 
 ---
 
 ## Commands page
-Description
+Commands are used to communicate between the game and the web server. For example, to privatize a territory or change a region inside.
 <details>
   <summary>Details</summary>
-  test
+
+  [Commands page code][isc35]
+
 </details>
 <img title="Commands" alt="Commands" src="https://user-images.githubusercontent.com/54445583/95023261-c2e26a00-0684-11eb-9c35-9c8d43de9f2f.gif" />
 
@@ -107,17 +111,18 @@ Description
 Description
 <details>
   <summary>Details</summary>
-  test
 </details>
 <img title="Rules" alt="Rules" src="https://user-images.githubusercontent.com/54445583/95023346-384e3a80-0685-11eb-9d94-f0225a20742a.gif" />
 
 ---
 
 ## FAQ page
-Description
+Frequently asked questions, HTML anchor link implemented.
 <details>
   <summary>Details</summary>
-  test
+  
+  [FAQ code][isc63]
+  
 </details>
 <img title="Rules" alt="Rules" src="https://user-images.githubusercontent.com/54445583/95023590-9596bb80-0686-11eb-93e5-62b5111b789f.gif" />
 
@@ -158,3 +163,9 @@ Description
 
 [iss27]: https://github.com/Qupipab/FantasyDreamWorlds/issues/27
 [isc27]: https://github.com/Qupipab/FantasyDreamWorlds/tree/master/client/src/views/server-info
+
+[isc10]: https://github.com/Qupipab/FantasyDreamWorlds/tree/master/client/src/components/fdw-sidebar
+
+[isc35]: https://github.com/Qupipab/FantasyDreamWorlds/tree/master/client/src/views/commands
+
+[isc63]: https://github.com/Qupipab/FantasyDreamWorlds/tree/master/client/src/views/faq
