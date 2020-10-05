@@ -28,10 +28,13 @@ It provides the ability to play on popular builds such as [Infinity Evolved][Inf
 ---
 
 ## Theme
-Description
+Dark Mode is a supplemental mode that can be used to display mostly dark surfaces on the UI. The advantages of Dark Mode are, it enhances visual ergonomics by reducing eye strain, facilitating screens to adjust according to current light conditions and providing comfort of use at night or in dark environments.
 <details>
   <summary>Details</summary>
-  test
+
+  [Issue #6][iss6]  
+  [Switch componentn code][isc6]
+
 </details>
 <img title="Theme" alt="Theme" src="https://user-images.githubusercontent.com/54445583/95020636-f9b08400-0674-11eb-9ed0-1932f21ca98f.gif" />
 
@@ -125,7 +128,8 @@ Description
   test
 </details>
 
-
 [FTB]: https://www.feed-the-beast.com/
 [Infinity]: https://www.curseforge.com/minecraft/modpacks/ftb-infinity-evolved
 [Ozone]: https://www.curseforge.com/minecraft/modpacks/project-ozone-2-reloaded
+[isc6]: https://github.com/Qupipab/FantasyDreamWorlds/tree/master/client/src/components/controls/fdw-theme-switch
+[iss6]: https://github.com/Qupipab/FantasyDreamWorlds/issues/6 
