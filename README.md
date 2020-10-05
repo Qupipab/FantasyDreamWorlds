@@ -10,8 +10,10 @@ It provides the ability to play on popular builds such as [Infinity Evolved][Inf
 ## Created with 
 
 * ASP.NET Core
-* EF Core
+* Entity Framework Core
 * Vue CLI
+* Vuex
+* Vue router
 * Scss
 * BootstrapVue
 * PostgreSQL
