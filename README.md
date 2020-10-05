@@ -76,7 +76,8 @@ Also FDW has English localization.
 
 ---
 
-## Mobile menu
+## Adaptive Design and mobile burger menu
+FDW has adaptive design for smartphones, tablets and pc.
 <details>
   <summary>Details</summary>
   The sass preprocessor was used. Layout made using flexbox and grid.
