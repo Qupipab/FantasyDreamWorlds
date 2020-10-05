@@ -141,7 +141,7 @@ The page of the shop allows you to search by game branches, categories and items
 
   The store also has an admin block where you can add products to the database.  
   The display of this block depends on claim's of jwt token's payload. [click][shop_1]  
-  On the backend, the role is checked using the attribute - [Authorize(Roles = "Admin")]. [click][shop_2]
+  On the backend, the role is checked using the attribute - [Authorize(Roles = "Admin")]. [click][shop_2]  
   Full shop code: [1][shop_3] [2][shop_4] [3][shop_5] [4][shop_6] [5][shop_7] [6][shop_8]
   <img title="AdminShop" alt="AdminShop" src="https://user-images.githubusercontent.com/54556157/95130041-a3bb0980-0764-11eb-94a7-11bb8b729ac8.gif" />
 
