@@ -1,9 +1,9 @@
 # About
 
-Fantasy Dream Worlds is a game project based on reworked high quality [FTB][FTB] modpacks and maps for Minecraft.  
+Fantasy Dream Worlds is the game project based on the reworked high quality [FTB][FTB] modpacks and maps for Minecraft.
 It provides the ability to play on popular builds such as [Infinity Evolved][Infinity] and [Project Ozone 2][Ozone], as well as several custom builds.
 
-**P.S. The project is under development**
+**The project is under development**
 
 ---
 
@@ -11,26 +11,23 @@ It provides the ability to play on popular builds such as [Infinity Evolved][Inf
 
 * ASP.NET Core
 * Entity Framework Core
-* Vue CLI
 * Vuex
-* Vue router
 * Scss
-* BootstrapVue
 * PostgreSQL
 
 ---
 
 ## Features
 
-* Dark theme
 * Localisation
 * Adaptability
+* Dark theme
 * Pop-up notifications
 
 ---
 
 ## Theme
-  Dark Mode is a supplemental mode that can be used to display mostly dark surfaces on the UI. The advantages of Dark Mode are, it enhances visual ergonomics by reducing eye strain, facilitating screens to adjust according to current light conditions and providing comfort of use at night or in dark environments.
+Dark Mode is the supplemental mode that can be used to display mostly dark surfaces on the UI. The advantages of Dark Mode are: it enhances visual ergonomics by reducing eye strain, facilitating screens to adjust according to current light conditions and providing comfort of use at night or in dark environments.
 <details>
   <summary>Details</summary>
 
@@ -43,7 +40,7 @@ It provides the ability to play on popular builds such as [Infinity Evolved][Inf
 ---
 
 ## Auth
-  Authorization allows you to upload your character skins, buy items and resources from the store and other perks.
+Authorization allows you to upload your character skins, buy items and resources from the store and other perks.
 <details>
   <summary>Details</summary>
   Registration is implemented through ASP.NET Core Identity. Authorization with JSON Web Tokens. Front-end validation is implemented using the Vuelidate library, and server validation errors through popup notifications.
@@ -57,9 +54,9 @@ It provides the ability to play on popular builds such as [Infinity Evolved][Inf
 ---
 
 ## Game Servers
-On the pages of game servers, you can see a description of a specific game branch, as well as find out more detailed information about the configuration and modifications of the game server.  
+On the pages of game servers, you can see a description of a specific game branch, as well as find out more detailed information about configuration and modifications of the game server.  
 
-Also FDW has English localization.
+FDW also has English localization.
 <details>
   <summary>Details</summary>
   The i18n library was used for localization. You can switch the language both using the switch in the footer and using the address bar.  
@@ -87,7 +84,7 @@ FDW has adaptive design for smartphones, tablets and pc.
 ---
 
 ## Sidebar
-The sidebar allows you to view the current online on the game servers, the general information on the game branch is displayed in an unfolded form, in the expanded form, more detailed information about the online on the servers of the branch is displayed.
+The sidebar allows you to view count of users online on the game servers, the general information on the game branch is displayed in an unfolded form, in the expanded form more detailed information about the online on the servers of the branch is displayed.
 <details>
   <summary>Details</summary>
 
