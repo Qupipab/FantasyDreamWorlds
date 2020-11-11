@@ -1,0 +1,115 @@
+.main__container {
+  margin-top: 65px;
+  display: grid;
+  grid-gap: 40px;
+  @media (max-width: 576px) {
+    margin-top: 0px;
+    grid-gap: 20px;
+  }
+  .post__card {
+    display: grid;
+    border-radius: 20px;
+    background-color: var(--d-first-level-bgc);
+    overflow: hidden;
+    grid-template-columns: minmax(20px, 7fr) 10fr;
+    @media (max-width: 576px) {
+      grid-template-columns: 1fr;
+      grid-template-rows: 7fr 10fr;
+    }
+    .image__wrapper {
+      position: relative;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      &::before {
+        content: "";
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        box-shadow: inset -110px 0 55px -55px var(--d-first-level-bgc);
+      }
+      @media (max-width: 576px) {
+        &::before {
+          box-shadow: inset 0 -120px 45px -45px var(--d-first-level-bgc);;
+        }
+      }
+    }
+    .info__container {
+      display: grid;
+      overflow: hidden;
+      grid-template-rows: auto auto 1fr;
+      grid-gap: 5px;
+      padding: 15px 35px;
+      margin: 25px 0;
+      border-radius: 10px;
+      right: 30px;
+      position: relative;
+      background-color: var(--d-third-level-bgc);
+      @media (max-width: 576px) {
+        right: 0;
+        top: -25px;
+        margin: 0 20px;
+        grid-gap: 2px;
+        padding: 15px 20px;
+      }
+      .title {
+        font-size: 32px;
+        font-weight: 600;
+        color: var(--d-main-purple-font-color);
+        @media (max-width: 576px) {
+          text-align: center;
+        }
+      }
+      hr {
+        border-top: 2px solid #FFF;
+      }
+      .description {
+        font-size: 14px;
+        color:  #bfc9ca;
+        overflow: hidden;
+      }
+      .post__footer {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        align-items: center;
+        margin-top: 40px;
+        .date__container {
+          display: grid;
+          grid-template-columns: min-content min-content;
+          align-items: center;
+          grid-gap: 5px;
+          p {
+            font-size: 14px;
+            font-weight: 600;
+          }
+        }
+        .datails__btn__wrapper {
+          cursor: pointer;
+          border-radius: 5px;
+          background-color: var(--d-main-purple-font-color);
+          .datails__btn {
+            font-size: 14px;
+            user-select: none;
+            padding: 12px 25px;
+            border-radius: 5px;
+            color: white;
+            background-color: var(--d-second-level-bgc);
+            position: relative;
+            transition: .1s ease-in-out top 0s, .2s ease-in-out color 0s;
+            top: -3px;
+            &:hover {
+              color: #bfc9ca;
+            }
+            &:active {
+              top: 0px;
+              transition: .1s ease-in-out top 0s;
+            }
+          }
+        }
+      }
+    }
+  }
+}

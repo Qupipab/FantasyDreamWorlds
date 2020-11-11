@@ -39,6 +39,7 @@ export default {
     z-index: 100;
     @media (max-width: 857px) {
       flex-direction: column;
+      margin: 50px auto;
     }
   }
   @media (max-width: 767px) {

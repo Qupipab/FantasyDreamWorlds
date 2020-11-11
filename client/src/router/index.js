@@ -3,6 +3,7 @@ import VueRouter from 'vue-router';
 import Root from './Root';
 import store from '@store';
 import {
+  Main,
   ServerInfo,
   Rules,
   Commands,
@@ -45,6 +46,11 @@ const routes = [
         path: 'faq',
         name: 'FAQ',
         component: Faq
+      },
+      {
+        path: 'main',
+        name: 'Main',
+        component: Main
       },
       {
         path: 'services/shop',

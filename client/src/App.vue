@@ -9,7 +9,11 @@
 
 <script>
 import { library } from '@fortawesome/fontawesome-svg-core';
-import { faMoon, faQuestionCircle, faFileAlt } from '@fortawesome/free-solid-svg-icons';
+import {
+  faMoon,
+  faQuestionCircle,
+  faFileAlt
+} from '@fortawesome/free-solid-svg-icons';
 
 library.add(faMoon);
 library.add(faQuestionCircle);
