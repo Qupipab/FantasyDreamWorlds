@@ -10,7 +10,7 @@ Vue.use(Vuex);
 export default new Vuex.Store({
   namespaced: true,
   state: {
-    themeMode: localStorage.getItem('themeMode')
+    themeMode: localStorage.getItem('themeMode') || 'dark'
   },
   mutations: {
   },
